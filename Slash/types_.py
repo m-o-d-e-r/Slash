@@ -104,13 +104,16 @@ class Column:
 class Table:
     def __init__(self, name: str):
         self.__name = name
-        self.columns = []
+        self.__columns = []
     
     def get_name(self):
         return self.__name
     
     def set_columns(self, *names):
-        self.columns = names
+        self.__columns = names
+    
+    def get_columns(self):
+        return self.__columns
 
     def create(self, connection):
         core.Create(self, BasicTypes.TYPES_LIST, connection)
