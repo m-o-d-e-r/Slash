@@ -1,4 +1,8 @@
+import hashlib
+from typing import final
 from .Core import core
+from random import randint
+from hashlib import md5
 
 
 class Rules:
@@ -105,7 +109,12 @@ class Table:
     def __init__(self, name: str):
         self.__name = name
         self.__columns = []
-    
+        TablesManager.tables.update(
+            {
+                md5(self.__name.encode("utf-8")).digest() : self
+            }
+        )
+
     def get_name(self):
         return self.__name
     
@@ -117,3 +126,12 @@ class Table:
 
     def create(self, connection):
         core.Create(self, BasicTypes.TYPES_LIST, connection)
+
+@final
+class TablesManager:
+    tables = {
+        
+    }
+    @staticmethod
+    def find_by_name(name):
+        return TablesManager.tables.get(md5(name.encode("utf-8")).digest())

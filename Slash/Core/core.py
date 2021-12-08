@@ -1,13 +1,12 @@
+from typing import final
 import psycopg2
 import string
 import re
 
 from .exeptions_ import (
-    SlashBadColumnNameError, SlashRulesError,
-    SlashTypeError, SlashBadAction,
-    SlashPatternMismatch
+    SlashBadColumnNameError, SlashTypeError,
+    SlashBadAction, SlashPatternMismatch
 )
-
 
 class Connection:
     def __init__(self, dbname =  " ", user = " ", password = " ", host = " ", port = 0):
@@ -33,18 +32,6 @@ class Connection:
     def close(self):
         self.__connection.close()
 
-    def create_table(self, table):
-        request = "CREATE TABLE IF NOT EXISTS {} ({})".format(
-            table.get_name(),
-            ", ".join([f"{col.column_name} {col.column_sql_type}" for col in table.get_columns()])
-            )
- #       self.cursor.execute(
-#        )
-  #      self.__connection.commit()
-        #print(CheckDatas.checkSQL(request, "create"))
-
-
-
 class Create():
     def __init__(self, table, types_list, conn):
         self.connection: Connection = conn
@@ -65,69 +52,35 @@ class Create():
         return True
 
     def __create(self, table):
-        self.connection.create_table(table)
+        request = "CREATE TABLE IF NOT EXISTS {} ({})".format(
+            table.get_name(),
+            ", ".join([f"{col.column_name} {col.column_sql_type}" for col in table.get_columns()])
+            )
 
+        self.connection.execute(CheckDatas.checkSQL(request, "create"))
 
-class Insert():
-    def __init__(self, conn: Connection, table_name, names, values, rules="*"):
-        responce = self.__validate(table_name, names, values, rules)
-        conn.execute(CheckDatas.checkSQL(responce, "insert"))
-
-    def __validate(self, table_name, names, values, rules):
-        CheckDatas.checkStr(table_name)
-
-        for name in names:
-            CheckDatas.checkStr(name)
-
-        for value in values:
-            if value.type_name == "type_text":
-                CheckDatas.checkStr(value.value)
-
-            valid_responce = value._is_valid_datas(rules)
-            if not valid_responce[0]:
-                raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
-
-        r = f"""INSERT INTO {table_name} {str(names).replace("'", "")} VALUES ("""
-
-        for index, v in enumerate(values):
-            if v.type_name == "type_int":
-                r += str(v.value)
-                if (index + 1) != len(values):
-                    r += ", "
-            elif v.type_name == "type_text":
-                r += ("'" + v.value + "'")
-                if (index + 1) != len(values):
-                    r += ","
-        r += ")"
-
-        return r
-
-
-class Update(): ...
-
-class Delete(): ...
-
-class Operations():
-    def __init__(self, connection):
-        self.__connection = connection
-
-    def insert(self, connection, table_name, names, values, *, rules="*"):
-        if rules == "*":
-            Insert(connection, table_name, names, values)
-        else:
-            Insert(connection, table_name, names, values, rules)
-
-    def update(self):
-        Update()
-
-    def delete(self):
-        Delete()
+@final
+class SQLConditions:
+    EQUEL = "="
+    AND = "AND"
+    NEQUEL = "!="
+    OR = "OR"
+    NOT = "NOT"
+    MORE = ">"
+    LESS = "<"
+    EMORE = ">="
+    ELESS = "<="
+    @staticmethod
+    def where(*condition):
+        return " ".join(list(map(str, condition)))
 
 
 class CheckDatas:
     SQL_TEMPLATES = {
         "insert" : "INSERT INTO [a-zA-Z0-9]* [)()a-zA-Z,\s]* VALUES [a-zA-Z)(0-9,\s']*",
         "create" : "CREATE TABLE IF NOT EXISTS [a-zA-Z0-9]* [)()a-zA-Z0-9',\s]*",
+        "update" : "",
+        "delete" : ""
     }
     def __init__(self): ...
 
