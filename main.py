@@ -1,5 +1,5 @@
-from Slash.types_ import Column, Table, Int, Text, Bool, Rules, TablesManager
-from Slash.Core.core import Connection, SQLConditions
+from Slash.types_ import Column, Table, Int, Text
+from Slash.Core.core import Connection
 from Slash.Core.operations_ import Operations
 
 
@@ -12,37 +12,9 @@ table = Table("test1")
 table.set_columns(Column(Int, "age"), Column(Text, "name"))
 table.create(conn)
 
-class myRules(Rules): ...
 
-user_rules = myRules()
-user_rules.new_rules(
-    {
-            "type_int"  : {
-                "min" : 0,
-                "max" : 20_000,
-                "valide_foo" : user_rules.valid_int
-            },
-            "type_text" : {
-                "length" : 100,
-                "valide_foo" : user_rules.valid_text
-            },
-            "type_bool" : {
-                "symbols" : [True, False],
-                "valide_foo" : user_rules.valid_bool
-            },
-            "type_date" : {
-                "current" : "{}.{}.{}",
-                "valide_foo" : user_rules.valid_date
-            }
-        }
-    )
+#Operations(conn).insert(table.get_name(), ("age", "name"), (Int(2), Text("1234")))
 
-#for i in range(1, 10_000):
-#    Operations(conn).insert("test1", ("age", "name"), (Int(i), Text("Name2")), rules=user_rules)
+print(Operations(conn).select(table.get_name(), ("age", "name")))
 
 
-Operations(conn).delete(
-    table.get_name(), SQLConditions.where(
-        "age", SQLConditions.ELESS, "100"
-    )
-)

@@ -1,3 +1,5 @@
+from os import name
+import re
 from .core import CheckDatas, Connection, SQLConditions
 
 from .exeptions_ import SlashRulesError
@@ -55,6 +57,23 @@ class Delete():
 
         return r
 
+class Select():
+    def __init__(self, conn, table_name, names, condition: SQLConditions):
+        self.__conn = conn
+        self.__responce = self.__validate(table_name, names, condition)
+
+    def __validate(self, table_name, names, condition):
+        CheckDatas.checkStr(table_name)
+
+        return "SELECT {} FROM {}{}".format(
+            ", ".join([n for n in names]),
+            table_name, condition
+        )
+
+    def get(self):
+        self.__conn.execute(CheckDatas.checkSQL(self.__responce, "select"))
+        return self.__conn.fetchall()
+
 
 class Operations():
     def __init__(self, connection):
@@ -65,6 +84,9 @@ class Operations():
             Insert(self.__connection, table_name, names, values)
         else:
             Insert(self.__connection, table_name, names, values, rules)
+
+    def select(self, table_name, names, condition = " "):
+        return Select(self.__connection, table_name, names, condition).get()
 
     def update(self):
         Update()

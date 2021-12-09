@@ -1,5 +1,4 @@
-from os import path
-from typing import final
+from typing import Final, final
 import psycopg2
 import string
 import re
@@ -33,6 +32,9 @@ class Connection:
     def close(self):
         self.__connection.close()
 
+    def fetchall(self):
+        return self.cursor.fetchall()
+
 class Create():
     def __init__(self, table, types_list, conn):
         self.connection: Connection = conn
@@ -62,26 +64,27 @@ class Create():
 
 @final
 class SQLConditions:
-    EQUEL = "="
+    EQ = "="
     AND = "AND"
-    NEQUEL = "!="
+    NE = "!="
     OR = "OR"
     NOT = "NOT"
-    MORE = ">"
-    LESS = "<"
-    EMORE = ">="
-    ELESS = "<="
+    GT = ">"
+    LT = "<"
+    GE = ">="
+    LE = "<="
     @staticmethod
     def where(*condition):
         return " WHERE " + " ".join(list(map(str, condition)))
 
 
 class CheckDatas:
-    SQL_TEMPLATES = {
+    SQL_TEMPLATES: Final = {
         "insert" : "INSERT INTO [a-zA-Z0-9]* [)()a-zA-Z,\s]* VALUES [a-zA-Z)(0-9,\s']*",
         "create" : "CREATE TABLE IF NOT EXISTS [a-zA-Z0-9]* [)()a-zA-Z0-9',\s]*",
         "update" : "",
-        "delete" : "DELETE FROM [a-zA-Z0-9]* [a-zA-Z0-9\s<>!=]*"
+        "delete" : "DELETE FROM [a-zA-Z0-9]* [a-zA-Z0-9\s<>!=]*",
+        "select" : "SELECT [a-zA-Z0-9(),\s'<>!=*]*"
     }
     def __init__(self): ...
 
@@ -103,6 +106,10 @@ class CheckDatas:
             if sql_request in template:
                 return sql_request
             else:
-                raise SlashPatternMismatch("\n\nPattern mismatch:\n\t{}".format(sql_request))
+                raise SlashPatternMismatch(
+                    "\n\nPattern mismatch:\n\t{}\n\nFinded pattern: {}\n\t".format(
+                        sql_request, template
+                    )
+                )
         else:
             raise SlashBadAction("Action is wrong")
