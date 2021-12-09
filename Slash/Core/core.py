@@ -1,3 +1,4 @@
+from os import path
 from typing import final
 import psycopg2
 import string
@@ -72,7 +73,7 @@ class SQLConditions:
     ELESS = "<="
     @staticmethod
     def where(*condition):
-        return " ".join(list(map(str, condition)))
+        return " WHERE " + " ".join(list(map(str, condition)))
 
 
 class CheckDatas:
@@ -80,7 +81,7 @@ class CheckDatas:
         "insert" : "INSERT INTO [a-zA-Z0-9]* [)()a-zA-Z,\s]* VALUES [a-zA-Z)(0-9,\s']*",
         "create" : "CREATE TABLE IF NOT EXISTS [a-zA-Z0-9]* [)()a-zA-Z0-9',\s]*",
         "update" : "",
-        "delete" : ""
+        "delete" : "DELETE FROM [a-zA-Z0-9]* [a-zA-Z0-9\s<>!=]*"
     }
     def __init__(self): ...
 
@@ -99,7 +100,6 @@ class CheckDatas:
 
         if sql_template is not None:
             template = re.findall(sql_template, sql_request)
-
             if sql_request in template:
                 return sql_request
             else:

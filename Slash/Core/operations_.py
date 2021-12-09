@@ -1,4 +1,4 @@
-from .core import CheckDatas
+from .core import CheckDatas, Connection, SQLConditions
 
 from .exeptions_ import SlashRulesError
 
@@ -42,23 +42,33 @@ class Update():
         conn.execute(CheckDatas.checkSQL(responce, "update"))
 
 class Delete():
-    def __init__(self, conn, table_name, names, condition):
-        print(condition)
+    def __init__(self, conn, table_name, condition: SQLConditions):
+        responce = self.__validate(table_name, condition)
+        conn.execute(CheckDatas.checkSQL(responce, "delete"))
+
+    def __validate(self, table_name, condition):
+        CheckDatas.checkStr(table_name)
+        r = "DELETE FROM {}{}".format(
+                table_name,
+                condition
+            )
+
+        return r
 
 
 class Operations():
     def __init__(self, connection):
         self.__connection = connection
 
-    def insert(self, connection, table_name, names, values, *, rules="*"):
+    def insert(self, table_name, names, values, *, rules="*"):
         if rules == "*":
-            Insert(connection, table_name, names, values)
+            Insert(self.__connection, table_name, names, values)
         else:
-            Insert(connection, table_name, names, values, rules)
+            Insert(self.__connection, table_name, names, values, rules)
 
     def update(self):
         Update()
 
-    def delete(self, connection, table_name, names, condition):
-        Delete(connection, table_name, names, condition)
+    def delete(self, table_name, condition = " "):
+        Delete(self.__connection, table_name, condition)
 
