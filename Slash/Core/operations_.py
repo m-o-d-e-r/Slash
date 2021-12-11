@@ -38,11 +38,6 @@ class Insert():
 
         return r
 
-class Update():
-    def __init__(self, conn, table_name, names, values, rules="*"):
-        responce = self.__validate(table_name, names, values, rules)
-        conn.execute(CheckDatas.checkSQL(responce, "update"))
-
 class Delete():
     def __init__(self, conn, table_name, condition: SQLConditions):
         responce = self.__validate(table_name, condition)
@@ -74,6 +69,25 @@ class Select():
         self.__conn.execute(CheckDatas.checkSQL(self.__responce, "select"))
         return self.__conn.fetchall()
 
+class Update():
+    def __init__(self, conn, table_name, names, values, condition):
+        responce = self.__validate(conn, table_name, names, values, condition)
+        conn.execute(CheckDatas.checkSQL(responce, "update"))
+
+    def __validate(self, conn, table_name, names, values, condition):
+        r = "UPDATE {} SET ".format(table_name)
+
+        for index, value in enumerate(values):
+            if value.type_name == "type_text":
+                r += " = ".join((names[index], f"'{value.value}'"))
+            elif value.type_name == "type_int":
+                r += " = ".join((names[index], f"{value.value}"))
+
+            r += ", " if index != (len(values) - 1) else ""
+
+        r += condition
+
+        return r
 
 class Operations():
     def __init__(self, connection):
@@ -88,9 +102,8 @@ class Operations():
     def select(self, table_name, names, condition = " "):
         return Select(self.__connection, table_name, names, condition).get()
 
-    def update(self):
-        Update()
-
     def delete(self, table_name, condition = " "):
         Delete(self.__connection, table_name, condition)
 
+    def update(self, table_name, column_names, values, condition = " "):
+        Update(self.__connection, table_name, column_names, values, condition)

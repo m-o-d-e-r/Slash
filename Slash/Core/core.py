@@ -82,7 +82,7 @@ class CheckDatas:
     SQL_TEMPLATES: Final = {
         "insert" : "INSERT INTO [a-zA-Z0-9]* [)()a-zA-Z,\s]* VALUES [a-zA-Z)(0-9,\s']*",
         "create" : "CREATE TABLE IF NOT EXISTS [a-zA-Z0-9]* [)()a-zA-Z0-9',\s]*",
-        "update" : "",
+        "update" : "UPDATE [a-zA-Z0-9]* SET [a-zA-Z0-9\s<>!=',]*",
         "delete" : "DELETE FROM [a-zA-Z0-9]* [a-zA-Z0-9\s<>!=]*",
         "select" : "SELECT [a-zA-Z0-9(),\s'<>!=*]*"
     }
