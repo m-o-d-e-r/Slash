@@ -71,10 +71,11 @@ class Select():
 
 class Update():
     def __init__(self, conn, table_name, names, values, condition):
-        responce = self.__validate(conn, table_name, names, values, condition)
+        responce = self.__validate(table_name, names, values, condition)
         conn.execute(CheckDatas.checkSQL(responce, "update"))
 
-    def __validate(self, conn, table_name, names, values, condition):
+    def __validate(self, table_name, names, values, condition):
+        CheckDatas.checkStr(table_name)
         r = "UPDATE {} SET ".format(table_name)
 
         for index, value in enumerate(values):
