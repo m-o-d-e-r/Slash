@@ -77,6 +77,14 @@ class SQLConditions:
     def where(*condition):
         return " WHERE " + " ".join(list(map(str, condition)))
 
+    def order_by(column, *, desc = ""):
+        return " ORDER BY {} {}".format(
+            CheckDatas.checkStr(column),
+            CheckDatas.checkStr(desc)
+        )
+
+    def gdoup_by(): ...
+
 
 class CheckDatas:
     SQL_TEMPLATES: Final = {
@@ -95,7 +103,7 @@ class CheckDatas:
                 raise SlashBadColumnNameError(
                     f"Error:\n\nBad name for column of data base\nName: {str_}\nSymbol: {char_}"
                 )
-        return True
+        return str_
  
     @staticmethod
     def checkSQL(sql_request, action):

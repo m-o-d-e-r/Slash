@@ -12,22 +12,14 @@ table = Table("test1")
 table.set_columns(Column(Int, "age"), Column(Text, "name"))
 table.create(conn)
 
-
-Operations(conn).insert(table.get_name(), ("age", "name"), (Int(2), Text("1234")))
-
-Operations(conn).update(
-    table.get_name(),
-    ("age", "name"),
-    (Int(3), Text("333")),
-    SQLConditions.where(
-        "age", SQLConditions.LE, "3"
-    )
-)
-
 print(
     Operations(conn).select(
         table.get_name(),
-        ("age", "name")
+        ("age", "name"),
+        SQLConditions.where(
+            "age", SQLConditions.EQ, 3,
+            SQLConditions.order_by("age", desc="desc")   
+        )
     )
 )
 

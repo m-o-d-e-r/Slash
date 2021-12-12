@@ -129,9 +129,10 @@ class Table:
 
 @final
 class TablesManager:
-    tables = {
-        
-    }
+    tables = {}
+
     @staticmethod
     def find_by_name(name):
         return TablesManager.tables.get(md5(name.encode("utf-8")).digest())
+    
+    
