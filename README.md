@@ -135,7 +135,7 @@ conn = Connection(
 # удаление с условием
 Operations(conn).delete(
     table.get_name(), SQLConditions.where(
-        "age", SQLConditions.LE, "100"
+        "age", SQLConditions.LE, 100
     )
 )
 
