@@ -17,4 +17,5 @@ setup(
     install_requires=['psycopg2'],
     include_package_data=True,
     distclass=BinaryDistribution,
+    python_requires='>=3.8',
 )
