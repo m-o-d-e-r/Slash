@@ -167,5 +167,14 @@ print(
 # PyPI
 <a href="https://pypi.org/project/Slash92/0.1.0/">PyPI</a>
 
+# Собрать .whl
+    python setup.py bdist_wheel
+    
+# Установка через .whl
+    pip install Slash92-0.1.0-py3-none-any.whl
+
+# Установка через setup.py
+    python setup.py install
+
 Скоро допишу и поправлю текст)
 Также буду изменять синтаксис условий
