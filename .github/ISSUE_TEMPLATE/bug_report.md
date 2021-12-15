@@ -23,4 +23,4 @@ If applicable, add screenshots to help explain your problem.
 **Additional context**
 Add any other context about the problem here.
 
-**Please write me a telegram: https://t.me/M_O_D_E_R
+**Please write me a telegram: https://t.me/M_O_D_E_R**
