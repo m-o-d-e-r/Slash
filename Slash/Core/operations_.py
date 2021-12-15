@@ -1,6 +1,7 @@
 from os import name
 import re
 from .core import CheckDatas, Connection, SQLConditions
+from ..types_ import DataSet
 
 from .exeptions_ import SlashRulesError
 
@@ -56,6 +57,8 @@ class Select():
     def __init__(self, conn, table_name, names, condition: SQLConditions):
         self.__conn = conn
         self.__responce = self.__validate(table_name, names, condition)
+        self.__table_name = table_name
+        self.__names = names
 
     def __validate(self, table_name, names, condition):
         CheckDatas.checkStr(table_name)
@@ -67,7 +70,8 @@ class Select():
 
     def get(self):
         self.__conn.execute(CheckDatas.checkSQL(self.__responce, "select"))
-        return self.__conn.fetchall()
+
+        return DataSet(self.__table_name, self.__names, self.__conn.fetchall())
 
 class Update():
     def __init__(self, conn, table_name, names, values, condition):
