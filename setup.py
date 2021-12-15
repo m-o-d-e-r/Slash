@@ -6,7 +6,7 @@ class BinaryDistribution(Distribution):
     def is_pure(self):
         return False
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 setup(
     name='Slash92',

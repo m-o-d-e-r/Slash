@@ -134,7 +134,7 @@ class TablesManager:
     @staticmethod
     def find_by_name(name):
         return TablesManager.tables.get(md5(name.encode("utf-8")).digest())
-    
+
 class DataSet:
     def __init__(self, table_name, columns, data):
         self.__table_name = table_name
@@ -145,9 +145,9 @@ class DataSet:
         return self.__columns
 
     def get_data(self):
-        return self.__data
+        return tuple(self.__data)
 
     def get_table_name(self):
         return self.__table_name
 
-    
+
