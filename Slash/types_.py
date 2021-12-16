@@ -89,20 +89,34 @@ class Date(ORMType):
         self.type_name = "type_date"
         self.value = value
 
+class AutoField(ORMType):
+    def __init__(self, value=""):
+        self.type_name = "type_int"
+        self.value = value
 
 class BasicTypes:
-    TYPES_LIST = (Int, Text, Bool, Date)
+    TYPES_LIST = (Int, Text, Bool, Date, AutoField)
     DB_TYPES_LIST = {
         Int : "INT", Text : "TEXT",
-        Bool : "BOOL", Date : "DATE"
+        Bool : "BOOL", Date : "DATE",
+        AutoField : "INT"
     }
 
 
 class Column:
     def __init__(self, column_type, column_name):
-        self.column_type = column_type
-        self.column_name = column_name
-        self.column_sql_type = BasicTypes.DB_TYPES_LIST.get(self.column_type)
+        self.__column_type = column_type
+        self.__column_name = column_name
+        self.__column_sql_type = BasicTypes.DB_TYPES_LIST.get(self.__column_type)
+    
+    @property
+    def type(self): return self.__column_type
+
+    @property
+    def name(self): return self.__column_name
+
+    @property
+    def sql_type(self): return self.__column_sql_type
 
 
 class Table:
@@ -115,14 +129,14 @@ class Table:
             }
         )
 
-    def get_name(self):
-        return self.__name
+    @property
+    def name(self): return self.__name
     
+    @property
+    def columns(self): return self.__columns
+
     def set_columns(self, *names):
         self.__columns = names
-    
-    def get_columns(self):
-        return self.__columns
 
     def create(self, connection):
         core.Create(self, BasicTypes.TYPES_LIST, connection)

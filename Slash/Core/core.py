@@ -43,21 +43,20 @@ class Create():
             self.__create(table)
 
     def __validate (self, types_list):
-        CheckDatas.checkStr(self.table.get_name())
+        CheckDatas.checkStr(self.table.name)
 
-        for column in self.table.get_columns():
-            if column.column_type not in types_list:
-                raise SlashTypeError(f"{type(column.column_type)} is not available type for data base")
+        for column in self.table.columns:
+            if column.type not in types_list:
+                raise SlashTypeError(f"{type(column.type)} is not available type for data base")
 
-        for column in self.table.get_columns():
-            CheckDatas.checkStr(column.column_name)
+            CheckDatas.checkStr(column.name)
 
         return True
 
     def __create(self, table):
         request = "CREATE TABLE IF NOT EXISTS {} ({})".format(
-            table.get_name(),
-            ", ".join([f"{col.column_name} {col.column_sql_type}" for col in table.get_columns()])
+            table.name,
+            ", ".join([f"{col.name} {col.sql_type}" for col in table.columns])
             )
 
         self.connection.execute(CheckDatas.checkSQL(request, "create"))

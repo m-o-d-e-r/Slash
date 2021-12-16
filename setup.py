@@ -1,12 +1,14 @@
-import os
 from setuptools import setup
 from setuptools.dist import Distribution
+import Slash
 
 class BinaryDistribution(Distribution):
     def is_pure(self):
         return False
 
-__version__ = "0.1.1"
+__version__ = Slash.__version__
+
+print(f"Slash version: {__version__}")
 
 setup(
     name='Slash92',
@@ -19,3 +21,5 @@ setup(
     distclass=BinaryDistribution,
     python_requires='>=3.8',
 )
+
+print("done...")
