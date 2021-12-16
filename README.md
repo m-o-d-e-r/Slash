@@ -121,9 +121,33 @@ table.create(conn)
 
 operations = Operations(conn)
 
-operations.insert(table.get_name(), ("age", "name"), (Int(1000), Text("Name2")), rules=myRules)
+operations.insert(table.name, ("age", "name"), (Int(1000), Text("Name2")), rules=myRules)
 # или (но базовые правила сильно ограничены)
-operations.insert(table.get_name(), ("age", "name"), (Int(1000), Text("Name2"))) # SlashRulesError
+operations.insert(table.name, ("age", "name"), (Int(1000), Text("Name2"))) # SlashRulesError
+```
+
+Обновление данных
+```Python
+from Slash.types_ import AutoField, Column, Table, Int, Text
+from Slash.Core.core import Connection, SQLConditions
+from Slash.Core.operations_ import Operations
+
+conn = Connection(
+    "Slash", "postgres", "root", "127.0.0.1", 5432
+)
+
+table = Table("test1")
+table.set_columns(Column(Int, "age"), Column(Text, "name"))
+table.create(conn)
+
+Operations(conn).update(
+    table.name,
+    ("name", ),
+    (Text("33"), ),
+    SQLConditions.where(
+        "age", SQLConditions.LE, "3"
+    )
+)
 ```
 
 Удаление данных
@@ -137,13 +161,13 @@ conn = Connection(
 
 # удаление с условием
 Operations(conn).delete(
-    table.get_name(), SQLConditions.where(
+    table.name, SQLConditions.where(
         "age", SQLConditions.LE, 100
     )
 )
 
 # удаление без условий
-Operations(conn).delete(table.get_name())
+Operations(conn).delete(table.name)
 ```
 
 Выборка данных
@@ -158,7 +182,7 @@ conn = Connection(
 # выборка даннных за условем из сортировкой
 print(
     Operations(conn).select(
-        table.get_name(),
+        table.name,
         ("age", "name"),
         SQLConditions.where(
             "age", SQLConditions.EQ, 3,
@@ -168,6 +192,7 @@ print(
 )
 ```
 # PyPI
+<a href="https://pypi.org/project/Slash92/0.1.2/">0.1.2</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.1/">0.1.1</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.0/">0.1.0</a>
 
