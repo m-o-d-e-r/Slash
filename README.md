@@ -168,7 +168,8 @@ print(
 )
 ```
 # PyPI
-<a href="https://pypi.org/project/Slash92/0.1.0/">PyPI</a>
+<a href="https://pypi.org/project/Slash92/0.1.1/">0.1.1</a><br>
+<a href="https://pypi.org/project/Slash92/0.1.0/">0.1.0</a>
 
 # Собрать .whl
     python setup.py bdist_wheel
