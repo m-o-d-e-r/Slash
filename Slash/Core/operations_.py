@@ -35,6 +35,14 @@ class Insert():
                 r += ("'" + v.value + "'")
                 if (index + 1) != len(values):
                     r += ","
+            elif v.type_name == "type_bool":
+                r += str(v.value)
+                if (index + 1) != len(values):
+                    r += ", "
+            elif v.type_name == "type_date":
+                r += ("'" + str(v.value) + "'")
+                if (index + 1) != len(values):
+                    r += ", "
         r += ")"
 
         return r
@@ -74,19 +82,27 @@ class Select():
         return DataSet(self.__table_name, self.__names, self.__conn.fetchall())
 
 class Update():
-    def __init__(self, conn, table_name, names, values, condition):
-        responce = self.__validate(table_name, names, values, condition)
+    def __init__(self, conn, table_name, names, values, condition, rules="*"):
+        responce = self.__validate(table_name, names, values, condition, rules)
         conn.execute(CheckDatas.checkSQL(responce, "update"))
 
-    def __validate(self, table_name, names, values, condition):
+    def __validate(self, table_name, names, values, condition, rules):
         CheckDatas.checkStr(table_name)
         r = "UPDATE {} SET ".format(table_name)
 
         for index, value in enumerate(values):
+            valid_responce = value._is_valid_datas(rules)
+            if not valid_responce[0]:
+                raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
+
             if value.type_name == "type_text":
                 r += " = ".join((names[index], f"'{value.value}'"))
             elif value.type_name == "type_int":
                 r += " = ".join((names[index], f"{value.value}"))
+            elif value.type_name == "type_bool":
+                r += " = ".join((names[index], f"{value.value}"))
+            elif value.type_name == "type_date":
+                r += " = ".join((names[index], f"'{value.value}'"))
 
             r += ", " if index != (len(values) - 1) else ""
 

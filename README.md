@@ -1,12 +1,56 @@
 # Скоро
   - AutoField(тип данных)
-  - Date(тип данных)
   - Упрощение работы с таблицами
   - Менеджер таблиц(для слияния таблиц, и т.д)
 
 # Новое
+  - Date(тип данных)
   - .get_name() => .name
   - .get_columns() => .columns
+
+```Python
+from Slash.types_ import AutoField, Bool, Column, Table, Int, Text, Date
+from Slash.Core.core import Connection
+from Slash.Core.operations_ import Operations
+
+import datetime
+
+conn = Connection(
+    "Slash", "postgres", "root", "127.0.0.1", 5432
+)
+
+table = Table("test22")
+table.set_columns(
+    Column(AutoField, "id"),
+    Column(Text, "Name"),
+    Column(Int, "age"),
+    Column(Bool, "student"),
+    Column(Date, "date")
+)
+table.create(conn)
+
+
+Operations(conn).insert(
+    "test22",
+    ("id", "Name", "age", "student", "date"),
+    (
+        Int(1),
+        Text("test"),
+        Int(12),
+        Bool(True),
+        Date(datetime.date.today())
+    )
+)
+
+Operations(conn).update(
+    table.name,
+    ("id", ),
+    (Int(200), )
+)
+
+print(Operations(conn).select(table.name, ("id", "Name", "age", "student", "date")).get_data())
+
+```
 
 # Файлы
   - `Slash/types_.py` <p>Базовые типы, класс для валидации типов(за правилами)</p>
@@ -199,6 +243,7 @@ print(
 )
 ```
 # PyPI
+<a href="https://pypi.org/project/Slash92/0.1.3/">0.1.3</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.2/">0.1.2</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.1/">0.1.1</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.0/">0.1.0</a>

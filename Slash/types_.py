@@ -1,9 +1,8 @@
-import hashlib
 from typing import final
 from .Core import core
 from random import randint
 from hashlib import md5
-
+import re
 
 class Rules:
     def __init__(self):
@@ -18,11 +17,10 @@ class Rules:
                 "valide_foo" : self.valid_text
             },
             "type_bool" : {
-                "symbols" : [True, False],
+                "symbols" : [True, False, 1, 0],
                 "valide_foo" : self.valid_bool
             },
             "type_date" : {
-                "current" : "{}.{}.{}",
                 "valide_foo" : self.valid_date
             }
         }
@@ -55,7 +53,13 @@ class Rules:
         else:
             return False
 
-    def valid_date(self, date_val, r): ...
+    def valid_date(self, date_val, r):
+        res = re.search("[0-9]{4}-[0-9]{2}-[0-9]{2}", str(date_val))
+
+        if res is not None and res.span()[1] == 10:
+            return True
+
+        return False
 
 class ORMType:
     def _is_valid_datas(self, user_rules: Rules):
