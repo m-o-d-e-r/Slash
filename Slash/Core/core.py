@@ -3,7 +3,7 @@ import psycopg2
 import string
 import re
 
-from .exeptions_ import (
+from .exceptions_ import (
     SlashBadColumnNameError, SlashTypeError,
     SlashBadAction, SlashPatternMismatch
 )
@@ -58,7 +58,6 @@ class Create():
             table.name,
             ", ".join([f"{col.name} {col.sql_type}" for col in table.columns])
             )
-
         self.connection.execute(CheckDatas.checkSQL(request, "create"))
 
 @final

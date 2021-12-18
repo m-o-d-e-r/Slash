@@ -103,7 +103,7 @@ class BasicTypes:
     DB_TYPES_LIST = {
         Int : "INT", Text : "TEXT",
         Bool : "BOOL", Date : "DATE",
-        AutoField : "INT"
+        AutoField : "SERIAL PRIMARY KEY"
     }
 
 
@@ -152,6 +152,17 @@ class TablesManager:
     @staticmethod
     def find_by_name(name):
         return TablesManager.tables.get(md5(name.encode("utf-8")).digest())
+    
+    def find_by_column(*column_names):
+        count = len(column_names)
+        print(count)
+
+        for table in TablesManager.tables.items():
+            for column in table[1].columns:
+                for column_name in column_names:
+                    if column_name == column.name:
+                        count -= 1
+
 
 class DataSet:
     def __init__(self, table_name, columns, data):

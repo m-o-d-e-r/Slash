@@ -1,42 +1,35 @@
-from re import template
-from Slash.types_ import AutoField, Bool, Column, Table, Int, Text, Date
-from Slash.Core.core import Connection
 from Slash.Core.operations_ import Operations
-
-import datetime
+from Slash.types_ import AutoField, Column, Table, TablesManager, Int, Text
+from Slash.Core.core import Connection
 
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432
 )
 
-table = Table("test22")
+table = Table("testAout")
 table.set_columns(
     Column(AutoField, "id"),
-    Column(Text, "Name"),
-    Column(Int, "age"),
-    Column(Bool, "student"),
-    Column(Date, "date")
+    Column(Text, "name")
 )
 table.create(conn)
 
 
 Operations(conn).insert(
-    "test22",
-    ("id", "Name", "age", "student", "date"),
+    table.name, 
     (
-        Int(1),
-        Text("test"),
-        Int(12),
-        Bool(True),
-        Date(datetime.date.today())
+        "name"
+    ),
+    (
+        Text("name"),
     )
 )
+#table1 = Table("test1")
+#table1.set_columns(Column(Int, "age"))
+#table2 = Table("test2")
+#table2.set_columns(Column(Int, "name"))
+#table3 = Table("test3")
+#table3.set_columns(Column(Int, "age"), Column(Text, "name"))
 
-Operations(conn).update(
-    table.name,
-    ("id", ),
-    (Int(200), )
-)
 
-print(Operations(conn).select(table.name, ("id", "Name", "age", "student", "date")).get_data())
-
+#print(TablesManager.find_by_column("age", "name"))
+conn.close()

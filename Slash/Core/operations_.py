@@ -3,7 +3,7 @@ import re
 from .core import CheckDatas, Connection, SQLConditions
 from ..types_ import DataSet
 
-from .exeptions_ import SlashRulesError
+from .exceptions_ import SlashRulesError
 
 class Insert():
     def __init__(self, conn, table_name, names, values, rules="*"):
@@ -24,7 +24,10 @@ class Insert():
             if not valid_responce[0]:
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
 
-        r = f"""INSERT INTO {table_name} {str(names).replace("'", "")} VALUES ("""
+        names = str(names)
+        names = names.replace("(", "")
+        names = names.replace(")", "").replace("'", "")
+        r = f"""INSERT INTO {table_name} ({names}) VALUES ("""
 
         for index, v in enumerate(values):
             if v.type_name == "type_int":
