@@ -123,6 +123,78 @@ class Column:
     def sql_type(self): return self.__column_sql_type
 
 
+@final
+class TablesManager:
+    tables = {}
+    Utables = {}
+
+    @staticmethod
+    def find_by_name(name):
+        return TablesManager.tables.get(md5(name.encode("utf-8")).digest())
+
+    def find_one_by_column(*column_names):
+        count = len(column_names)
+
+        for table in TablesManager.tables.values():
+            for column in table.columns:
+                if (column.name in column_names):
+                    count -= 1
+
+                if count == 0:
+                    return table
+
+            count = len(column_names)
+
+    def find_many_by_column(*column_names):
+        tables = []
+        count = len(column_names)
+
+        for table in TablesManager.tables.values():
+            for column in table.columns:
+                if (column.name in column_names):
+                    count -= 1
+
+                if count == 0:
+                    tables.append(table)
+                    break
+
+            count = len(column_names)
+
+        return tables
+
+    def unite(*tables):
+        columnsU = []
+        name_ = []
+        for table in tables:
+            for column in table.columns:
+                if column.name not in columnsU:
+                    columnsU.append(column)
+            name_.append(table.name.lower())
+        name_ = "U".join(name_)
+
+
+        class UnatedTable(
+            Table, metaclass=TableMeta, parent=Table,
+            U_table_name=name_, U_table_columns=columnsU
+        ):
+            def __init__(self, name: str):
+                self.__name = name
+                self.__columns = []
+                TablesManager.Utables.update(
+                    {
+                        md5(self.name.encode("utf-8")).digest() : self
+                    }
+                )
+
+
+        Utable = UnatedTable(name_)
+        Utable.set_columns(*columnsU)
+
+        Utable.set_columns = None
+
+        return Utable
+
+
 class Table:
     def __init__(self, name: str):
         self.__name = name
@@ -135,7 +207,7 @@ class Table:
 
     @property
     def name(self): return self.__name
-    
+
     @property
     def columns(self): return self.__columns
 
@@ -145,23 +217,18 @@ class Table:
     def create(self, connection):
         core.Create(self, BasicTypes.TYPES_LIST, connection)
 
-@final
-class TablesManager:
-    tables = {}
+class TableMeta(type):
+    def __new__(cls, name, parents, namespace, **kwargs):
+        parent_name: Table = kwargs["parent"](kwargs["U_table_name"])
 
-    @staticmethod
-    def find_by_name(name):
-        return TablesManager.tables.get(md5(name.encode("utf-8")).digest())
-    
-    def find_by_column(*column_names):
-        count = len(column_names)
-        print(count)
-
-        for table in TablesManager.tables.items():
-            for column in table[1].columns:
-                for column_name in column_names:
-                    if column_name == column.name:
-                        count -= 1
+        namespace.update(
+            {
+                "name" : parent_name.name,
+                "columns" : kwargs["U_table_columns"],
+                "set_columns" : parent_name.set_columns,
+            }
+        )
+        return type(name, (), namespace)
 
 
 class DataSet:

@@ -1,36 +1,36 @@
 # Скоро
   - Упрощение работы с таблицами
-  - Менеджер таблиц(для слияния таблиц, и т.д)
 
 # Новое
-  - AutoField(тип данных)
+  - TablesManager
 
 ```Python
-from Slash.Core.operations_ import Operations
-from Slash.types_ import AutoField, Column, Table, Text
+from Slash.types_ import Column, Table, TablesManager, Int, Text
 from Slash.Core.core import Connection
 
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432
 )
 
-table = Table("testAout")
-table.set_columns(
-    Column(AutoField, "id"),
-    Column(Text, "name")
-)
-table.create(conn)
+
+table1 = Table("test1")
+table1.set_columns(Column(Int, "age"))
+table2 = Table("test2")
+table2.set_columns(Column(Int, "name"))
+table3 = Table("test3")
+table3.set_columns(Column(Int, "age"), Column(Text, "name"))
 
 
-Operations(conn).insert(
-    table.name, 
-    (
-        "name"
-    ),
-    (
-        Text("name"),
-    )
-)
+print(TablesManager.find_by_name("test3"))
+print(TablesManager.find_one_by_column("age", "name"))
+print(TablesManager.find_many_by_column("age"))
+
+
+unatedTable = TablesManager.unite(table1, table2)
+print(unatedTable.name)
+print(unatedTable.columns)
+
+conn.close()
 ```
 
 # Файлы
@@ -224,6 +224,7 @@ print(
 )
 ```
 # PyPI
+<a href="https://pypi.org/project/Slash92/0.1.4/">0.1.5</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.4/">0.1.4</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.3/">0.1.3</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.2/">0.1.2</a><br>
@@ -234,7 +235,7 @@ print(
     python setup.py bdist_wheel
     
 # Установка через .whl
-    pip install Slash92-0.1.4-py3-none-any.whl
+    pip install Slash92-0.1.5-py3-none-any.whl
 
 # Установка через setup.py
     python setup.py install
