@@ -81,7 +81,8 @@ class SQLConditions:
             CheckDatas.checkStr(desc)
         )
 
-    def gdoup_by(): ...
+    @staticmethod
+    def group_by(): ...
 
 
 class CheckDatas:
@@ -90,7 +91,7 @@ class CheckDatas:
         "create" : "CREATE TABLE IF NOT EXISTS [a-zA-Z0-9]* [)()a-zA-Z0-9',\s]*",
         "update" : "UPDATE [a-zA-Z0-9]* SET [a-zA-Z0-9\s<>!=',]*",
         "delete" : "DELETE FROM [a-zA-Z0-9]* [a-zA-Z0-9\s<>!=]*",
-        "select" : "SELECT [a-zA-Z0-9(),\s'<>!=*]*"
+        "select" : "SELECT [a-zA-Z0-9(),\s'<>!=*.]*"
     }
     def __init__(self): ...
 
