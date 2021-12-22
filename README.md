@@ -4,7 +4,7 @@
 
 # Новое
   - TablesManager(updated)(пока лучше не трогать)
-  - проверка кода (pylint, mypym prospector, bandit)
+  - проверка кода (pylint, mypy, prospector, bandit)
 
 ```Python
 from Slash.Core.operations_ import Operations
