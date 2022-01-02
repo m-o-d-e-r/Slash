@@ -1,0 +1,38 @@
+:root {
+    --error-div-width: 70vw;
+}
+  
+
+.error_wrapper
+{
+    position: absolute;
+
+    top: 25vh;
+    height: 50vh;
+    width: 100vw;
+
+    text-align: center;
+}
+
+.error_div
+{
+    position: relative;
+
+    width: var(--error-div-width);
+    height: 50vh;
+    left: 15vw;
+
+    background-color: #deeaefd5;
+
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+
+    border-radius: 10px;
+}
+
+.responce_code
+{
+    color: #3c859e;
+    font-weight: bold;
+}
