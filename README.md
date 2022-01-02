@@ -23,7 +23,7 @@ table.set_columns(
 conn.create(table)
 
 op = Operations(conn)
-op.select(table, ("age", "name", )).get_data() # лучше пока тыкать
+op.select(table, ("age", "name", )).get_data() # лучше пока не тыкать
 op.select(table, ("age", "name", )).get_data() # делал просто для примера
 op.select(table, ("age", "name", )).get_data() # 
 
