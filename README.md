@@ -1,46 +1,33 @@
 # Скоро
-  - Упрощение работы с таблицами
   - Операции с объединенными таблицами
+  - Можно будет создавать откат
 
 # Новое
-  - TablesManager(updated)(пока лучше не трогать)
-  - проверка кода (pylint, mypym prospector, bandit)
+  - таблицу можно создать через класс Connection (сделано для избежания циклического импорта)
 
 ```Python
-from Slash.Core.operations_ import Operations
-from Slash.types_ import Column, Table, TablesManager, Int, Text
 from Slash.Core.core import Connection
+from Slash.Core.operations_ import Operations
+from Slash.types_ import Column, Int, Table, Text
+
 
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432
 )
 
+table = Table("test3")
+table.set_columns(
+    Column(Int, "age"),
+    Column(Text, "name")
+)
+conn.create(table)
 
-table1 = Table("test1")
-table1.set_columns(Column(Int, "age"))
-table1.create(conn)
+op = Operations(conn)
+op.select(table, ("age", "name", )).get_data() # лучше пока тыкать
+op.select(table, ("age", "name", )).get_data() # делал просто для примера
+op.select(table, ("age", "name", )).get_data() # 
 
-table2 = Table("test2")
-table2.set_columns(Column(Int, "name"))
-table2.create(conn)
-
-table3 = Table("test3")
-table3.set_columns(Column(Int, "age"), Column(Text, "name"))
-table3.create(conn)
-
-Operations(conn).insert(table3, ("age", "name"), (Int(1), Text("asas"),))
-# Operations(conn).insert(table1, ("age"), (Int(1),))
-# Operations(conn).insert(table1, ("age"), (Int(2),))
-# Operations(conn).insert(table2, ("name"), (Int(11),))
-# Operations(conn).insert(table2, ("name"), (Int(22),))
-
-
-utable = TablesManager.unite(table1, table2)
-
-
-operations = Operations(conn)
-operations.select(utable, ("age", "name"))
-
+print(op.query_handler.rollback()) # будет удалено последнее действие, потом будет делать запросы в порядку котором исполнялись (пока работает только для селектов, позже будут исполнятся запросы которые что-то изменили в бд)
 
 conn.close()
 
@@ -237,6 +224,8 @@ print(
 )
 ```
 # PyPI
+<a href="https://pypi.org/project/Slash92/0.1.8/">0.1.8</a><br>
+<a href="https://pypi.org/project/Slash92/0.1.7.0/">0.1.7.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.6/">0.1.6</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.5/">0.1.5</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.4/">0.1.4</a><br>
@@ -249,7 +238,7 @@ print(
     python setup.py bdist_wheel
     
 # Установка через .whl
-    pip install Slash92-0.1.5-py3-none-any.whl
+    pip install Slash92-0.1.8-py3-none-any.whl
 
 # Установка через setup.py
     python setup.py install
