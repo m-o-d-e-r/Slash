@@ -238,7 +238,7 @@ print(
     python setup.py bdist_wheel
     
 # Установка через .whl
-    pip install Slash92-0.1.7-py3-none-any.whl
+    pip install Slash92-0.1.8-py3-none-any.whl
 
 # Установка через setup.py
     python setup.py install
