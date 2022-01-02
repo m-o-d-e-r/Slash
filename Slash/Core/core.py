@@ -7,9 +7,11 @@ from .exceptions_ import (
     SlashBadColumnNameError, SlashTypeError,
     SlashBadAction, SlashPatternMismatch
 )
+from ..types_ import QueryQueue, BasicTypes
+
 
 class Connection:
-    def __init__(self, dbname =  " ", user = " ", password = " ", host = " ", port = 0):
+    def __init__(self, dbname=" ", user=" ", password=" ", host=" ", port=0):
         self.dbname = dbname
         self.user = user
         self.password = password
@@ -25,6 +27,12 @@ class Connection:
         )
         self.cursor = self.__connection.cursor()
 
+        self.__query_queue = QueryQueue(self)
+
+    @property
+    def queue(self):
+        return self.__query_queue
+
     def execute(self, request):
         self.cursor.execute(request)
         self.__connection.commit()
@@ -35,6 +43,9 @@ class Connection:
     def fetchall(self):
         return self.cursor.fetchall()
 
+    def create(self, table):
+        Create(table, BasicTypes.TYPES_LIST, self)
+
 class Create():
     def __init__(self, table, types_list, conn):
         self.connection: Connection = conn
@@ -42,7 +53,7 @@ class Create():
         if self.__validate(types_list):
             self.__create(table)
 
-    def __validate (self, types_list):
+    def __validate(self, types_list):
         CheckDatas.check_str(self.table.name)
 
         for column in self.table.columns:
@@ -54,11 +65,12 @@ class Create():
         return True
 
     def __create(self, table):
-        request = "CREATE TABLE IF NOT EXISTS {} ({})".format(
+        request = "CREATE TABLE IF NOT EXISTS {} (rowID SERIAL PRIMARY KEY, {})".format(
             table.name,
             ", ".join([f"{col.name} {col.sql_type}" for col in table.columns])
-            )
+        )
         self.connection.execute(CheckDatas.check_sql(request, "create"))
+
 
 @final
 class SQLConditions:

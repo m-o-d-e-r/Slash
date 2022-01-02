@@ -2,8 +2,6 @@ from typing import final, Dict, List
 from hashlib import md5
 import re
 
-from .Core import core
-
 
 class Rules:
     """BAse rules for data"""
@@ -230,9 +228,10 @@ class TablesManager:
             name_.append(table.name.lower())
         name_ = "U".join(name_)
 
-        class UnatedTable(
+        class UnitedTable(
             Table, metaclass=TableMeta, parent=Table,
-            U_table_name=name_, U_table_columns=columns_u
+            U_table_name=name_, U_table_columns=columns_u,
+            U_tables = tables
         ):
             """Table which are few tables"""
             def __init__(self, name: str):
@@ -245,8 +244,10 @@ class TablesManager:
                     }
                 )
 
-        u_table = UnatedTable(name_)
+        u_table = UnitedTable(name_)
         u_table.set_columns(*columns_u)
+
+        u_table.set_columns = lambda x=None: print("Not allowed for united tables")
 
         return u_table
 
@@ -278,10 +279,6 @@ class Table:
         """
         self.__columns = names
 
-    def create(self, connection):
-        """Will create table if not exist"""
-        core.Create(self, BasicTypes.TYPES_LIST, connection)
-
 
 class TableMeta(type):
     """Metaclass for Table, will create UnatedTable"""
@@ -293,6 +290,7 @@ class TableMeta(type):
                 "name": parent_name.name,
                 "columns": kwargs["U_table_columns"],
                 "set_columns": parent_name.set_columns,
+                "tables": kwargs["U_tables"]
             }
         )
         return type(name, (), namespace)
@@ -316,3 +314,50 @@ class DataSet(object):
     def get_table_name(self):
         """Return table name"""
         return self.__table_name
+
+
+class Query:
+    def __init__(self, id, request) -> None:
+        self.id = id
+        self.query = request
+
+
+class QueryQueue:
+    def __init__(self, connection) -> None:
+        self.__current_id = 1
+        self.__queries: dict = {}
+        self.__connection = connection
+
+    def add_query(self, request):
+        q = Query(self.__current_id, request)
+
+        self.__queries.update(
+            {
+                q.id: q.query
+            }
+        )
+        self.__current_id += 1
+        return q
+
+    def rollback(self):
+        self.__queries.pop(self.__current_id-1)
+        self.execute()
+
+        return self.__queries
+
+    def execute(self):
+        for key in self.__queries.keys():
+            print(self.__connection.execute(self.__queries[key]._responce))
+            print(self.__connection.cursor.fetchall())
+
+    @property
+    def get_queue(self):
+        return self.__queries
+
+    @property
+    def last(self):
+        return self.__queries.get(self.__current_id-1)
+
+    @property
+    def first(self):
+        return self.__queries.get(1)
