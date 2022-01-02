@@ -1,5 +1,5 @@
 from .core import CheckDatas, SQLConditions
-from ..types_ import DataSet
+from ..types_ import DataSet, QueryQueue, Query
 
 from .exceptions_ import SlashRulesError
 
@@ -7,17 +7,17 @@ from .exceptions_ import SlashRulesError
 class Insert():
     def __init__(self, conn, table, names, values, rules="*"):
         responce = self.__validate(table, names, values, rules)
-        conn.execute(CheckDatas.checkSQL(responce, "insert"))
+        conn.execute(CheckDatas.check_sql(responce, "insert"))
 
     def __validate(self, table, names, values, rules):
-        CheckDatas.checkStr(table.name)
+        CheckDatas.check_str(table.name)
 
         for name in names:
-            CheckDatas.checkStr(name)
+            CheckDatas.check_str(name)
 
         for value in values:
             if value.type_name == "type_text":
-                CheckDatas.checkStr(value.value)
+                CheckDatas.check_str(value.value)
 
             valid_responce = value._is_valid_datas(rules)
             # value._is_valid_datas(rules)
@@ -54,10 +54,10 @@ class Insert():
 class Delete():
     def __init__(self, conn, table, condition: SQLConditions):
         responce = self.__validate(table, condition)
-        conn.execute(CheckDatas.checkSQL(responce, "delete"))
+        conn.execute(CheckDatas.check_sql(responce, "delete"))
 
     def __validate(self, table, condition):
-        CheckDatas.checkStr(table.name)
+        CheckDatas.check_str(table.name)
         sql_responce = f"DELETE FROM {table.name}{condition}"
 
         return sql_responce
@@ -66,12 +66,12 @@ class Delete():
 class Select():
     def __init__(self, conn, table, names, condition: SQLConditions):
         self.__conn = conn
-        self.__responce = self.__validate(table, names, condition)
+        self._responce = self.__validate(table, names, condition)
         self.__table__name = table.name
         self.__names = names
 
     def __validate(self, table, names, condition):
-        CheckDatas.checkStr(table.name)
+        CheckDatas.check_str(table.name)
 
         return "SELECT {} FROM {}{}".format(
             ", ".join([n for n in names]),
@@ -79,7 +79,7 @@ class Select():
         )
 
     def get(self):
-        self.__conn.execute(CheckDatas.checkSQL(self.__responce, "select"))
+        self.__conn.execute(CheckDatas.check_sql(self._responce, "select"))
 
         return DataSet(
             self.__table__name, self.__names, self.__conn.fetchall()
@@ -89,10 +89,10 @@ class Select():
 class Update():
     def __init__(self, conn, table, names, values, condition, rules="*"):
         responce = self.__validate(table, names, values, condition, rules)
-        conn.execute(CheckDatas.checkSQL(responce, "update"))
+        conn.execute(CheckDatas.check_sql(responce, "update"))
 
     def __validate(self, table, names, values, condition, rules):
-        CheckDatas.checkStr(table.name)
+        CheckDatas.check_str(table.name)
         sql_responce = "UPDATE {} SET ".format(table.name)
 
         for index, value in enumerate(values):
@@ -119,6 +119,7 @@ class Update():
 class Operations():
     def __init__(self, connection):
         self.__connection = connection
+        self.query_handler: QueryQueue = connection.queue
 
     def insert(self, table, names, values, *, rules="*"):
         try:
@@ -132,9 +133,35 @@ class Operations():
     def select(self, table, names, condition=" "):
         try:
             table._is_unated
-            # что-то будет
-        except AttributeError:
-            return Select(self.__connection, table, names, condition).get()
+            datas: dict = {}
+
+            for table_ in table.tables:
+                datas.update(
+                    {
+                        table_.name: {
+                            "columns": [column.name for column in table_.columns]
+                        }
+                    }
+                )
+
+            columns = ""
+            for table_ in table.tables:
+                for column in datas[table_.name]["columns"]:
+                    columns += f"{table_.name}.{column}, "
+            columns = columns[0 : len(columns) - 2]
+
+            r = "SELECT {} FROM {} WHERE {}.rowID".format(
+                columns,
+                ', '.join([table_.name for table_ in table.tables]),
+                '.rowID = '.join([table_.name for table_ in table.tables]),
+            )
+
+            self.__connection.execute(r)
+            return self.__connection.cursor.fetchall()
+        except AttributeError as e:
+            select_query = Select(self.__connection, table, names, condition)
+            self.query_handler.add_query(select_query)
+            return select_query.get()
 
     def delete(self, table, condition=" "):
         try:
