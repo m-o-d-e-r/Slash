@@ -12,7 +12,8 @@ from Slash.types_ import Column, Int, Table, Text
 
 
 
-log = Logger(__name__, __file__)
+log = Logger(__name__, __file__) # __name__ - имя логера
+# __file__ - файл, относительно которого будет создана папка для логирования
 log.info("New session")
 
 
