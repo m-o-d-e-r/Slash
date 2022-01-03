@@ -1,7 +1,11 @@
+from sys import path
+import sys
 from typing import Final, final
 import psycopg2
+import logging
 import string
 import re
+import os
 
 from .exceptions_ import (
     SlashBadColumnNameError, SlashTypeError,
@@ -11,7 +15,7 @@ from ..types_ import QueryQueue, BasicTypes
 
 
 class Connection:
-    def __init__(self, dbname=" ", user=" ", password=" ", host=" ", port=0):
+    def __init__(self, dbname=" ", user=" ", password=" ", host=" ", port=0, *, logger=False):
         self.dbname = dbname
         self.user = user
         self.password = password
@@ -29,13 +33,20 @@ class Connection:
 
         self.__query_queue = QueryQueue(self)
 
+        self.__logger = logger
+
     @property
     def queue(self):
         return self.__query_queue
 
-    def execute(self, request):
-        self.cursor.execute(request)
-        self.__connection.commit()
+    def execute(self, request, message=""):
+        try:
+            self.cursor.execute(request)
+            self.__connection.commit()
+        except:
+            self.__logger.info("Unsuccessful commit: \n\t{}\n\t{}".format(request, message))
+        else:
+            self.__logger.info("Successful commit: {}".format(message))
 
     def close(self):
         self.__connection.close()
@@ -69,7 +80,10 @@ class Create():
             table.name,
             ", ".join([f"{col.name} {col.sql_type}" for col in table.columns])
         )
-        self.connection.execute(CheckDatas.check_sql(request, "create"))
+        self.connection.execute(
+            CheckDatas.check_sql(request, "create"),
+            "create operation"
+        )
 
 
 @final
@@ -133,3 +147,24 @@ class CheckDatas:
                 )
         else:
             raise SlashBadAction("Action is wrong")
+
+
+class Logger(logging.Logger):
+    def __init__(self, name: str, file: str, level=logging.INFO) -> None:
+        super().__init__(name, level=level)
+
+        handler = logging.FileHandler(self.path(file))
+        formatter = logging.Formatter("[%(asctime)s]:[%(process)d-%(levelname)s]:[%(name)s]:[%(message)s]")
+
+        handler.setFormatter(formatter)
+        self.addHandler(handler)
+
+    def path(self, file):
+        path_ = os.path.dirname(os.path.abspath(file)) + "\\logs"
+
+        if not os.path.exists(path_):
+            os.mkdir(path_)
+        path_ += "\\data.log"
+
+        os.environ.setdefault("logs", path_)
+        return path_

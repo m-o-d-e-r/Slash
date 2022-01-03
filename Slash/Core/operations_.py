@@ -6,8 +6,12 @@ from .exceptions_ import SlashRulesError
 
 class Insert():
     def __init__(self, conn, table, names, values, rules="*"):
-        responce = self.__validate(table, names, values, rules)
-        conn.execute(CheckDatas.check_sql(responce, "insert"))
+        self.__responce = self.__validate(table, names, values, rules)
+        self.__table = table
+        conn.execute(
+            CheckDatas.check_sql(self.__responce, "insert"),
+            "insert operation"
+        )
 
     def __validate(self, table, names, values, rules):
         CheckDatas.check_str(table.name)
@@ -50,11 +54,22 @@ class Insert():
 
         return sql_responce
 
+    @property
+    def responce(self):
+        return self.__responce
+
+    @property
+    def table(self):
+        return self.__table
+
 
 class Delete():
     def __init__(self, conn, table, condition: SQLConditions):
-        responce = self.__validate(table, condition)
-        conn.execute(CheckDatas.check_sql(responce, "delete"))
+        self.__responce = self.__validate(table, condition)
+        conn.execute(
+            CheckDatas.check_sql(self.__responce, "delete"),
+            "delete operation"
+        )
 
     def __validate(self, table, condition):
         CheckDatas.check_str(table.name)
@@ -62,11 +77,15 @@ class Delete():
 
         return sql_responce
 
+    @property
+    def responce(self):
+        return self.__responce
+
 
 class Select():
     def __init__(self, conn, table, names, condition: SQLConditions):
         self.__conn = conn
-        self._responce = self.__validate(table, names, condition)
+        self.__responce = self.__validate(table, names, condition)
         self.__table__name = table.name
         self.__names = names
 
@@ -79,17 +98,27 @@ class Select():
         )
 
     def get(self):
-        self.__conn.execute(CheckDatas.check_sql(self._responce, "select"))
+        self.__conn.execute(
+            CheckDatas.check_sql(self.__responce, "select"),
+            "select operation"
+        )
 
         return DataSet(
             self.__table__name, self.__names, self.__conn.fetchall()
         )
 
+    @property
+    def responce(self):
+        return self.__responce
+
 
 class Update():
     def __init__(self, conn, table, names, values, condition, rules="*"):
-        responce = self.__validate(table, names, values, condition, rules)
-        conn.execute(CheckDatas.check_sql(responce, "update"))
+        self.__responce = self.__validate(table, names, values, condition, rules)
+        conn.execute(
+            CheckDatas.check_sql(self.__responce, "update"),
+            "update operation"
+        )
 
     def __validate(self, table, names, values, condition, rules):
         CheckDatas.check_str(table.name)
@@ -115,6 +144,10 @@ class Update():
 
         return sql_responce
 
+    @property
+    def responce(self):
+        return self.__responce
+
 
 class Operations():
     def __init__(self, connection):
@@ -126,9 +159,11 @@ class Operations():
             table._is_unated
         except AttributeError:
             if rules == "*":
-                Insert(self.__connection, table, names, values)
+                insert_query = Insert(self.__connection, table, names, values)
+                self.query_handler.add_query(insert_query)
             else:
-                Insert(self.__connection, table, names, values, rules)
+                insert_query = Insert(self.__connection, table, names, values, rules)
+                self.query_handler.add_query(insert_query)
 
     def select(self, table, names, condition=" "):
         try:

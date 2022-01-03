@@ -341,14 +341,13 @@ class QueryQueue:
 
     def rollback(self):
         self.__queries.pop(self.__current_id-1)
-        self.execute()
+        self.__execute()
 
         return self.__queries
 
-    def execute(self):
+    def __execute(self):
         for key in self.__queries.keys():
-            print(self.__connection.execute(self.__queries[key]._responce))
-            print(self.__connection.cursor.fetchall())
+            self.__connection.execute(self.__queries[key].responce, "rollback")
 
     @property
     def get_queue(self):

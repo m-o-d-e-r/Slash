@@ -3,7 +3,6 @@ from Slash.Core.operations_ import Operations
 from Slash.types_ import Column, Int, Table, Text
 
 
-
 log = Logger(__name__, __file__)
 log.info("New session")
 
@@ -21,7 +20,7 @@ table.set_columns(
 conn.create(table)
 
 op = Operations(conn)
-#op.select(table, ("age", "name", )).get_data()
+op.select(table, ("age", "name", )).get_data()
 
 op.insert(
     table,
@@ -29,13 +28,5 @@ op.insert(
     (Int(229), Text("hello"), )
 )
 
-op.insert(
-    table,
-    ("age", "name" , ),
-    (Int(230), Text("hello"), )
-)
-op.delete(table)
-op.query_handler.rollback()
-#print(op.query_handler.get_queue)
 
 conn.close()

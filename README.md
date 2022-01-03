@@ -1,19 +1,25 @@
 # Скоро
   - Операции с объединенными таблицами
-  - Можно будет создавать откат
+  - Можно будет создавать откат (вот прям скоро)
 
 # Новое
-  - таблицу можно создать через класс Connection (сделано для избежания циклического импорта)
+  - добавлено логирование (класс Logger)
 
 ```Python
-from Slash.Core.core import Connection
+from Slash.Core.core import Connection, Logger
 from Slash.Core.operations_ import Operations
 from Slash.types_ import Column, Int, Table, Text
 
 
+
+log = Logger(__name__, __file__)
+log.info("New session")
+
+
 conn = Connection(
-    "Slash", "postgres", "root", "127.0.0.1", 5432
-)
+    "Slash", "postgres", "root", "127.0.0.1", 5432,
+    logger=log
+) # будет лог после каждого комита, в специальной папке(будет создана если не существует)
 
 table = Table("test3")
 table.set_columns(
@@ -23,13 +29,15 @@ table.set_columns(
 conn.create(table)
 
 op = Operations(conn)
-op.select(table, ("age", "name", )).get_data() # лучше пока не тыкать
-op.select(table, ("age", "name", )).get_data() # делал просто для примера
-op.select(table, ("age", "name", )).get_data() # 
 
-print(op.query_handler.rollback()) # будет удалено последнее действие, потом будет делать запросы в порядку котором исполнялись (пока работает только для селектов, позже будут исполнятся запросы которые что-то изменили в бд)
+op.insert(
+    table,
+    ("age", "name" , ),
+    (Int(229), Text("hello"), )
+)
 
 conn.close()
+
 
 ```
 
@@ -105,7 +113,7 @@ conn = Connection(
 
 table = Table("test1")
 table.set_columns(Column(Int, "age"), Column(Text, "name"))
-table.create(conn)
+conn.create(table)
 ```
 
 Вставка данных
@@ -149,7 +157,7 @@ conn = Connection(
 
 table = Table("test1")
 table.set_columns(Column(Int, "age"), Column(Text, "name"))
-table.create(conn)
+conn.create(table)
 
 operations = Operations(conn)
 
@@ -170,7 +178,7 @@ conn = Connection(
 
 table = Table("test1")
 table.set_columns(Column(Int, "age"), Column(Text, "name"))
-table.create(conn)
+conn.create(table)
 
 Operations(conn).update(
     table.name,
@@ -224,6 +232,7 @@ print(
 )
 ```
 # PyPI
+<a href="https://pypi.org/project/Slash92/0.1.8/">0.1.9</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.8/">0.1.8</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.7.0/">0.1.7.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.6/">0.1.6</a><br>
@@ -238,7 +247,7 @@ print(
     python setup.py bdist_wheel
     
 # Установка через .whl
-    pip install Slash92-0.1.8-py3-none-any.whl
+    pip install Slash92-0.1.9-py3-none-any.whl
 
 # Установка через setup.py
     python setup.py install

@@ -1,0 +1,6 @@
+[2022-01-04 00:28:09,911]:[3644-INFO]:[__main__]:[New session]
+[2022-01-04 00:28:10,076]:[3644-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 00:29:23,491]:[6536-INFO]:[__main__]:[New session]
+[2022-01-04 00:29:23,530]:[6536-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 00:29:23,733]:[6536-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 00:29:23,808]:[6536-INFO]:[__main__]:[Successful commit: insert operation]
