@@ -234,7 +234,8 @@ print(
 )
 ```
 # PyPI
-<a href="https://pypi.org/project/Slash92/0.1.8/">0.1.9</a><br>
+<a href="https://pypi.org/project/Slash92/0.2.0/">0.2.0</a><br>
+<a href="https://pypi.org/project/Slash92/0.1.9/">0.1.9</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.8/">0.1.8</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.7.0/">0.1.7.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.6/">0.1.6</a><br>
