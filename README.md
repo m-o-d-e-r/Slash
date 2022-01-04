@@ -1,44 +1,45 @@
 # Скоро
   - Операции с объединенными таблицами
   - Можно будет создавать откат (вот прям скоро)
+  - Можно будет пользовательськие правила закинуть в json
 
 # Новое
-  - добавлено логирование (класс Logger)
+  - новый тип для данных Hidden (для паролей, на выходе получается хеш)
+  - можно перенаправить ошибки в json
 
 ```Python
 from Slash.Core.core import Connection, Logger
-from Slash.Core.operations_ import Operations
-from Slash.types_ import Column, Int, Table, Text
+from Slash.Core.operations_ import Operations, SQLConditions
+from Slash.types_ import Column, Hidden, Text, Int, Table
 
 
-
-log = Logger(__name__, __file__) # __name__ - имя логера
-# __file__ - файл, относительно которого будет создана папка для логирования
+log = Logger(__name__, __file__, redirect_error=True)
 log.info("New session")
 
 
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432,
     logger=log
-) # будет лог после каждого комита, в специальной папке(будет создана если не существует)
+)
 
-table = Table("test3")
+
+
+table = Table("testhidden")
 table.set_columns(
     Column(Int, "age"),
-    Column(Text, "name")
+    Column(Text, "name"),
+    Column(Hidden, "password")
 )
 conn.create(table)
 
-op = Operations(conn)
+# тут было сделано пару фиксов(под капотом)
 
-op.insert(
-    table,
-    ("age", "name" , ),
-    (Int(229), Text("hello"), )
-)
+#Operations(conn).insert(table, ("age", "name", "password"), (Int(17), Text("Bogdan"), Hidden("password")))
+#print(Operations(conn).select(table, ["age", "password"]).get_data())
+#Operations(conn).update(table, ["age"], (Int(18)))
+
 
 conn.close()
-
 
 ```
 

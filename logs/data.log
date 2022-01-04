@@ -78,3 +78,1603 @@
 [2022-01-03 19:45:53,036]:[8212-INFO]:[__main__]:[Successful commit: insert operation]
 [2022-01-03 19:45:53,036]:[8212-INFO]:[__main__]:[Successful commit: delete operation]
 [2022-01-03 19:45:53,043]:[8212-INFO]:[__main__]:[Successful commit: rollback]
+[2022-01-04 15:35:14,803]:[5792-INFO]:[__main__]:[New session]
+[2022-01-04 15:35:15,564]:[5792-INFO]:[__main__]:[Unsuccessful commit: 
+	CREATE TABLE IF NOT EXISTS 25 (rowID SERIAL PRIMARY KEY, pasw TEXT)
+	create operation]
+[2022-01-04 15:35:35,469]:[2344-INFO]:[__main__]:[New session]
+[2022-01-04 15:35:35,508]:[2344-INFO]:[__main__]:[Unsuccessful commit: 
+	CREATE TABLE IF NOT EXISTS 25 (rowID SERIAL PRIMARY KEY, pasw TEXT)
+	create operation]
+[2022-01-04 15:36:42,223]:[7916-INFO]:[__main__]:[New session]
+[2022-01-04 15:36:42,254]:[7916-INFO]:[__main__]:[Unsuccessful commit: 
+	CREATE TABLE IF NOT EXISTS 25 (rowID SERIAL PRIMARY KEY, pasw TEXT)
+	create operation]
+[2022-01-04 15:36:59,989]:[7524-INFO]:[__main__]:[New session]
+[2022-01-04 15:37:00,028]:[7524-INFO]:[__main__]:[Unsuccessful commit: 
+	CREATE TABLE IF NOT EXISTS 25 (rowID SERIAL PRIMARY KEY, pasw TEXT)
+	create operation]
+[2022-01-04 15:37:00,036]:[7524-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO 25 (name,) VALUES ()
+	insert operation]
+[2022-01-04 15:37:37,565]:[5408-INFO]:[__main__]:[New session]
+[2022-01-04 15:37:38,598]:[5408-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:37:38,598]:[5408-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name,) VALUES ()
+	insert operation]
+[2022-01-04 15:38:16,018]:[740-INFO]:[__main__]:[New session]
+[2022-01-04 15:38:16,059]:[740-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:38:28,853]:[2164-INFO]:[__main__]:[New session]
+[2022-01-04 15:38:28,892]:[2164-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:38:28,900]:[2164-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name,) VALUES ()
+	insert operation]
+[2022-01-04 15:38:57,708]:[6976-INFO]:[__main__]:[New session]
+[2022-01-04 15:38:57,748]:[6976-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:38:57,748]:[6976-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name,) VALUES ('123')
+	insert operation]
+[2022-01-04 15:40:05,287]:[7536-INFO]:[__main__]:[New session]
+[2022-01-04 15:40:05,333]:[7536-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:40:05,333]:[7536-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name,) VALUES ('hello')
+	insert operation]
+[2022-01-04 15:40:18,564]:[5792-INFO]:[__main__]:[New session]
+[2022-01-04 15:40:18,603]:[5792-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:40:18,603]:[5792-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name,) VALUES ()
+	insert operation]
+[2022-01-04 15:40:33,858]:[6000-INFO]:[__main__]:[New session]
+[2022-01-04 15:40:33,907]:[6000-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:40:33,908]:[6000-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name,) VALUES ('hello')
+	insert operation]
+[2022-01-04 15:41:29,046]:[5768-INFO]:[__main__]:[New session]
+[2022-01-04 15:41:29,085]:[5768-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:41:29,085]:[5768-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name,) VALUES ('hello')
+	insert operation]
+[2022-01-04 15:42:00,683]:[7296-INFO]:[__main__]:[New session]
+[2022-01-04 15:42:00,745]:[7296-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:42:00,784]:[7296-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name) VALUES ('hello')
+	insert operation]
+[2022-01-04 15:42:44,995]:[7512-INFO]:[__main__]:[New session]
+[2022-01-04 15:42:45,035]:[7512-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:43:18,226]:[5892-INFO]:[__main__]:[New session]
+[2022-01-04 15:43:18,273]:[5892-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:43:25,531]:[6804-INFO]:[__main__]:[New session]
+[2022-01-04 15:43:25,570]:[6804-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:43:35,172]:[5864-INFO]:[__main__]:[New session]
+[2022-01-04 15:43:35,211]:[5864-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:43:45,041]:[6180-INFO]:[__main__]:[New session]
+[2022-01-04 15:43:45,082]:[6180-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:44:49,485]:[7116-INFO]:[__main__]:[New session]
+[2022-01-04 15:44:49,528]:[7116-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:44:49,528]:[7116-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name) VALUES ('hello')
+	insert operation]
+[2022-01-04 15:45:23,486]:[5576-INFO]:[__main__]:[New session]
+[2022-01-04 15:45:23,530]:[5576-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:45:23,530]:[5576-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name) VALUES ('hello')
+	insert operation]
+[2022-01-04 15:45:56,857]:[7024-INFO]:[__main__]:[New session]
+[2022-01-04 15:45:56,896]:[7024-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:45:56,896]:[7024-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name) VALUES ('hello')
+������:  ������� "name" � ������� "qqqqq" �� ����������
+LINE 1: INSERT INTO qqqqq (name) VALUES ('hello')
+                           ^
+
+	insert operation]
+[2022-01-04 15:47:15,042]:[5932-INFO]:[__main__]:[New session]
+[2022-01-04 15:47:15,085]:[5932-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:47:15,088]:[5932-INFO]:[__main__]:[b'Unsuccessful commit: \n\tINSERT INTO qqqqq (name) VALUES (\'hello\')\n\xd0\x9e\xd0\xa8\xd0\x98\xd0\x91\xd0\x9a\xd0\x90:  \xd1\x81\xd1\x82\xd0\xbe\xd0\xbb\xd0\xb1\xd0\xb5\xd1\x86 "name" \xd0\xb2 \xd1\x82\xd0\xb0\xd0\xb1\xd0\xbb\xd0\xb8\xd1\x86\xd0\xb5 "qqqqq" \xd0\xbd\xd0\xb5 \xd1\x81\xd1\x83\xd1\x89\xd0\xb5\xd1\x81\xd1\x82\xd0\xb2\xd1\x83\xd0\xb5\xd1\x82\nLINE 1: INSERT INTO qqqqq (name) VALUES (\'hello\')\n                           ^\n\n\tinsert operation']
+[2022-01-04 15:48:02,704]:[5796-INFO]:[__main__]:[New session]
+[2022-01-04 15:48:02,744]:[5796-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:48:02,744]:[5796-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name) VALUES ('hello')
+������:  ������� "name" � ������� "qqqqq" �� ����������
+LINE 1: INSERT INTO qqqqq (name) VALUES ('hello')
+                           ^
+
+	insert operation]
+[2022-01-04 15:48:24,399]:[5892-INFO]:[__main__]:[New session]
+[2022-01-04 15:48:24,439]:[5892-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:48:24,447]:[5892-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name) VALUES ('hello')
+	insert operation]
+[2022-01-04 15:48:42,536]:[7912-INFO]:[__main__]:[New session]
+[2022-01-04 15:48:42,575]:[7912-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:48:42,583]:[7912-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (name) VALUES ('pasw')
+	insert operation]
+[2022-01-04 15:49:00,311]:[6928-INFO]:[__main__]:[New session]
+[2022-01-04 15:49:00,348]:[6928-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:49:00,484]:[6928-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:49:15,509]:[8116-INFO]:[__main__]:[New session]
+[2022-01-04 15:49:15,552]:[8116-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:49:15,557]:[8116-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:49:15,638]:[8116-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:49:25,958]:[6204-INFO]:[__main__]:[New session]
+[2022-01-04 15:49:25,997]:[6204-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:49:26,004]:[6204-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:49:26,004]:[6204-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:49:34,137]:[7668-INFO]:[__main__]:[New session]
+[2022-01-04 15:49:34,176]:[7668-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:49:34,184]:[7668-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:49:34,184]:[7668-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:49:41,916]:[7400-INFO]:[__main__]:[New session]
+[2022-01-04 15:49:41,956]:[7400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:49:41,956]:[7400-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:49:41,956]:[7400-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:49:52,058]:[7248-INFO]:[__main__]:[New session]
+[2022-01-04 15:49:52,098]:[7248-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:49:52,100]:[7248-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (pasw) VALUES ()
+	insert operation]
+[2022-01-04 15:49:52,101]:[7248-INFO]:[__main__]:[Unsuccessful commit: 
+	SELECT pasw FROM qqqqq 
+	select operation]
+[2022-01-04 15:49:58,680]:[6396-INFO]:[__main__]:[New session]
+[2022-01-04 15:49:58,711]:[6396-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:49:58,719]:[6396-INFO]:[__main__]:[Unsuccessful commit: 
+	INSERT INTO qqqqq (pasw) VALUES ()
+	insert operation]
+[2022-01-04 15:49:58,719]:[6396-INFO]:[__main__]:[Unsuccessful commit: 
+	SELECT pasw FROM qqqqq 
+	select operation]
+[2022-01-04 15:50:10,452]:[6032-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:10,488]:[6032-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:10,496]:[6032-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:10,496]:[6032-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:11,653]:[5024-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:11,692]:[5024-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:11,692]:[5024-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:11,700]:[5024-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:12,517]:[1956-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:12,548]:[1956-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:12,556]:[1956-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:12,556]:[1956-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:13,039]:[7208-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:13,079]:[7208-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:13,083]:[7208-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:13,084]:[7208-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:13,365]:[5292-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:13,410]:[5292-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:13,410]:[5292-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:13,410]:[5292-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:13,710]:[6120-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:13,749]:[6120-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:13,751]:[6120-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:13,754]:[6120-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:14,019]:[7916-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:14,058]:[7916-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:14,058]:[7916-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:14,066]:[7916-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:14,363]:[3800-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:14,401]:[3800-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:14,409]:[3800-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:14,409]:[3800-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:14,684]:[2392-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:14,723]:[2392-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:14,727]:[2392-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:14,729]:[2392-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 15:50:15,020]:[4992-INFO]:[__main__]:[New session]
+[2022-01-04 15:50:15,063]:[4992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 15:50:15,067]:[4992-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 15:50:15,069]:[4992-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 17:13:34,499]:[2896-INFO]:[__main__]:[New session]
+[2022-01-04 17:13:34,858]:[2896-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:13:34,993]:[2896-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 17:13:34,993]:[2896-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 17:15:16,241]:[5656-INFO]:[__main__]:[New session]
+[2022-01-04 17:15:16,272]:[5656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:15:16,272]:[5656-INFO]:[__main__]:[Session closed]
+[2022-01-04 17:16:07,918]:[4292-INFO]:[__main__]:[New session]
+[2022-01-04 17:16:07,965]:[4292-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:17:40,587]:[5048-INFO]:[__main__]:[New session]
+[2022-01-04 17:17:40,627]:[5048-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:17:40,628]:[5048-INFO]:[__main__]:[Session closed]
+[2022-01-04 17:17:48,877]:[4576-INFO]:[__main__]:[New session]
+[2022-01-04 17:17:48,919]:[4576-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:18:54,134]:[4396-INFO]:[__main__]:[New session]
+[2022-01-04 17:18:54,182]:[4396-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:19:00,456]:[6684-INFO]:[__main__]:[New session]
+[2022-01-04 17:20:00,658]:[5204-INFO]:[__main__]:[New session]
+[2022-01-04 17:20:00,706]:[5204-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:20:34,236]:[5760-INFO]:[__main__]:[New session]
+[2022-01-04 17:20:34,275]:[5760-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    1 / 0
+ZeroDivisionError: division by zero
+[2022-01-04 17:20:53,302]:[6312-INFO]:[__main__]:[New session]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 14, in <module>
+    1 / 0
+ZeroDivisionError: division by zero
+[2022-01-04 17:22:24,952]:[6156-INFO]:[__main__]:[New session]
+[2022-01-04 17:22:24,991]:[6156-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:22:24,991]:[6156-INFO]:[__main__]:[Session closed]
+[2022-01-04 17:22:38,817]:[6268-INFO]:[__main__]:[New session]
+[2022-01-04 17:22:38,856]:[6268-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    1 / 0 
+ZeroDivisionError: division by zero
+[2022-01-04 17:22:59,919]:[4588-INFO]:[__main__]:[New session]
+[2022-01-04 17:22:59,960]:[4588-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    1 / 0 
+ZeroDivisionError: division by zero
+[2022-01-04 17:23:01,124]:[5324-INFO]:[__main__]:[New session]
+[2022-01-04 17:23:01,173]:[5324-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    1 / 0 
+ZeroDivisionError: division by zero
+[2022-01-04 17:23:02,197]:[6388-INFO]:[__main__]:[New session]
+[2022-01-04 17:23:02,228]:[6388-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    1 / 0 
+ZeroDivisionError: division by zero
+[2022-01-04 17:23:05,134]:[6404-INFO]:[__main__]:[New session]
+[2022-01-04 17:23:05,173]:[6404-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    1 / 0 
+ZeroDivisionError: division by zero
+
+[2022-01-04 17:27:36,974]:[6388-INFO]:[__main__]:[New session]
+[2022-01-04 17:27:37,013]:[6388-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:27:37,013]:[6388-INFO]:[__main__]:[Session closed]
+
+
+[2022-01-04 17:27:52,822]:[1572-INFO]:[__main__]:[New session]
+[2022-01-04 17:27:52,878]:[1572-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:27:52,879]:[1572-INFO]:[__main__]:[Session closed]
+
+
+[2022-01-04 17:28:01,485]:[7224-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:01,524]:[7224-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:01,524]:[7224-INFO]:[__main__]:[Session closed]
+
+
+[2022-01-04 17:28:02,459]:[6272-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:02,500]:[6272-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:02,500]:[6272-INFO]:[__main__]:[Session closed]
+
+
+[2022-01-04 17:28:03,405]:[2372-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:03,444]:[2372-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:03,444]:[2372-INFO]:[__main__]:[Session closed]
+
+
+[2022-01-04 17:28:04,296]:[6312-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:04,335]:[6312-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 17:28:04,335]:[6312-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:10,157]:[6952-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:10,196]:[6952-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:10,204]:[6952-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:18,595]:[7980-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:18,634]:[7980-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:18,634]:[7980-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:19,224]:[5092-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:19,262]:[5092-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:19,263]:[5092-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:19,880]:[4412-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:19,918]:[4412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:19,919]:[4412-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:20,476]:[7728-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:20,518]:[7728-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:20,519]:[7728-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:23,755]:[5656-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:23,794]:[5656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:23,794]:[5656-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:24,445]:[6992-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:24,484]:[6992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:24,484]:[6992-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:25,116]:[6896-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:25,159]:[6896-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:25,159]:[6896-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:28:25,781]:[5468-INFO]:[__main__]:[New session]
+[2022-01-04 17:28:25,820]:[5468-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:28:25,820]:[5468-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:29:36,257]:[5680-INFO]:[__main__]:[New session]
+[2022-01-04 17:29:36,296]:[5680-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:29:36,296]:[5680-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:30:00,047]:[6312-INFO]:[__main__]:[New session]
+[2022-01-04 17:30:00,086]:[6312-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:30:00,086]:[6312-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:30:22,583]:[6872-INFO]:[__main__]:[New session]
+[2022-01-04 17:30:22,623]:[6872-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:30:22,646]:[6872-INFO]:[__main__]:[Unsuccessful commit: 
+	SELECT name FROM qqqqq 
+	select operation
+
+ОШИБКА:  столбец "name" не существует
+LINE 1: SELECT name FROM qqqqq 
+               ^
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("name", ))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 203, in select
+    return select_query.get()
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 107, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 58, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-04 17:31:12,958]:[7160-INFO]:[__main__]:[New session]
+[2022-01-04 17:31:12,998]:[7160-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:31:13,005]:[7160-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 17:31:13,005]:[7160-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:32:12,139]:[5412-INFO]:[__main__]:[New session]
+[2022-01-04 17:32:12,184]:[5412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:32:12,187]:[5412-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 17:32:12,187]:[5412-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:32:20,798]:[5632-INFO]:[__main__]:[New session]
+[2022-01-04 17:32:20,845]:[5632-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:32:20,845]:[5632-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT name FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "name" не существует
+LINE 1: SELECT name FROM qqqqq 
+               ^
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("name", ))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 203, in select
+    return select_query.get()
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 107, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 58, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-04 17:32:44,204]:[3820-INFO]:[__main__]:[New session]
+[2022-01-04 17:32:44,243]:[3820-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:32:44,243]:[3820-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT name FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "name" не существует
+LINE 1: SELECT name FROM qqqqq 
+               ^
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("name", )).f
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 203, in select
+    return select_query.get()
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 107, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 58, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-04 17:32:54,942]:[6888-INFO]:[__main__]:[New session]
+[2022-01-04 17:32:54,987]:[6888-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:32:54,990]:[6888-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("pasw", )).f
+AttributeError: 'DataSet' object has no attribute 'f'
+
+[2022-01-04 17:40:23,629]:[4500-INFO]:[__main__]:[New session]
+[2022-01-04 17:40:23,667]:[4500-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:40:23,670]:[4500-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 17:40:23,670]:[4500-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:40:29,481]:[6288-INFO]:[__main__]:[New session]
+[2022-01-04 17:40:29,520]:[6288-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:40:29,520]:[6288-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 17:40:29,520]:[6288-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 17:40:38,989]:[7640-INFO]:[__main__]:[New session]
+[2022-01-04 17:40:39,020]:[7640-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:40:39,028]:[7640-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:43:32,840]:[4132-INFO]:[__main__]:[New session]
+[2022-01-04 17:43:32,879]:[4132-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 17:44:03,637]:[840-INFO]:[__main__]:[New session]
+[2022-01-04 17:44:03,686]:[840-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 17:44:11,245]:[2176-INFO]:[__main__]:[New session]
+[2022-01-04 17:44:11,297]:[2176-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 17:44:52,694]:[5628-INFO]:[__main__]:[New session]
+[2022-01-04 17:44:52,740]:[5628-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 17:44:59,088]:[1400-INFO]:[__main__]:[New session]
+[2022-01-04 17:44:59,138]:[1400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:44:59,142]:[1400-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:45:10,962]:[6236-INFO]:[__main__]:[New session]
+[2022-01-04 17:45:11,001]:[6236-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:45:11,001]:[6236-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:45:31,208]:[2740-INFO]:[__main__]:[New session]
+[2022-01-04 17:45:31,247]:[2740-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:45:31,247]:[2740-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:46:01,868]:[1124-INFO]:[__main__]:[New session]
+[2022-01-04 17:46:01,907]:[1124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:46:01,907]:[1124-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("paw", ))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 203, in select
+    return select_query.get()
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 107, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 61, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-04 17:46:44,555]:[5900-INFO]:[__main__]:[New session]
+[2022-01-04 17:46:44,594]:[5900-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:46:44,594]:[5900-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:48:28,468]:[7912-INFO]:[__main__]:[New session]
+[2022-01-04 17:48:28,507]:[7912-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 17:48:41,927]:[6664-INFO]:[__main__]:[New session]
+[2022-01-04 17:48:41,966]:[6664-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:48:41,974]:[6664-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("paw", ))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 203, in select
+    return select_query.get()
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 107, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 62, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-04 17:48:59,834]:[5564-INFO]:[__main__]:[New session]
+[2022-01-04 17:48:59,874]:[5564-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:48:59,874]:[5564-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("paw", ))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 203, in select
+    return select_query.get()
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 107, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 62, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-04 17:49:31,753]:[5332-INFO]:[__main__]:[New session]
+[2022-01-04 17:49:31,794]:[5332-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:49:31,802]:[5332-ERROR]:[__main__]:[ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 45, in execute
+    self.cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+
+[2022-01-04 17:49:31,802]:[5332-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:49:37,122]:[5204-INFO]:[__main__]:[New session]
+[2022-01-04 17:49:37,163]:[5204-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:49:37,165]:[5204-ERROR]:[__main__]:[ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 45, in execute
+    self.cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+
+[2022-01-04 17:49:37,166]:[5204-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:49:38,147]:[1580-INFO]:[__main__]:[New session]
+[2022-01-04 17:49:38,186]:[1580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:49:38,186]:[1580-ERROR]:[__main__]:[ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 45, in execute
+    self.cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+
+[2022-01-04 17:49:38,194]:[1580-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:49:39,088]:[1512-INFO]:[__main__]:[New session]
+[2022-01-04 17:49:39,120]:[1512-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:49:39,127]:[1512-ERROR]:[__main__]:[ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 45, in execute
+    self.cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+
+[2022-01-04 17:49:39,127]:[1512-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:49:47,307]:[4092-INFO]:[__main__]:[New session]
+[2022-01-04 17:49:47,338]:[4092-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:49:47,346]:[4092-ERROR]:[__main__]:[ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 45, in execute
+    self.cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+
+[2022-01-04 17:49:47,346]:[4092-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:50:04,886]:[7652-INFO]:[__main__]:[New session]
+[2022-01-04 17:50:04,923]:[7652-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:50:04,923]:[7652-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:50:37,407]:[7968-INFO]:[__main__]:[New session]
+[2022-01-04 17:50:37,438]:[7968-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:50:37,446]:[7968-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:50:54,187]:[3436-INFO]:[__main__]:[New session]
+[2022-01-04 17:50:54,218]:[3436-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:50:54,226]:[3436-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:51:06,523]:[1236-INFO]:[__main__]:[New session]
+[2022-01-04 17:51:06,567]:[1236-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:51:06,570]:[1236-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:51:14,641]:[5964-INFO]:[__main__]:[New session]
+[2022-01-04 17:51:14,711]:[5964-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:51:14,713]:[5964-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 174, in select
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 22, in <module>
+    op.select(table, ("paw", ))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 203, in select
+    return select_query.get()
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 107, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 61, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-04 17:51:26,021]:[4688-INFO]:[__main__]:[New session]
+[2022-01-04 17:51:26,059]:[4688-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:51:26,067]:[4688-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT paw FROM qqqqq  >>
+	select operation
+
+ОШИБКА:  столбец "paw" не существует
+LINE 1: SELECT paw FROM qqqqq 
+               ^
+HINT:  Возможно, предполагалась ссылка на столбец "qqqqq.pasw".
+]
+
+[2022-01-04 17:51:36,772]:[4908-INFO]:[__main__]:[New session]
+[2022-01-04 17:51:36,812]:[4908-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 17:51:36,812]:[4908-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 17:51:36,812]:[4908-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:05:08,514]:[7108-INFO]:[__main__]:[New session]
+[2022-01-04 18:05:08,553]:[7108-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:05:08,556]:[7108-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:05:08,556]:[7108-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:13:05,574]:[3516-INFO]:[__main__]:[New session]
+[2022-01-04 18:13:05,605]:[3516-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:13:25,509]:[5328-INFO]:[__main__]:[New session]
+
+[2022-01-04 18:13:33,421]:[1088-INFO]:[__main__]:[New session]
+[2022-01-04 18:13:33,873]:[1088-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:13:33,873]:[1088-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:14:49,647]:[2784-INFO]:[__main__]:[New session]
+[2022-01-04 18:14:49,694]:[2784-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:15:23,990]:[4120-INFO]:[__main__]:[New session]
+[2022-01-04 18:15:24,038]:[4120-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:15:37,226]:[4408-INFO]:[__main__]:[New session]
+[2022-01-04 18:15:37,272]:[4408-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:15:48,992]:[2228-INFO]:[__main__]:[New session]
+[2022-01-04 18:15:49,052]:[2228-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:17:34,967]:[6460-INFO]:[__main__]:[New session]
+[2022-01-04 18:17:35,006]:[6460-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:17:35,006]:[6460-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testHh (test,) VALUES () >>
+	insert operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+LINE 1: INSERT INTO testHh (test,) VALUES ()
+                                 ^
+]
+[2022-01-04 18:17:35,006]:[6460-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:17:48,276]:[4484-INFO]:[__main__]:[New session]
+[2022-01-04 18:17:48,336]:[4484-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:17:48,344]:[4484-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testHh (test) VALUES () >>
+	insert operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+LINE 1: INSERT INTO testHh (test) VALUES ()
+                                          ^
+]
+[2022-01-04 18:17:48,345]:[4484-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:18:23,353]:[6120-INFO]:[__main__]:[New session]
+[2022-01-04 18:18:23,410]:[6120-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:18:23,419]:[6120-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testHh (test) VALUES () >>
+	insert operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+LINE 1: INSERT INTO testHh (test) VALUES ()
+                                          ^
+]
+[2022-01-04 18:18:23,420]:[6120-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:18:41,875]:[4696-INFO]:[__main__]:[New session]
+[2022-01-04 18:18:41,922]:[4696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:18:41,922]:[4696-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testHh (test,) VALUES () >>
+	insert operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+LINE 1: INSERT INTO testHh (test,) VALUES ()
+                                 ^
+]
+[2022-01-04 18:18:41,922]:[4696-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:18:45,903]:[4396-INFO]:[__main__]:[New session]
+[2022-01-04 18:18:45,956]:[4396-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:18:45,972]:[4396-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testHh (test) VALUES () >>
+	insert operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+LINE 1: INSERT INTO testHh (test) VALUES ()
+                                          ^
+]
+[2022-01-04 18:18:45,972]:[4396-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:18:56,718]:[2720-INFO]:[__main__]:[New session]
+[2022-01-04 18:18:56,765]:[2720-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:19:02,798]:[4464-INFO]:[__main__]:[New session]
+[2022-01-04 18:19:02,845]:[4464-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:19:02,845]:[4464-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testHh (test) VALUES () >>
+	insert operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+LINE 1: INSERT INTO testHh (test) VALUES ()
+                                          ^
+]
+[2022-01-04 18:19:02,845]:[4464-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:20:08,774]:[7644-INFO]:[__main__]:[New session]
+[2022-01-04 18:20:08,813]:[7644-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:20:43,008]:[5944-INFO]:[__main__]:[New session]
+[2022-01-04 18:20:43,064]:[5944-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:20:49,239]:[1480-INFO]:[__main__]:[New session]
+[2022-01-04 18:20:49,278]:[1480-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:20:53,976]:[1400-INFO]:[__main__]:[New session]
+[2022-01-04 18:20:54,015]:[1400-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:21:06,627]:[4248-INFO]:[__main__]:[New session]
+[2022-01-04 18:21:06,663]:[4248-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:21:09,793]:[5892-INFO]:[__main__]:[New session]
+[2022-01-04 18:21:09,833]:[5892-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:23:04,501]:[7700-INFO]:[__main__]:[New session]
+[2022-01-04 18:23:04,555]:[7700-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:23:04,654]:[7700-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:23:04,654]:[7700-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:23:19,304]:[7012-INFO]:[__main__]:[New session]
+[2022-01-04 18:23:19,363]:[7012-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:24:10,059]:[4620-INFO]:[__main__]:[New session]
+[2022-01-04 18:24:10,101]:[4620-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:24:50,341]:[5068-INFO]:[__main__]:[New session]
+[2022-01-04 18:24:50,387]:[5068-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:25:20,277]:[8084-INFO]:[__main__]:[New session]
+[2022-01-04 18:25:20,321]:[8084-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:25:20,325]:[8084-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:25:20,325]:[8084-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:25:49,895]:[4948-INFO]:[__main__]:[New session]
+[2022-01-04 18:25:49,983]:[4948-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 167, in insert
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 23, in <module>
+    Operations(conn).insert(table, ("age", "name" ), (Int("111"), Text("123"), ))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 170, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 31, in __validate
+    raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
+Slash.Core.exceptions_.SlashRulesError: 
+
+
+Rule: {'min': 0, 'max': 255, 'type': <class 'int'>, 'valide_foo': <bound method Rules.valid_int of <Slash.types_.Rules object at 0x00000000028CD1F0>>}
+
+[2022-01-04 18:26:09,623]:[7480-INFO]:[__main__]:[New session]
+[2022-01-04 18:26:09,675]:[7480-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:26:09,679]:[7480-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:26:09,680]:[7480-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:26:29,082]:[4836-INFO]:[__main__]:[New session]
+[2022-01-04 18:26:29,130]:[4836-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:26:29,138]:[4836-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:26:29,138]:[4836-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:26:38,468]:[4088-INFO]:[__main__]:[New session]
+[2022-01-04 18:26:38,543]:[4088-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:27:18,576]:[6400-INFO]:[__main__]:[New session]
+[2022-01-04 18:27:18,634]:[6400-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:27:48,807]:[7584-INFO]:[__main__]:[New session]
+[2022-01-04 18:27:48,846]:[7584-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:28:25,828]:[7708-INFO]:[__main__]:[New session]
+[2022-01-04 18:28:25,871]:[7708-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:28:25,871]:[7708-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:28:25,871]:[7708-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:28:35,280]:[8180-INFO]:[__main__]:[New session]
+[2022-01-04 18:28:35,327]:[8180-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:28:35,352]:[8180-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:28:35,353]:[8180-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:28:44,578]:[3924-INFO]:[__main__]:[New session]
+[2022-01-04 18:28:44,625]:[3924-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:28:44,625]:[3924-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:28:44,625]:[3924-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:29:22,966]:[5600-INFO]:[__main__]:[New session]
+[2022-01-04 18:29:23,032]:[5600-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:29:23,037]:[5600-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:29:23,037]:[5600-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:29:53,719]:[8076-INFO]:[__main__]:[New session]
+[2022-01-04 18:29:53,777]:[8076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:29:53,781]:[8076-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:29:53,782]:[8076-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:30:08,072]:[4652-INFO]:[__main__]:[New session]
+[2022-01-04 18:30:08,107]:[4652-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:30:08,115]:[4652-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:30:08,115]:[4652-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:30:13,755]:[5356-INFO]:[__main__]:[New session]
+[2022-01-04 18:30:13,800]:[5356-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:30:21,907]:[4384-INFO]:[__main__]:[New session]
+[2022-01-04 18:30:21,966]:[4384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:30:21,974]:[4384-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:30:21,975]:[4384-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:30:32,264]:[2372-INFO]:[__main__]:[New session]
+[2022-01-04 18:30:32,319]:[2372-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:30:32,319]:[2372-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:30:32,319]:[2372-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:30:39,092]:[6536-INFO]:[__main__]:[New session]
+[2022-01-04 18:30:39,141]:[6536-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:30:39,141]:[6536-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:30:39,149]:[6536-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:32:02,072]:[8184-INFO]:[__main__]:[New session]
+[2022-01-04 18:32:02,111]:[8184-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:32:02,120]:[8184-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:32:02,120]:[8184-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:32:12,176]:[6592-INFO]:[__main__]:[New session]
+[2022-01-04 18:32:12,233]:[6592-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:32:12,233]:[6592-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:32:12,233]:[6592-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:32:27,050]:[6268-INFO]:[__main__]:[New session]
+[2022-01-04 18:32:27,099]:[6268-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:32:27,102]:[6268-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:32:27,115]:[6268-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:32:40,532]:[4524-INFO]:[__main__]:[New session]
+[2022-01-04 18:32:40,586]:[4524-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:32:40,586]:[4524-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:32:40,586]:[4524-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:32:54,532]:[6212-INFO]:[__main__]:[New session]
+[2022-01-04 18:32:54,579]:[6212-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:32:54,579]:[6212-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:32:54,579]:[6212-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:33:03,514]:[5008-INFO]:[__main__]:[New session]
+[2022-01-04 18:33:03,553]:[5008-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:33:03,561]:[5008-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:33:03,562]:[5008-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:33:43,078]:[5192-INFO]:[__main__]:[New session]
+[2022-01-04 18:33:43,126]:[5192-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:33:54,389]:[4636-INFO]:[__main__]:[New session]
+[2022-01-04 18:33:54,436]:[4636-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:33:54,459]:[4636-INFO]:[__main__]:[Unsuccessful commit: 
+	<< UPDATE test3 SET a = 1  >>
+	update operation
+
+ОШИБКА:  столбец "a" в таблице "test3" не существует
+LINE 1: UPDATE test3 SET a = 1 
+                         ^
+]
+[2022-01-04 18:33:54,459]:[4636-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:34:04,178]:[6536-INFO]:[__main__]:[New session]
+[2022-01-04 18:34:04,246]:[6536-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:34:04,253]:[6536-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:34:04,253]:[6536-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:34:24,078]:[3708-INFO]:[__main__]:[New session]
+[2022-01-04 18:34:24,165]:[3708-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:34:24,165]:[3708-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:34:24,165]:[3708-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:34:36,639]:[7040-INFO]:[__main__]:[New session]
+[2022-01-04 18:34:36,701]:[7040-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:34:36,707]:[7040-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:34:36,707]:[7040-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:34:54,626]:[7692-INFO]:[__main__]:[New session]
+[2022-01-04 18:34:54,666]:[7692-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:35:23,781]:[6960-INFO]:[__main__]:[New session]
+[2022-01-04 18:35:23,826]:[6960-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:37:52,131]:[4860-INFO]:[__main__]:[New session]
+[2022-01-04 18:37:52,170]:[4860-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:37:52,170]:[4860-INFO]:[__main__]:[Unsuccessful commit: 
+	<< UPDATE test3 SET a = 1  >>
+	update operation
+
+ОШИБКА:  столбец "a" в таблице "test3" не существует
+LINE 1: UPDATE test3 SET a = 1 
+                         ^
+]
+[2022-01-04 18:37:52,178]:[4860-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:40:12,125]:[5452-INFO]:[__main__]:[New session]
+[2022-01-04 18:40:12,171]:[5452-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:40:19,201]:[5448-INFO]:[__main__]:[New session]
+[2022-01-04 18:40:19,247]:[5448-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:40:41,531]:[7916-INFO]:[__main__]:[New session]
+[2022-01-04 18:40:41,627]:[7916-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:40:41,653]:[7916-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:40:41,653]:[7916-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:41:14,213]:[7024-INFO]:[__main__]:[New session]
+[2022-01-04 18:41:14,256]:[7024-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:41:14,264]:[7024-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:41:14,264]:[7024-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:41:28,917]:[2740-INFO]:[__main__]:[New session]
+[2022-01-04 18:41:28,964]:[2740-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:41:28,972]:[2740-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:41:28,972]:[2740-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:43:22,298]:[5444-INFO]:[__main__]:[New session]
+[2022-01-04 18:43:22,345]:[5444-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:43:22,345]:[5444-INFO]:[__main__]:[Unsuccessful commit: 
+	<< UPDATE test3 SET a = 1  >>
+	update operation
+
+ОШИБКА:  столбец "a" в таблице "test3" не существует
+LINE 1: UPDATE test3 SET a = 1 
+                         ^
+]
+[2022-01-04 18:43:22,345]:[5444-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:43:41,400]:[7488-INFO]:[__main__]:[New session]
+[2022-01-04 18:43:41,449]:[7488-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:43:41,457]:[7488-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:43:41,457]:[7488-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:43:58,826]:[4456-INFO]:[__main__]:[New session]
+[2022-01-04 18:43:58,865]:[4456-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:44:11,104]:[5296-INFO]:[__main__]:[New session]
+[2022-01-04 18:44:11,143]:[5296-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:44:25,532]:[6484-INFO]:[__main__]:[New session]
+[2022-01-04 18:44:25,571]:[6484-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-04 18:44:37,679]:[6860-INFO]:[__main__]:[New session]
+[2022-01-04 18:44:37,719]:[6860-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ("age"), (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:46:35,937]:[2624-INFO]:[__main__]:[New session]
+[2022-01-04 18:46:35,981]:[2624-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:46:35,989]:[2624-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:46:35,989]:[2624-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:46:53,516]:[7032-INFO]:[__main__]:[New session]
+[2022-01-04 18:46:53,565]:[7032-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 146, in __validate
+    sql_responce += " = ".join((names[index], f"{value.value}"))
+TypeError: sequence item 0: expected str instance, list found
+
+[2022-01-04 18:47:28,445]:[6188-INFO]:[__main__]:[New session]
+[2022-01-04 18:47:28,484]:[6188-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:20,078]:[8056-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:20,126]:[8056-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:47,707]:[7236-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:47,761]:[7236-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 223, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 225, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 139, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:47:36,988]:[7380-INFO]:[__main__]:[New session]
+[2022-01-04 18:47:37,035]:[7380-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 223, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 225, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 139, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:03,183]:[6228-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:03,222]:[6228-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:08,381]:[6872-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:08,445]:[6872-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:16,295]:[364-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:16,334]:[364-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:25,350]:[4952-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:25,389]:[4952-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ["age"], (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:32,718]:[7444-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:32,767]:[7444-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in update
+    table._is_unated
+AttributeError: 'Table' object has no attribute '_is_unated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 25, in <module>
+    Operations(conn).update(table, ("age"), (Int(1)))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 224, in update
+    Update(self.__connection, table, column_names, values, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 120, in __init__
+    self.__responce = self.__validate(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 138, in __validate
+    for index, value in enumerate(values):
+TypeError: 'Int' object is not iterable
+
+[2022-01-04 18:48:59,728]:[1208-INFO]:[__main__]:[New session]
+[2022-01-04 18:48:59,775]:[1208-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:48:59,783]:[1208-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:48:59,783]:[1208-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:09,088]:[632-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:09,154]:[632-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:09,178]:[632-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:09,178]:[632-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:28,284]:[1264-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:28,331]:[1264-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:28,331]:[1264-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:28,331]:[1264-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:28,809]:[7672-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:28,856]:[7672-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:28,856]:[7672-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:28,856]:[7672-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:29,292]:[4696-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:29,334]:[4696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:29,334]:[4696-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:29,334]:[4696-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:29,732]:[3252-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:29,771]:[3252-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:29,779]:[3252-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:29,779]:[3252-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:39,455]:[6176-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:39,494]:[6176-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:39,501]:[6176-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:39,501]:[6176-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:40,480]:[5176-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:40,519]:[5176-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:40,527]:[5176-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:40,527]:[5176-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:52,533]:[5916-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:52,577]:[5916-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:52,584]:[5916-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:52,584]:[5916-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:49:53,047]:[2200-INFO]:[__main__]:[New session]
+[2022-01-04 18:49:53,086]:[2200-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:49:53,086]:[2200-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:49:53,086]:[2200-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:50:02,127]:[2412-INFO]:[__main__]:[New session]
+[2022-01-04 18:50:02,184]:[2412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:50:02,194]:[2412-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:50:02,195]:[2412-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:50:03,224]:[5600-INFO]:[__main__]:[New session]
+[2022-01-04 18:50:03,263]:[5600-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:50:03,271]:[5600-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:50:03,271]:[5600-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:51:06,056]:[8124-INFO]:[__main__]:[New session]
+[2022-01-04 18:51:06,099]:[8124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:51:06,099]:[8124-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:51:06,099]:[8124-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:51:55,735]:[5384-INFO]:[__main__]:[New session]
+[2022-01-04 18:51:55,804]:[5384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:51:55,804]:[5384-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:51:55,812]:[5384-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:51:55,812]:[5384-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:51:55,812]:[5384-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:52:06,308]:[6508-INFO]:[__main__]:[New session]
+[2022-01-04 18:52:06,347]:[6508-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 18:52:06,347]:[6508-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 18:52:06,355]:[6508-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 18:52:06,355]:[6508-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 18:52:06,355]:[6508-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:54:38,689]:[7632-INFO]:[__main__]:[New session]
+[2022-01-04 18:54:38,728]:[7632-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:55:18,816]:[7432-INFO]:[__main__]:[New session]
+[2022-01-04 18:55:18,872]:[7432-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:55:32,505]:[6736-INFO]:[__main__]:[New session]
+[2022-01-04 18:55:32,552]:[6736-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:56:03,983]:[6276-INFO]:[__main__]:[New session]
+[2022-01-04 18:56:04,022]:[6276-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:56:10,560]:[224-INFO]:[__main__]:[New session]
+[2022-01-04 18:56:10,608]:[224-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:56:16,322]:[5260-INFO]:[__main__]:[New session]
+[2022-01-04 18:56:16,362]:[5260-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:56:24,669]:[7236-INFO]:[__main__]:[New session]
+[2022-01-04 18:56:24,719]:[7236-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:56:26,034]:[1724-INFO]:[__main__]:[New session]
+[2022-01-04 18:56:26,065]:[1724-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:56:28,765]:[8052-INFO]:[__main__]:[New session]
+[2022-01-04 18:56:28,804]:[8052-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:56:29,634]:[5316-INFO]:[__main__]:[New session]
+[2022-01-04 18:56:29,673]:[5316-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:57:12,159]:[4744-INFO]:[__main__]:[New session]
+[2022-01-04 18:57:12,214]:[4744-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:57:29,793]:[4748-INFO]:[__main__]:[New session]
+[2022-01-04 18:57:29,833]:[4748-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:57:33,014]:[8168-INFO]:[__main__]:[New session]
+[2022-01-04 18:57:33,053]:[8168-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 18:57:37,788]:[4524-INFO]:[__main__]:[New session]
+[2022-01-04 18:57:37,839]:[4524-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 19:01:11,283]:[3696-INFO]:[__main__]:[New session]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 17, in <module>
+    table = Table("testhidden")
+  File "d:\pyrus\ORM\Slash\types_.py", line 302, in __init__
+    md5(self.__name.encode("utf-8")).digest(): self
+NameError: name 'md5' is not defined
+
+[2022-01-04 19:02:42,551]:[5112-INFO]:[__main__]:[New session]
+[2022-01-04 19:02:42,775]:[5112-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 19:02:42,775]:[5112-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 19:04:24,391]:[7704-INFO]:[__main__]:[New session]
+[2022-01-04 19:04:24,438]:[7704-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 19:04:24,438]:[7704-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testhidden (age, name, passsword) VALUES (17, 'Bogdan','efe103f42ae5158a7b5424f238a8452e') >>
+	insert operation
+
+ОШИБКА:  столбец "passsword" в таблице "testhidden" не существует
+LINE 1: INSERT INTO testhidden (age, name, passsword) VALUES (17, 'B...
+                                           ^
+]
+[2022-01-04 19:04:24,438]:[7704-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 19:04:53,427]:[7472-INFO]:[__main__]:[New session]
+[2022-01-04 19:04:53,474]:[7472-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 19:04:53,478]:[7472-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-04 19:04:53,479]:[7472-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 19:05:44,096]:[7248-INFO]:[__main__]:[New session]
+[2022-01-04 19:05:44,145]:[7248-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 19:05:44,145]:[7248-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-04 19:05:44,145]:[7248-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 19:06:15,764]:[6656-INFO]:[__main__]:[New session]
+[2022-01-04 19:06:15,808]:[6656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 19:06:15,808]:[6656-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 19:06:15,816]:[6656-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 19:06:39,416]:[6312-INFO]:[__main__]:[New session]
+[2022-01-04 19:06:39,455]:[6312-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 19:06:39,455]:[6312-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 19:06:39,455]:[6312-INFO]:[__main__]:[Session closed]
+
+[2022-01-04 19:07:14,970]:[6996-INFO]:[__main__]:[New session]
+[2022-01-04 19:07:15,009]:[6996-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-04 19:07:15,017]:[6996-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-04 19:07:15,017]:[6996-INFO]:[__main__]:[Session closed]

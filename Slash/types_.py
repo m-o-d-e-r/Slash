@@ -1,6 +1,7 @@
 from typing import final, Dict, List
-from hashlib import md5
+import hashlib
 import re
+import os
 
 
 class Rules:
@@ -10,6 +11,7 @@ class Rules:
             "type_int": {
                 "min": 0,
                 "max": 255,
+                "type": int,
                 "valide_foo": self.valid_int
             },
             "type_text": {
@@ -23,6 +25,10 @@ class Rules:
             "type_date": {
                 "do": re.search,
                 "valide_foo": self.valid_date
+            },
+            "type_hidden": {
+                "available": [str],
+                "valide_foo": self.valid_hidden
             }
         }
         self.user_rules = {}
@@ -42,6 +48,9 @@ class Rules:
 
     def valid_int(self, int_val, rule):
         """Validate int"""
+        if type(int_val) != rule["type"]:
+            return False 
+
         if rule["min"] < int_val < rule["max"]:
             return True
         return False
@@ -67,6 +76,26 @@ class Rules:
 
         return False
 
+    def valid_hidden(self, hidden_val, rule):
+        if type(hidden_val) in rule["available"]:
+            return True
+        
+        return False
+
+
+    def __check_path(self, path):
+        return os.path.exists(path)
+
+    def read_json(self, path: str): ...
+#        self.__check_path(path)
+#        with open(path, "r") as file_:
+#            ...
+
+    def write_json(self, path: str): ...
+#        path = os.path.dirname(path) + "/"
+#        with open(path + "/rules.json", "w") as file_:
+#            json.dump(self.__rules, file_, indent=4)
+
 
 class ORMType:
     """Base type class"""
@@ -81,6 +110,16 @@ class ORMType:
         rule = user_rules.get_user_rules()[self.type_name]
 
         return (rule["valide_foo"](self.value, rule), rule)
+
+
+class Hidden(ORMType):
+    def __init__(self, value: str):
+        value = str(value)
+        self.type_name = "type_hidden"
+
+        solt = "".join([chr(ord(item) << ((len(value) - i) // 2)) for i, item in enumerate(value)])
+
+        self.value = hashlib.md5((solt + value).encode("utf-8")).hexdigest()
 
 
 class Int(ORMType):
@@ -135,11 +174,12 @@ class AutoField(ORMType):
 
 class BasicTypes:
     """Contains all available types"""
-    TYPES_LIST = (Int, Text, Bool, Date, AutoField)
+    TYPES_LIST = (Int, Text, Bool, Date, AutoField, Hidden)
     DB_TYPES_LIST = {
         Int: "INT", Text: "TEXT",
         Bool: "BOOL", Date: "DATE",
-        AutoField: "SERIAL PRIMARY KEY"
+        AutoField: "SERIAL PRIMARY KEY",
+        Hidden: "TEXT"
     }
 
 
@@ -179,7 +219,7 @@ class TablesManager:
     @staticmethod
     def find_by_name(name):
         """Return one tablesby name of table"""
-        return TablesManager.tables.get(md5(name.encode("utf-8")).digest())
+        return TablesManager.tables.get(hashlib.md5(name.encode("utf-8")).digest())
 
     @staticmethod
     def find_one_by_column(*column_names):
@@ -231,7 +271,7 @@ class TablesManager:
         class UnitedTable(
             Table, metaclass=TableMeta, parent=Table,
             U_table_name=name_, U_table_columns=columns_u,
-            U_tables = tables
+            U_tables=tables
         ):
             """Table which are few tables"""
             def __init__(self, name: str):
@@ -240,7 +280,7 @@ class TablesManager:
 
                 TablesManager.Utables.update(
                     {
-                        md5(self.name.encode("utf-8")).digest(): self
+                        hashlib.md5(self.name.encode("utf-8")).digest(): self
                     }
                 )
 
@@ -259,7 +299,7 @@ class Table:
         self.__columns: List[Column] = []
         TablesManager.tables.update(
             {
-                md5(self.__name.encode("utf-8")).digest(): self
+                hashlib.md5(self.__name.encode("utf-8")).digest(): self
             }
         )
 

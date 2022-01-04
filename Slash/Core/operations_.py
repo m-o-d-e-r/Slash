@@ -1,11 +1,11 @@
-from .core import CheckDatas, SQLConditions
-from ..types_ import DataSet, QueryQueue, Query
+from .core import CheckDatas, Connection, SQLConditions
+from ..types_ import DataSet, QueryQueue, Table
 
 from .exceptions_ import SlashRulesError
 
 
 class Insert():
-    def __init__(self, conn, table, names, values, rules="*"):
+    def __init__(self, conn: Connection, table: Table, names: tuple, values: tuple, rules="*"):
         self.__responce = self.__validate(table, names, values, rules)
         self.__table = table
         conn.execute(
@@ -28,9 +28,8 @@ class Insert():
             if not valid_responce[0]:
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
 
-        names = str(names)
-        names = names.replace("(", "")
-        names = names.replace(")", "").replace("'", "")
+        names = ", ".join(names)
+
         sql_responce = f"""INSERT INTO {table.name} ({names}) VALUES ("""
 
         for index, val in enumerate(values):
@@ -50,6 +49,10 @@ class Insert():
                 sql_responce += ("'" + str(val.value) + "'")
                 if (index + 1) != len(values):
                     sql_responce += ", "
+            elif val.type_name == "type_hidden":
+                sql_responce += ("'" + str(val.value) + "'")
+                if (index + 1) != len(values):
+                    sql_responce += ", "                
         sql_responce += ")"
 
         return sql_responce
@@ -64,7 +67,7 @@ class Insert():
 
 
 class Delete():
-    def __init__(self, conn, table, condition: SQLConditions):
+    def __init__(self, conn: Connection, table: Table, condition: SQLConditions):
         self.__responce = self.__validate(table, condition)
         conn.execute(
             CheckDatas.check_sql(self.__responce, "delete"),
@@ -83,7 +86,7 @@ class Delete():
 
 
 class Select():
-    def __init__(self, conn, table, names, condition: SQLConditions):
+    def __init__(self, conn: Connection, table: Table, names: tuple, condition: SQLConditions):
         self.__conn = conn
         self.__responce = self.__validate(table, names, condition)
         self.__table__name = table.name
@@ -113,14 +116,19 @@ class Select():
 
 
 class Update():
-    def __init__(self, conn, table, names, values, condition, rules="*"):
-        self.__responce = self.__validate(table, names, values, condition, rules)
+    def __init__(self, conn: Connection, table: Table, names: tuple, values: tuple, condition, rules="*"):
+        self.__responce = self.__validate(
+            table, names, values, condition, rules
+        )
         conn.execute(
             CheckDatas.check_sql(self.__responce, "update"),
             "update operation"
         )
 
     def __validate(self, table, names, values, condition, rules):
+        names = [names] if (type(names) != list) and (type(names) != tuple) else names
+        values = [values] if (type(values) != list) and (type(values) != tuple) else values
+
         CheckDatas.check_str(table.name)
         sql_responce = "UPDATE {} SET ".format(table.name)
 
@@ -162,7 +170,9 @@ class Operations():
                 insert_query = Insert(self.__connection, table, names, values)
                 self.query_handler.add_query(insert_query)
             else:
-                insert_query = Insert(self.__connection, table, names, values, rules)
+                insert_query = Insert(
+                    self.__connection, table, names, values, rules
+                )
                 self.query_handler.add_query(insert_query)
 
     def select(self, table, names, condition=" "):
@@ -183,17 +193,17 @@ class Operations():
             for table_ in table.tables:
                 for column in datas[table_.name]["columns"]:
                     columns += f"{table_.name}.{column}, "
-            columns = columns[0 : len(columns) - 2]
+            columns = columns[0: len(columns) - 2]
 
-            r = "SELECT {} FROM {} WHERE {}.rowID".format(
+            responce = "SELECT {} FROM {} WHERE {}.rowID".format(
                 columns,
                 ', '.join([table_.name for table_ in table.tables]),
                 '.rowID = '.join([table_.name for table_ in table.tables]),
             )
 
-            self.__connection.execute(r)
+            self.__connection.execute(responce)
             return self.__connection.cursor.fetchall()
-        except AttributeError as e:
+        except AttributeError as exception:
             select_query = Select(self.__connection, table, names, condition)
             self.query_handler.add_query(select_query)
             return select_query.get()

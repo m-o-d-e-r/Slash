@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 28, in <module>
+    1 / 0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 13, in <module>
+    print(log.path())
+TypeError: path() missing 1 required positional argument: 'file'
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 29, in <module>
+    1 / 0
+ZeroDivisionError: division by zero
