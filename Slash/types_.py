@@ -82,19 +82,12 @@ class Rules:
         
         return False
 
-
     def __check_path(self, path):
         return os.path.exists(path)
 
     def read_json(self, path: str): ...
-#        self.__check_path(path)
-#        with open(path, "r") as file_:
-#            ...
 
     def write_json(self, path: str): ...
-#        path = os.path.dirname(path) + "/"
-#        with open(path + "/rules.json", "w") as file_:
-#            json.dump(self.__rules, file_, indent=4)
 
 
 class ORMType:
@@ -192,6 +185,9 @@ class Column:
             self.__column_type
         )
 
+    def set_sql_type(self, column):
+        self.__column_sql_type = BasicTypes.DB_TYPES_LIST.get(column)
+
     @property
     def type(self):
         """Return orm-type of the column"""
@@ -200,6 +196,10 @@ class Column:
     @property
     def name(self):
         """Return name of the column"""
+        return self.__column_name
+
+    def set_name(self, name):
+        self.__column_name = name
         return self.__column_name
 
     @property
@@ -269,7 +269,7 @@ class TablesManager:
         name_ = "U".join(name_)
 
         class UnitedTable(
-            Table, metaclass=TableMeta, parent=Table,
+            Table, metaclass=UnitedTableMeta, parent=Table,
             U_table_name=name_, U_table_columns=columns_u,
             U_tables=tables
         ):
@@ -290,6 +290,21 @@ class TablesManager:
         u_table.set_columns = lambda x=None: print("Not allowed for united tables")
 
         return u_table
+
+
+class TableMeta(type):
+    def __new__(cls, name, parrent, args: dict):
+        columns = []
+        for k in args:
+            if type(args[k]) is Column:
+                args[k].set_name(k)
+                columns.append(args[k])
+
+        for column in columns:
+            args.pop(column.name)
+
+        args.update({"columns": columns})
+        return type(name, parrent, args)
 
 
 class Table:
@@ -320,7 +335,7 @@ class Table:
         self.__columns = names
 
 
-class TableMeta(type):
+class UnitedTableMeta(type):
     """Metaclass for Table, will create UnatedTable"""
     def __new__(cls, name, parents, namespace, **kwargs):
         parent_name: Table = kwargs["parent"](kwargs["U_table_name"])

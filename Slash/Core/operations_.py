@@ -14,6 +14,9 @@ class Insert():
         )
 
     def __validate(self, table, names, values, rules):
+        names = [names] if (type(names) != list) and (type(names) != tuple) else names
+        values = [values] if (type(values) != list) and (type(values) != tuple) else values
+
         CheckDatas.check_str(table.name)
 
         for name in names:
@@ -93,6 +96,8 @@ class Select():
         self.__names = names
 
     def __validate(self, table, names, condition):
+        names = [names] if (type(names) != list) and (type(names) != tuple) else names
+
         CheckDatas.check_str(table.name)
 
         return "SELECT {} FROM {}{}".format(
@@ -105,6 +110,8 @@ class Select():
             CheckDatas.check_sql(self.__responce, "select"),
             "select operation"
         )
+
+        print(self.__responce)
 
         return DataSet(
             self.__table__name, self.__names, self.__conn.fetchall()

@@ -1,5 +1,4 @@
 from typing import Final, final
-import traceback
 import logging
 import string
 import sys
@@ -45,17 +44,20 @@ class Connection:
             self.cursor.execute(request)
             self.__connection.commit()
         except Exception as e:
-            if os.environ.get("redirect_error") != "True":
-                print(e)
-            self.__logger.info(
-                "Unsuccessful commit: \n\t<< {} >>\n\t{}\n\n{}".format(request, message, e)
-            )
+            if self.__logger is not False:
+                if os.environ.get("redirect_error") != "True":
+                    print(e)
+                self.__logger.info(
+                    "Unsuccessful commit: \n\t<< {} >>\n\t{}\n\n{}".format(request, message, e)
+                )
         else:
-            self.__logger.info("Successful commit: {}".format(message))
+            if self.__logger is not False:
+                self.__logger.info("Successful commit: {}".format(message))
 
     def close(self):
         self.__connection.close()
-        self.__logger.info("Session closed")
+        if self.__logger is not False:
+            self.__logger.info("Session closed")
 
     def fetchall(self):
         return self.cursor.fetchall()

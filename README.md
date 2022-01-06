@@ -2,44 +2,51 @@
   - Операции с объединенными таблицами
   - Можно будет создавать откат (вот прям скоро)
   - Можно будет пользовательськие правила закинуть в json
+  - Можно будет вызывать операцию из таблицы
 
 # Новое
+  - пофиксил пару багов при передаче (names, values) в операциях
+  - добавлена возможность создавать таблицу как класс
   - новый тип для данных Hidden (для паролей, на выходе получается хеш)
   - можно перенаправить ошибки в json
 
 ```Python
-from Slash.Core.core import Connection, Logger
-from Slash.Core.operations_ import Operations, SQLConditions
-from Slash.types_ import Column, Hidden, Text, Int, Table
+from Slash.types_ import Table, TableMeta, Column, Int, Text, Hidden
+from Slash.Core.operations_ import Operations
+from Slash.Core.core import Connection
 
 
-log = Logger(__name__, __file__, redirect_error=True)
-log.info("New session")
+conn = Connection("Slash", "postgres", "root", "127.0.0.1", 5432)
 
 
-conn = Connection(
-    "Slash", "postgres", "root", "127.0.0.1", 5432,
-    logger=log
-)
+class TestModel(Table, metaclass=TableMeta): # первое это наша таблица, второе это мета-класс(он создает колонки с именем)
+    rating = Column(Int, None) # тут можно передать любое имя, но оно будет переименовано в имя атрибута
+    year = Column(Text, None)  # второй параметр обязателен
+    password = Column(Hidden, None)
 
 
-
-table = Table("testhidden")
-table.set_columns(
-    Column(Int, "age"),
-    Column(Text, "name"),
-    Column(Hidden, "password")
-)
+table = TestModel("test25")
 conn.create(table)
 
-# тут было сделано пару фиксов(под капотом)
+for i in table.columns:
+    print(i.name)
 
-#Operations(conn).insert(table, ("age", "name", "password"), (Int(17), Text("Bogdan"), Hidden("password")))
-#print(Operations(conn).select(table, ["age", "password"]).get_data())
-#Operations(conn).update(table, ["age"], (Int(18)))
 
+print()
+
+
+table2 = Table("test25")
+table2.set_columns(
+    Column(Int, "rating"),
+    Column(Text, "year"),
+    Column(Hidden, "password")
+)
+
+for i in table2.columns:
+    print(i.name)
 
 conn.close()
+
 
 ```
 
@@ -234,6 +241,7 @@ print(
 )
 ```
 # PyPI
+<a href="https://pypi.org/project/Slash92/0.2.1.0/">0.2.1.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.2.0/">0.2.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.9/">0.1.9</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.8/">0.1.8</a><br>
@@ -250,7 +258,7 @@ print(
     python setup.py bdist_wheel
     
 # Установка через .whl
-    pip install Slash92-0.1.9-py3-none-any.whl
+    pip install Slash92-0.2.1-py3-none-any.whl
 
 # Установка через setup.py
     python setup.py install
