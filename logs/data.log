@@ -1678,3 +1678,11 @@ LINE 1: INSERT INTO testhidden (age, name, passsword) VALUES (17, 'B...
 [2022-01-04 19:07:15,009]:[6996-INFO]:[__main__]:[Successful commit: create operation]
 [2022-01-04 19:07:15,017]:[6996-INFO]:[__main__]:[Successful commit: update operation]
 [2022-01-04 19:07:15,017]:[6996-INFO]:[__main__]:[Session closed]
+
+[2022-01-08 20:06:13,067]:[7400-INFO]:[__main__]:[New session]
+[2022-01-08 20:06:13,762]:[7400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-08 20:06:14,333]:[7400-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-08 20:06:14,337]:[7400-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-08 20:06:14,371]:[7400-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-08 20:06:14,374]:[7400-INFO]:[__main__]:[Successful commit: rollback]
+[2022-01-08 20:06:14,374]:[7400-INFO]:[__main__]:[Session closed]

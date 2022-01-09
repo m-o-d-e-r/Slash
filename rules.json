@@ -1,0 +1,31 @@
+{
+    "type_int": {
+        "min": 0,
+        "max": 255,
+        "type": "int",
+        "valide_foo": "valid_int"
+    },
+    "type_text": {
+        "length": 100,
+        "valide_foo": "valid_text"
+    },
+    "type_bool": {
+        "symbols": [
+            true,
+            false,
+            1,
+            0
+        ],
+        "valide_foo": "valid_bool"
+    },
+    "type_date": {
+        "do": "do",
+        "valide_foo": "valid_date"
+    },
+    "type_hidden": {
+        "available": [
+            "str"
+        ],
+        "valide_foo": "valid_hidden"
+    }
+}
