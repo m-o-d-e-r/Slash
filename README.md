@@ -3,50 +3,30 @@
   - Можно будет создавать откат (вот прям скоро)
   - Можно будет пользовательськие правила закинуть в json
   - Можно будет вызывать операцию из таблицы
+  - Следующим шагом сделаю норм(+-) документацию
 
 # Новое
-  - пофиксил пару багов при передаче (names, values) в операциях
-  - добавлена возможность создавать таблицу как класс
-  - новый тип для данных Hidden (для паролей, на выходе получается хеш)
-  - можно перенаправить ошибки в json
+  - добавлена возможность записи/чтения правил из json-фалов(rules.json)<p>
+     &emsp;Есть два класса которые позволяют это сделать(JsonConverter, WinJsonConverter)<br>
+        `JsonConverter` - под все платформы<br>
+        `WinJsonConverter` - только под винду(так как для линухи .so)<br>
+
+      &emsp;Решил так сделать для эксперимента.
+      А вообще хочу написать какую-то фичу на плюсах и портировать под ORM.<br>
+      Мб какой-то валидатор, или парсер. Ну или сделаю пачку модулей для каких-то расчетов. <a href="#WinJsonConverter">Помощь в сборке WinJsonConverter</a>(сборка под линуху такая же).
+</p>
+
 
 ```Python
-from Slash.types_ import Table, TableMeta, Column, Int, Text, Hidden
-from Slash.Core.operations_ import Operations
-from Slash.Core.core import Connection
+from Slash.types_ import Rules, WinJsonConverter, JsonConverter
 
 
-conn = Connection("Slash", "postgres", "root", "127.0.0.1", 5432)
+rule = Rules()
 
+t = WinJsonConverter(rule.get_rules()) # передача правил для записи в rules.json
+t.write()
 
-class TestModel(Table, metaclass=TableMeta): # первое это наша таблица, второе это мета-класс(он создает колонки с именем)
-    rating = Column(Int, None) # тут можно передать любое имя, но оно будет переименовано в имя атрибута
-    year = Column(Text, None)  # второй параметр обязателен
-    password = Column(Hidden, None)
-
-
-table = TestModel("test25")
-conn.create(table)
-
-for i in table.columns:
-    print(i.name)
-
-
-print()
-
-
-table2 = Table("test25")
-table2.set_columns(
-    Column(Int, "rating"),
-    Column(Text, "year"),
-    Column(Hidden, "password")
-)
-
-for i in table2.columns:
-    print(i.name)
-
-conn.close()
-
+t.read(rule) # чтение
 
 ```
 
@@ -263,5 +243,28 @@ print(
 # Установка через setup.py
     python setup.py install
 
-Скоро допишу и поправлю текст)
-Также буду изменять синтаксис условий
+# Собрать WinJsonConverter
+<div id="WinJsonConverter"></div>
+&emsp;Для начала cкопируйте исходник ORM
+    
+    git clone https://github.com/m-o-d-e-r/Slash.git
+  &emsp;<s>Если вас у вас не появился синий экран</s> найдите файл `setup_for_cython.py`, он понадобится для сборки нашей динамической либы.
+  Потом с помощью <s>древней</s> команды запустите компиляцию `utils_for_rules.pyx`(этот файл тусит в `Slash/utilities/`, надо чтобы он был в одной папке с `setup_for_cython.py` или изменить путь в `setup_for_cython.py`). В `Slash/utilities/` находится: исходник `WinJsonConverter` и уже скомпилирования его версия, это значит что вы можете не собирать этот модуль заново.
+
+    python setup_for_cython.py build_ext --inplace
+
+  &emsp;<s>Если с вашего монитора ничего не вылезло</s> можете смело перемещать файл с расширением .pyd в `Slash/utilities/`.<br><br><br>
+  <b>!!!Важно!!!</b><br>
+  
+|  Можно  |       Нельзя       |
+| ------- | ------------------ |
+| Добавлять что-то новое   | Менять имя файла   |
+| Гладить кота при сборке(+2 к удаче) | Пить томатный сок  |
+
+&emsp;Если есть какие-то трудности в сборке пишите <a href="https://t.me/M_O_D_E_R">сюда</a>.
+
+
+  <b>!!!Не сильно важно, но к сути!!!</b><br>
+  `Windows` - .pyd<br>
+  `Linux` - .so<br>
+&emsp;Под каждую ось свое расширение, но питон всё понимает. + вы не будете импортировать эту либу напрямую, хотя конечно это возможно.
