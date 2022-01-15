@@ -16,18 +16,18 @@ from ..types_ import QueryQueue, BasicTypes
 
 class Connection:
     def __init__(self, dbname, user, password, host, port, *, logger=False):
-        self.dbname = dbname
-        self.user = user
-        self.password = password
-        self.host = host
-        self.port = port
+        self._dbname = dbname
+        self._user = user
+        self._password = password
+        self._host = host
+        self._port = port
 
         self.__connection = psycopg2.connect(
-            dbname=self.dbname,
-            user=self.user,
-            password=self.password,
-            host=self.host,
-            port=self.port
+            dbname=self._dbname,
+            user=self._user,
+            password=self._password,
+            host=self._host,
+            port=self._port
         )
         self.cursor = self.__connection.cursor()
 

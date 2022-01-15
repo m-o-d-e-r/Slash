@@ -1,10 +1,20 @@
-from Slash.types_ import Rules, WinJsonConverter, JsonConverter
+from Slash.types_ import AutoField, Column, Table, Int, Text
+from Slash.Core.core import Connection, SQLConditions
+from Slash.Core.operations_ import Operations
 
+conn = Connection(
+    "Slash", "postgres", "root", "127.0.0.1", 5432
+)
 
-rule = Rules()
-t = WinJsonConverter(rule.get_rules())
-t.write()
+table = Table("test1")
+table.set_columns(Column(Int, "age"), Column(Text, "name"))
+conn.create(table)
 
-#print(t.read(rule))
-#print()
-#print(rule.get_rules())
+Operations(conn).update(
+    table,
+    ("name", ),
+    (Text("33"), ),
+    SQLConditions.where(
+        "age", SQLConditions.LE, "3"
+    )
+)

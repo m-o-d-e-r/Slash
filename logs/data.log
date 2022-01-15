@@ -1686,3 +1686,48 @@ LINE 1: INSERT INTO testhidden (age, name, passsword) VALUES (17, 'B...
 [2022-01-08 20:06:14,371]:[7400-INFO]:[__main__]:[Successful commit: delete operation]
 [2022-01-08 20:06:14,374]:[7400-INFO]:[__main__]:[Successful commit: rollback]
 [2022-01-08 20:06:14,374]:[7400-INFO]:[__main__]:[Session closed]
+
+[2022-01-15 12:47:33,321]:[4552-INFO]:[__main__]:[Unsuccessful commit: 
+	<< CREATE TABLE IF NOT EXISTS testdoc1 (rowID SERIAL PRIMARY KEY, userid SERIAL PRIMARY KEY, age INT, name TEXT) >>
+	create operation
+
+ОШИБКА:  таблица "testdoc1" не может иметь несколько первичных ключей
+LINE 1: ...testdoc1 (rowID SERIAL PRIMARY KEY, userid SERIAL PRIMARY KE...
+                                                             ^
+]
+
+[2022-01-15 12:48:10,229]:[3104-INFO]:[__main__]:[Unsuccessful commit: 
+	<< CREATE TABLE IF NOT EXISTS testdoc1 (rowID SERIAL PRIMARY KEY, userid SERIAL PRIMARY KEY, age INT, name TEXT) >>
+	create operation
+
+ОШИБКА:  таблица "testdoc1" не может иметь несколько первичных ключей
+LINE 1: ...testdoc1 (rowID SERIAL PRIMARY KEY, userid SERIAL PRIMARY KE...
+                                                             ^
+]
+
+[2022-01-15 12:48:58,173]:[5948-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-15 12:49:35,920]:[5008-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-15 12:52:29,463]:[4212-INFO]:[__main__]:[Successful commit: create operation]
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test2.py", line 23, in <module>
+    conn.create(table)
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 66, in create
+    Create(table, BasicTypes.TYPES_LIST, self)
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 73, in __init__
+    if self.__validate(types_list):
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 83, in __validate
+    CheckDatas.check_str(column.name)
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 139, in check_str
+    raise SlashBadColumnNameError(
+Slash.Core.exceptions_.SlashBadColumnNameError: Error:
+
+Bad name for column of data base
+Name: bor_n
+Symbol: _
+
+[2022-01-15 13:20:45,482]:[6632-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-15 13:21:15,774]:[3464-INFO]:[__main__]:[Successful commit: create operation]

@@ -40,7 +40,7 @@ class Rules:
                 "valide_foo": self.valid_hidden
             }
         }
-        self.user_rules = {}
+        self._user_rules = {}
 
     def get_rules(self):
         """Return current rules"""
@@ -48,12 +48,12 @@ class Rules:
 
     def get_user_rules(self):
         """Return user rules"""
-        return self.user_rules
+        return self._user_rules
 
     def new_rules(self, rules: dict):
         """Create new rules(user rules)"""
-        self.user_rules = rules
-        return self.user_rules
+        self._user_rules = rules
+        return self._user_rules
 
     def valid_int(self, int_val, rule):
         """Validate int"""
@@ -93,10 +93,6 @@ class Rules:
 
     def __check_path(self, path):
         return os.path.exists(path)
-
-    def read_json(self, path: str): ...
-
-    def write_json(self, path: str): ...
 
 
 class JsonConverter:
