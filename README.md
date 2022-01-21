@@ -1,10 +1,11 @@
 # Скоро
   - Операции с объединенными таблицами
   - Можно будет создавать откат (вот прям скоро)
-  - Можно будет вызывать операцию из таблицы
 
 # Новое
-  - добавлена возможность записи/чтения правил из json-фалов(rules.json)<p>
+  - Операции для UnitedTable(test)
+  - fix SQLConditions
+  - Добавлена возможность записи/чтения правил из json-фалов(rules.json)<p>
      &emsp;Есть два класса которые позволяют это сделать(JsonConverter, WinJsonConverter)<br>
         `JsonConverter` - под все платформы<br>
         `WinJsonConverter` - только под винду(так как для линухи .so)<br>
@@ -13,6 +14,68 @@
       А вообще хочу написать какую-то фичу на плюсах и портировать под ORM.<br>
       Мб какой-то валидатор, или парсер. Ну или сделаю пачку модулей для каких-то расчетов. <a href="#WinJsonConverter">Помощь в сборке WinJsonConverter</a>(сборка под линуху такая же).
 </p>
+
+```Python
+from Slash.Core.core import Connection, Logger, SQLConditions
+from Slash.Core.operations_ import Operations
+from Slash.types_ import (
+    Table, TablesManager, TableMeta,
+    Text, Int, Column
+)
+
+conn = Connection(
+    "Slash", "postgres", "root", "127.0.0.1", 5432,
+    logger=Logger(__name__, __file__, redirect_error=True)
+)
+
+
+class Authors(Table, metaclass=TableMeta):
+    author = Column(Text, None)
+    author_status = Column(Int, None)
+
+
+class Reports(Table, metaclass=TableMeta):
+    author = Column(Text, None)
+    report = Column(Text, None)
+
+
+authors = Authors("authors")
+reports = Reports("reports")
+
+conn.create(authors)
+conn.create(reports)
+
+
+united_table = TablesManager.unite(authors, reports)
+
+Operations(conn).insert(
+    united_table,
+    ("author", "author_status", "report"), 
+    (Text("M_O_D_E_R"), Int(100), Text("Hello world"))
+)
+
+print(
+    Operations(conn).select(
+        united_table,
+        ("author", "author_status", "report"),
+        SQLConditions.where(
+            "author", SQLConditions.EQ, "M_O_D_E_R", SQLConditions.AND, "rowid",  SQLConditions.EQ, 5
+        )
+    ).get_data()
+)
+
+Operations(conn).delete(
+    united_table,
+    SQLConditions.where("rowid", SQLConditions.EQ, 4)
+)
+
+Operations(conn).update(
+    united_table,
+    ("author"),
+    (Text("test_name"))
+)
+
+```
 
 
 # Файлы
@@ -283,6 +346,7 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
+<a href="https://pypi.org/project/Slash92/0.2.3/">0.2.3</a><br>
 <a href="https://pypi.org/project/Slash92/0.2.1.0/">0.2.1.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.2.0/">0.2.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.1.9/">0.1.9</a><br>

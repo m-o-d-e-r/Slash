@@ -2,5 +2,5 @@ from distutils.core import setup
 from Cython.Build import cythonize
 
 setup(
-    ext_modules=cythonize('utils_for_rules.pyx'),
+    ext_modules=cythonize('kolatz.pyx'),
 )

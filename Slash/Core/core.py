@@ -4,7 +4,6 @@ import string
 import sys
 import re
 import os
-
 import psycopg2
 
 from .exceptions_ import (
@@ -62,16 +61,16 @@ class Connection:
     def fetchall(self):
         return self.cursor.fetchall()
 
-    def create(self, table):
-        Create(table, BasicTypes.TYPES_LIST, self)
+    def create(self, table, operation_obj=None):
+        Create(table, BasicTypes.TYPES_LIST, self, operation_obj)
 
 
 class Create():
-    def __init__(self, table, types_list, conn: Connection):
+    def __init__(self, table, types_list, conn: Connection, operation_obj):
         self.connection = conn
         self.table = table
         if self.__validate(types_list):
-            self.__create(table)
+            self.__create(table, operation_obj)
 
     def __validate(self, types_list):
         CheckDatas.check_str(self.table.name)
@@ -84,7 +83,10 @@ class Create():
 
         return True
 
-    def __create(self, table):
+    def __create(self, table, operation_obj):
+        if operation_obj:
+            table.op = operation_obj(self.connection, table)
+
         request = "CREATE TABLE IF NOT EXISTS {} (rowID SERIAL PRIMARY KEY, {})".format(
             table.name,
             ", ".join([f"{col.name} {col.sql_type}" for col in table.columns])
@@ -109,7 +111,28 @@ class SQLConditions:
 
     @staticmethod
     def where(*condition):
-        return " WHERE " + " ".join(list(map(str, condition)))
+        output_condition = " WHERE " + " ".join(list(map(str, condition)))
+
+        main_templates = re.findall(r"[a-zA-Z_0-9]* = [a-zA-Z_0-9]*", output_condition)
+        new_condition = []
+        for template in main_templates:
+            item = template.split()[-1]
+            try:
+                int(template.split()[-1])
+                item = str(item)
+            except:
+                item = f"'{item}'"
+            template = template.split()
+            template[-1] = item
+            template = " ".join(template)
+            
+            new_condition.append(template)
+        
+        new_condition =  " AND ".join(new_condition)
+        new_condition = " WHERE " + new_condition
+
+        print(CheckDatas.check_str(new_condition))
+        return new_condition
 
     @staticmethod
     def order_by(column, *, desc=""):
@@ -124,18 +147,20 @@ class SQLConditions:
 
 class CheckDatas:
     SQL_TEMPLATES: Final = {
-        "insert": r"INSERT INTO [a-zA-Z0-9]* [)()a-zA-Z,\s]* VALUES [a-zA-Z)(0-9,\s'-]*",
-        "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9]* [)()a-zA-Z0-9',\s]*",
-        "update": r"UPDATE [a-zA-Z0-9]* SET [a-zA-Z0-9\s<>!=',]*",
-        "delete": r"DELETE FROM [a-zA-Z0-9]* [a-zA-Z0-9\s<>!=]*",
-        "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*.]*"
+        "insert": r"INSERT INTO [a-zA-Z0-9_]* [)()a-zA-Z,\s_]* VALUES [a-zA-Z)(0-9,\s'@._]*",
+        "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9',\s_]*",
+        "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!=',_]*",
+        "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>!=_.]*",
+        "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._]*"
     }
     def __init__(self): ...
 
     @staticmethod
     def check_str(str_: str):
+        datas = string.punctuation.replace("@", "").replace(".", "").replace("_", "").replace("-", "")
+        datas = datas.replace("=", "").replace(">", "").replace("<", "").replace("'", "")
         for char_ in str_:
-            if char_ in string.punctuation:
+            if char_ in datas:
                 raise SlashBadColumnNameError(
                     f"Error:\n\nBad name for column of data base\nName: {str_}\nSymbol: {char_}"
                 )

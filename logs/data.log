@@ -1731,3 +1731,2187 @@ Symbol: _
 [2022-01-15 13:20:45,482]:[6632-INFO]:[__main__]:[Successful commit: create operation]
 
 [2022-01-15 13:21:15,774]:[3464-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:06:12,915]:[1364-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:06:12,922]:[1364-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:06:12,957]:[1364-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:07:04,546]:[3532-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:07:04,546]:[3532-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:07:12,025]:[7228-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:07:12,027]:[7228-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:08:13,680]:[9056-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:08:13,688]:[9056-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:08:13,688]:[9056-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:09:00,083]:[5136-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:00,083]:[5136-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:00,083]:[5136-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:09:09,472]:[8172-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:09,472]:[8172-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:09,480]:[8172-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:09:15,807]:[2588-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:15,807]:[2588-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:15,815]:[2588-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:09:20,457]:[7324-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:20,457]:[7324-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:20,473]:[7324-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:09:42,436]:[8108-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:42,444]:[8108-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:09:42,444]:[8108-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:10:28,750]:[7096-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:10:28,750]:[7096-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:10:28,750]:[7096-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:11:11,800]:[6452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:11:11,800]:[6452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:11:11,800]:[6452-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:12:10,625]:[5080-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:12:10,633]:[5080-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:12:10,633]:[5080-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:12:27,130]:[3832-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:12:27,130]:[3832-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:12:27,138]:[3832-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:13:24,115]:[5432-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:13:24,115]:[5432-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:13:24,123]:[5432-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:13:49,014]:[9044-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:13:49,014]:[9044-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:13:49,022]:[9044-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:14:18,075]:[8696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:14:18,075]:[8696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:14:18,083]:[8696-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:14:41,705]:[3848-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:14:41,705]:[3848-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:14:57,296]:[5364-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:14:57,296]:[5364-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:15:15,273]:[5700-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:15:15,273]:[5700-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:15:26,214]:[3784-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:15:26,214]:[3784-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:15:26,222]:[3784-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:16:01,830]:[4672-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:16:01,832]:[4672-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:16:01,835]:[4672-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:17:22,156]:[1704-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:17:22,158]:[1704-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:17:22,162]:[1704-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:17:55,914]:[6772-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:17:55,921]:[6772-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:17:55,921]:[6772-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:18:10,828]:[7364-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:18:10,830]:[7364-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:18:10,836]:[7364-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:18:25,182]:[6384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:18:25,182]:[6384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:18:25,182]:[6384-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:19:12,241]:[8648-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:19:12,241]:[8648-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:19:12,249]:[8648-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO authorsUreports (author, author_status, report) VALUES ('M_O_D_E_R',100, 'Hi i am developer') >>
+	insert operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: INSERT INTO authorsUreports (author, author_status, report) ...
+                    ^
+]
+
+[2022-01-18 21:19:29,590]:[7620-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:19:29,590]:[7620-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:19:50,878]:[1812-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:19:50,879]:[1812-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:21:23,153]:[5224-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:21:23,155]:[5224-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:21:31,319]:[9032-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:21:31,327]:[9032-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:21:32,130]:[3000-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:21:32,130]:[3000-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:21:55,916]:[7264-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:21:55,923]:[7264-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:22:38,555]:[7292-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:22:38,555]:[7292-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:22:43,130]:[1364-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:22:43,138]:[1364-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:22:48,326]:[844-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:22:48,326]:[844-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:22:56,660]:[8704-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:22:56,660]:[8704-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:23:06,958]:[8244-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:23:06,959]:[8244-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:23:22,052]:[8756-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:23:22,052]:[8756-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:23:23,149]:[3548-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:23:23,151]:[3548-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:23:30,739]:[4844-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:23:30,739]:[4844-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:23:40,776]:[4988-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:23:40,776]:[4988-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:24:02,667]:[3476-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:24:02,669]:[3476-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:25:33,524]:[5396-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:25:33,532]:[5396-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:26:40,124]:[6704-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:26:40,124]:[6704-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:26:49,638]:[1868-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:26:49,638]:[1868-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:27:07,837]:[8704-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:27:07,837]:[8704-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:28:07,147]:[5140-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:28:07,147]:[5140-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:28:16,226]:[8016-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:28:16,227]:[8016-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:26:26,189]:[8420-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:26:26,197]:[8420-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:26:37,335]:[4356-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:26:37,337]:[4356-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:26:50,988]:[1364-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:26:50,988]:[1364-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:27:06,559]:[2056-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:27:06,560]:[2056-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:27:31,925]:[8736-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:27:31,925]:[8736-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:28:31,043]:[8600-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:28:31,045]:[8600-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:28:53,710]:[1496-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:28:53,710]:[1496-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:29:23,231]:[3232-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:29:23,231]:[3232-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:29:31,668]:[7108-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:29:31,676]:[7108-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:29:53,743]:[8208-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:29:53,743]:[8208-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:30:07,169]:[8924-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:30:07,169]:[8924-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:30:20,602]:[6728-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:30:20,604]:[6728-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:30:38,130]:[7800-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:30:38,130]:[7800-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:30:44,563]:[6720-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:30:44,563]:[6720-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:31:02,875]:[5568-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:31:02,875]:[5568-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:32:12,498]:[8924-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:32:12,498]:[8924-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:32:23,253]:[2020-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:32:23,253]:[2020-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:32:43,418]:[5828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:32:43,418]:[5828-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:33:19,188]:[6252-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:33:19,188]:[6252-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:34:45,258]:[2056-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:34:45,258]:[2056-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:35:00,627]:[4908-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:35:00,629]:[4908-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:35:25,975]:[8556-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:35:25,977]:[8556-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:38:01,770]:[1996-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:38:01,778]:[1996-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:38:24,744]:[9136-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:38:24,744]:[9136-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:38:54,770]:[3800-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:38:54,770]:[3800-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:39:15,204]:[9164-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:39:15,204]:[9164-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:39:21,813]:[5028-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:39:21,821]:[5028-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:39:38,800]:[1496-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:39:38,800]:[1496-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:41:55,695]:[7756-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:41:55,696]:[7756-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:42:01,149]:[7372-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:42:01,151]:[7372-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:42:07,388]:[8704-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:42:07,388]:[8704-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:42:19,669]:[7268-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:42:19,669]:[7268-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:42:29,857]:[4736-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:42:29,857]:[4736-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:44:31,500]:[7508-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:44:31,502]:[7508-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:44:47,594]:[2428-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:44:47,594]:[2428-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:44:59,652]:[8700-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:44:59,652]:[8700-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:45:26,623]:[7176-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:45:26,623]:[7176-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:47:31,558]:[8284-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:47:31,558]:[8284-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:47:40,249]:[5420-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:47:40,249]:[5420-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:47:49,716]:[4536-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:47:49,724]:[4536-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-18 21:49:34,270]:[7320-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-18 21:49:34,272]:[7320-INFO]:[__main__]:[Successful commit: create operation]
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 8, in <module>
+    conn = Connection(
+TypeError: __init__() takes 6 positional arguments but 7 were given
+
+[2022-01-19 09:36:57,877]:[5652-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:36:57,877]:[5652-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:38:10,833]:[6312-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:38:10,840]:[6312-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:38:36,486]:[2104-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:38:36,486]:[2104-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:38:45,546]:[4824-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:38:45,554]:[4824-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:38:55,902]:[4760-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:38:55,902]:[4760-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:39:09,301]:[6192-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:39:09,301]:[6192-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:39:24,920]:[6172-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:39:24,928]:[6172-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:39:35,785]:[6432-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:39:35,786]:[6432-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:40:52,958]:[3380-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:40:52,959]:[3380-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:41:57,250]:[2104-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:41:57,258]:[2104-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:42:09,354]:[3344-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:42:09,362]:[3344-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:42:22,744]:[676-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:42:22,751]:[676-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 09:43:24,716]:[6368-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:43:24,717]:[6368-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:43:24,878]:[6368-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 09:43:24,881]:[6368-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 09:44:25,079]:[4028-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:44:25,081]:[4028-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:44:25,086]:[4028-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 34, in <module>
+    Operations(conn).insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 189, in insert
+    self.query_handler.add_query(insert_query)
+NameError: name 'insert_query' is not defined
+
+[2022-01-19 09:44:38,128]:[3844-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:44:38,128]:[3844-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:44:38,136]:[3844-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 34, in <module>
+    Operations(conn).insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 189, in insert
+    self.query_handler.add_query(insert_query)
+NameError: name 'insert_query' is not defined
+
+[2022-01-19 09:45:22,641]:[6848-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:45:22,641]:[6848-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:45:22,681]:[6848-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 09:45:22,689]:[6848-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 09:45:40,639]:[2180-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:45:40,639]:[2180-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:45:40,647]:[2180-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 09:45:40,647]:[2180-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 09:45:57,996]:[4684-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:45:57,996]:[4684-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:45:58,003]:[4684-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 09:45:58,003]:[4684-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 09:57:21,069]:[7164-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:57:21,070]:[7164-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 30, in <module>
+    a
+NameError: name 'a' is not defined
+
+[2022-01-19 09:57:27,569]:[1328-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:57:27,571]:[1328-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 30, in <module>
+    a
+NameError: name 'a' is not defined
+
+[2022-01-19 09:57:44,787]:[6836-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 09:57:44,789]:[6836-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 10:13:24,746]:[6696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:13:24,746]:[6696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:13:24,769]:[6696-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 10:13:24,769]:[6696-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:13:30,314]:[6964-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:13:30,314]:[6964-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:13:30,314]:[6964-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 10:13:30,322]:[6964-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:13:32,862]:[5680-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:13:32,864]:[5680-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:13:32,870]:[5680-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 10:13:32,874]:[5680-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:20:34,788]:[5784-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:20:34,795]:[5784-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:20:34,819]:[5784-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 10:20:34,819]:[5784-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:21:21,983]:[6900-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:21:21,983]:[6900-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:21:21,991]:[6900-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:21:52,916]:[4876-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:21:52,916]:[4876-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:21:52,916]:[4876-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:22:04,782]:[4768-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:22:04,782]:[4768-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:22:04,791]:[4768-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:23:20,454]:[4536-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:23:20,461]:[4536-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:23:20,461]:[4536-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:22:48,884]:[4076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:22:49,006]:[4076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:22:49,010]:[4076-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 10:22:49,014]:[4076-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:24:01,971]:[2940-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:24:01,971]:[2940-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:24:01,979]:[2940-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-19 10:24:01,979]:[2940-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-19 10:34:33,410]:[1076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:34:33,413]:[1076-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 10:35:58,333]:[6280-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:35:58,341]:[6280-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 10:36:40,695]:[6904-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:36:40,695]:[6904-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:36:40,806]:[6904-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status, report FROM authorsUreports  >>
+	select operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: SELECT author, author_status, report FROM authorsUreports 
+                                                  ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 212, in select
+    print(select_query.get())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-19 10:38:36,906]:[1076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:38:36,908]:[1076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:38:36,910]:[1076-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status, report FROM authorsUreports  >>
+	select operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: SELECT author, author_status, report FROM authorsUreports 
+                                                  ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 212, in select
+    print(select_query.get())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-19 10:38:42,670]:[2944-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:38:42,670]:[2944-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:38:42,670]:[2944-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status, report FROM authorsUreports  >>
+	select operation
+
+ОШИБКА:  отношение "authorsureports" не существует
+LINE 1: SELECT author, author_status, report FROM authorsUreports 
+                                                  ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 212, in select
+    print(select_query.get(), 1)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-19 10:41:23,544]:[5816-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:41:23,545]:[5816-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 10:41:36,267]:[6400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:41:36,269]:[6400-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 10:41:40,295]:[4684-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:41:40,297]:[4684-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:41:40,300]:[4684-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 10:41:40,309]:[4684-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 10:41:48,708]:[4456-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:41:48,715]:[4456-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:41:48,715]:[4456-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 10:41:48,715]:[4456-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 10:43:25,883]:[2040-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:43:25,883]:[2040-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 10:43:25,883]:[2040-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 10:43:25,891]:[2040-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:05:38,442]:[3588-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:05:38,442]:[3588-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:05:38,442]:[3588-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:05:38,450]:[3588-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:12:49,654]:[7124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:12:49,654]:[7124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:12:49,654]:[7124-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:12:49,662]:[7124-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:13:28,404]:[5856-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:13:28,404]:[5856-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:13:28,412]:[5856-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:13:28,412]:[5856-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:13:42,583]:[2028-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:13:42,585]:[2028-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:13:42,588]:[2028-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:13:42,592]:[2028-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:13:52,178]:[2876-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:13:52,178]:[2876-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:13:52,178]:[2876-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:13:52,186]:[2876-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:14:05,577]:[6436-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:14:05,578]:[6436-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:14:05,582]:[6436-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:14:05,585]:[6436-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:14:26,239]:[6944-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:14:26,239]:[6944-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:14:26,247]:[6944-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:14:26,247]:[6944-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:14:55,956]:[7020-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:14:55,956]:[7020-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:14:55,963]:[7020-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:14:55,963]:[7020-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:15:38,655]:[4316-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:15:38,663]:[4316-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:15:38,663]:[4316-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:15:38,670]:[4316-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:15:57,661]:[7124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:15:57,661]:[7124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:15:57,661]:[7124-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:15:57,661]:[7124-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:16:22,555]:[384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:16:22,555]:[384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:16:22,563]:[384-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:16:22,563]:[384-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:16:36,230]:[3192-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:16:36,230]:[3192-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:16:36,238]:[3192-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:16:36,238]:[3192-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:17:50,294]:[5688-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:17:50,294]:[5688-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:17:50,294]:[5688-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:17:50,302]:[5688-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:18:00,723]:[6592-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:18:00,731]:[6592-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:18:00,731]:[6592-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:18:00,731]:[6592-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:18:15,064]:[2764-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:18:15,066]:[2764-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:18:15,069]:[2764-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:18:15,071]:[2764-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:18:42,389]:[5632-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:18:42,397]:[5632-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:18:42,397]:[5632-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:18:42,397]:[5632-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 11:19:22,664]:[6352-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:19:22,665]:[6352-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-19 11:20:48,184]:[2624-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:20:48,184]:[2624-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 11:20:48,192]:[2624-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 11:20:48,192]:[2624-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:47:59,930]:[2656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:47:59,932]:[2656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:48:00,277]:[2656-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:48:00,309]:[2656-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:51:47,396]:[5188-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:51:47,396]:[5188-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:51:47,396]:[5188-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:51:47,396]:[5188-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:53:06,107]:[5252-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:53:06,107]:[5252-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:53:06,107]:[5252-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:53:06,107]:[5252-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:53:23,423]:[8512-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:53:23,423]:[8512-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:53:23,423]:[8512-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:53:23,423]:[8512-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 218, in select
+    datas.append(*data_frame)
+TypeError: append() takes exactly one argument (2 given)
+
+[2022-01-19 21:53:25,837]:[6652-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:53:25,853]:[6652-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:53:25,853]:[6652-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:53:25,853]:[6652-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 218, in select
+    datas.append(*data_frame)
+TypeError: append() takes exactly one argument (2 given)
+
+[2022-01-19 21:54:13,215]:[6400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:54:13,215]:[6400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:54:13,215]:[6400-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:54:13,215]:[6400-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:55:14,500]:[4992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:55:14,500]:[4992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:55:14,500]:[4992-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:55:14,500]:[4992-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 216, in select
+    print(*data_frame)
+NameError: name 'data_frame' is not defined
+
+[2022-01-19 21:55:29,414]:[8816-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:55:29,414]:[8816-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:55:29,414]:[8816-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:55:29,414]:[8816-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:55:46,078]:[5072-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:55:46,093]:[5072-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:55:46,093]:[5072-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:55:46,093]:[5072-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 216, in select
+    print(**data_item)
+TypeError: print() argument after ** must be a mapping, not tuple
+
+[2022-01-19 21:56:21,083]:[8328-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:56:21,083]:[8328-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:56:21,099]:[8328-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:56:21,099]:[8328-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:57:16,628]:[6724-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:57:16,628]:[6724-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:57:16,628]:[6724-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:57:16,628]:[6724-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:57:25,258]:[5740-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:57:25,258]:[5740-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:57:25,258]:[5740-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:57:25,258]:[5740-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:57:59,895]:[8452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:57:59,895]:[8452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:57:59,895]:[8452-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:57:59,895]:[8452-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:58:56,675]:[5096-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:58:56,675]:[5096-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:58:56,675]:[5096-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:58:56,675]:[5096-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:59:07,892]:[7800-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:59:07,892]:[7800-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:59:07,908]:[7800-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:59:07,908]:[7800-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 21:59:48,147]:[2904-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:59:48,147]:[2904-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 21:59:48,147]:[2904-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 21:59:48,147]:[2904-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:00:12,973]:[9024-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:00:12,973]:[9024-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:00:12,973]:[9024-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:00:12,973]:[9024-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:00:35,444]:[7460-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:00:35,444]:[7460-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:00:35,444]:[7460-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:00:35,444]:[7460-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:00:48,951]:[8828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:00:48,966]:[8828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:00:48,966]:[8828-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:00:48,966]:[8828-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:01:33,913]:[5700-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:01:33,913]:[5700-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:01:33,913]:[5700-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:01:33,928]:[5700-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:06:21,361]:[8760-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:06:21,361]:[8760-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:06:21,361]:[8760-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:06:21,361]:[8760-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:07:32,360]:[8552-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:07:32,375]:[8552-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:07:32,375]:[8552-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:07:32,375]:[8552-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:07:48,965]:[1208-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:07:48,965]:[1208-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:07:48,965]:[1208-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:07:48,965]:[1208-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:09:13,149]:[5848-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:09:13,149]:[5848-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:09:13,165]:[5848-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:09:13,165]:[5848-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:09:30,733]:[5160-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:09:30,733]:[5160-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:09:30,733]:[5160-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:09:30,733]:[5160-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:12:02,928]:[448-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:12:02,928]:[448-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:12:02,928]:[448-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:12:02,928]:[448-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:13:29,765]:[3460-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:13:29,765]:[3460-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:13:29,781]:[3460-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:13:29,781]:[3460-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:13:58,578]:[6656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:13:58,593]:[6656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:13:58,593]:[6656-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:13:58,593]:[6656-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:15:48,043]:[2580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:15:48,043]:[2580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:15:48,059]:[2580-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:15:48,059]:[2580-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:16:36,347]:[4212-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:16:36,363]:[4212-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:16:36,363]:[4212-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:16:36,363]:[4212-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:17:11,440]:[6848-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:17:11,456]:[6848-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:17:11,456]:[6848-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:17:11,456]:[6848-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:15:43,547]:[8412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:15:43,547]:[8412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:15:43,547]:[8412-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:15:43,547]:[8412-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:17:17,432]:[5596-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:17:17,432]:[5596-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:17:17,432]:[5596-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:17:17,432]:[5596-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:17:55,832]:[5188-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:17:55,832]:[5188-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:17:55,847]:[5188-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:17:55,847]:[5188-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:18:05,680]:[2552-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:05,696]:[2552-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:05,696]:[2552-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:18:05,696]:[2552-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in select
+    new_data.append([item, data_item[n+1]])
+IndexError: tuple index out of range
+
+[2022-01-19 22:18:15,440]:[5712-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:15,440]:[5712-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:15,440]:[5712-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:18:15,440]:[5712-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in select
+    new_data.append([item, data_item[n+1]])
+IndexError: tuple index out of range
+
+[2022-01-19 22:18:34,216]:[6352-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:34,232]:[6352-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:34,232]:[6352-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:18:34,232]:[6352-INFO]:[__main__]:[Successful commit: select operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 222, in select
+    new_data.append([item, data[n+1]])
+IndexError: list index out of range
+
+[2022-01-19 22:18:44,179]:[7004-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:44,179]:[7004-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:44,195]:[7004-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:18:44,195]:[7004-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:18:51,708]:[7076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:51,708]:[7076-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:18:51,724]:[7076-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:18:51,724]:[7076-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:19:43,547]:[5524-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:19:43,549]:[5524-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:19:43,553]:[5524-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:19:43,555]:[5524-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:20:13,392]:[5620-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:20:13,392]:[5620-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:20:13,392]:[5620-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:20:13,392]:[5620-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:20:52,265]:[1716-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:20:52,265]:[1716-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:20:52,265]:[1716-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:20:52,265]:[1716-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:21:20,144]:[8988-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:20,144]:[8988-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:20,144]:[8988-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:21:20,144]:[8988-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:21:24,743]:[8792-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:24,743]:[8792-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:24,743]:[8792-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:21:24,743]:[8792-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:21:39,911]:[7560-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:39,911]:[7560-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:39,911]:[7560-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:21:39,926]:[7560-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:21:59,433]:[4212-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:59,433]:[4212-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:21:59,433]:[4212-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:21:59,433]:[4212-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:22:16,724]:[8992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:22:16,724]:[8992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:22:16,724]:[8992-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:22:16,724]:[8992-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:22:40,472]:[6104-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:22:40,472]:[6104-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:22:40,472]:[6104-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:22:40,472]:[6104-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:23:10,561]:[7128-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:23:10,561]:[7128-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:23:10,561]:[7128-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:23:10,561]:[7128-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:23:27,302]:[6820-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:23:27,302]:[6820-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:23:27,318]:[6820-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:23:27,318]:[6820-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:23:34,641]:[8492-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:23:34,641]:[8492-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:23:34,641]:[8492-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:23:34,641]:[8492-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:24:23,509]:[8808-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:24:23,509]:[8808-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:24:23,525]:[8808-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:24:23,525]:[8808-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:26:40,460]:[5824-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:26:40,468]:[5824-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:26:40,468]:[5824-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:26:40,468]:[5824-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:27:34,983]:[6812-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:27:34,991]:[6812-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:27:34,991]:[6812-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:27:34,991]:[6812-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:27:45,201]:[2480-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:27:45,201]:[2480-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:27:45,201]:[2480-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:27:45,201]:[2480-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:27:52,152]:[6736-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:27:52,160]:[6736-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:27:52,160]:[6736-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:27:52,160]:[6736-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:29:18,846]:[5604-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:29:18,846]:[5604-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:29:18,846]:[5604-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:29:18,854]:[5604-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:29:34,321]:[8088-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:29:34,321]:[8088-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:29:34,321]:[8088-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:29:34,329]:[8088-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:30:14,869]:[7464-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:30:14,869]:[7464-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:30:14,876]:[7464-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:30:14,876]:[7464-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:30:27,041]:[7780-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:30:27,041]:[7780-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:30:27,048]:[7780-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:30:27,048]:[7780-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:30:48,919]:[3324-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:30:48,919]:[3324-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:30:48,927]:[3324-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:30:48,927]:[3324-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:31:09,142]:[3608-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:31:09,142]:[3608-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:31:09,150]:[3608-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:31:09,150]:[3608-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:31:22,705]:[5508-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:31:22,712]:[5508-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:31:22,712]:[5508-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:31:22,712]:[5508-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:31:44,040]:[8588-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:31:44,041]:[8588-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:31:44,049]:[8588-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:31:44,053]:[8588-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:34:06,555]:[6864-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:06,555]:[6864-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:06,555]:[6864-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:34:06,555]:[6864-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:34:19,103]:[604-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:19,103]:[604-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:19,103]:[604-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:34:19,111]:[604-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:34:38,229]:[4080-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:38,229]:[4080-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:38,237]:[4080-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:34:38,237]:[4080-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:34:54,331]:[7764-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:54,331]:[7764-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:54,338]:[7764-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:34:54,338]:[7764-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:34:59,725]:[5828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:59,725]:[5828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:34:59,733]:[5828-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:34:59,733]:[5828-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-19 22:35:09,639]:[9040-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:35:09,639]:[9040-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-19 22:35:09,639]:[9040-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-19 22:35:09,647]:[9040-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 11:47:50,667]:[2380-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:47:50,667]:[2380-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-21 11:48:13,344]:[5052-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:48:13,344]:[5052-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-21 11:50:42,999]:[5396-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:50:42,999]:[5396-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:50:43,109]:[5396-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 11:50:43,148]:[5396-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 11:51:01,389]:[6872-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:51:01,389]:[6872-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:51:01,428]:[6872-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 11:51:01,431]:[6872-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 11:51:02,475]:[5692-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:51:02,475]:[5692-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:51:02,475]:[5692-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 11:51:02,483]:[5692-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 11:52:31,781]:[5480-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:52:31,789]:[5480-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:52:31,789]:[5480-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 11:52:31,789]:[5480-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 11:55:04,927]:[176-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:55:04,927]:[176-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:55:04,945]:[176-INFO]:[__main__]:[Successful commit: update operation]
+[2022-01-21 11:55:04,953]:[176-INFO]:[__main__]:[Successful commit: update operation]
+
+[2022-01-21 11:55:54,722]:[1032-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:55:54,724]:[1032-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:55:54,730]:[1032-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 11:55:54,733]:[1032-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 11:55:55,877]:[3696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:55:55,877]:[3696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:55:55,885]:[3696-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 11:55:55,885]:[3696-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 11:57:27,450]:[5856-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:57:27,450]:[5856-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:57:27,458]:[5856-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 11:57:27,498]:[5856-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM reports WHERE author_status = 100 >>
+	delete operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: DELETE FROM reports WHERE author_status = 100
+                                  ^
+]
+
+[2022-01-21 11:58:17,655]:[4816-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 11:58:17,655]:[4816-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-21 12:08:18,117]:[8060-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:08:18,117]:[8060-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:08:18,125]:[8060-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 12:08:18,140]:[8060-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 12:17:40,664]:[3580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:17:40,665]:[3580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:17:40,669]:[3580-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:17:40,672]:[3580-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 12:18:26,671]:[3452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:18:26,671]:[3452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:18:26,671]:[3452-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:18:26,671]:[3452-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 12:18:46,225]:[5560-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:18:46,227]:[5560-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:18:46,232]:[5560-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:18:46,233]:[5560-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 5 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 5
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 213, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 12:22:45,667]:[7004-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:22:45,667]:[7004-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:22:45,676]:[7004-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:22:45,676]:[7004-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 214, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 12:23:36,291]:[7392-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:23:36,291]:[7392-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:23:36,291]:[7392-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:23:36,299]:[7392-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 214, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 12:25:51,189]:[6112-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:25:51,190]:[6112-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:25:51,194]:[6112-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:25:51,196]:[6112-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 214, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 12:26:07,003]:[4520-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:26:07,003]:[4520-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:26:07,011]:[4520-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:26:07,011]:[4520-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 215, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 12:26:40,001]:[2604-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:26:40,001]:[2604-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 12:26:40,001]:[2604-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 12:26:40,009]:[2604-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 215, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:00:06,604]:[5768-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:00:06,608]:[5768-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:00:06,621]:[5768-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:00:06,628]:[5768-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 215, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:02:49,861]:[4360-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:02:49,861]:[4360-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:02:49,869]:[4360-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:02:49,869]:[4360-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 217, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:03:17,471]:[5924-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:03:17,471]:[5924-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:03:17,479]:[5924-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:03:17,479]:[5924-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 217, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:03:28,299]:[7764-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:03:28,299]:[7764-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:03:28,315]:[7764-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:03:28,333]:[7764-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 217, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:04:16,946]:[4352-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:04:16,954]:[4352-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:04:16,958]:[4352-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:04:16,961]:[4352-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 217, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:07:11,190]:[2012-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:07:11,190]:[2012-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:07:11,190]:[2012-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:07:11,198]:[2012-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 219, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:08:25,558]:[6312-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:08:25,558]:[6312-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:08:25,566]:[6312-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:08:25,566]:[6312-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 217, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:08:37,904]:[2672-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:08:37,912]:[2672-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:08:37,912]:[2672-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:08:37,919]:[2672-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 218, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:08:57,274]:[6452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:08:57,282]:[6452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:08:57,282]:[6452-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:08:57,282]:[6452-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 218, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:09:34,406]:[5476-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:09:34,406]:[5476-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:09:34,414]:[5476-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:09:34,414]:[5476-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, report FROM reports WHERE author_status = 20 >>
+	select operation
+
+ОШИБКА:  столбец "author_status" не существует
+LINE 1: SELECT author, report FROM reports WHERE author_status = 20
+                                                 ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 219, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:10:34,168]:[3024-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:10:34,176]:[3024-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:10:34,176]:[3024-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:10:34,184]:[3024-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 13:21:38,486]:[5988-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:21:38,486]:[5988-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:21:38,486]:[5988-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:21:38,494]:[5988-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 13:22:16,076]:[5936-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:22:16,076]:[5936-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:22:16,083]:[5936-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:22:16,083]:[5936-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 13:25:52,026]:[1888-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:25:52,026]:[1888-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:25:52,034]:[1888-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:25:52,034]:[1888-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 13:26:53,315]:[5580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:26:53,315]:[5580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:26:53,315]:[5580-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ... author, author_status FROM authors WHERE author = M_O_D_E_R
+                                                              ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 63, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:28:02,051]:[5608-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:28:02,051]:[5608-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:28:02,059]:[5608-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:28:02,059]:[5608-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 13:29:44,953]:[7448-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:29:44,960]:[7448-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:29:44,960]:[7448-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ... author, author_status FROM authors WHERE author = M_O_D_E_R
+                                                              ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 64, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:29:57,553]:[6292-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:29:57,553]:[6292-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:29:57,599]:[6292-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE 'author' '=' 'M_O_D_E_R' >>
+	select operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "'='")
+LINE 1: ...author, author_status FROM authors WHERE 'author' '=' 'M_O_D...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 64, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:31:01,276]:[6960-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:31:01,277]:[6960-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:31:01,278]:[6960-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE 'author' '=' 'M_O_D_E_R' >>
+	select operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "'='")
+LINE 1: ...author, author_status FROM authors WHERE 'author' '=' 'M_O_D...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:31:31,450]:[2804-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:31:31,450]:[2804-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:31:31,458]:[2804-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE 'author' '=' 'M_O_D_E_R' >>
+	select operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "'='")
+LINE 1: ...author, author_status FROM authors WHERE 'author' '=' 'M_O_D...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:31:54,812]:[5296-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:31:54,812]:[5296-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:31:54,820]:[5296-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE 'author' '=' 'M_O_D_E_R' >>
+	select operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "'='")
+LINE 1: ...author, author_status FROM authors WHERE 'author' '=' 'M_O_D...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:32:42,559]:[2524-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:32:42,559]:[2524-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:32:42,559]:[2524-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ... author, author_status FROM authors WHERE author = M_O_D_E_R
+                                                              ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:33:07,248]:[7844-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:33:07,255]:[7844-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:33:07,257]:[7844-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ... author, author_status FROM authors WHERE author = M_O_D_E_R
+                                                              ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:34:01,144]:[6712-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:34:01,144]:[6712-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:34:01,144]:[6712-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ... author, author_status FROM authors WHERE author = M_O_D_E_R
+                                                              ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:34:15,093]:[2996-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:34:15,093]:[2996-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:34:15,102]:[2996-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ... author, author_status FROM authors WHERE author = M_O_D_E_R
+                                                              ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:34:31,405]:[6244-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:34:31,405]:[6244-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 43, in <module>
+    SQLConditions.where(
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 117, in where
+    output_condition = " WHERE " + " ".join(list(map(str, condition))).split()
+TypeError: can only concatenate str (not "list") to str
+
+[2022-01-21 13:34:55,133]:[7732-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:34:55,135]:[7732-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:34:55,139]:[7732-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ... author, author_status FROM authors WHERE author = M_O_D_E_R
+                                                              ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:35:37,499]:[4728-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:35:37,500]:[4728-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:35:37,503]:[4728-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:35:57,007]:[5760-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:35:57,009]:[5760-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:35:57,011]:[5760-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:36:10,531]:[2824-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:36:10,539]:[2824-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:36:10,539]:[2824-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:37:19,919]:[4748-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:37:19,919]:[4748-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 43, in <module>
+    SQLConditions.where(
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 119, in where
+    print(re.template(r" = [a-zA-Z_]", output_condition))
+  File "D:\Python38\Python\lib\re.py", line 261, in template
+    return _compile(pattern, flags|T)
+TypeError: unsupported operand type(s) for |: 'str' and 'RegexFlag'
+
+[2022-01-21 13:37:45,858]:[4896-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:37:45,858]:[4896-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 43, in <module>
+    SQLConditions.where(
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 119, in where
+    print(re.template(r" = [a-zA-Z]", output_condition))
+  File "D:\Python38\Python\lib\re.py", line 261, in template
+    return _compile(pattern, flags|T)
+TypeError: unsupported operand type(s) for |: 'str' and 'RegexFlag'
+
+[2022-01-21 13:38:27,857]:[6400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:38:27,859]:[6400-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:38:27,862]:[6400-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:38:37,919]:[5464-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:38:37,919]:[5464-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:38:37,919]:[5464-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:39:02,238]:[6404-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:39:02,238]:[6404-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:39:02,246]:[6404-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:39:28,655]:[7780-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:39:28,655]:[7780-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:39:28,655]:[7780-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:40:48,333]:[6168-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:40:48,333]:[6168-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:40:48,333]:[6168-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 62, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:40:55,701]:[5124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:40:55,701]:[5124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:40:55,708]:[5124-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 62, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:41:00,680]:[5828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:41:00,680]:[5828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:41:00,688]:[5828-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 62, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:42:16,523]:[2548-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:42:16,523]:[2548-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:42:16,523]:[2548-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 62, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:43:59,188]:[6412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:43:59,188]:[6412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:43:59,188]:[6412-INFO]:[__main__]:[Unsuccessful commit: 
+	<< SELECT author, author_status FROM authors WHERE author = M_O_D_E_R AND rowid = 10 >>
+	select operation
+
+ОШИБКА:  столбец "m_o_d_e_r" не существует
+LINE 1: ...author, author_status FROM authors WHERE author = M_O_D_E_R ...
+                                                             ^
+]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    Operations(conn).select(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 220, in select
+    data.append(select_query.get().get_data())
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 114, in get
+    self.__table__name, self.__names, self.__conn.fetchall()
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 62, in fetchall
+    return self.cursor.fetchall()
+psycopg2.ProgrammingError: no results to fetch
+
+[2022-01-21 13:54:13,974]:[4428-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:54:13,975]:[4428-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:54:13,981]:[4428-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:54:13,985]:[4428-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 13:54:26,412]:[6452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:54:26,413]:[6452-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:54:26,416]:[6452-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 13:54:26,418]:[6452-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 13:57:06,208]:[3112-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:57:06,208]:[3112-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 43, in <module>
+    SQLConditions.where(
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 134, in where
+    print(CheckDatas.check_str(new_condition))
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 162, in check_str
+    raise SlashBadColumnNameError(
+Slash.Core.exceptions_.SlashBadColumnNameError: Error:
+
+Bad name for column of data base
+Name:  WHERE author = 'M_O_D_E_R' AND rowid = 5
+Symbol: =
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    conn.create(authors)
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 65, in create
+    Create(table, BasicTypes.TYPES_LIST, self, operation_obj)
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 72, in __init__
+    if self.__validate(types_list):
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 76, in __validate
+    CheckDatas.check_str(self.table.name)
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 161, in check_str
+    if char_ in string.punctuation.replace("@", "").replace(".", "").replace("_", "").replace("=").replace(">").replace("<"):
+TypeError: replace expected at least 2 arguments, got 1
+
+[2022-01-21 13:59:12,487]:[3868-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:59:12,487]:[3868-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 43, in <module>
+    SQLConditions.where(
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 134, in where
+    print(CheckDatas.check_str(new_condition))
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 163, in check_str
+    raise SlashBadColumnNameError(
+Slash.Core.exceptions_.SlashBadColumnNameError: Error:
+
+Bad name for column of data base
+Name:  WHERE author = 'M_O_D_E_R' AND rowid = 5
+Symbol: '
+
+[2022-01-21 13:59:49,990]:[7772-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 13:59:49,991]:[7772-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 43, in <module>
+    SQLConditions.where(
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 134, in where
+    print(CheckDatas.check_str(new_condition))
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 164, in check_str
+    raise SlashBadColumnNameError(
+Slash.Core.exceptions_.SlashBadColumnNameError: Error:
+
+Bad name for column of data base
+Name:  WHERE author = 'M_O_D_E_R' AND rowid = 5
+Symbol: =
+
+[2022-01-21 14:00:05,425]:[5556-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:00:05,432]:[5556-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:00:05,437]:[5556-INFO]:[__main__]:[Successful commit: select operation]
+[2022-01-21 14:00:05,440]:[5556-INFO]:[__main__]:[Successful commit: select operation]

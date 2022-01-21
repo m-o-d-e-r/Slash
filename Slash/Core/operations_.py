@@ -27,7 +27,6 @@ class Insert():
                 CheckDatas.check_str(value.value)
 
             valid_responce = value._is_valid_datas(rules)
-            # value._is_valid_datas(rules)
             if not valid_responce[0]:
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
 
@@ -111,8 +110,6 @@ class Select():
             "select operation"
         )
 
-        print(self.__responce)
-
         return DataSet(
             self.__table__name, self.__names, self.__conn.fetchall()
         )
@@ -165,14 +162,30 @@ class Update():
 
 
 class Operations():
-    def __init__(self, connection):
+    def __init__(self, connection, table_link=None):
         self.__connection = connection
         self.query_handler: QueryQueue = connection.queue
+        self.__table = table_link
 
     def insert(self, table, names, values, *, rules="*"):
-        try:
+        if self.__table:
+            table = self.__table
+
+        if table.__dict__.get("_is_unated") is not None:
             table._is_unated
-        except AttributeError:
+
+            data: dict = dict(zip(names, values))
+
+            for one_table in table.tables:
+                columns_list = []
+                for column in one_table.columns:
+                    columns_list.append(column.name)
+
+                insert_query = Insert(
+                    self.__connection, one_table, columns_list, [data[i] for i in columns_list], rules
+                )
+                self.query_handler.add_query(insert_query)
+        else:
             if rules == "*":
                 insert_query = Insert(self.__connection, table, names, values)
                 self.query_handler.add_query(insert_query)
@@ -183,46 +196,66 @@ class Operations():
                 self.query_handler.add_query(insert_query)
 
     def select(self, table, names, condition=" "):
-        try:
+        if self.__table:
+            table = self.__table
+
+        if table.__dict__.get("_is_unated") is not None:
             table._is_unated
-            datas: dict = {}
 
-            for table_ in table.tables:
-                datas.update(
-                    {
-                        table_.name: {
-                            "columns": [column.name for column in table_.columns]
-                        }
-                    }
-                )
+            data: list = []
+            for one_table in table.tables:
+                columns_list = []
+                non_existence_column = None
+                for column in one_table.columns:
+                    columns_list.append(column.name)
 
-            columns = ""
-            for table_ in table.tables:
-                for column in datas[table_.name]["columns"]:
-                    columns += f"{table_.name}.{column}, "
-            columns = columns[0: len(columns) - 2]
+                for column in table.columns:
+                    if column.name not in columns_list:
+                        non_existence_column = column.name
 
-            responce = "SELECT {} FROM {} WHERE {}.rowID".format(
-                columns,
-                ', '.join([table_.name for table_ in table.tables]),
-                '.rowID = '.join([table_.name for table_ in table.tables]),
-            )
+#                print(non_existence_column)
+#                print(columns_list)
+                select_query = Select(self.__connection, one_table, columns_list, condition if non_existence_column not in condition else " ")
+                self.query_handler.add_query(select_query)
+                data.append(select_query.get().get_data())
 
-            self.__connection.execute(responce)
-            return self.__connection.cursor.fetchall()
-        except AttributeError as exception:
+            new_data = []
+            for i, data_item in enumerate(data):
+                if i == len(data) - 1:
+                    break
+                for n, item in enumerate(data_item):
+                    temp_data = item + data[i+1][n]
+                    temp_data = sorted(set(temp_data), key=lambda d: temp_data.index(d))
+                    new_data.append(tuple(temp_data))
+            new_data = tuple(new_data)
+
+            return DataSet(table.name, table.columns, new_data)
+        else:
             select_query = Select(self.__connection, table, names, condition)
             self.query_handler.add_query(select_query)
             return select_query.get()
 
     def delete(self, table, condition=" "):
-        try:
+        if self.__table:
+            table = self.__table
+
+        if table.__dict__.get("_is_unated") is not None:
             table._is_unated
-        except AttributeError:
+
+            for table_item in table.tables:
+                Delete(self.__connection, table_item, condition)
+        else:
             return Delete(self.__connection, table, condition)
 
     def update(self, table, column_names, values, condition=" "):
-        try:
+        if self.__table:
+            table = self.__table
+
+        if table.__dict__.get("_is_unated") is not None:
             table._is_unated
-        except AttributeError:
+
+
+            for table_item in table.tables:
+                Update(self.__connection, table_item, column_names, values, condition)
+        else:
             Update(self.__connection, table, column_names, values, condition)

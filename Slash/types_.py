@@ -4,14 +4,9 @@ import json
 import re
 import os
 
-# это для моих тестов
-if __name__ == "__main__":
-    from utilities import utils_for_rules
-else:
-    from .utilities import utils_for_rules
+from .utilities.utils_for_rules import *
+from .utilities.kolatz_utils.slash3_core import triple_slash
 
-
-WinJsonConverter = utils_for_rules.WinJsonConverter
 
 class Rules:
     """BAse rules for data"""
@@ -168,9 +163,7 @@ class Hidden(ORMType):
         value = str(value)
         self.type_name = "type_hidden"
 
-        solt = "".join([chr(ord(item) << ((len(value) - i) // 2)) for i, item in enumerate(value)])
-
-        self.value = hashlib.md5((solt + value).encode("utf-8")).hexdigest()
+        self.value = hashlib.md5(value.encode("utf-8")).hexdigest()
 
 
 class Int(ORMType):
@@ -341,6 +334,15 @@ class TablesManager:
                         hashlib.md5(self.name.encode("utf-8")).digest(): self
                     }
                 )
+        s_len = len(columns_u)
+        for i in range(s_len):
+            if s_len > len(columns_u):
+                break
+
+            for n in range(len(columns_u)):
+                if columns_u[i] == columns_u[n]:
+                    del columns_u[n]
+                    break
 
         u_table = UnitedTable(name_)
         u_table.set_columns(*columns_u)
