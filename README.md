@@ -402,6 +402,6 @@ print(
 
 
 <br>
-<center>
+<div align="center">
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Произведение «<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Slash Documentation</span>» созданное автором по имени <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">M_O_D_E_R</span>, публикуется на условиях <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">лицензии Creative Commons «Attribution» («Атрибуция») 4.0 Всемирная</a>.<br />Основано на произведении с <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/m-o-d-e-r/Slash/blob/master/README.md" rel="dct:source">https://github.com/m-o-d-e-r/Slash/blob/master/README.md</a>.
-</center>
+</div>
