@@ -1,5 +1,6 @@
 *.exe
 *.nim
+dist
 .vscode
 env
 Slash92.egg-info
