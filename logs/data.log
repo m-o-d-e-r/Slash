@@ -3915,3 +3915,974 @@ Symbol: =
 [2022-01-21 14:00:05,432]:[5556-INFO]:[__main__]:[Successful commit: create operation]
 [2022-01-21 14:00:05,437]:[5556-INFO]:[__main__]:[Successful commit: select operation]
 [2022-01-21 14:00:05,440]:[5556-INFO]:[__main__]:[Successful commit: select operation]
+
+[2022-01-21 14:37:43,994]:[8036-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-21 14:40:28,378]:[6604-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 190, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 26, in __validate
+    if value.type_name == "type_text":
+AttributeError: 'str' object has no attribute 'type_name'
+
+[2022-01-21 14:41:03,059]:[6564-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:41:03,083]:[6564-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:41:31,464]:[4812-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:41:31,468]:[4812-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:41:39,448]:[4520-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:41:39,456]:[4520-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 33, in <module>
+    print(conn.queue.get_queue())
+TypeError: 'dict' object is not callable
+
+[2022-01-21 14:41:43,771]:[7228-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:41:43,771]:[7228-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:43:55,875]:[444-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:43:55,882]:[444-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:43:55,882]:[444-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:44:18,692]:[2744-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:44:18,692]:[2744-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:44:18,700]:[2744-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:44:31,041]:[6684-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:44:31,049]:[6684-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:44:31,049]:[6684-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:44:39,334]:[8044-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:44:39,334]:[8044-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:44:39,334]:[8044-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:44:49,639]:[8124-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:44:49,647]:[8124-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:44:49,647]:[8124-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    print(dir(conn.queue.get_queue[i]).responce)
+AttributeError: 'list' object has no attribute 'responce'
+
+[2022-01-21 14:45:03,135]:[3864-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:45:03,144]:[3864-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:45:03,144]:[3864-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:48:57,847]:[7808-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:48:57,855]:[7808-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:48:57,855]:[7808-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:49:04,033]:[6356-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:49:04,041]:[6356-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:49:04,041]:[6356-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:50:25,866]:[1992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:50:25,872]:[1992-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:50:25,874]:[1992-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:50:25,875]:[1992-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 14:51:25,037]:[6680-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:51:25,037]:[6680-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:51:25,037]:[6680-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:51:25,046]:[6680-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 14:52:16,153]:[4084-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-01-21 14:52:57,729]:[3952-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:52:57,729]:[3952-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:52:57,729]:[3952-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:53:05,168]:[2600-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:53:05,168]:[2600-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:53:05,176]:[2600-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:54:28,482]:[5852-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:54:28,486]:[5852-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:54:28,488]:[5852-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 14:54:36,129]:[5608-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:54:36,129]:[5608-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:54:36,137]:[5608-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:54:36,137]:[5608-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 14:57:26,180]:[7188-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:57:26,186]:[7188-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:57:26,188]:[7188-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:57:26,191]:[7188-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 14:57:51,467]:[6116-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:57:51,471]:[6116-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:57:51,473]:[6116-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:57:51,476]:[6116-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 14:58:32,401]:[5576-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:58:32,401]:[5576-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:58:32,401]:[5576-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:58:32,409]:[5576-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 14:58:57,382]:[5104-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 14:58:57,386]:[5104-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:58:57,388]:[5104-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 14:58:57,399]:[5104-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 14:58:57,401]:[5104-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 14:58:57,403]:[5104-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:02:40,805]:[5924-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:02:40,836]:[5924-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:02:40,836]:[5924-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:02:40,844]:[5924-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:02:40,844]:[5924-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:02:40,844]:[5924-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:02:49,312]:[7980-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:02:49,320]:[7980-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:02:49,320]:[7980-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:02:49,320]:[7980-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:02:49,320]:[7980-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:02:49,328]:[7980-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:14:19,287]:[2420-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:14:19,294]:[2420-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:14:19,296]:[2420-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:14:19,299]:[2420-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:14:19,300]:[2420-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:14:19,302]:[2420-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:14:28,257]:[8136-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:14:28,260]:[8136-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:14:28,262]:[8136-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:14:28,266]:[8136-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:14:28,267]:[8136-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:14:28,269]:[8136-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:15:21,519]:[3580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:15:21,519]:[3580-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:15:21,519]:[3580-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:15:21,528]:[3580-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:15:21,528]:[3580-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:15:21,537]:[3580-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:15:27,343]:[5200-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:15:27,343]:[5200-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:15:27,351]:[5200-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 15:15:43,604]:[1648-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:15:43,609]:[1648-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:15:43,631]:[1648-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 15:15:48,774]:[6924-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:15:48,782]:[6924-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:15:48,782]:[6924-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:15:48,791]:[6924-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:15:48,792]:[6924-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:15:48,792]:[6924-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:16:23,410]:[4260-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:16:23,410]:[4260-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:16:23,417]:[4260-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:16:23,417]:[4260-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:16:23,417]:[4260-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:16:23,425]:[4260-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:24:41,290]:[4648-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 201, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 24, in __validate
+    self.__metadata["columns"] = names
+AttributeError: 'Insert' object has no attribute '_Insert__metadata'
+
+[2022-01-21 15:25:28,192]:[444-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 201, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 24, in __validate
+    self._metadata["columns"] = names
+AttributeError: 'Insert' object has no attribute '_metadata'
+
+[2022-01-21 15:26:09,977]:[7484-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:26:09,997]:[7484-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:26:09,999]:[7484-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:26:10,002]:[7484-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:26:10,003]:[7484-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:26:10,005]:[7484-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:26:29,578]:[3232-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 201, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 24, in __validate
+    self.Insert_metadata["columns"] = names
+AttributeError: 'Insert' object has no attribute 'Insert_metadata'
+
+[2022-01-21 15:27:01,340]:[712-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 201, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 24, in __validate
+    self._Insert_responce["columns"] = names
+AttributeError: 'Insert' object has no attribute '_Insert_responce'
+
+[2022-01-21 15:27:14,578]:[5808-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 201, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 24, in __validate
+    self._Insert_metadata["columns"] = names
+AttributeError: 'Insert' object has no attribute '_Insert_metadata'
+
+[2022-01-21 15:28:04,394]:[6684-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 201, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 24, in __validate
+    self.metadata["columns"] = names
+AttributeError: 'Insert' object has no attribute 'metadata'
+
+[2022-01-21 15:28:16,557]:[7064-INFO]:[__main__]:[Successful commit: create operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 201, in insert
+    insert_query = Insert(self.__connection, table, names, values)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 24, in __validate
+    self.metadata["columns"] = names
+AttributeError: 'Insert' object has no attribute 'metadata'
+
+[2022-01-21 15:29:15,317]:[4656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:29:15,325]:[4656-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 199, in insert
+    self.query_handler.add_query(insert_query)
+  File "d:\pyrus\ORM\Slash\types_.py", line 447, in add_query
+    print(request.get_metadata)
+AttributeError: 'Insert' object has no attribute 'get_metadata'
+
+[2022-01-21 15:29:21,868]:[2580-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:29:21,875]:[2580-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:29:21,875]:[2580-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:29:21,883]:[2580-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:29:21,883]:[2580-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:29:21,883]:[2580-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:29:35,508]:[3144-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:29:35,512]:[3144-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:29:35,514]:[3144-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:29:35,517]:[3144-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:29:35,519]:[3144-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:29:35,521]:[3144-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:31:48,603]:[904-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:31:48,611]:[904-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:31:48,611]:[904-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:31:48,619]:[904-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:31:48,619]:[904-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:31:48,619]:[904-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:32:14,867]:[4728-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:32:14,867]:[4728-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:32:14,875]:[4728-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:32:14,875]:[4728-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:32:14,875]:[4728-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:32:14,875]:[4728-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:32:25,545]:[5312-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:32:25,545]:[5312-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:32:25,553]:[5312-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:32:25,553]:[5312-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:32:25,553]:[5312-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:32:25,553]:[5312-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:35:57,577]:[936-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:35:57,577]:[936-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:35:57,584]:[936-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:35:57,584]:[936-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:35:57,584]:[936-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:35:57,592]:[936-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:37:05,372]:[6524-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:37:05,372]:[6524-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:37:05,372]:[6524-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:37:05,381]:[6524-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:37:05,382]:[6524-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:37:05,384]:[6524-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:37:47,711]:[2448-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:37:47,734]:[2448-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:37:47,737]:[2448-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:37:47,740]:[2448-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:37:47,740]:[2448-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:37:47,740]:[2448-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:38:00,254]:[7128-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:38:00,254]:[7128-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:38:00,270]:[7128-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:38:00,278]:[7128-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:38:00,278]:[7128-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:38:00,278]:[7128-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:38:14,813]:[6208-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:38:14,818]:[6208-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:38:14,822]:[6208-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:38:14,826]:[6208-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:38:14,827]:[6208-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:38:14,829]:[6208-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:39:19,038]:[6524-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:39:19,038]:[6524-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:39:19,038]:[6524-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:39:19,045]:[6524-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:39:19,045]:[6524-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:39:19,045]:[6524-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:40:00,416]:[5072-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:40:00,894]:[5072-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:40:00,902]:[5072-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:40:01,146]:[5072-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:40:01,146]:[5072-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:40:01,154]:[5072-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:40:17,408]:[2116-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:40:17,416]:[2116-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 199, in insert
+    self.query_handler.add_query(insert_query)
+  File "d:\pyrus\ORM\Slash\types_.py", line 447, in add_query
+    print(["-".join(i) for i in [item for item in (zip(request.metadata["columns"], request.metadata["values"]))]])
+  File "d:\pyrus\ORM\Slash\types_.py", line 447, in <listcomp>
+    print(["-".join(i) for i in [item for item in (zip(request.metadata["columns"], request.metadata["values"]))]])
+TypeError: sequence item 1: expected str instance, int found
+
+[2022-01-21 15:40:32,501]:[5672-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:40:32,501]:[5672-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:40:32,509]:[5672-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:40:32,509]:[5672-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:40:32,517]:[5672-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:40:32,517]:[5672-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:41:14,433]:[2216-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:41:14,433]:[2216-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:41:14,441]:[2216-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:41:14,441]:[2216-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:41:14,441]:[2216-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:41:14,449]:[2216-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:41:46,175]:[5464-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:41:46,178]:[5464-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:41:46,181]:[5464-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:41:46,191]:[5464-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:41:46,191]:[5464-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:41:46,191]:[5464-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:42:01,144]:[1748-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:42:01,154]:[1748-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:42:01,154]:[1748-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:42:01,162]:[1748-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:42:01,162]:[1748-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:42:01,162]:[1748-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:42:41,500]:[5808-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:42:41,508]:[5808-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:42:41,508]:[5808-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:42:41,508]:[5808-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:42:41,508]:[5808-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:42:41,516]:[5808-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:43:10,524]:[612-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:43:10,532]:[612-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:43:10,532]:[612-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:43:10,540]:[612-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:43:10,540]:[612-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:43:10,540]:[612-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:43:23,939]:[5992-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:43:23,947]:[5992-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 199, in insert
+    self.query_handler.add_query(insert_query)
+  File "d:\pyrus\ORM\Slash\types_.py", line 448, in add_query
+    print(" = ".join(item))
+TypeError: sequence item 1: expected str instance, int found
+
+[2022-01-21 15:43:31,569]:[7900-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:43:31,577]:[7900-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:43:31,577]:[7900-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:43:31,584]:[7900-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:43:31,584]:[7900-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:43:31,584]:[7900-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:44:07,417]:[7952-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:44:07,417]:[7952-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:44:07,427]:[7952-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:44:07,431]:[7952-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:44:07,433]:[7952-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:44:07,434]:[7952-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:45:07,187]:[7332-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:45:07,195]:[7332-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:45:07,195]:[7332-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:45:07,195]:[7332-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:45:07,195]:[7332-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:45:07,203]:[7332-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:45:29,951]:[5088-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:45:29,951]:[5088-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:45:29,958]:[5088-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:45:29,958]:[5088-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:45:29,958]:[5088-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:45:29,966]:[5088-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:49:56,253]:[4856-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:49:56,258]:[4856-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 199, in insert
+    self.query_handler.add_query(insert_query)
+  File "d:\pyrus\ORM\Slash\types_.py", line 452, in add_query
+    request.op.delete(None, condition)
+AttributeError: 'Insert' object has no attribute 'op'
+
+[2022-01-21 15:50:12,680]:[6384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:50:12,680]:[6384-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:50:12,680]:[6384-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:50:12,688]:[6384-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:52:45,206]:[5472-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:52:45,213]:[5472-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:52:45,213]:[5472-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:52:45,213]:[5472-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:54:04,398]:[7144-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:54:04,406]:[7144-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:54:04,406]:[7144-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:54:04,406]:[7144-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:54:29,893]:[6776-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:54:29,901]:[6776-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:54:29,901]:[6776-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:54:29,901]:[6776-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:54:29,909]:[6776-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:54:45,327]:[4292-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:54:45,332]:[4292-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:54:45,334]:[4292-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:54:45,340]:[4292-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 15:54:45,342]:[4292-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 15:55:08,793]:[4316-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:55:08,801]:[4316-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:55:08,801]:[4316-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:55:08,825]:[4316-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM classWHERE number = 2 count = 60 teacher = lll  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "=")
+LINE 1: DELETE FROM classWHERE number = 2 count = 60 teacher = lll 
+                                      ^
+]
+[2022-01-21 15:55:08,833]:[4316-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:55:38,980]:[5636-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:55:38,985]:[5636-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:55:38,986]:[5636-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:55:38,986]:[5636-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 count = 60 teacher = lll  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "count")
+LINE 1: DELETE FROM class WHERE number = 2 count = 60 teacher = lll 
+                                           ^
+]
+[2022-01-21 15:55:38,994]:[5636-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:55:51,304]:[7800-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:55:51,309]:[7800-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:55:51,314]:[7800-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    print(conn.queue.rollback())
+  File "d:\pyrus\ORM\Slash\types_.py", line 466, in rollback
+    print(self.__queries[self.__current_id-1].table.op.delete(None, self.__condition))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 256, in delete
+    return Delete(self.__connection, table, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 83, in __init__
+    CheckDatas.check_sql(self.__responce, "delete"),
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 178, in check_sql
+    raise SlashPatternMismatch(
+Slash.Core.exceptions_.SlashPatternMismatch: 
+
+Pattern mismatch:
+	DELETE FROM class WHERE number = 2, count = 60, teacher = lll, 
+
+Finded pattern: ['DELETE FROM class WHERE number = 2']
+	
+
+[2022-01-21 15:56:05,000]:[6420-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:56:05,004]:[6420-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:56:05,006]:[6420-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:56:05,007]:[6420-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 count = 60 teacher = lll  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "count")
+LINE 1: DELETE FROM class WHERE number = 2 count = 60 teacher = lll 
+                                           ^
+]
+[2022-01-21 15:56:05,009]:[6420-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:57:10,963]:[3952-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:57:10,963]:[3952-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:57:10,971]:[3952-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:57:10,971]:[3952-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2, count = 60, teacher = lll,  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ",")
+LINE 1: DELETE FROM class WHERE number = 2, count = 60, teacher = ll...
+                                          ^
+]
+[2022-01-21 15:57:10,971]:[3952-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:57:38,184]:[3332-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:57:38,192]:[3332-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:57:38,192]:[3332-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:57:38,192]:[3332-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll AND  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: ...class WHERE number = 2 AND count = 60 AND teacher = lll AND 
+                                                                       ^
+]
+[2022-01-21 15:57:38,192]:[3332-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:58:09,146]:[5060-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:58:09,154]:[5060-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:09,154]:[5060-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:09,154]:[5060-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll AND  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: ...class WHERE number = 2 AND count = 60 AND teacher = lll AND 
+                                                                       ^
+]
+[2022-01-21 15:58:09,162]:[5060-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:58:16,325]:[4072-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:58:16,325]:[4072-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:16,333]:[4072-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:16,333]:[4072-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2, count = 60, teacher = lll,  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: ",")
+LINE 1: DELETE FROM class WHERE number = 2, count = 60, teacher = ll...
+                                          ^
+]
+[2022-01-21 15:58:16,333]:[4072-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:58:30,206]:[444-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:58:30,213]:[444-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:30,213]:[444-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:30,213]:[444-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll AND  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: ...class WHERE number = 2 AND count = 60 AND teacher = lll AND 
+                                                                       ^
+]
+[2022-01-21 15:58:30,213]:[444-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:58:38,830]:[5132-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:58:38,835]:[5132-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:38,839]:[5132-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:38,845]:[5132-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2count = 60teacher = lll >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "count")
+LINE 1: DELETE FROM class WHERE number = 2count = 60teacher = lll
+                                          ^
+]
+[2022-01-21 15:58:38,846]:[5132-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:58:45,996]:[7676-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:58:46,008]:[7676-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:46,011]:[7676-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:58:46,016]:[7676-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll AND  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: ...class WHERE number = 2 AND count = 60 AND teacher = lll AND 
+                                                                       ^
+]
+[2022-01-21 15:58:46,018]:[7676-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:59:10,733]:[5440-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:59:10,741]:[5440-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:59:10,741]:[5440-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    print(conn.queue.rollback())
+  File "d:\pyrus\ORM\Slash\types_.py", line 468, in rollback
+    print(self.__queries[self.__current_id-1].table.op.delete(None, self.__condition))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 256, in delete
+    return Delete(self.__connection, table, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 83, in __init__
+    CheckDatas.check_sql(self.__responce, "delete"),
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 178, in check_sql
+    raise SlashPatternMismatch(
+Slash.Core.exceptions_.SlashPatternMismatch: 
+
+Pattern mismatch:
+	DELETE FROM class[' WHERE number = 2 ', ' count = 60 ', ' teacher = lll ', ' ']
+
+Finded pattern: []
+	
+
+[2022-01-21 15:59:35,513]:[5316-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:59:35,521]:[5316-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:59:35,521]:[5316-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:59:35,521]:[5316-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll A >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса (примерное положение: "A")
+LINE 1: ...OM class WHERE number = 2 AND count = 60 AND teacher = lll A
+                                                                      ^
+]
+[2022-01-21 15:59:35,529]:[5316-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 15:59:40,648]:[4240-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 15:59:40,656]:[4240-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:59:40,656]:[4240-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 15:59:40,656]:[4240-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll  >>
+	delete operation
+
+ОШИБКА:  столбец "lll" не существует
+LINE 1: ...ROM class WHERE number = 2 AND count = 60 AND teacher = lll 
+                                                                   ^
+]
+[2022-01-21 15:59:40,664]:[4240-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 16:01:04,968]:[5144-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:01:04,968]:[5144-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:01:04,976]:[5144-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:01:04,976]:[5144-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll AND  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: ...class WHERE number = 2 AND count = 60 AND teacher = lll AND 
+                                                                       ^
+]
+[2022-01-21 16:01:04,976]:[5144-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 16:01:12,094]:[5680-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:01:12,102]:[5680-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:01:12,102]:[5680-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:01:12,102]:[5680-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = lll AND  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: ...class WHERE number = 2 AND count = 60 AND teacher = lll AND 
+                                                                       ^
+]
+[2022-01-21 16:01:12,110]:[5680-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO class (number, count, teacher) VALUES (1, 30, 'Someone') >>
+	rollback
+
+ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+]
+
+[2022-01-21 16:01:18,858]:[5880-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:01:18,862]:[5880-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:01:18,866]:[5880-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:01:18,872]:[5880-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 16:02:05,018]:[7684-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:02:05,018]:[7684-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\types_.py", line 452, in add_query
+    item[1] = str(item[1])
+TypeError: 'tuple' object does not support item assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 199, in insert
+    self.query_handler.add_query(insert_query)
+  File "d:\pyrus\ORM\Slash\types_.py", line 454, in add_query
+    item[1] = f"'{item[1]}'"
+TypeError: 'tuple' object does not support item assignment
+
+[2022-01-21 16:02:31,278]:[7656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:02:31,283]:[7656-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:\pyrus\ORM\Slash\types_.py", line 452, in add_query
+    item[1] = str(item[1])
+TypeError: 'tuple' object does not support item assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 27, in <module>
+    operation.insert(
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 199, in insert
+    self.query_handler.add_query(insert_query)
+  File "d:\pyrus\ORM\Slash\types_.py", line 454, in add_query
+    item[1] = f"'{item[1]}'"
+TypeError: 'tuple' object does not support item assignment
+
+[2022-01-21 16:02:43,591]:[5448-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:02:43,599]:[5448-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:02:43,599]:[5448-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:02:43,607]:[5448-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 16:02:49,309]:[5828-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:02:49,317]:[5828-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:02:49,317]:[5828-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:02:49,317]:[5828-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 16:04:32,971]:[216-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:04:32,979]:[216-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:04:32,979]:[216-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:04:32,987]:[216-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 16:04:46,713]:[7796-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:04:46,725]:[7796-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:04:46,728]:[7796-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:04:46,731]:[7796-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 16:05:16,441]:[7164-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:05:16,449]:[7164-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:05:16,449]:[7164-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    conn.queue.rollback()
+  File "d:\pyrus\ORM\Slash\types_.py", line 471, in rollback
+    print(self.__queries[self.__current_id-1].table.op.delete(None, self.__condition))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 256, in delete
+    return Delete(self.__connection, table, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 83, in __init__
+    CheckDatas.check_sql(self.__responce, "delete"),
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 178, in check_sql
+    raise SlashPatternMismatch(
+Slash.Core.exceptions_.SlashPatternMismatch: 
+
+Pattern mismatch:
+	DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = 'lll' 
+
+Finded pattern: ['DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = ']
+	
+
+[2022-01-21 16:08:23,469]:[6796-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:08:23,480]:[6796-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:08:23,482]:[6796-INFO]:[__main__]:[Successful commit: insert operation]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test.py", line 40, in <module>
+    conn.queue.rollback()
+  File "d:\pyrus\ORM\Slash\types_.py", line 471, in rollback
+    print(self.__queries[self.__current_id-1].table.op.delete(None, self.__condition))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 256, in delete
+    return Delete(self.__connection, table, condition)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 83, in __init__
+    CheckDatas.check_sql(self.__responce, "delete"),
+  File "d:\pyrus\ORM\Slash\Core\core.py", line 178, in check_sql
+    raise SlashPatternMismatch(
+Slash.Core.exceptions_.SlashPatternMismatch: 
+
+Pattern mismatch:
+	DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = 'Someone' 
+
+Finded pattern: ['DELETE FROM class WHERE number = 2 AND count = 60 AND teacher = ']
+	
+
+[2022-01-21 16:08:35,876]:[8096-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:08:35,881]:[8096-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:08:35,883]:[8096-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:08:35,887]:[8096-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 16:08:35,890]:[8096-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 16:09:21,449]:[4132-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:09:21,454]:[4132-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:09:21,456]:[4132-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:09:21,458]:[4132-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-01-21 16:09:21,460]:[4132-INFO]:[__main__]:[Successful commit: rollback]
+
+[2022-01-21 16:10:11,056]:[5768-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:10:11,061]:[5768-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:10:11,063]:[5768-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:10:11,066]:[5768-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 16:10:24,489]:[6748-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:10:24,497]:[6748-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:10:24,497]:[6748-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:10:24,497]:[6748-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 16:11:09,035]:[4020-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:11:09,035]:[4020-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:09,042]:[4020-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-01-21 16:11:16,809]:[4740-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:11:16,817]:[4740-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:16,817]:[4740-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:16,817]:[4740-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 16:11:26,625]:[6788-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:11:26,625]:[6788-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:26,632]:[6788-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:26,632]:[6788-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 16:11:35,950]:[4012-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:11:35,953]:[4012-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:35,955]:[4012-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:35,958]:[4012-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 16:11:44,448]:[7000-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:11:44,456]:[7000-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:44,456]:[7000-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:44,463]:[7000-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 16:11:50,507]:[7416-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:11:50,510]:[7416-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:50,512]:[7416-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:50,515]:[7416-INFO]:[__main__]:[Successful commit: delete operation]
+
+[2022-01-21 16:11:51,297]:[7884-INFO]:[__main__]:[Successful commit: create operation]
+[2022-01-21 16:11:51,297]:[7884-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:51,305]:[7884-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-01-21 16:11:51,305]:[7884-INFO]:[__main__]:[Successful commit: delete operation]
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test5.py", line 24, in <module>
+    Insert(conn, table, ("number", "count", "teacher"), (1, 1, "qwerty"))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 31, in __validate
+    if value.type_name == "type_text":
+AttributeError: 'int' object has no attribute 'type_name'
+
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test5.py", line 24, in <module>
+    Insert(conn, table, ("number", "count", "teacher"), (1, 1, "qwerty"))
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 9, in __init__
+    self.__responce = self.__validate(table, names, values, rules)
+  File "d:\pyrus\ORM\Slash\Core\operations_.py", line 31, in __validate
+    if value.type_name == "type_text":
+AttributeError: 'int' object has no attribute 'type_name'
+
+
+
+[2022-01-22 10:39:32,984]:[5856-INFO]:[__main__]:[Successful commit: insert operation]

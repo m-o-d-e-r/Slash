@@ -442,8 +442,21 @@ class QueryQueue:
         self.__current_id = 1
         self.__queries: dict = {}
         self.__connection = connection
+        self.__condition = ""
 
     def add_query(self, request):
+        condition = " WHERE "
+        for item in [items for items in list(zip(request.metadata["columns"], request.metadata["values"]))]:
+            try:
+                int(item[1])
+                condition += " = ".join(list(map(str, [item[0], str(item[1])])))
+            except:
+                condition += " = ".join(list(map(str, [item[0], f"'{item[1]}'"])))
+            condition += " AND "
+
+        condition = condition[0 : len(condition) - 4]
+        self.__condition = condition
+
         q = Query(self.__current_id, request)
 
         self.__queries.update(
@@ -455,8 +468,9 @@ class QueryQueue:
         return q
 
     def rollback(self):
+        self.__queries[self.__current_id-1].table.op.delete(None, self.__condition)
         self.__queries.pop(self.__current_id-1)
-        self.__execute()
+#        self.__execute()
 
         return self.__queries
 

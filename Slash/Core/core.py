@@ -150,7 +150,7 @@ class CheckDatas:
         "insert": r"INSERT INTO [a-zA-Z0-9_]* [)()a-zA-Z,\s_]* VALUES [a-zA-Z)(0-9,\s'@._]*",
         "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9',\s_]*",
         "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!=',_]*",
-        "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>!=_.]*",
+        "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>!=_.']*",
         "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._]*"
     }
     def __init__(self): ...

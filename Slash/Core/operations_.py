@@ -12,6 +12,10 @@ class Insert():
             CheckDatas.check_sql(self.__responce, "insert"),
             "insert operation"
         )
+        self.__metadata: dict = {
+            "columns" : names,
+            "values" : [val.value for val in values]
+        }
 
     def __validate(self, table, names, values, rules):
         names = [names] if (type(names) != list) and (type(names) != tuple) else names
@@ -34,30 +38,25 @@ class Insert():
 
         sql_responce = f"""INSERT INTO {table.name} ({names}) VALUES ("""
 
+        need_format = ("type_text", "type_date", "type_hidden")
+
         for index, val in enumerate(values):
-            if val.type_name == "type_int":
-                sql_responce += str(val.value)
-                if (index + 1) != len(values):
-                    sql_responce += ", "
-            elif val.type_name == "type_text":
+            if val.type_name in need_format:
                 sql_responce += ("'" + val.value + "'")
                 if (index + 1) != len(values):
-                    sql_responce += ","
-            elif val.type_name == "type_bool":
+                    sql_responce += ", "
+            else:
                 sql_responce += str(val.value)
                 if (index + 1) != len(values):
                     sql_responce += ", "
-            elif val.type_name == "type_date":
-                sql_responce += ("'" + str(val.value) + "'")
-                if (index + 1) != len(values):
-                    sql_responce += ", "
-            elif val.type_name == "type_hidden":
-                sql_responce += ("'" + str(val.value) + "'")
-                if (index + 1) != len(values):
-                    sql_responce += ", "                
+                
         sql_responce += ")"
 
         return sql_responce
+
+    @property
+    def metadata(self):
+        return self.__metadata
 
     @property
     def responce(self):
@@ -98,6 +97,8 @@ class Select():
         names = [names] if (type(names) != list) and (type(names) != tuple) else names
 
         CheckDatas.check_str(table.name)
+        for name in names:
+            CheckDatas.check_str(name)
 
         return "SELECT {} FROM {}{}".format(
             ", ".join([n for n in names]),
@@ -136,19 +137,17 @@ class Update():
         CheckDatas.check_str(table.name)
         sql_responce = "UPDATE {} SET ".format(table.name)
 
+        need_format = ("type_text", "type_date", "type_hidden")
+
         for index, value in enumerate(values):
             valid_responce = value._is_valid_datas(rules)
             if not valid_responce[0]:
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
-
-            if value.type_name == "type_text":
+            
+            if value.type_name in need_format:
                 sql_responce += " = ".join((names[index], f"'{value.value}'"))
-            elif value.type_name == "type_int":
+            else:
                 sql_responce += " = ".join((names[index], f"{value.value}"))
-            elif value.type_name == "type_bool":
-                sql_responce += " = ".join((names[index], f"{value.value}"))
-            elif value.type_name == "type_date":
-                sql_responce += " = ".join((names[index], f"'{value.value}'"))
 
             sql_responce += ", " if index != (len(values) - 1) else ""
 
