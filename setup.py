@@ -2,6 +2,7 @@ from setuptools import setup
 from setuptools.dist import Distribution
 import Slash
 
+
 class BinaryDistribution(Distribution):
     def is_pure(self):
         return False
