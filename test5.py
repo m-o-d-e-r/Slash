@@ -12,6 +12,8 @@ conn = Connection(
 
 
 
+
+
 class InfoClass(Table, metaclass=TableMeta):
     number = Column(Int, None)
     count = Column(Int, None)
