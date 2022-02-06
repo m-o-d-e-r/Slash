@@ -4886,3 +4886,271 @@ AttributeError: 'int' object has no attribute 'type_name'
 
 
 [2022-01-22 10:39:32,984]:[5856-INFO]:[__main__]:[Successful commit: insert operation]
+
+[2022-02-06 16:44:06,282]:[3744-INFO]:[__main__]:[New session]
+[2022-02-06 16:44:07,631]:[3744-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:45:51,643]:[1200-INFO]:[__main__]:[New session]
+[2022-02-06 16:45:51,723]:[1200-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:45:56,873]:[4280-INFO]:[__main__]:[New session]
+[2022-02-06 16:45:56,915]:[4280-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:46:13,460]:[2160-INFO]:[__main__]:[New session]
+[2022-02-06 16:46:14,389]:[2160-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:46:14,389]:[2160-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:51:48,143]:[3316-INFO]:[__main__]:[New session]
+[2022-02-06 16:51:48,215]:[3316-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:51:48,215]:[3316-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:52:08,369]:[2920-INFO]:[__main__]:[New session]
+[2022-02-06 16:52:08,408]:[2920-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:52:08,416]:[2920-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:52:30,312]:[6476-INFO]:[__main__]:[New session]
+[2022-02-06 16:52:30,351]:[6476-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:52:30,359]:[6476-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:52:34,996]:[7084-INFO]:[__main__]:[New session]
+[2022-02-06 16:52:35,035]:[7084-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:52:35,035]:[7084-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:52:59,324]:[6412-INFO]:[__main__]:[New session]
+[2022-02-06 16:52:59,363]:[6412-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:52:59,363]:[6412-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:53:39,866]:[5344-INFO]:[__main__]:[New session]
+[2022-02-06 16:53:39,905]:[5344-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 16:54:03,992]:[6328-INFO]:[__main__]:[New session]
+[2022-02-06 16:54:04,080]:[6328-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 16:54:52,035]:[2876-INFO]:[__main__]:[New session]
+[2022-02-06 16:54:52,083]:[2876-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 16:55:39,876]:[8180-INFO]:[__main__]:[New session]
+[2022-02-06 16:55:39,908]:[8180-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 16:55:42,750]:[220-INFO]:[__main__]:[New session]
+[2022-02-06 16:55:42,791]:[220-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 16:55:53,181]:[4368-INFO]:[__main__]:[New session]
+[2022-02-06 16:55:53,236]:[4368-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 16:56:02,679]:[5480-INFO]:[__main__]:[New session]
+[2022-02-06 16:56:02,726]:[5480-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 16:56:56,456]:[7396-INFO]:[__main__]:[New session]
+[2022-02-06 16:56:56,487]:[7396-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:56:56,487]:[7396-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 16:57:09,830]:[6080-INFO]:[__main__]:[New session]
+[2022-02-06 16:57:09,867]:[6080-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 16:57:09,868]:[6080-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:05:05,114]:[5036-INFO]:[__main__]:[New session]
+[2022-02-06 17:05:05,155]:[5036-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:05:05,155]:[5036-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:08:16,384]:[4916-INFO]:[__main__]:[New session]
+[2022-02-06 17:08:16,553]:[4916-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:08:16,608]:[4916-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 17:08:16,608]:[4916-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:13:23,492]:[3852-INFO]:[__main__]:[New session]
+[2022-02-06 17:13:23,539]:[3852-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:13:23,565]:[3852-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 17:13:23,566]:[3852-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:13:38,430]:[5716-INFO]:[__main__]:[New session]
+[2022-02-06 17:13:38,469]:[5716-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:16:09,910]:[6304-INFO]:[__main__]:[New session]
+[2022-02-06 17:16:09,941]:[6304-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:16:34,321]:[6588-INFO]:[__main__]:[New session]
+[2022-02-06 17:16:34,360]:[6588-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:16:53,659]:[8100-INFO]:[__main__]:[New session]
+[2022-02-06 17:16:53,706]:[8100-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:16:53,861]:[8100-INFO]:[__main__]:[Unsuccessful commit: 
+	<< INSERT INTO testfutures (test_int, w) VALUES (1, '1') >>
+	insert operation
+
+ОШИБКА:  столбец "w" в таблице "testfutures" не существует
+LINE 1: INSERT INTO testfutures (test_int, w) VALUES (1, '1')
+                                           ^
+]
+[2022-02-06 17:16:53,861]:[8100-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:17:08,458]:[6228-INFO]:[__main__]:[New session]
+[2022-02-06 17:17:08,498]:[6228-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:17:08,522]:[6228-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 17:17:08,522]:[6228-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:17:11,362]:[6672-INFO]:[__main__]:[New session]
+[2022-02-06 17:17:11,401]:[6672-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:17:15,225]:[6404-INFO]:[__main__]:[New session]
+[2022-02-06 17:17:15,264]:[6404-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:17:15,264]:[6404-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 17:17:15,264]:[6404-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:18:08,274]:[6036-INFO]:[__main__]:[New session]
+[2022-02-06 17:18:08,321]:[6036-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:18:21,612]:[7064-INFO]:[__main__]:[New session]
+[2022-02-06 17:18:21,651]:[7064-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:18:21,651]:[7064-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:25:44,401]:[6444-INFO]:[__main__]:[New session]
+[2022-02-06 17:25:44,448]:[6444-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:25:44,448]:[6444-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:26:16,010]:[5476-INFO]:[__main__]:[New session]
+[2022-02-06 17:26:16,049]:[5476-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:26:16,049]:[5476-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:27:13,857]:[7432-INFO]:[__main__]:[New session]
+[2022-02-06 17:27:13,896]:[7432-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:27:13,896]:[7432-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:27:59,285]:[860-INFO]:[__main__]:[New session]
+[2022-02-06 17:27:59,332]:[860-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:27:59,332]:[860-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:28:17,981]:[6852-INFO]:[__main__]:[New session]
+[2022-02-06 17:28:18,020]:[6852-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:28:18,020]:[6852-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:28:28,897]:[6640-INFO]:[__main__]:[New session]
+[2022-02-06 17:28:28,936]:[6640-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:28:28,936]:[6640-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:28:35,591]:[4320-INFO]:[__main__]:[New session]
+[2022-02-06 17:28:35,623]:[4320-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:28:35,630]:[4320-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:28:41,758]:[800-INFO]:[__main__]:[New session]
+[2022-02-06 17:28:41,797]:[800-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:28:41,797]:[800-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:28:48,416]:[6272-INFO]:[__main__]:[New session]
+[2022-02-06 17:28:48,455]:[6272-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:28:48,455]:[6272-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:29:22,312]:[7984-INFO]:[__main__]:[New session]
+[2022-02-06 17:29:22,343]:[7984-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:29:22,351]:[7984-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:29:39,313]:[6728-INFO]:[__main__]:[New session]
+[2022-02-06 17:29:39,350]:[6728-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:29:39,351]:[6728-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:29:44,498]:[7064-INFO]:[__main__]:[New session]
+[2022-02-06 17:29:44,546]:[7064-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:29:44,546]:[7064-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:30:01,791]:[5820-INFO]:[__main__]:[New session]
+[2022-02-06 17:30:01,885]:[5820-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:30:01,893]:[5820-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:30:16,579]:[6332-INFO]:[__main__]:[New session]
+[2022-02-06 17:30:16,626]:[6332-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:30:16,626]:[6332-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:30:21,012]:[6060-INFO]:[__main__]:[New session]
+[2022-02-06 17:30:21,051]:[6060-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:30:21,051]:[6060-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:30:43,786]:[5472-INFO]:[__main__]:[New session]
+[2022-02-06 17:30:43,825]:[5472-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:30:43,825]:[5472-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:31:23,801]:[1356-INFO]:[__main__]:[New session]
+[2022-02-06 17:31:23,840]:[1356-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:31:23,840]:[1356-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:31:37,397]:[392-INFO]:[__main__]:[New session]
+[2022-02-06 17:31:37,436]:[392-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:31:37,436]:[392-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:31:57,913]:[2352-INFO]:[__main__]:[New session]
+[2022-02-06 17:31:57,955]:[2352-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:31:57,956]:[2352-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:35:22,633]:[6348-INFO]:[__main__]:[New session]
+[2022-02-06 17:35:22,672]:[6348-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:35:22,672]:[6348-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:35:44,463]:[1512-INFO]:[__main__]:[New session]
+[2022-02-06 17:35:44,503]:[1512-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:35:44,503]:[1512-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:36:27,671]:[7876-INFO]:[__main__]:[New session]
+[2022-02-06 17:36:27,712]:[7876-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:36:27,712]:[7876-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:36:46,050]:[7640-INFO]:[__main__]:[New session]
+[2022-02-06 17:36:46,082]:[7640-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:36:46,089]:[7640-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:37:02,012]:[7032-INFO]:[__main__]:[New session]
+[2022-02-06 17:37:02,051]:[7032-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:37:02,051]:[7032-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:37:23,420]:[7668-INFO]:[__main__]:[New session]
+[2022-02-06 17:37:23,477]:[7668-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:37:23,478]:[7668-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:37:42,645]:[2044-INFO]:[__main__]:[New session]
+[2022-02-06 17:37:42,687]:[2044-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:37:42,687]:[2044-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:37:50,356]:[6576-INFO]:[__main__]:[New session]
+[2022-02-06 17:37:50,396]:[6576-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:37:50,404]:[6576-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:37:55,116]:[4520-INFO]:[__main__]:[New session]
+[2022-02-06 17:37:55,166]:[4520-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:37:55,166]:[4520-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:38:10,538]:[1548-INFO]:[__main__]:[New session]
+[2022-02-06 17:38:10,579]:[1548-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:38:10,586]:[1548-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:38:46,217]:[7028-INFO]:[__main__]:[New session]
+[2022-02-06 17:38:46,264]:[7028-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:38:46,272]:[7028-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:38:58,822]:[2440-INFO]:[__main__]:[New session]
+[2022-02-06 17:38:58,870]:[2440-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:38:58,870]:[2440-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:39:05,262]:[1808-INFO]:[__main__]:[New session]
+[2022-02-06 17:39:05,309]:[1808-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:39:05,310]:[1808-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:39:24,914]:[384-INFO]:[__main__]:[New session]
+[2022-02-06 17:39:24,953]:[384-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:39:24,953]:[384-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:39:30,718]:[7372-INFO]:[__main__]:[New session]
+[2022-02-06 17:39:30,757]:[7372-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:39:30,757]:[7372-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:39:42,546]:[2696-INFO]:[__main__]:[New session]
+[2022-02-06 17:39:42,611]:[2696-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:39:42,642]:[2696-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 17:39:42,642]:[2696-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:45:08,584]:[8140-INFO]:[__main__]:[New session]
+[2022-02-06 17:45:08,624]:[8140-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:45:08,639]:[8140-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 17:45:08,639]:[8140-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:52:47,262]:[7136-INFO]:[__main__]:[New session]
+[2022-02-06 17:52:47,301]:[7136-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:52:47,326]:[7136-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 17:52:47,326]:[7136-INFO]:[__main__]:[Session closed]

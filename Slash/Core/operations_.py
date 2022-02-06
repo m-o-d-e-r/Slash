@@ -1,11 +1,26 @@
+from typing import Any
 from .core import CheckDatas, Connection, SQLConditions
 from ..types_ import DataSet, QueryQueue, Table
 
-from .exceptions_ import SlashRulesError
+from .exceptions_ import SlashRulesError, SlashLenMismatch
 
 
 class Insert():
-    def __init__(self, conn: Connection, table: Table, names: tuple, values: tuple, rules="*"):
+    def __init__(self, conn: Connection, table: Table, names: Any, values: Any, rules="*"):
+        names = [names] if (type(names) != list) and (type(names) != tuple) else names
+        values = [values] if (type(values) != list) and (type(values) != tuple) else values
+
+        if len(names) != len(values):
+            raise SlashLenMismatch(
+                """The lenght of the data and the lenght of the columns do not match.
+                    Column lenght: {}
+                    Values lenght: {}
+                """.format(
+                    len(names),
+                    len(values)
+                )
+            )
+
         self.__responce = self.__validate(table, names, values, rules)
         self.__table = table
         conn.execute(
@@ -18,9 +33,6 @@ class Insert():
         }
 
     def __validate(self, table, names, values, rules):
-        names = [names] if (type(names) != list) and (type(names) != tuple) else names
-        values = [values] if (type(values) != list) and (type(values) != tuple) else values
-
         CheckDatas.check_str(table.name)
 
         for name in names:
@@ -42,13 +54,13 @@ class Insert():
 
         for index, val in enumerate(values):
             if val.type_name in need_format:
-                sql_responce += ("'" + val.value + "'")
-                if (index + 1) != len(values):
-                    sql_responce += ", "
+                sql_responce += f"'{val.value}'"
             else:
                 sql_responce += str(val.value)
-                if (index + 1) != len(values):
-                    sql_responce += ", "
+ 
+            if (index + 1) != len(values):
+                sql_responce += ", "
+
                 
         sql_responce += ")"
 

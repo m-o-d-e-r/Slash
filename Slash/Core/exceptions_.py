@@ -16,3 +16,7 @@ class SlashBadAction(Exception):
 
 class SlashPatternMismatch(Exception):
     def __init__(self, text): ...
+
+
+class SlashLenMismatch(Exception):
+    def __init__(self, text) -> None: ...

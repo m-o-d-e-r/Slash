@@ -1,3 +1,5 @@
+from webbrowser import Opera
+import tabledata
 from Slash.Core.core import Connection, Logger
 from Slash.Core.operations_ import Operations
 from Slash.types_ import Column, Int, Table, Text
@@ -13,29 +15,19 @@ conn = Connection(
     logger=log
 )
 
-table = Table("test3")
+
+table = Table("testfutures")
 table.set_columns(
-    Column(Int, "age"),
-    Column(Text, "name")
+    Column(Int, "test_int"),
+    Column(Text, "test_text")
 )
 conn.create(table)
 
-op = Operations(conn)
-#op.select(table, ("age", "name", )).get_data()
-
-op.insert(
+Operations(conn).insert(
     table,
-    ("age", "name" , ),
-    (Int(229), Text("hello"), )
+    ("test_int", "test_text"),
+    (Int(1), Text("1"))
 )
 
-op.insert(
-    table,
-    ("age", "name" , ),
-    (Int(230), Text("hello"), )
-)
-op.delete(table)
-op.query_handler.rollback()
-#print(op.query_handler.get_queue)
 
 conn.close()

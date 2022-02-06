@@ -146,7 +146,7 @@ class SQLConditions:
 
 
 class CheckDatas:
-    SQL_TEMPLATES: Final = {
+    SQL_TEMPLATES: dict = {
         "insert": r"INSERT INTO [a-zA-Z0-9_]* [)()a-zA-Z,\s_]* VALUES [a-zA-Z)(0-9,\s'@._]*",
         "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9',\s_]*",
         "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!=',_]*",
@@ -157,10 +157,9 @@ class CheckDatas:
 
     @staticmethod
     def check_str(str_: str):
-        datas = string.punctuation.replace("@", "").replace(".", "").replace("_", "").replace("-", "")
-        datas = datas.replace("=", "").replace(">", "").replace("<", "").replace("'", "")
-        for char_ in str_:
-            if char_ in datas:
+        available_char = string.ascii_letters + string.digits + "@._-=><'"
+        for char_  in str_:
+            if char_ not in available_char:
                 raise SlashBadColumnNameError(
                     f"Error:\n\nBad name for column of data base\nName: {str_}\nSymbol: {char_}"
                 )
