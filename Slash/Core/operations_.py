@@ -1,5 +1,5 @@
 from typing import Any
-from .core import CheckDatas, Connection, SQLConditions
+from .core import CheckDatas, Connection, SQLCnd
 from ..types_ import DataSet, QueryQueue, Table
 
 from .exceptions_ import SlashRulesError, SlashLenMismatch
@@ -61,7 +61,7 @@ class Insert():
             if (index + 1) != len(values):
                 sql_responce += ", "
 
-                
+
         sql_responce += ")"
 
         return sql_responce
@@ -80,7 +80,7 @@ class Insert():
 
 
 class Delete():
-    def __init__(self, conn: Connection, table: Table, condition: SQLConditions):
+    def __init__(self, conn: Connection, table: Table, condition: SQLCnd):
         self.__responce = self.__validate(table, condition)
         conn.execute(
             CheckDatas.check_sql(self.__responce, "delete"),
@@ -99,7 +99,7 @@ class Delete():
 
 
 class Select():
-    def __init__(self, conn: Connection, table: Table, names: tuple, condition: SQLConditions):
+    def __init__(self, conn: Connection, table: Table, names: tuple, condition: SQLCnd):
         self.__conn = conn
         self.__responce = self.__validate(table, names, condition)
         self.__table__name = table.name
@@ -172,7 +172,15 @@ class Update():
         return self.__responce
 
 
-class Operations():
+class Singleton(type):
+    _operations_object_ = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._operations_object_:
+            cls._operations_object_[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+        return cls._operations_object_[cls]
+
+
+class Operations(metaclass=Singleton):
     def __init__(self, connection, table_link=None):
         self.__connection = connection
         self.query_handler: QueryQueue = connection.queue

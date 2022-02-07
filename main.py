@@ -1,6 +1,4 @@
-from webbrowser import Opera
-import tabledata
-from Slash.Core.core import Connection, Logger
+from Slash.Core.core import Connection, Logger, SQLCnd
 from Slash.Core.operations_ import Operations
 from Slash.types_ import Column, Int, Table, Text
 
@@ -23,11 +21,14 @@ table.set_columns(
 )
 conn.create(table)
 
-Operations(conn).insert(
+#Operations(conn).insert(
+#    table,
+#    ("test_int", "test_text"),
+#    (Int(1), Text("1"))
+#)
+Operations(conn).delete(
     table,
-    ("test_int", "test_text"),
-    (Int(1), Text("1"))
+    condition=SQLCnd.where("test_text", SQLCnd.EQ, Text("1"))
 )
-
 
 conn.close()

@@ -219,6 +219,7 @@ class AutoField(ORMType):
 class BasicTypes:
     """Contains all available types"""
     TYPES_LIST = (Int, Text, Bool, Date, AutoField, Hidden)
+    NEED_FORMAT = ("type_text", "type_date", "type_hidden")
     DB_TYPES_LIST = {
         Int: "INT", Text: "TEXT",
         Bool: "BOOL", Date: "DATE",

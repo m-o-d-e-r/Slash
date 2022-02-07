@@ -5154,3 +5154,164 @@ LINE 1: INSERT INTO testfutures (test_int, w) VALUES (1, '1')
 [2022-02-06 17:52:47,301]:[7136-INFO]:[__main__]:[Successful commit: create operation]
 [2022-02-06 17:52:47,326]:[7136-INFO]:[__main__]:[Successful commit: insert operation]
 [2022-02-06 17:52:47,326]:[7136-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:56:58,932]:[7328-INFO]:[__main__]:[New session]
+[2022-02-06 17:56:58,971]:[7328-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:57:22,556]:[6124-INFO]:[__main__]:[New session]
+[2022-02-06 17:57:22,595]:[6124-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:58:11,314]:[5224-INFO]:[__main__]:[New session]
+[2022-02-06 17:58:11,362]:[5224-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:58:40,076]:[5924-INFO]:[__main__]:[New session]
+[2022-02-06 17:58:40,126]:[5924-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 17:58:49,194]:[2128-INFO]:[__main__]:[New session]
+[2022-02-06 17:58:49,233]:[2128-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:58:49,282]:[2128-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM testfutures WHERE  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: DELETE FROM testfutures WHERE 
+                                      ^
+]
+[2022-02-06 17:58:49,283]:[2128-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:59:11,890]:[6656-INFO]:[__main__]:[New session]
+[2022-02-06 17:59:11,929]:[6656-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:59:11,929]:[6656-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM testfutures WHERE  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: DELETE FROM testfutures WHERE 
+                                      ^
+]
+[2022-02-06 17:59:11,929]:[6656-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 17:59:58,331]:[2044-INFO]:[__main__]:[New session]
+[2022-02-06 17:59:58,373]:[2044-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 17:59:58,373]:[2044-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM testfutures WHERE  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: DELETE FROM testfutures WHERE 
+                                      ^
+]
+[2022-02-06 17:59:58,373]:[2044-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:00:25,436]:[936-INFO]:[__main__]:[New session]
+[2022-02-06 18:00:25,484]:[936-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:00:25,486]:[936-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM testfutures WHERE  >>
+	delete operation
+
+ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: DELETE FROM testfutures WHERE 
+                                      ^
+]
+[2022-02-06 18:00:25,486]:[936-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:01:16,904]:[7712-INFO]:[__main__]:[New session]
+[2022-02-06 18:01:16,951]:[7712-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:01:16,958]:[7712-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM testfutures WHERE row_id <= 5 >>
+	delete operation
+
+ОШИБКА:  столбец "row_id" не существует
+LINE 1: DELETE FROM testfutures WHERE row_id <= 5
+                                      ^
+HINT:  Возможно, предполагалась ссылка на столбец "testfutures.rowid".
+]
+[2022-02-06 18:01:16,958]:[7712-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:01:32,303]:[4436-INFO]:[__main__]:[New session]
+[2022-02-06 18:01:32,353]:[4436-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:01:32,409]:[4436-INFO]:[__main__]:[Successful commit: delete operation]
+[2022-02-06 18:01:32,409]:[4436-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:02:25,097]:[4632-INFO]:[__main__]:[New session]
+[2022-02-06 18:02:25,136]:[4632-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:02:25,152]:[4632-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM testfutures WHERE test_text = 1 >>
+	delete operation
+
+ОШИБКА:  оператор не существует: text = integer
+LINE 1: DELETE FROM testfutures WHERE test_text = 1
+                                                ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+]
+[2022-02-06 18:02:25,152]:[4632-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:02:57,452]:[7852-INFO]:[__main__]:[New session]
+[2022-02-06 18:02:57,500]:[7852-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 18:03:14,052]:[4584-INFO]:[__main__]:[New session]
+[2022-02-06 18:03:14,091]:[4584-INFO]:[__main__]:[Successful commit: create operation]
+
+[2022-02-06 18:03:41,170]:[7460-INFO]:[__main__]:[New session]
+[2022-02-06 18:03:41,218]:[7460-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:03:41,221]:[7460-INFO]:[__main__]:[Unsuccessful commit: 
+	<< DELETE FROM testfutures WHERE test_text = 1 >>
+	delete operation
+
+ОШИБКА:  оператор не существует: text = integer
+LINE 1: DELETE FROM testfutures WHERE test_text = 1
+                                                ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+]
+[2022-02-06 18:03:41,222]:[7460-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:05:21,184]:[5140-INFO]:[__main__]:[New session]
+[2022-02-06 18:05:21,223]:[5140-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:05:21,223]:[5140-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:05:31,822]:[5388-INFO]:[__main__]:[New session]
+[2022-02-06 18:05:31,878]:[5388-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:05:31,879]:[5388-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:06:06,854]:[5116-INFO]:[__main__]:[New session]
+[2022-02-06 18:06:06,893]:[5116-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:06:06,893]:[5116-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:06:35,292]:[5988-INFO]:[__main__]:[New session]
+[2022-02-06 18:06:35,346]:[5988-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:06:35,375]:[5988-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 18:06:35,376]:[5988-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:06:36,184]:[4416-INFO]:[__main__]:[New session]
+[2022-02-06 18:06:36,224]:[4416-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:06:36,224]:[4416-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 18:06:36,224]:[4416-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:06:37,138]:[320-INFO]:[__main__]:[New session]
+[2022-02-06 18:06:37,169]:[320-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:06:37,177]:[320-INFO]:[__main__]:[Successful commit: insert operation]
+[2022-02-06 18:06:37,177]:[320-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:08:40,607]:[5844-INFO]:[__main__]:[New session]
+[2022-02-06 18:08:40,646]:[5844-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:08:40,646]:[5844-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:09:20,934]:[6184-INFO]:[__main__]:[New session]
+[2022-02-06 18:09:20,973]:[6184-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:09:20,973]:[6184-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:11:11,681]:[5040-INFO]:[__main__]:[New session]
+[2022-02-06 18:11:11,712]:[5040-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:11:11,720]:[5040-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:10:38,130]:[4332-INFO]:[__main__]:[New session]
+[2022-02-06 18:10:38,169]:[4332-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:10:38,169]:[4332-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:19:41,165]:[2352-INFO]:[__main__]:[New session]
+[2022-02-06 18:19:41,213]:[2352-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:19:41,215]:[2352-INFO]:[__main__]:[Session closed]
+
+[2022-02-06 18:20:01,825]:[6368-INFO]:[__main__]:[New session]
+[2022-02-06 18:20:01,872]:[6368-INFO]:[__main__]:[Successful commit: create operation]
+[2022-02-06 18:20:01,872]:[6368-INFO]:[__main__]:[Session closed]

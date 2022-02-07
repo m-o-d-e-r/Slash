@@ -1,4 +1,5 @@
-from typing import Final, final
+from turtle import right
+from typing import Final, List, final
 import logging
 import string
 import sys
@@ -7,10 +8,13 @@ import os
 import psycopg2
 
 from .exceptions_ import (
-    SlashBadColumnNameError, SlashTypeError,
+    SlashBadColumnNameError, SlashLenMismatch, SlashTypeError,
     SlashBadAction, SlashPatternMismatch
 )
-from ..types_ import QueryQueue, BasicTypes
+from ..types_ import (
+    QueryQueue, BasicTypes,
+    BasicTypes
+)
 
 
 class Connection:
@@ -98,41 +102,74 @@ class Create():
 
 
 @final
-class SQLConditions:
-    EQ = "="
-    AND = "AND"
-    NE = "!="
-    OR = "OR"
-    NOT = "NOT"
-    GT = ">"
-    LT = "<"
-    GE = ">="
-    LE = "<="
+class SQLCnd:
+    class EQ:
+        symbol = "="
+    class AND:
+        symbol = "AND"
+    class NE:
+        symbol = "!="
+    class OR:
+        symbol = "OR"
+    class NOT:
+        symbol = "NOT"
+    class GT:
+        symbol = ">"
+    class LT:
+        symbol = "<"
+    class GE:
+        symbol = ">="
+    class LE:
+        symbol = "<="
 
     @staticmethod
     def where(*condition):
-        output_condition = " WHERE " + " ".join(list(map(str, condition)))
+        condition = list(condition)
 
-        main_templates = re.findall(r"[a-zA-Z_0-9]* = [a-zA-Z_0-9]*", output_condition)
-        new_condition = []
-        for template in main_templates:
-            item = template.split()[-1]
-            try:
-                int(template.split()[-1])
-                item = str(item)
-            except:
-                item = f"'{item}'"
-            template = template.split()
-            template[-1] = item
-            template = " ".join(template)
-            
-            new_condition.append(template)
-        
-        new_condition =  " AND ".join(new_condition)
-        new_condition = " WHERE " + new_condition
+        for index, cond_item in enumerate(condition):
+            if type(cond_item) is not list:
+                condition[index] = cond_item.symbol
+                continue
 
-        print(CheckDatas.check_str(new_condition))
-        return new_condition
+            if len(cond_item) != 3:
+                raise SlashLenMismatch(
+                    """Lenght of the condition item should be 3, not {}
+                    """.format(
+                        len(cond_item)
+                    )
+            )
+
+            left_side = cond_item[0]
+            cond_symbol = cond_item[1]
+            right_side = cond_item[2]
+
+            if type(left_side) is str:
+                left_side = CheckDatas.check_str(left_side)
+            else:
+                raise SlashTypeError(
+                    """Type of the name of column should be str, not {}""".format(
+                        type(left_side)
+                    )
+                )
+
+            if not cond_symbol.__dict__.get("symbol"):
+                raise SlashTypeError("""Wrong type for condition symbol""")
+
+            if type(right_side) not in BasicTypes.TYPES_LIST:
+                raise SlashTypeError("""Wrong type for data""")
+
+            temp_value = None
+            if right_side.type_name in BasicTypes.NEED_FORMAT:
+                temp_value = f"'{right_side.value}'"
+            else:
+                temp_value = str(right_side.value)
+
+            cond_item[0:3] = [f"{left_side} {cond_symbol.symbol} {temp_value}"]
+
+        condition = " ".join([i[0] if type(i) is list else i for i in condition])
+        condition = CheckDatas.check_str(" WHERE " + condition)
+
+        return condition
 
     @staticmethod
     def order_by(column, *, desc=""):
@@ -157,11 +194,11 @@ class CheckDatas:
 
     @staticmethod
     def check_str(str_: str):
-        available_char = string.ascii_letters + string.digits + "@._-=><'"
+        available_char = string.ascii_letters + string.digits + "@._-=><' "
         for char_  in str_:
             if char_ not in available_char:
                 raise SlashBadColumnNameError(
-                    f"Error:\n\nBad name for column of data base\nName: {str_}\nSymbol: {char_}"
+                    f"Error:\n\nBad name for column of data base\nName: {str_}\nSymbol: <{char_}>"
                 )
         return str_
 
