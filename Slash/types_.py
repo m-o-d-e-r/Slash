@@ -1,3 +1,4 @@
+from mimetypes import init
 from typing import final, Dict, List
 import hashlib
 import json
@@ -490,3 +491,13 @@ class QueryQueue:
     @property
     def first(self):
         return self.__queries.get(1)
+
+
+@final
+class SymbolEncoder:
+    def __init__(self):
+        ...
+
+    @property
+    def symbols(self):
+        return {}

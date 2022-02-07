@@ -1,5 +1,4 @@
-from turtle import right
-from typing import Final, List, final
+from typing import final
 import logging
 import string
 import sys
