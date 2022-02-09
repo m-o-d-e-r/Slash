@@ -365,14 +365,17 @@ class TableMeta(type):
         for column in columns:
             args.pop(column.name)
 
+        if args.get("__table__name__"):
+            args.update({"_Table__name": args.get("__table__name__")})
+
         args.update({"columns": columns})
         return type(name, parrent, args)
 
 
 class Table:
     """Table of database"""
-    def __init__(self, name: str):
-        self.__name = name
+    def __init__(self, name: str=None):
+        self.__name = name if name else self.name
         self.__columns: List[Column] = []
         TablesManager.tables.update(
             {

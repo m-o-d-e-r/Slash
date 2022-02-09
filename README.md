@@ -3,83 +3,41 @@
     &emsp;Свежая информация по поводу моих проектов будет доступна на этом <a href="https://t.me/logbook_17">канале</a>.
 </p>
 
-
 # Скоро
-  - Можно будет создавать откат (вот прям скоро)
+  - в условиях сделаю проверку типов колонок и входных данных(для входных данных уже есть)
+  - Альфа версия ORM
 
 # Новое
-  - Операции для UnitedTable(test)
-  - fix SQLConditions
-  - Добавлена возможность записи/чтения правил из json-фалов(rules.json)<p>
-     &emsp;Есть два класса которые позволяют это сделать(JsonConverter, WinJsonConverter)<br>
-        `JsonConverter` - под все платформы<br>
-        `WinJsonConverter` - только под винду(так как для линухи .so)<br>
-
-      &emsp;Решил так сделать для эксперимента.
-      А вообще хочу написать какую-то фичу на плюсах и портировать под ORM.<br>
-      Мб какой-то валидатор, или парсер. Ну или сделаю пачку модулей для каких-то расчетов. <a href="#WinJsonConverter">Помощь в сборке WinJsonConverter</a>(сборка под линуху такая же).
-</p>
+  - fix UnitedTables
+  - синтаксис условий
 
 ```Python
-from Slash.Core.core import Connection, Logger, SQLConditions
+from Slash.Core.core import SQLCnd, Connection
 from Slash.Core.operations_ import Operations
-from Slash.types_ import (
-    Table, TablesManager, TableMeta,
-    Text, Int, Column
-)
+from Slash.types_ import Text, Int, Table, Column
 
 conn = Connection(
-    "Slash", "postgres", "root", "127.0.0.1", 5432,
-    logger=Logger(__name__, __file__, redirect_error=True)
+    "Slash", "postgres", "root", "127.0.0.1", 5432
 )
 
 
-class Authors(Table, metaclass=TableMeta):
-    author = Column(Text, None)
-    author_status = Column(Int, None)
+#print(SQLCnd.where(["row_id", SQLCnd.EQ, Int(1)], SQLCnd.AND, ["text", SQLCnd.EQ, Text("123")]))
 
 
-class Reports(Table, metaclass=TableMeta):
-    author = Column(Text, None)
-    report = Column(Text, None)
-
-
-authors = Authors("authors")
-reports = Reports("reports")
-
-conn.create(authors)
-conn.create(reports)
-
-
-united_table = TablesManager.unite(authors, reports)
-
-Operations(conn).insert(
-    united_table,
-    ("author", "author_status", "report"), 
-    (Text("M_O_D_E_R"), Int(100), Text("Hello world"))
+table = Table("testfutures")
+table.set_columns(
+    Column(Int, "test_int"),
+    Column(Text, "test_text")
 )
-
-print(
-    Operations(conn).select(
-        united_table,
-        ("author", "author_status", "report"),
-        SQLConditions.where(
-            "author", SQLConditions.EQ, "M_O_D_E_R", SQLConditions.AND, "rowid",  SQLConditions.EQ, 5
-        )
-    ).get_data()
-)
+conn.create(table)
 
 Operations(conn).delete(
-    united_table,
-    SQLConditions.where("rowid", SQLConditions.EQ, 4)
+    table,
+    condition=SQLCnd.where(["rowid", SQLCnd.EQ, Int(9)], SQLCnd.AND, ["test_text", SQLCnd.EQ, Text("1")])
 )
 
-Operations(conn).update(
-    united_table,
-    ("author"),
-    (Text("test_name"))
-)
 
+conn.close()
 ```
 
 

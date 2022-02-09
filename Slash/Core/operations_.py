@@ -1,5 +1,5 @@
 from typing import Any
-from .core import CheckDatas, Connection, SQLCnd
+from .core import CheckDatas, Connection, SQLCnd, CheckColumns
 from ..types_ import DataSet, QueryQueue, Table
 
 from .exceptions_ import SlashRulesError, SlashLenMismatch
@@ -221,34 +221,42 @@ class Operations(metaclass=Singleton):
         if table.__dict__.get("_is_unated") is not None:
             table._is_unated
 
-            data: list = []
+            data_matrix = []
+            output = []
+            result = []
+
             for one_table in table.tables:
                 columns_list = []
-                non_existence_column = None
                 for column in one_table.columns:
                     columns_list.append(column.name)
 
-                for column in table.columns:
-                    if column.name not in columns_list:
-                        non_existence_column = column.name
+                select_query = Select(self.__connection, one_table, columns_list, condition).get()
+                temp = []
+                for data in select_query.get_data():
+                    temp.append(data)
+                data_matrix.append(temp)
 
-#                print(non_existence_column)
-#                print(columns_list)
-                select_query = Select(self.__connection, one_table, columns_list, condition if non_existence_column not in condition else " ")
-                self.query_handler.add_query(select_query)
-                data.append(select_query.get().get_data())
-
-            new_data = []
-            for i, data_item in enumerate(data):
-                if i == len(data) - 1:
+            for t in range(len(data_matrix)):
+                temp_data = []
+                for i, item in enumerate(data_matrix):
+                    for n, nitem in enumerate(item):
+                        temp_data.append(data_matrix[n][t])
                     break
-                for n, item in enumerate(data_item):
-                    temp_data = item + data[i+1][n]
-                    temp_data = sorted(set(temp_data), key=lambda d: temp_data.index(d))
-                    new_data.append(tuple(temp_data))
-            new_data = tuple(new_data)
+                output.append(temp_data)
 
-            return DataSet(table.name, table.columns, new_data)
+            for i, output_item in enumerate(output):
+                temp_user_data = []
+                for item_frame in output_item:
+                    for item in item_frame:
+                        temp_user_data.append(item)
+                len_ = len(temp_user_data)
+
+                for n in range(len_-1):
+                    if temp_user_data.count(temp_user_data[n]) > 1:
+                        del temp_user_data[n]
+                result.append(tuple(temp_user_data))
+
+            return DataSet(table.name, table.columns, result)
         else:
             select_query = Select(self.__connection, table, names, condition)
             self.query_handler.add_query(select_query)
@@ -261,6 +269,7 @@ class Operations(metaclass=Singleton):
         if table.__dict__.get("_is_unated") is not None:
             table._is_unated
 
+            CheckColumns.check(condition, table.tables)
             for table_item in table.tables:
                 Delete(self.__connection, table_item, condition)
         else:
@@ -273,8 +282,13 @@ class Operations(metaclass=Singleton):
         if table.__dict__.get("_is_unated") is not None:
             table._is_unated
 
+            data: dict = dict(zip(column_names, values))
 
-            for table_item in table.tables:
-                Update(self.__connection, table_item, column_names, values, condition)
+            for one_table in table.tables:
+                columns_list = []
+                for column in one_table.columns:
+                    columns_list.append(column.name)
+
+                Update(self.__connection, one_table, columns_list, [data[i] for i in columns_list], condition)
         else:
             Update(self.__connection, table, column_names, values, condition)

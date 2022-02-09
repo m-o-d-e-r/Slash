@@ -20,3 +20,7 @@ class SlashPatternMismatch(Exception):
 
 class SlashLenMismatch(Exception):
     def __init__(self, text) -> None: ...
+
+
+class SlashOneTableColumn(Exception):
+    def __init__(self, text) -> None: ...
