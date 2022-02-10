@@ -10,6 +10,22 @@ def mult(lst):
 
     return n
 
+def normalize_int_array(string_int):
+    for index, value in enumerate(string_int):
+        for index2, value2 in enumerate(string_int):
+            string_int[index] += (string_int[index] - string_int[index2])
+
+    for index, value in enumerate(string_int):
+        if string_int.count(value) > 1:
+            for index2 in range(len(string_int)):
+                string_int[index] //= index2
+
+    for index, value in enumerate(string_int):
+        if value < 0:
+            string_int[index] = ~string_int[index]
+    
+    return string_int
+
 def triple_slash(input_string, r=2):
     string_int = list(map(ord, input_string))
     number = mult(string_int)
@@ -18,13 +34,7 @@ def triple_slash(input_string, r=2):
 
     main_result = _3x_1(number)
 
-    for index, value in enumerate(string_int):
-        if string_int.count(value) > 1:
-            string_int[index] = value // (index + 1)
-
-    for index, value in enumerate(string_int):
-        if value % 2 == 0:
-            string_int[index] = value + 1
+    string_int = normalize_int_array(string_int)
 
     results = [_3x_1(i) for i in string_int]
 
@@ -40,12 +50,12 @@ def triple_slash(input_string, r=2):
         for i in range(ROUNDS):
             if res == 0:
                 res = result[0] // (index  + 1)
-            
+
             if res < 33:
                 res *= 1.5
             elif res > 126:
                 res *= 0.5
-        
+
         res = int(res)
         output.append(chr(res))
 
