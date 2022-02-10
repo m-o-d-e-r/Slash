@@ -17,13 +17,17 @@ def normalize_int_array(string_int):
 
     for index, value in enumerate(string_int):
         if string_int.count(value) > 1:
-            for index2 in range(len(string_int)):
+            for index2 in range(1, len(string_int)):
                 string_int[index] //= index2
 
     for index, value in enumerate(string_int):
         if value < 0:
             string_int[index] = ~string_int[index]
-    
+
+    for index, value in enumerate(string_int):
+        if value == 0:
+            string_int[index] += (max(string_int) - min(string_int))
+
     return string_int
 
 def triple_slash(input_string, r=2):
@@ -42,9 +46,9 @@ def triple_slash(input_string, r=2):
         res = 0
         while True:
             try:
-                res = (main_result[2][result[0]] // main_result[0])
+                res = main_result[2][result[0]] // main_result[0]
                 break
-            except:
+            except Exception as e:
                 result[0] //= 2
 
         for i in range(ROUNDS):

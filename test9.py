@@ -1,7 +1,12 @@
-from Slash.utilities.kolatz_utils.kolatz import _3x_1
 from Slash.utilities.kolatz_utils.slash3_core import triple_slash
+import string
 
+mas = []
 
-print(triple_slash("aabcd"))
-print(triple_slash("abbcd"))
-print(triple_slash("acbcd"))
+for i in string.ascii_letters:
+    mas.append(triple_slash(f"hel{i}o"))
+
+for i in mas:
+    if mas.count(i) > 1:
+        print(i)
+
