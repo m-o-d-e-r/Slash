@@ -1,6 +1,7 @@
 from typing import final
 import logging
 import string
+import time
 import sys
 import re
 import os
@@ -249,6 +250,9 @@ class Logger(logging.Logger):
         with open(os.environ.get("logs"), "a") as file_:
             file_.write("\n")
 
+        self.info("Start session")
+        self.__start_time = time.time()
+
     def __path(self, file: str):
         path_ = os.path.dirname(os.path.abspath(file)) + "\\logs"
 
@@ -261,3 +265,6 @@ class Logger(logging.Logger):
             sys.stderr = open(os.environ.get("logs"), "a")
 
         return path_
+
+    def __del__(self):
+        self.info(f"Session closed (work time: {time.time() - self.__start_time})")

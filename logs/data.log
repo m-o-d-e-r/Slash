@@ -5315,3 +5315,117 @@ HINT:  Оператор с данными именем и типами аргу�
 [2022-02-06 18:20:01,825]:[6368-INFO]:[__main__]:[New session]
 [2022-02-06 18:20:01,872]:[6368-INFO]:[__main__]:[Successful commit: create operation]
 [2022-02-06 18:20:01,872]:[6368-INFO]:[__main__]:[Session closed]
+
+
+[2022-02-10 09:06:22,446]:[6004-INFO]:[__main__]:[Hello]
+
+[2022-02-10 09:07:04,279]:[4120-INFO]:[__main__]:[Hello]
+
+[2022-02-10 09:09:02,050]:[4964-INFO]:[__main__]:[Start session]
+
+[2022-02-10 09:09:09,336]:[4360-INFO]:[__main__]:[Start session]
+
+[2022-02-10 09:09:10,484]:[5112-INFO]:[__main__]:[Start session]
+
+[2022-02-10 09:09:11,375]:[5284-INFO]:[__main__]:[Start session]
+
+[2022-02-10 09:09:49,598]:[6012-INFO]:[__main__]:[Start session]
+[2022-02-10 09:09:49,626]:[6012-INFO]:[__main__]:[Session closed]
+
+[2022-02-10 09:09:54,582]:[4748-INFO]:[__main__]:[Start session]
+[2022-02-10 09:09:54,597]:[4748-INFO]:[__main__]:[Session closed]
+
+[2022-02-10 09:11:28,207]:[4772-INFO]:[__main__]:[Start session]
+[2022-02-10 09:11:28,222]:[4772-INFO]:[__main__]:[Session closed (time: 0.015625)]
+
+[2022-02-10 09:11:41,214]:[2496-INFO]:[__main__]:[Start session]
+[2022-02-10 09:11:41,214]:[2496-INFO]:[__main__]:[Session closed (work time: 0.0)]
+
+[2022-02-10 09:12:02,795]:[6000-INFO]:[__main__]:[Start session]
+[2022-02-10 09:12:04,800]:[6000-INFO]:[__main__]:[Session closed (work time: 2.0048828125)]
+
+[2022-02-10 09:21:45,368]:[4044-INFO]:[__main__]:[Start session]
+[2022-02-10 09:21:45,370]:[4044-INFO]:[__main__]:[Session closed (work time: 0.001953125)]
+
+[2022-02-10 09:23:11,623]:[4036-INFO]:[__main__]:[Start session]
+[2022-02-10 09:23:11,638]:[4036-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:23:32,868]:[4284-INFO]:[__main__]:[Start session]
+[2022-02-10 09:23:32,883]:[4284-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:23:47,007]:[740-INFO]:[__main__]:[Start session]
+[2022-02-10 09:23:47,023]:[740-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:23:51,604]:[4972-INFO]:[__main__]:[Start session]
+[2022-02-10 09:23:51,620]:[4972-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:23:59,742]:[3484-INFO]:[__main__]:[Start session]
+[2022-02-10 09:23:59,751]:[3484-INFO]:[__main__]:[Session closed (work time: 0.009765625)]
+
+[2022-02-10 09:24:04,177]:[5356-INFO]:[__main__]:[Start session]
+[2022-02-10 09:24:04,193]:[5356-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:25:47,252]:[476-INFO]:[__main__]:[Start session]
+[2022-02-10 09:25:47,268]:[476-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:26:32,349]:[4900-INFO]:[__main__]:[Start session]
+[2022-02-10 09:26:32,368]:[4900-INFO]:[__main__]:[Session closed (work time: 0.0185549259185791)]
+
+[2022-02-10 09:26:38,562]:[5036-INFO]:[__main__]:[Start session]
+[2022-02-10 09:26:38,578]:[5036-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:26:50,098]:[676-INFO]:[__main__]:[Start session]
+[2022-02-10 09:26:50,114]:[676-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:26:54,227]:[4300-INFO]:[__main__]:[Start session]
+[2022-02-10 09:26:54,243]:[4300-INFO]:[__main__]:[Session closed (work time: 0.015624761581420898)]
+
+[2022-02-10 09:26:59,274]:[4852-INFO]:[__main__]:[Start session]
+[2022-02-10 09:26:59,290]:[4852-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:27:57,545]:[3708-INFO]:[__main__]:[Start session]
+[2022-02-10 09:27:57,561]:[3708-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:28:19,877]:[5408-INFO]:[__main__]:[Start session]
+[2022-02-10 09:28:20,037]:[5408-INFO]:[__main__]:[Session closed (work time: 0.1591796875)]
+
+[2022-02-10 09:28:50,829]:[4848-INFO]:[__main__]:[Start session]
+[2022-02-10 09:28:50,941]:[4848-INFO]:[__main__]:[Session closed (work time: 0.1123046875)]
+
+[2022-02-10 09:29:06,742]:[4124-INFO]:[__main__]:[Start session]
+[2022-02-10 09:29:06,884]:[4124-INFO]:[__main__]:[Session closed (work time: 0.142578125)]
+
+[2022-02-10 09:29:37,970]:[2496-INFO]:[__main__]:[Start session]
+[2022-02-10 09:29:37,986]:[2496-INFO]:[__main__]:[Session closed (work time: 0.015625)]
+
+[2022-02-10 09:30:01,266]:[608-INFO]:[__main__]:[Start session]
+[2022-02-10 09:30:01,362]:[608-INFO]:[__main__]:[Session closed (work time: 0.0957028865814209)]
+
+[2022-02-10 09:31:55,042]:[4276-INFO]:[__main__]:[Start session]
+[2022-02-10 09:31:55,092]:[4276-INFO]:[__main__]:[Session closed (work time: 0.048828125)]
+
+[2022-02-10 09:31:59,480]:[5368-INFO]:[__main__]:[Start session]
+[2022-02-10 09:31:59,542]:[5368-INFO]:[__main__]:[Session closed (work time: 0.0624997615814209)]
+
+[2022-02-10 09:34:33,343]:[5380-INFO]:[__main__]:[Start session]
+[2022-02-10 09:34:33,390]:[5380-INFO]:[__main__]:[Session closed (work time: 0.046875)]
+
+[2022-02-10 09:37:34,367]:[3748-INFO]:[__main__]:[Start session]
+[2022-02-10 09:37:34,414]:[3748-INFO]:[__main__]:[Session closed (work time: 0.046875)]
+
+[2022-02-10 09:37:55,138]:[4940-INFO]:[__main__]:[Start session]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test10.py", line 9, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-02-10 09:37:55,201]:[4940-INFO]:[__main__]:[Session closed (work time: 0.0624997615814209)]
+
+[2022-02-10 09:39:03,177]:[3684-INFO]:[__main__]:[Start session]
+Traceback (most recent call last):
+  File "d:/pyrus/ORM/test10.py", line 9, in <module>
+    1/0
+ZeroDivisionError: division by zero
+[2022-02-10 09:39:03,224]:[3684-INFO]:[__main__]:[Session closed (work time: 0.046875)]
+
+[2022-02-10 09:39:16,550]:[3368-INFO]:[__main__]:[Start session]
+[2022-02-10 09:39:16,628]:[3368-INFO]:[__main__]:[Session closed (work time: 0.078125)]

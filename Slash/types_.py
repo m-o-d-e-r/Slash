@@ -494,13 +494,3 @@ class QueryQueue:
     @property
     def first(self):
         return self.__queries.get(1)
-
-
-@final
-class SymbolEncoder:
-    def __init__(self):
-        ...
-
-    @property
-    def symbols(self):
-        return {}
