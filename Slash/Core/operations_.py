@@ -172,15 +172,7 @@ class Update():
         return self.__responce
 
 
-class Singleton(type):
-    _operations_object_ = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._operations_object_:
-            cls._operations_object_[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._operations_object_[cls]
-
-
-class Operations(metaclass=Singleton):
+class Operations:
     def __init__(self, connection, table_link=None):
         self.__connection = connection
         self.query_handler: QueryQueue = connection.queue

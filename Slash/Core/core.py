@@ -247,7 +247,7 @@ class Logger(logging.Logger):
         handler.setFormatter(formatter)
         self.addHandler(handler)
 
-        with open(os.environ.get("logs"), "a") as file_:
+        with open(str(os.environ.get("logs")), "a") as file_:
             file_.write("\n")
 
         self.info("Start session")
@@ -262,7 +262,7 @@ class Logger(logging.Logger):
 
         os.environ.setdefault("logs", path_)
         if self.__redirect_error:
-            sys.stderr = open(os.environ.get("logs"), "a")
+            sys.stderr = open(str(os.environ.get("logs")), "a")
 
         return path_
 

@@ -1,5 +1,5 @@
 from mimetypes import init
-from typing import final, Dict, List
+from typing import Any, final, Dict, List
 import hashlib
 import json
 import re
@@ -146,7 +146,9 @@ class JsonConverter:
 
 class ORMType:
     """Base type class"""
-    # @staticmethod
+    def __init__(self):
+        self.type_name: str
+        self.value: Any
     def _is_valid_datas(self, user_rules: Rules):
         if user_rules == "*":
             rules = Rules()
