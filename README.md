@@ -3,41 +3,42 @@
     &emsp;Свежая информация по поводу моих проектов будет доступна на этом <a href="https://t.me/logbook_17">канале</a>.
 </p>
 
-# Скоро
-  - в условиях сделаю проверку типов колонок и входных данных(для входных данных уже есть)
-  - Альфа версия ORM
-
 # Новое
-  - fix UnitedTables
-  - синтаксис условий
+  - with для Connection, Operations(будет удобно, возможно)
+  - теперь нужно передавать колонку для того чтобы задать условие для запроов (проверка типов колонок и входных данных)
 
 ```Python
-from Slash.Core.core import SQLCnd, Connection
+from Slash.types_ import Table, Column, Text
+from Slash.Core.core import Connection, SQLCnd
+
+
+table = Table("testtableforcondition")
+table.set_columns(Column(Text, "some_c"))
+
+with Connection("Slash", "postgres", "root", "127.0.0.1", 5432) as conn:
+    conn.create(table)
+
+    print(SQLCnd.where([table.some_c, SQLCnd.EQ, Text("1")]))
+
+```
+<br>
+
+```Python
 from Slash.Core.operations_ import Operations
-from Slash.types_ import Text, Int, Table, Column
-
-conn = Connection(
-    "Slash", "postgres", "root", "127.0.0.1", 5432
-)
+from Slash.types_ import Table, Column, Text
+from Slash.Core.core import Connection
 
 
-#print(SQLCnd.where(["row_id", SQLCnd.EQ, Int(1)], SQLCnd.AND, ["text", SQLCnd.EQ, Text("123")]))
+table = Table("some_table")
+table.set_columns(Column(Text, "textcolumn"))
 
+with Connection("Slash", "postgres", "root", "127.0.0.1", 5432) as conn:
+    conn.create(table)
 
-table = Table("testfutures")
-table.set_columns(
-    Column(Int, "test_int"),
-    Column(Text, "test_text")
-)
-conn.create(table)
+    with Operations(conn) as op:
+        op.insert(table, ("textcolumn"), (Text("hello")))
+        print(op.select(table, ("textcolumn")).get_data())
 
-Operations(conn).delete(
-    table,
-    condition=SQLCnd.where(["rowid", SQLCnd.EQ, Int(9)], SQLCnd.AND, ["test_text", SQLCnd.EQ, Text("1")])
-)
-
-
-conn.close()
 ```
 
 
@@ -130,7 +131,7 @@ from Slash.types_ import (
 )
 from Slash.Core.core import Connection, Logger
 
-log = Logger(__name__, __file__", redirect_error=True)
+log = Logger(__name__, __file__, redirect_error=True)
 
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432,
@@ -309,6 +310,7 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
+<a href="https://pypi.org/project/Slash92/1.1.0/">1.1.0 (alpha)</a><hr>
 <a href="https://pypi.org/project/Slash92/0.2.3/">0.2.3</a><br>
 <a href="https://pypi.org/project/Slash92/0.2.1.0/">0.2.1.0</a><br>
 <a href="https://pypi.org/project/Slash92/0.2.0/">0.2.0</a><br>
@@ -359,7 +361,3 @@ print(
 &emsp;Под каждую ось свое расширение, но питон всё понимает. + вы не будете импортировать эту либу напрямую, хотя конечно это возможно.
 
 
-<br>
-<div align="center">
-    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Произведение «<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Slash Documentation</span>» созданное автором по имени <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">M_O_D_E_R</span>, публикуется на условиях <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">лицензии Creative Commons «Attribution» («Атрибуция») 4.0 Всемирная</a>.<br />Основано на произведении с <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/m-o-d-e-r/Slash/blob/master/README.md" rel="dct:source">https://github.com/m-o-d-e-r/Slash/blob/master/README.md</a>.
-</div>

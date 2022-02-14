@@ -8,12 +8,15 @@ import os
 import psycopg2
 
 from .exceptions_ import (
-    SlashBadColumnNameError, SlashLenMismatch, SlashOneTableColumn, SlashTypeError,
-    SlashBadAction, SlashPatternMismatch
+    SlashBadColumnNameError, SlashLenMismatch,
+    SlashOneTableColumn, SlashTypeError,
+    SlashBadAction, SlashPatternMismatch,
+    SlashNoResultToFetch, SlashUnexpectedError,
+    SlashNotTheSame
 )
 from ..types_ import (
     QueryQueue, BasicTypes,
-    BasicTypes
+    BasicTypes, Column
 )
 
 
@@ -32,7 +35,7 @@ class Connection:
             host=self._host,
             port=self._port
         )
-        self.cursor = self.__connection.cursor()
+        self.__cursor = self.__connection.cursor()
 
         self.__query_queue = QueryQueue(self)
 
@@ -42,9 +45,13 @@ class Connection:
     def queue(self):
         return self.__query_queue
 
+    @property
+    def cursor(self):
+        return self.__cursor
+
     def execute(self, request, message=""):
         try:
-            self.cursor.execute(request)
+            self.__cursor.execute(request)
             self.__connection.commit()
         except Exception as e:
             if self.__logger is not False:
@@ -63,10 +70,21 @@ class Connection:
             self.__logger.info("Session closed")
 
     def fetchall(self):
-        return self.cursor.fetchall()
+        try:
+            return self.__cursor.fetchall()
+        except psycopg2.ProgrammingError:
+            raise SlashNoResultToFetch("\n\tNo results to fetch")
+        except:
+            raise SlashUnexpectedError("\n\t\"\_(-_-)_/\"")
 
     def create(self, table, operation_obj=None):
         Create(table, BasicTypes.TYPES_LIST, self, operation_obj)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.__connection.close()
 
 
 class Create():
@@ -143,14 +161,23 @@ class SQLCnd:
             cond_symbol = cond_item[1]
             right_side = cond_item[2]
 
-            if type(left_side) is str:
+            if type(left_side) is Column:
+                if left_side.type is not type(right_side):
+                    raise SlashNotTheSame(
+                        "\n\tColumn and input types are not equal:\n\nColumn {}\nData {}".format(
+                            left_side.type,
+                            type(right_side)
+                        )
+                    )
+                left_side = left_side.name
                 left_side = CheckDatas.check_str(left_side)
             else:
                 raise SlashTypeError(
-                    """Type of the name of column should be str, not {}""".format(
+                    """Type of the name of column should be Column, not {}""".format(
                         type(left_side)
                     )
                 )
+            
 
             if not cond_symbol.__dict__.get("symbol"):
                 raise SlashTypeError("""Wrong type for condition symbol""")

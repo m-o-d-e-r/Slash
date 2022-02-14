@@ -251,7 +251,6 @@ class Operations:
             return DataSet(table.name, table.columns, result)
         else:
             select_query = Select(self.__connection, table, names, condition)
-            self.query_handler.add_query(select_query)
             return select_query.get()
 
     def delete(self, table, condition=" "):
@@ -284,3 +283,8 @@ class Operations:
                 Update(self.__connection, one_table, columns_list, [data[i] for i in columns_list], condition)
         else:
             Update(self.__connection, table, column_names, values, condition)
+
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, *args): ...
