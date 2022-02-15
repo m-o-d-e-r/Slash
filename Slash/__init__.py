@@ -1,4 +1,4 @@
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 __author__ = "M_O_D_E_R"
 
 from .types_ import *

@@ -49,9 +49,9 @@ class Connection:
     def cursor(self):
         return self.__cursor
 
-    def execute(self, request, message=""):
+    def execute(self, request, message="", data=None):
         try:
-            self.__cursor.execute(request)
+            self.__cursor.execute(request, data)
             self.__connection.commit()
         except Exception as e:
             if self.__logger is not False:
@@ -87,7 +87,7 @@ class Connection:
         self.__connection.close()
 
 
-class Create():
+class Create:
     def __init__(self, table, types_list, conn: Connection, operation_obj):
         self.connection = conn
         self.table = table
@@ -211,11 +211,11 @@ class SQLCnd:
 
 class CheckDatas:
     SQL_TEMPLATES: dict = {
-        "insert": r"INSERT INTO [a-zA-Z0-9_]* [)()a-zA-Z,\s_]* VALUES [a-zA-Z)(0-9,\s'@._-]*",
-        "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9',\s_]*",
-        "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!=',-_]*",
-        "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>!=_.']*",
-        "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._]*"
+        "insert": r"INSERT INTO [a-zA-Z0-9_]* [()a-zA-Z,\s_0-9]* VALUES [a-zA-Z)(0-9,%\s'@._-]*",
+        "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9',\s_%]*",
+        "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!=',-_%]*",
+        "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>!=_.'%]*",
+        "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._%]*"
     }
     def __init__(self): ...
 
@@ -232,7 +232,6 @@ class CheckDatas:
     @staticmethod
     def check_sql(sql_request: str, action: str):
         sql_template = CheckDatas.SQL_TEMPLATES.get(action)
-
         if sql_template is not None:
             template = re.findall(sql_template, sql_request)
             if sql_request in template:

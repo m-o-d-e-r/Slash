@@ -399,6 +399,7 @@ class Table:
         """Set columns for table:
             .set_columns(Column(type of datas, name of column))
         """
+        self.__setattr__("rowid", Column(Int, "rowid"))
         for column in columns:
             self.__setattr__(column.name, column)
 

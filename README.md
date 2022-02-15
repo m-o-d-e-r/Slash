@@ -310,6 +310,7 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
+<a href="https://pypi.org/project/Slash92/1.1.1/">1.1.1 (alpha)</a><hr>
 <a href="https://pypi.org/project/Slash92/1.1.0/">1.1.0 (alpha)</a><hr>
 <a href="https://pypi.org/project/Slash92/0.2.3/">0.2.3</a><br>
 <a href="https://pypi.org/project/Slash92/0.2.1.0/">0.2.1.0</a><br>
@@ -327,9 +328,9 @@ print(
 
 # Собрать .whl
     python setup.py bdist_wheel
-    
+
 # Установка через .whl
-    pip install Slash92-0.2.1-py3-none-any.whl
+    pip install Slash92-1.1.1-py3-none-any.whl
 
 # Установка через setup.py
     python setup.py install

@@ -24,8 +24,9 @@ class Insert():
         self.__responce = self.__validate(table, names, values, rules)
         self.__table = table
         conn.execute(
-            CheckDatas.check_sql(self.__responce, "insert"),
-            "insert operation"
+            CheckDatas.check_sql(self.__responce[0], "insert"),
+            "insert operation",
+            self.__responce[1]
         )
         self.__metadata: dict = {
             "columns" : names,
@@ -47,24 +48,9 @@ class Insert():
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
 
         names = ", ".join(names)
+        sql_responce = f'INSERT INTO {table.name} ({names}) VALUES ({", ".join(["%s" for i in range(len(values))])})'
 
-        sql_responce = f"""INSERT INTO {table.name} ({names}) VALUES ("""
-
-        need_format = ("type_text", "type_date", "type_hidden")
-
-        for index, val in enumerate(values):
-            if val.type_name in need_format:
-                sql_responce += f"'{val.value}'"
-            else:
-                sql_responce += str(val.value)
- 
-            if (index + 1) != len(values):
-                sql_responce += ", "
-
-
-        sql_responce += ")"
-
-        return sql_responce
+        return [sql_responce, tuple([i.value for i in values])]
 
     @property
     def metadata(self):
@@ -155,7 +141,7 @@ class Update():
             valid_responce = value._is_valid_datas(rules)
             if not valid_responce[0]:
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
-            
+
             if value.type_name in need_format:
                 sql_responce += " = ".join((names[index], f"'{value.value}'"))
             else:
@@ -195,16 +181,16 @@ class Operations:
                 insert_query = Insert(
                     self.__connection, one_table, columns_list, [data[i] for i in columns_list], rules
                 )
-                self.query_handler.add_query(insert_query)
+#                self.query_handler.add_query(insert_query)
         else:
             if rules == "*":
                 insert_query = Insert(self.__connection, table, names, values)
-                self.query_handler.add_query(insert_query)
+#                self.query_handler.add_query(insert_query)
             else:
                 insert_query = Insert(
                     self.__connection, table, names, values, rules
                 )
-                self.query_handler.add_query(insert_query)
+ #               self.query_handler.add_query(insert_query)
 
     def select(self, table, names, condition=" "):
         if self.__table:
