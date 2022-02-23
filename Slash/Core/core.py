@@ -28,13 +28,16 @@ class Connection:
         self._host = host
         self._port = port
 
-        self.__connection = psycopg2.connect(
-            dbname=self._dbname,
-            user=self._user,
-            password=self._password,
-            host=self._host,
-            port=self._port
-        )
+        try:
+            self.__connection = psycopg2.connect(
+                dbname=self._dbname,
+                user=self._user,
+                password=self._password,
+                host=self._host,
+                port=self._port
+            )
+        except:
+            raise SlashUnexpectedError("Bad connection...")
         self.__cursor = self.__connection.cursor()
 
         self.__query_queue = QueryQueue(self)
@@ -60,9 +63,8 @@ class Connection:
                 self.__logger.info(
                     "Unsuccessful commit: \n\t<< {} >>\n\t{}\n\n{}".format(request, message, e)
                 )
-        else:
-            if self.__logger is not False:
-                self.__logger.info("Successful commit: {}".format(message))
+        if self.__logger is not False:
+            self.__logger.info("Successful commit: {}".format(message))
 
     def close(self):
         self.__connection.close()

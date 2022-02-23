@@ -1,12 +1,13 @@
-from mimetypes import init
+import sys
+sys.path.append("\\".join(__file__.split("\\")[0:-1]))
 from typing import Any, final, Dict, List
 import hashlib
 import json
 import re
 import os
 
-from .utilities.utils_for_rules import *
-from .utilities.kolatz_utils.slash3_core import triple_slash
+#$from utilities.utils_for_rules import WinJsonConverter
+#from utilities.kolatz_utils.slash3_core import triple_slash
 
 
 class Rules:
