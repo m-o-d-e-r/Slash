@@ -1,13 +1,13 @@
 import sys
 sys.path.append("\\".join(__file__.split("\\")[0:-1]))
-from typing import Any, final, Dict, List
+from typing import Any, Union, final, Dict, List
 import hashlib
 import json
 import re
 import os
 
 #$from utilities.utils_for_rules import WinJsonConverter
-#from utilities.kolatz_utils.slash3_core import triple_slash
+#from utilities.kolatz_utils.slash3_core import -
 
 
 class Rules:
@@ -359,11 +359,13 @@ class TablesManager:
 
 class TableMeta(type):
     def __new__(cls, name, parrent, args: dict):
-        columns = []
+        columns: list = []
+        dot_col: dict = {}
         for k in args:
             if type(args[k]) is Column:
                 args[k].set_name(k)
                 columns.append(args[k])
+                dot_col.update({k: args[k]})
 
         for column in columns:
             args.pop(column.name)
@@ -372,6 +374,8 @@ class TableMeta(type):
             args.update({"_Table__name": args.get("__table__name__")})
 
         args.update({"columns": columns})
+        args.update(dot_col)
+        args.update({"rowid": Column(Int, "rowid")})
         return type(name, parrent, args)
 
 
@@ -443,61 +447,68 @@ class DataSet(object):
         return self.__table_name
 
 
-class Query:
-    def __init__(self, id, request) -> None:
-        self.id = id
-        self.query = request
+@final
+class Role:
+    def __init__(self, name: str, password: str, marker: str) -> None:
+        self.__name = name
+        self.__password = password
+        self.__marker = marker
+
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @property
+    def password(self) -> str:
+        return self.__password
+    
+    @property
+    def marker(self) -> str:
+        return self.__marker
+
+    def set_marker(self, new_marker: str) -> None:
+        self.__marker = new_marker
 
 
-class QueryQueue:
+class RoleRights:
+    SUPERUSER = 50
+    CREATEROLE = 30
+    CREATEDB = 10
+
+
+class RolesManager:
+    OBJECT = None
+    def __new__(cls, *args):
+        if not RolesManager.OBJECT:
+            RolesManager.OBJECT = super().__new__(cls)
+            return RolesManager.OBJECT
+        else:
+            return RolesManager.OBJECT
+
     def __init__(self, connection) -> None:
-        self.__current_id = 1
-        self.__queries: dict = {}
+        self.__roles_center: dict = {}
         self.__connection = connection
-        self.__condition = ""
 
-    def add_query(self, request):
-        condition = " WHERE "
-        for item in [items for items in list(zip(request.metadata["columns"], request.metadata["values"]))]:
-            try:
-                int(item[1])
-                condition += " = ".join(list(map(str, [item[0], str(item[1])])))
-            except:
-                condition += " = ".join(list(map(str, [item[0], f"'{item[1]}'"])))
-            condition += " AND "
-
-        condition = condition[0 : len(condition) - 4]
-        self.__condition = condition
-
-        q = Query(self.__current_id, request)
-
-        self.__queries.update(
-            {
-                q.id: q.query
-            }
+    def create_role(self, role: Role):
+        self.__roles_center.update({role.name : role})
+        self.__connection.execute(
+            "CREATE ROLE {} WITH LOGIN PASSWORD '{}' {};".format(
+                role.name,
+                role.password,
+                role.marker
+            )
         )
-        self.__current_id += 1
-        return q
 
-    def rollback(self):
-        self.__queries[self.__current_id-1].table.op.delete(None, self.__condition)
-        self.__queries.pop(self.__current_id-1)
-#        self.__execute()
+    def delete_role(self, name: str):
+        self.__roles_center.pop(name)
 
-        return self.__queries
+    def change_rights(self, name: str, marker: str):
+        user: Union[Role, None] = self.__roles_center.get(name)
+        if user:
+            user.set_marker(marker)
+            return True
+        return False
 
-    def __execute(self):
-        for key in self.__queries.keys():
-            self.__connection.execute(self.__queries[key].responce, "rollback")
-
-    @property
-    def get_queue(self):
-        return self.__queries
-
-    @property
-    def last(self):
-        return self.__queries.get(self.__current_id-1)
-
-    @property
-    def first(self):
-        return self.__queries.get(1)
+    def get_roles(self):
+        return self.__roles_center
+    

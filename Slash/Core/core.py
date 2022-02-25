@@ -1,11 +1,11 @@
 from typing import final
+import psycopg2
 import logging
 import string
 import time
 import sys
 import re
 import os
-import psycopg2
 
 from .exceptions_ import (
     SlashBadColumnNameError, SlashLenMismatch,
@@ -15,8 +15,9 @@ from .exceptions_ import (
     SlashNotTheSame
 )
 from ..types_ import (
-    QueryQueue, BasicTypes,
-    BasicTypes, Column
+    BasicTypes,
+    BasicTypes,
+    Column
 )
 
 
@@ -40,13 +41,7 @@ class Connection:
             raise SlashUnexpectedError("Bad connection...")
         self.__cursor = self.__connection.cursor()
 
-        self.__query_queue = QueryQueue(self)
-
         self.__logger = logger
-
-    @property
-    def queue(self):
-        return self.__query_queue
 
     @property
     def cursor(self):

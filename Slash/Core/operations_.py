@@ -1,6 +1,6 @@
 from typing import Any
 from .core import CheckDatas, Connection, SQLCnd, CheckColumns
-from ..types_ import DataSet, QueryQueue, Table
+from ..types_ import DataSet, Table
 
 from .exceptions_ import SlashRulesError, SlashLenMismatch
 
@@ -161,7 +161,6 @@ class Update():
 class Operations:
     def __init__(self, connection, table_link=None):
         self.__connection = connection
-        self.query_handler: QueryQueue = connection.queue
         self.__table = table_link
 
     def insert(self, table, names, values, *, rules="*"):
@@ -178,19 +177,16 @@ class Operations:
                 for column in one_table.columns:
                     columns_list.append(column.name)
 
-                insert_query = Insert(
+                Insert(
                     self.__connection, one_table, columns_list, [data[i] for i in columns_list], rules
                 )
-#                self.query_handler.add_query(insert_query)
         else:
             if rules == "*":
-                insert_query = Insert(self.__connection, table, names, values)
-#                self.query_handler.add_query(insert_query)
+                Insert(self.__connection, table, names, values)
             else:
-                insert_query = Insert(
+                Insert(
                     self.__connection, table, names, values, rules
                 )
- #               self.query_handler.add_query(insert_query)
 
     def select(self, table, names, condition=" "):
         if self.__table:
@@ -236,8 +232,7 @@ class Operations:
 
             return DataSet(table.name, table.columns, result)
         else:
-            select_query = Select(self.__connection, table, names, condition)
-            return select_query.get()
+            return Select(self.__connection, table, names, condition).get()
 
     def delete(self, table, condition=" "):
         if self.__table:
