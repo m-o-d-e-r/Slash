@@ -3,6 +3,7 @@ from Slash.Core.core import Connection, SQLCnd
 from Slash.types_ import RolesManager, Role, Table, Column, Text, Int, TableMeta, Bool, RoleRights
 
 
+
 conn = Connection(
     dbname="Slash",
     user="postgres",
@@ -10,7 +11,6 @@ conn = Connection(
     host="127.0.0.1",
     port=5432
 )
-
 
 class Books(Table, metaclass=TableMeta):
     book = Column(Text, None)
@@ -46,3 +46,4 @@ conn.create(books)
 
 
 conn.close()
+
