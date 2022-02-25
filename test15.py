@@ -37,8 +37,6 @@ conn.create(books)
 #Operations(conn).delete(books, SQLCnd.where([books.book, SQLCnd.EQ, Text("Java Script")]))
 
 
-
-
 #r_manager = RolesManager(conn)
 #r_manager.create_role(Role("admin2", "admin2", "CREATEDB"))
 
