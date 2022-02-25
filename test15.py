@@ -44,5 +44,4 @@ conn.create(books)
 
 #print(r_manager.get_roles())
 
-
 conn.close()
