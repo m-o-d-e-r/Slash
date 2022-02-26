@@ -6,10 +6,8 @@
 # Важно
 Так как я пока не использую WinJsonConverter и triple_slash, я решил их не подключать.
 
-# Скоро
-   - обновлю колонку для даты
-
 # Новое
+   - Date.now()
    - последние коммиты это просто тест моего скрипта
 
 ```Python
@@ -315,6 +313,7 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
+<a href="https://pypi.org/project/Slash92/1.1.2/">1.1.2 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.1.1/">1.1.1 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.1.0/">1.1.0 (alpha)</a><hr>
 <a href="https://pypi.org/project/Slash92/0.2.3/">0.2.3</a><br>
@@ -339,6 +338,9 @@ print(
 
 # Установка через setup.py
     python setup.py install
+
+# Установка через pip
+    pip install Slash92
 
 # Собрать WinJsonConverter
 <div id="WinJsonConverter"></div>

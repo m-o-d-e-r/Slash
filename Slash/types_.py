@@ -1,13 +1,14 @@
 import sys
 sys.path.append("\\".join(__file__.split("\\")[0:-1]))
 from typing import Any, Union, final, Dict, List
+import datetime
 import hashlib
 import json
 import re
 import os
 
-#$from utilities.utils_for_rules import WinJsonConverter
-#from utilities.kolatz_utils.slash3_core import -
+#from utilities.utils_for_rules import WinJsonConverter
+#from utilities.kolatz_utils.slash3_core import *
 
 
 class Rules:
@@ -208,6 +209,10 @@ class Date(ORMType):
     def __init__(self, value):
         self.type_name = "type_date"
         self.value = value
+    
+    @staticmethod
+    def now():
+        return datetime.datetime.now()
 
 
 class AutoField(ORMType):
@@ -383,6 +388,7 @@ class Table:
     """Table of database"""
     def __init__(self, name: str=None):
         self.__name = name if name else self.name
+        print(self.__name, self.name, name)
         self.__columns: List[Column] = []
         TablesManager.tables.update(
             {

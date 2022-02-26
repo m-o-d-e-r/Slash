@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import final
 import psycopg2
 import logging
@@ -212,7 +213,10 @@ class CheckDatas:
         "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9',\s_%]*",
         "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!=',-_%]*",
         "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>!=_.'%]*",
-        "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._%]*"
+        "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._%]*",
+        "create_role": "",
+        "delete_role": "",
+        "change_role_right": ""
     }
     def __init__(self): ...
 
