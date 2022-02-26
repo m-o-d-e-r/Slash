@@ -511,4 +511,3 @@ class RolesManager:
 
     def get_roles(self):
         return self.__roles_center
-    
