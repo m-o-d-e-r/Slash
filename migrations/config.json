@@ -1,0 +1,26 @@
+{
+    "count_of_blocks": 0,
+    "last_hash": "adaa60779c8bfaae2f9c7871bac0fc4682344515d0e973c059b8ba1fb82599b317f84c1a43ab0033aee364a02a5cca79dbe6ec23eb75e3f83ae5949f2d0479d4",
+    "blocks": {
+        "migration_0": {
+            "is_first": true,
+            "hash": "adaa60779c8bfaae2f9c7871bac0fc4682344515d0e973c059b8ba1fb82599b317f84c1a43ab0033aee364a02a5cca79dbe6ec23eb75e3f83ae5949f2d0479d4",
+            "tables": {
+                "tableformigrations": [
+                    [
+                        "count",
+                        "INT"
+                    ],
+                    [
+                        "is_true",
+                        "BOOL"
+                    ],
+                    [
+                        "date",
+                        "DATE"
+                    ]
+                ]
+            }
+        }
+    }
+}

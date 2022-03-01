@@ -1,5 +1,7 @@
 import sys
-sys.path.append("\\".join(__file__.split("\\")[0:-1]))
+BASE_DIR = "\\".join(__file__.split("\\")[0:-1])
+sys.path.append(BASE_DIR + "\\utilities")
+sys.path.append(BASE_DIR)
 from typing import Any, Union, final, Dict, List
 import datetime
 import hashlib
@@ -7,8 +9,8 @@ import json
 import re
 import os
 
-#from utilities.utils_for_rules import WinJsonConverter
-#from utilities.kolatz_utils.slash3_core import *
+#from utils_for_rules import WinJsonConverter
+#from kolatz_utils.slash3_core import *
 
 
 class Rules:
@@ -388,7 +390,6 @@ class Table:
     """Table of database"""
     def __init__(self, name: str=None):
         self.__name = name if name else self.name
-        print(self.__name, self.name, name)
         self.__columns: List[Column] = []
         TablesManager.tables.update(
             {

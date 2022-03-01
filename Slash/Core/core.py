@@ -1,10 +1,12 @@
+import sys
+sys.path.append("\\".join(__file__.split("\\")[0:-1]))
+
 from datetime import datetime
 from typing import final
 import psycopg2
 import logging
 import string
 import time
-import sys
 import re
 import os
 
@@ -20,6 +22,7 @@ from ..types_ import (
     BasicTypes,
     Column
 )
+from .migrate import MigrationCore
 
 
 class Connection:
@@ -43,6 +46,7 @@ class Connection:
         self.__cursor = self.__connection.cursor()
 
         self.__logger = logger
+        self.__migration_engine = None
 
     @property
     def cursor(self):
@@ -76,6 +80,8 @@ class Connection:
             raise SlashUnexpectedError("\n\t\"\_(-_-)_/\"")
 
     def create(self, table, operation_obj=None):
+        if self.__migration_engine:
+            self.__migration_engine.make_signature(table)
         Create(table, BasicTypes.TYPES_LIST, self, operation_obj)
 
     def __enter__(self):
@@ -83,6 +89,9 @@ class Connection:
 
     def __exit__(self, *args):
         self.__connection.close()
+
+    def set_migration_engine(self, engine: MigrationCore):
+        self.__migration_engine = engine
 
 
 class Create:
