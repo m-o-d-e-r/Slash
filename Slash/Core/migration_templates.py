@@ -9,5 +9,6 @@ STANDART_JSON_CONFIG: dict = {
 MIGRATION_BLOCK: dict = {
     "is_first": False,
     "hash": "",
+    "table_count": 0,
     "tables": {}
 }

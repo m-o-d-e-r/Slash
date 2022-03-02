@@ -6,22 +6,51 @@
 # Важно
 Так как я пока не использую WinJsonConverter и triple_slash, я решил их не подключать.
 
+# Скоро
+   - обновлю документацию
+
 # Новое
-   - Date.now()
-   - последние коммиты это просто тест моего скрипта
+   - появилися файл миграции(миграция происходит автоматически при добавлении новых таблиц или полей таблиц),
+   скоро добавлю чтобы ядро делало миграцию при изминении типа поля. Оно работает, но пока лучше не трогать, 
+   так как пока это тест и там ещё нету откатов бд.
 
 ```Python
-from Slash.types_ import Table, Column, Text
-from Slash.Core.core import Connection, SQLCnd
+from Slash.types_ import Table, TableMeta, Column, Int, Date, Bool
+from Slash.Core.operations_ import Operations
+from Slash.Core.migrate import MigrationCore
+from Slash.Core.core import Connection
+import os
+
+conn = Connection("Slash", "postgres", 'root', "127.0.0.1", 5432)
+conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations"))
 
 
-table = Table("testtableforcondition")
-table.set_columns(Column(Text, "some_c"))
+class TableForMigration(Table, metaclass=TableMeta):
+    count = Column(Int, None)
+    is_true = Column(Bool, None)
+    date = Column(Date, None)
+    new_column = Column(Bool, None)
 
-with Connection("Slash", "postgres", "root", "127.0.0.1", 5432) as conn:
-    conn.create(table)
+    __table__name__ = "tableformigrations"
 
-    print(SQLCnd.where([table.some_c, SQLCnd.EQ, Text("1")]))
+
+#class Test2(Table, metaclass=TableMeta):
+#   age = Column(Int, None)
+#    man = Column(Bool, None)
+#    dirsday = Column(Date, None)
+
+#    __table__name__ = "test2"
+
+
+table = TableForMigration()
+conn.create(table)
+
+#table2 = Test2()
+#conn.create(table2)
+
+
+
+conn.close()
 
 ```
 <br>

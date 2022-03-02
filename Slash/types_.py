@@ -170,7 +170,7 @@ class Hidden(ORMType):
         value = str(value)
         self.type_name = "type_hidden"
 
-        self.value = hashlib.md5(value.encode("utf-8")).hexdigest()
+        self.value = hashlib.sha512(value.encode("utf-8")).hexdigest()
 
 
 class Int(ORMType):
@@ -282,7 +282,7 @@ class TablesManager:
     @staticmethod
     def find_by_name(name):
         """Return one tablesby name of table"""
-        return TablesManager.tables.get(hashlib.md5(name.encode("utf-8")).digest())
+        return TablesManager.tables.get(hashlib.sha512(name.encode("utf-8")).hexdigest())
 
     @staticmethod
     def find_one_by_column(*column_names):
@@ -343,7 +343,7 @@ class TablesManager:
 
                 TablesManager.Utables.update(
                     {
-                        hashlib.md5(self.name.encode("utf-8")).digest(): self
+                        hashlib.sha512(self.name.encode("utf-8")).hexdigest(): self
                     }
                 )
         s_len = len(columns_u)
@@ -365,7 +365,10 @@ class TablesManager:
 
 
 class TableMeta(type):
+    COUNT_OF_TABLE_OBJECTS = 0
+    COUNT_OF_TABLE_TEMPLATES = 0
     def __new__(cls, name, parrent, args: dict):
+        TableMeta.COUNT_OF_TABLE_TEMPLATES += 1
         columns: list = []
         dot_col: dict = {}
         for k in args:
@@ -389,11 +392,12 @@ class TableMeta(type):
 class Table:
     """Table of database"""
     def __init__(self, name: str=None):
+        TableMeta.COUNT_OF_TABLE_OBJECTS += 1
         self.__name = name if name else self.name
         self.__columns: List[Column] = []
         TablesManager.tables.update(
             {
-                hashlib.md5(self.__name.encode("utf-8")).digest(): self
+                hashlib.sha512(self.__name.encode("utf-8")).hexdigest(): self
             }
         )
 

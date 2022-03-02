@@ -81,7 +81,7 @@ class Connection:
 
     def create(self, table, operation_obj=None):
         if self.__migration_engine:
-            self.__migration_engine.make_signature(table)
+            self.__migration_engine.make_migrations()
         Create(table, BasicTypes.TYPES_LIST, self, operation_obj)
 
     def __enter__(self):
