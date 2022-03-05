@@ -1,4 +1,4 @@
-from Slash.types_ import Table, TableMeta, Column, Int, Date, Bool
+from Slash.types_ import Table, TableMeta, Column, Int, Date, Bool, Text
 from Slash.Core.operations_ import Operations
 from Slash.Core.migrate import MigrationCore
 from Slash.Core.core import Connection
@@ -28,6 +28,10 @@ class TableForMigration(Table, metaclass=TableMeta):
 table = TableForMigration()
 conn.create(table)
 
+print(len(table.columns))
+#conn.add_column(table, Column(Int, "t2"))
+conn.delete_column(table, "test")
+print(len(table.columns))
 #table2 = Test2()
 #conn.create(table2)
 

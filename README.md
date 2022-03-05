@@ -3,27 +3,22 @@
     &emsp;Свежая информация по поводу моих проектов будет доступна на этом <a href="https://t.me/logbook_17">канале</a>.
 </p>
 
-# Важно
-Так как я пока не использую WinJsonConverter и triple_slash, я решил их не подключать.
-
 # Скоро
    - обновлю документацию
 
 # Новое
-   - появилися файл миграции(миграция происходит автоматически при добавлении новых таблиц или полей таблиц),
-   скоро добавлю чтобы ядро делало миграцию при изминении типа поля. Оно работает, но пока лучше не трогать, 
-   так как пока это тест и там ещё нету откатов бд.
+   - новая версия 1.2.0
+   - пару фиксов
+   - можно добавлять и удалять колонки на ходу
 
 ```Python
 from Slash.types_ import Table, TableMeta, Column, Int, Date, Bool
-from Slash.Core.operations_ import Operations
 from Slash.Core.migrate import MigrationCore
 from Slash.Core.core import Connection
 import os
 
 conn = Connection("Slash", "postgres", 'root', "127.0.0.1", 5432)
 conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations"))
-
 
 class TableForMigration(Table, metaclass=TableMeta):
     count = Column(Int, None)
@@ -34,25 +29,16 @@ class TableForMigration(Table, metaclass=TableMeta):
     __table__name__ = "tableformigrations"
 
 
-#class Test2(Table, metaclass=TableMeta):
-#   age = Column(Int, None)
-#    man = Column(Bool, None)
-#    dirsday = Column(Date, None)
-
-#    __table__name__ = "test2"
-
-
 table = TableForMigration()
 conn.create(table)
 
-#table2 = Test2()
-#conn.create(table2)
-
-
+conn.add_column(table, Column(Int, "test"))
+conn.delete_column(table, "test")
 
 conn.close()
-
 ```
+
+
 <br>
 
 ```Python
@@ -342,6 +328,7 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
+<a href="https://pypi.org/project/Slash92/1.2.0/">1.2.0 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.1.2/">1.1.2 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.1.1/">1.1.1 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.1.0/">1.1.0 (alpha)</a><hr>

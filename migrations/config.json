@@ -1,6 +1,6 @@
 {
-    "count_of_blocks": 3,
-    "last_hash": "2a2c2fada2cb1e59e5324c4d00986bd3c75e02c83fbfdde496ef94261807c284e41b08f7af42ca80c8c8cdc5132d1a656753e9b4509f7c49d3474c6996b41010",
+    "count_of_blocks": 6,
+    "last_hash": "46bfe0ded245074c462efd28e8a1109cded8db566b1cc965f9853387c82b98d6114233e71a48e0461ac4d8370f40019ec83a64941bd67b4cfd3cd1a2514b078f",
     "blocks": {
         "migration_0": {
             "is_first": true,
@@ -79,6 +79,89 @@
                     [
                         "new_column",
                         "BOOL"
+                    ]
+                ]
+            }
+        },
+        "migration_3": {
+            "is_first": false,
+            "hash": "ddb8c85835e929e13875fddb400759b0642a9290e81c673788d0b1ec7bf46f3717d92e6cc4d74a406733e6aa0d3be4b06f4e322b81917be69472323c78373c93",
+            "table_count": 1,
+            "tables": {
+                "tableformigrations": [
+                    [
+                        "count",
+                        "INT"
+                    ],
+                    [
+                        "is_true",
+                        "BOOL"
+                    ],
+                    [
+                        "date",
+                        "DATE"
+                    ],
+                    [
+                        "new_column",
+                        "BOOL"
+                    ],
+                    [
+                        "t2",
+                        "INT"
+                    ]
+                ]
+            }
+        },
+        "migration_4": {
+            "is_first": false,
+            "hash": "4c7fed93b12f5997398a572d826ab78dfbcf07aa20ec722374dc8ac4054a18deebc1e8e6001c6c2be13e11d46ad9f9272c2e5a973a00182150de8d0e6c29e106",
+            "table_count": 1,
+            "tables": {
+                "tableformigrations": [
+                    [
+                        "count",
+                        "INT"
+                    ],
+                    [
+                        "is_true",
+                        "BOOL"
+                    ],
+                    [
+                        "date",
+                        "DATE"
+                    ],
+                    [
+                        "new_column",
+                        "BOOL"
+                    ]
+                ]
+            }
+        },
+        "migration_5": {
+            "is_first": false,
+            "hash": "46bfe0ded245074c462efd28e8a1109cded8db566b1cc965f9853387c82b98d6114233e71a48e0461ac4d8370f40019ec83a64941bd67b4cfd3cd1a2514b078f",
+            "table_count": 1,
+            "tables": {
+                "lol": [
+                    [
+                        "count",
+                        "INT"
+                    ],
+                    [
+                        "is_true",
+                        "BOOL"
+                    ],
+                    [
+                        "text",
+                        "TEXT"
+                    ],
+                    [
+                        "date",
+                        "DATE"
+                    ],
+                    [
+                        "passw",
+                        "TEXT"
                     ]
                 ]
             }

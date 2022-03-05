@@ -93,6 +93,43 @@ class Connection:
     def set_migration_engine(self, engine: MigrationCore):
         self.__migration_engine = engine
 
+    def add_column(self, table, column: Column):
+        ColumnManipulator.new_column(self, table, column)
+        if self.__migration_engine:
+            self.__migration_engine.make_migrations()
+
+    def delete_column(self, table, column_name: str):
+        ColumnManipulator.drop_column(self, table, column_name)
+        if self.__migration_engine:
+            self.__migration_engine.make_migrations()
+
+
+class ColumnManipulator:
+    @staticmethod
+    def new_column(connection: Connection, table, column: Column):
+        if isinstance(column, Column):
+            CheckDatas.check_str(table.name)
+            CheckDatas.check_str(column.name)
+
+            request = f"ALTER TABLE {table.name} ADD {column.name} {column.sql_type}"
+            connection.execute(CheckDatas.check_sql(request, "add_column"))
+
+            table.columns.append(column)
+            table.__setattr__(column.name, column)
+        else:
+            raise SlashTypeError(f"This item should be Column type, not {type(column)}")
+
+    @staticmethod
+    def drop_column(connection: Connection, table, column_name: str):
+        if isinstance(column_name, str):
+            CheckDatas.check_str(table.name)
+            CheckDatas.check_str(column_name)
+
+            request = f"ALTER TABLE {table.name} DROP COLUMN {column_name}"
+            connection.execute(CheckDatas.check_sql(request, "drop_column"))
+        else:
+            raise SlashTypeError(f"Column name should be str, not {type(column_name)}")
+
 
 class Create:
     def __init__(self, table, types_list, conn: Connection, operation_obj):
@@ -225,7 +262,9 @@ class CheckDatas:
         "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._%]*",
         "create_role": "",
         "delete_role": "",
-        "change_role_right": ""
+        "change_role_right": "",
+        "add_column": r"ALTER TABLE [a-zA-Z0-9_]* ADD [a-zA-Z0-9_]* \D*",
+        "drop_column": r"ALTER TABLE [a-zA-Z0-9_]* DROP COLUMN [a-zA-Z0-9_]*",
     }
     def __init__(self): ...
 

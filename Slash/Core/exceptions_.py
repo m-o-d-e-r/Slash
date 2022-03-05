@@ -25,6 +25,7 @@ class SlashLenMismatch(Exception):
 class SlashOneTableColumn(Exception):
     def __init__(self, text) -> None: ...
 
+
 class SlashNoResultToFetch(Exception):
     def __init__(self, text) -> None: ...
 

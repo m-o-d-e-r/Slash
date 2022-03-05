@@ -28,10 +28,6 @@ class Insert():
             "insert operation",
             self.__responce[1]
         )
-        self.__metadata: dict = {
-            "columns" : names,
-            "values" : [val.value for val in values]
-        }
 
     def __validate(self, table, names, values, rules):
         CheckDatas.check_str(table.name)
@@ -51,10 +47,6 @@ class Insert():
         sql_responce = f'INSERT INTO {table.name} ({names}) VALUES ({", ".join(["%s" for i in range(len(values))])})'
 
         return [sql_responce, tuple([i.value for i in values])]
-
-    @property
-    def metadata(self):
-        return self.__metadata
 
     @property
     def responce(self):

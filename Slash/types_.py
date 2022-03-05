@@ -28,7 +28,6 @@ class Rules:
                 "valide_foo": self.valid_text
             },
             "type_bool": {
-                "symbols": [True, False, 1, 0],
                 "valide_foo": self.valid_bool
             },
             "type_date": {
@@ -59,37 +58,23 @@ class Rules:
         """Validate int"""
         if type(int_val) != rule["type"]:
             return False 
-
-        if rule["min"] < int_val < rule["max"]:
-            return True
-        return False
+        return rule["min"] <= int_val <= rule["max"]
 
     def valid_text(self, text_val, rule):
         """Validate text"""
-        if len(text_val) <= rule["length"]:
-            return True
-        return False
+        return len(text_val) <= rule["length"]
 
     def valid_bool(self, bool_val, rule):
         """Validate bool"""
-        if bool_val in rule["symbols"]:
-            return True
-        return False
+        return bool(bool_val)
 
     def valid_date(self, date_val, rule):
         """Validate data"""
-        res = rule["do"]("[0-9]{4}-[0-9]{2}-[0-9]{2}", str(date_val))
-
-        if res is not None and res.span()[1] == 10:
-            return True
-
-        return False
+        res = rule["do"]("\d{4}-\d{2}-\d{2}", str(date_val))
+        return (res is not None and res.span()[1] == 10)
 
     def valid_hidden(self, hidden_val, rule):
-        if type(hidden_val) in rule["available"]:
-            return True
-        
-        return False
+        return type(hidden_val) in rule["available"]
 
     def __check_path(self, path):
         return os.path.exists(path)
