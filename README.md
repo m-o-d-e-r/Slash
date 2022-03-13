@@ -8,58 +8,18 @@
    - обновлю документацию
 
 # Новое
-   - новая версия 1.2.0
-   - пару фиксов
-   - можно добавлять и удалять колонки на ходу
+   - Создан менеджер версий, который будет обновлять значение версии `{main}.{middle}.{mini}`, пример в `img/`
+        - main (тут что-то зделаю)
+        - middle (будет изменятся при изменении количества таблиц или их наименований)
+        - mini (будет изменятся при изменении количества полей таблиц или их имени)
 
 ```Python
-from Slash.types_ import Table, TableMeta, Column, Int, Date, Bool
-from Slash.Core.migrate import MigrationCore
-from Slash.Core.core import Connection
-import os
+    conn = Connection("Slash", "postgres", "root", "127.0.0.1", 5432)
+    conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations", False))
 
-conn = Connection("Slash", "postgres", 'root', "127.0.0.1", 5432)
-conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations"))
-
-class TableForMigration(Table, metaclass=TableMeta):
-    count = Column(Int, None)
-    is_true = Column(Bool, None)
-    date = Column(Date, None)
-    new_column = Column(Bool, None)
-
-    __table__name__ = "tableformigrations"
-
-
-table = TableForMigration()
-conn.create(table)
-
-conn.add_column(table, Column(Int, "test"))
-conn.delete_column(table, "test")
-
-conn.close()
+#    set_migration_engine(движок для миграций, отладочные сообщения(по умолчанию True))
+#   в движок для миграций нужно передать путь к папке миграций(если папка не создана, она создается)
 ```
-
-
-<br>
-
-```Python
-from Slash.Core.operations_ import Operations
-from Slash.types_ import Table, Column, Text
-from Slash.Core.core import Connection
-
-
-table = Table("some_table")
-table.set_columns(Column(Text, "textcolumn"))
-
-with Connection("Slash", "postgres", "root", "127.0.0.1", 5432) as conn:
-    conn.create(table)
-
-    with Operations(conn) as op:
-        op.insert(table, ("textcolumn"), (Text("hello")))
-        print(op.select(table, ("textcolumn")).get_data())
-
-```
-
 
 # Файлы
   - `Slash/types_.py` <p>Базовые типы, класс для валидации типов(за правилами)</p>
@@ -329,6 +289,7 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
+<a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.2.0/">1.2.0 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.1.2/">1.1.2 (alpha)</a><br>
 <a href="https://pypi.org/project/Slash92/1.1.1/">1.1.1 (alpha)</a><br>
