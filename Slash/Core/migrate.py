@@ -48,8 +48,9 @@ class VersionManager:
         "mini": ("columns")
     }
 
-    def __init__(self):
-        rich.print(f"\n\t[green][Info] -> [cyan]Call VersionManager\n\t{'-'*30}\n")
+    def __init__(self, debug_messages: bool):
+        rich.print(f"\n\t[green][Info] -> [cyan]Call VersionManager\n\t{'-'*30}\n") if debug_messages else ""
+        self.debug_messages = debug_messages
 
     def get_current_version(self):
         with open(str(os.environ.get("MIGRATION_FILE")), "r") as file_:
@@ -60,14 +61,16 @@ class VersionManager:
 
     def push(self, event: str, data):
         if event == "tables":
-            rich.print("\t[green][Info] -> [blue]Detected table difference")
-            rich.print(f"\n: Current tables: {data[0]}")
-            rich.print(f": Last tables: {data[1]}")
-            rich.print(f": Difference: {data[0].symmetric_difference(data[1])}\n")
+            if self.debug_messages:
+                rich.print("\t[green][Info] -> [blue]Detected table difference")
+                rich.print(f"\n: Current tables: {data[0]}")
+                rich.print(f": Last tables: {data[1]}")
+                rich.print(f": Difference: {data[0].symmetric_difference(data[1])}\n")
         elif event == "columns":
-            rich.print("\n\t[green][Info] -> [blue]Detected columns difference")
-            rich.print(f": Table: {data[0]}")
-            rich.print(f": Columns: {data[1]}")
+            if self.debug_messages:
+                rich.print("\n\t[green][Info] -> [blue]Detected columns difference")
+                rich.print(f": Table: {data[0]}")
+                rich.print(f": Columns: {data[1]}")
 
         VersionManager.QUEUE.put(event)
 
@@ -76,7 +79,7 @@ class VersionManager:
 
     def generate_version(self):
         current_version = self.get_current_version()
-        rich.print(f"\n\n\tCurrent version: [yellow]{current_version}")
+        rich.print(f"\n\n\tCurrent version: [yellow]{current_version}") if self.debug_messages else ""
 
         main, middle, mini = map(int, current_version.split("."))
 
@@ -88,7 +91,7 @@ class VersionManager:
                 mini += 1
 
         new_version = VersionManager.FORMAT.format(main, middle, mini)
-        rich.print(f"\tNew version: [yellow]{new_version}")
+        rich.print(f"\tNew version: [yellow]{new_version}") if self.debug_messages else ""
         return new_version
 
 
@@ -98,13 +101,14 @@ class MigrationDownGrade:
 
 
 class MigrationCore:
-    def __init__(self, path_) -> None:
+    def __init__(self, path_, show_messages: bool = True) -> None:
         if not os.path.exists(path_):
             os.mkdir(path_)
             with open(path_+"/config.json", "w") as file_:
                 json.dump(STANDART_JSON_CONFIG, file_, indent=4)
         self.__migrations_folder = path_
         os.environ.setdefault("MIGRATION_FILE", self.__migrations_folder+"/config.json")
+        self.show_messages = show_messages
 
     @property
     def path(self):
@@ -128,7 +132,7 @@ class MigrationCore:
                 self._make_migration_block(config, merged_table_blocks, column_names)
                 config["count_of_blocks"] += 1
             else:
-                version_manager: VersionManager = VersionManager()
+                version_manager: VersionManager = VersionManager(self.show_messages)
                 last_block: dict = config["blocks"][f"migration_{config['count_of_blocks']-1}"]
 
                 # checking the tables
@@ -167,13 +171,13 @@ class MigrationCore:
 
                 n_version: str = version_manager.generate_version()
                 if (n_version != version_manager.get_current_version()):
-                    rich.print("\n\nCreating new migration block...")
+                    rich.print("\n\nCreating new migration block...") if self.show_messages else ""
 
                     self._make_migration_block(config, merged_table_blocks, column_names, last_block["hash"])
                     config["version"] = n_version
                     config["count_of_blocks"] += 1
 
-                    rich.print("Migration block was created...")
+                    rich.print("Migration block was created...") if self.show_messages else ""
 
             self._write_config_file(config)
 

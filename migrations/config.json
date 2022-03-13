@@ -1,20 +1,44 @@
 {
-    "version": "0.6.6",
-    "count_of_blocks": 7,
-    "last_hash": "6f6fbc44d99954b5da536ee5d7eaab73c588be9c9f00f095e1734e57f11903dfa51c01664629d30df82e8774ce7eeadbcdefa8bcfcfdf4c8c80e77c40f0e9bb6",
+    "version": "0.1.1",
+    "count_of_blocks": 2,
+    "last_hash": "7dc49653c9cfcf64e0402d6db0db1af271fc7b50fd2200f860ad92d8c90f77059d15fed5d43e06730886f70c4c24b087e36c1fdc0637160600727b8055ffbe73",
     "blocks": {
         "migration_0": {
             "is_first": true,
-            "hash": "e102cd363c784884e93589dae93da7c2b544975470d8c34eedbb77b0871a346e723e8facc7bd1864235a57a77ab5f4196d45c8999ae52553ce6252afb1dd7e42",
+            "hash": "f89d6e4826cc11f5e56d746c7e0b7fd2e069f438b50b749d3f26c9b8934330ac74dafe73b67e7b8f6bb66e8eca77fe93e76857ee234708fc23b2a2e6745d795d",
             "table_count": 1,
             "tables": {
                 "users": [
                     [
-                        "author",
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
                         "TEXT"
                     ],
                     [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
                         "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
                         "TEXT"
                     ]
                 ]
@@ -22,142 +46,41 @@
         },
         "migration_1": {
             "is_first": false,
-            "hash": "c41c8672eadc6446de57833089f5e894c6159dc75ad3567c1dff1d08365885408dc879c9e972da1137e5c4afec3ef9c562939ca3e8ad6e52a0a9be2d39d1b6e8",
-            "table_count": 2,
-            "tables": {
-                "users": [
-                    [
-                        "author",
-                        "TEXT"
-                    ],
-                    [
-                        "phone",
-                        "TEXT"
-                    ]
-                ],
-                "users2": [
-                    [
-                        "author2",
-                        "TEXT"
-                    ],
-                    [
-                        "phone2",
-                        "TEXT"
-                    ]
-                ]
-            }
-        },
-        "migration_2": {
-            "is_first": false,
-            "hash": "bf246b2b5a2638e5bcae7a2f1a15c0701dbf47eb7c9d3aa7d64a95f849d1adb4696069ac3bdc064f50ce92d53702d1e0fbd63fe7424c3dcabc1eaa218619fde3",
+            "hash": "4c63eff4e5b7696bbbbc5da37c6e99df15cf9d2e3b952e4c6116bcab15feed3907034b425194f0f9b119241f46e1f2731c201b636c0feb73843fbc7a5ae48230",
             "table_count": 1,
             "tables": {
                 "users": [
                     [
-                        "author",
-                        "TEXT"
-                    ],
-                    [
-                        "phone",
-                        "TEXT"
-                    ]
-                ]
-            }
-        },
-        "migration_3": {
-            "is_first": false,
-            "hash": "bb854937e7b0b56075401a3fca3cb9602c55b1a5a8ed834d8f965161e49fa5e7644e2b96fea9508cc37f30133ae3156e18de73ceeed80a39d74d16c41d423fc9",
-            "table_count": 2,
-            "tables": {
-                "users": [
-                    [
-                        "author",
-                        "TEXT"
-                    ],
-                    [
-                        "phone",
-                        "TEXT"
-                    ]
-                ],
-                "users2": [
-                    [
-                        "author2",
-                        "TEXT"
-                    ],
-                    [
-                        "phone2",
-                        "TEXT"
-                    ]
-                ]
-            }
-        },
-        "migration_4": {
-            "is_first": false,
-            "hash": "a30a7eda6a16c0d7a3d7fdb8a6a054e62f2254058f878a2a6e8dfcef15b8da3174b9b5e5ded201efd72a081f4dd45154805082147c9cdcb2070c73034e38cfd6",
-            "table_count": 1,
-            "tables": {
-                "users": [
-                    [
-                        "author",
-                        "TEXT"
-                    ],
-                    [
-                        "phone",
-                        "TEXT"
-                    ]
-                ]
-            }
-        },
-        "migration_5": {
-            "is_first": false,
-            "hash": "109d7b66bd1205e9e46a27aad523009e16aae4190548ceb99da6107a8db79ac58bb626014dca7561d67f6aeba7696bb6836e39192dc9d0c91d490d4f961d935d",
-            "table_count": 2,
-            "tables": {
-                "users": [
-                    [
-                        "author",
+                        "rang",
                         "INT"
                     ],
                     [
-                        "phone",
-                        "TEXT"
-                    ]
-                ],
-                "users2": [
-                    [
-                        "author2",
+                        "author_name",
                         "TEXT"
                     ],
                     [
-                        "phone2",
+                        "author_surname",
                         "TEXT"
-                    ]
-                ]
-            }
-        },
-        "migration_6": {
-            "is_first": false,
-            "hash": "6f6fbc44d99954b5da536ee5d7eaab73c588be9c9f00f095e1734e57f11903dfa51c01664629d30df82e8774ce7eeadbcdefa8bcfcfdf4c8c80e77c40f0e9bb6",
-            "table_count": 2,
-            "tables": {
-                "users": [
+                    ],
                     [
-                        "author",
-                        "TEXT"
+                        "single",
+                        "BOOL"
                     ],
                     [
                         "phone",
                         "TEXT"
-                    ]
-                ],
-                "users2": [
+                    ],
                     [
-                        "author2",
+                        "login",
                         "TEXT"
                     ],
                     [
-                        "phone2",
+                        "password",
                         "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
                     ]
                 ]
             }
