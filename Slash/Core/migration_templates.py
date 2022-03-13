@@ -1,6 +1,7 @@
 # STANDART_JSON_CONFIG < MIGRATION_BLOCK
 
 STANDART_JSON_CONFIG: dict = {
+    "version": "0.1.0",
     "count_of_blocks": 0,
     "last_hash": "",
     "blocks": {}

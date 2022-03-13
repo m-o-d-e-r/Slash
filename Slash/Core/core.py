@@ -71,6 +71,9 @@ class Connection:
         if self.__logger is not False:
             self.__logger.info("Session closed")
 
+    def __del__(self):
+        self.close()
+
     def fetchall(self):
         try:
             return self.__cursor.fetchall()

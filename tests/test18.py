@@ -47,11 +47,11 @@ class Test(Table, metaclass=TableMeta):
     text = Column(Text, None)
     date = Column(Date, None)
     passw = Column(Hidden, None)
-#    __table__name__ = "lol"
+    __table__name__ = "q"
 
 
 
-table = Test("lol")
+table = Test()
 conn.create(table)
 
 

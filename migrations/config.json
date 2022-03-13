@@ -1,166 +1,162 @@
 {
-    "count_of_blocks": 6,
-    "last_hash": "46bfe0ded245074c462efd28e8a1109cded8db566b1cc965f9853387c82b98d6114233e71a48e0461ac4d8370f40019ec83a64941bd67b4cfd3cd1a2514b078f",
+    "version": "0.6.6",
+    "count_of_blocks": 7,
+    "last_hash": "6f6fbc44d99954b5da536ee5d7eaab73c588be9c9f00f095e1734e57f11903dfa51c01664629d30df82e8774ce7eeadbcdefa8bcfcfdf4c8c80e77c40f0e9bb6",
     "blocks": {
         "migration_0": {
             "is_first": true,
-            "hash": "35e6af8ca7a57d0abf806dffbb2d51c2050aba4861d6d2b018a70799ec63edc48b1b363dd1e43e151f75d2c28ec4c8a0c3119f99b86e31bc61beaebafe5a5e53",
-            "table_count": 2,
+            "hash": "e102cd363c784884e93589dae93da7c2b544975470d8c34eedbb77b0871a346e723e8facc7bd1864235a57a77ab5f4196d45c8999ae52553ce6252afb1dd7e42",
+            "table_count": 1,
             "tables": {
-                "tableformigrations": [
+                "users": [
                     [
-                        "count",
-                        "INT"
+                        "author",
+                        "TEXT"
                     ],
                     [
-                        "is_true",
-                        "BOOL"
-                    ],
-                    [
-                        "date",
-                        "DATE"
-                    ]
-                ],
-                "test2": [
-                    [
-                        "age",
-                        "INT"
-                    ],
-                    [
-                        "man",
-                        "BOOL"
-                    ],
-                    [
-                        "dirsday",
-                        "DATE"
+                        "phone",
+                        "TEXT"
                     ]
                 ]
             }
         },
         "migration_1": {
             "is_first": false,
-            "hash": "168e2f7e18621b17f601b2ca32f289e7279e45928409ac21d9610c8734a1434693e9b396eac482209710130ea4265de194477c74596b9363272fa2707f6f46e1",
-            "table_count": 1,
+            "hash": "c41c8672eadc6446de57833089f5e894c6159dc75ad3567c1dff1d08365885408dc879c9e972da1137e5c4afec3ef9c562939ca3e8ad6e52a0a9be2d39d1b6e8",
+            "table_count": 2,
             "tables": {
-                "tableformigrations": [
+                "users": [
                     [
-                        "count",
-                        "INT"
+                        "author",
+                        "TEXT"
                     ],
                     [
-                        "is_true",
-                        "BOOL"
+                        "phone",
+                        "TEXT"
+                    ]
+                ],
+                "users2": [
+                    [
+                        "author2",
+                        "TEXT"
                     ],
                     [
-                        "date",
-                        "DATE"
+                        "phone2",
+                        "TEXT"
                     ]
                 ]
             }
         },
         "migration_2": {
             "is_first": false,
-            "hash": "2a2c2fada2cb1e59e5324c4d00986bd3c75e02c83fbfdde496ef94261807c284e41b08f7af42ca80c8c8cdc5132d1a656753e9b4509f7c49d3474c6996b41010",
+            "hash": "bf246b2b5a2638e5bcae7a2f1a15c0701dbf47eb7c9d3aa7d64a95f849d1adb4696069ac3bdc064f50ce92d53702d1e0fbd63fe7424c3dcabc1eaa218619fde3",
             "table_count": 1,
             "tables": {
-                "tableformigrations": [
+                "users": [
                     [
-                        "count",
-                        "INT"
+                        "author",
+                        "TEXT"
                     ],
                     [
-                        "is_true",
-                        "BOOL"
-                    ],
-                    [
-                        "date",
-                        "DATE"
-                    ],
-                    [
-                        "new_column",
-                        "BOOL"
+                        "phone",
+                        "TEXT"
                     ]
                 ]
             }
         },
         "migration_3": {
             "is_first": false,
-            "hash": "ddb8c85835e929e13875fddb400759b0642a9290e81c673788d0b1ec7bf46f3717d92e6cc4d74a406733e6aa0d3be4b06f4e322b81917be69472323c78373c93",
-            "table_count": 1,
+            "hash": "bb854937e7b0b56075401a3fca3cb9602c55b1a5a8ed834d8f965161e49fa5e7644e2b96fea9508cc37f30133ae3156e18de73ceeed80a39d74d16c41d423fc9",
+            "table_count": 2,
             "tables": {
-                "tableformigrations": [
+                "users": [
                     [
-                        "count",
-                        "INT"
+                        "author",
+                        "TEXT"
                     ],
                     [
-                        "is_true",
-                        "BOOL"
+                        "phone",
+                        "TEXT"
+                    ]
+                ],
+                "users2": [
+                    [
+                        "author2",
+                        "TEXT"
                     ],
                     [
-                        "date",
-                        "DATE"
-                    ],
-                    [
-                        "new_column",
-                        "BOOL"
-                    ],
-                    [
-                        "t2",
-                        "INT"
+                        "phone2",
+                        "TEXT"
                     ]
                 ]
             }
         },
         "migration_4": {
             "is_first": false,
-            "hash": "4c7fed93b12f5997398a572d826ab78dfbcf07aa20ec722374dc8ac4054a18deebc1e8e6001c6c2be13e11d46ad9f9272c2e5a973a00182150de8d0e6c29e106",
+            "hash": "a30a7eda6a16c0d7a3d7fdb8a6a054e62f2254058f878a2a6e8dfcef15b8da3174b9b5e5ded201efd72a081f4dd45154805082147c9cdcb2070c73034e38cfd6",
             "table_count": 1,
             "tables": {
-                "tableformigrations": [
+                "users": [
                     [
-                        "count",
-                        "INT"
+                        "author",
+                        "TEXT"
                     ],
                     [
-                        "is_true",
-                        "BOOL"
-                    ],
-                    [
-                        "date",
-                        "DATE"
-                    ],
-                    [
-                        "new_column",
-                        "BOOL"
+                        "phone",
+                        "TEXT"
                     ]
                 ]
             }
         },
         "migration_5": {
             "is_first": false,
-            "hash": "46bfe0ded245074c462efd28e8a1109cded8db566b1cc965f9853387c82b98d6114233e71a48e0461ac4d8370f40019ec83a64941bd67b4cfd3cd1a2514b078f",
-            "table_count": 1,
+            "hash": "109d7b66bd1205e9e46a27aad523009e16aae4190548ceb99da6107a8db79ac58bb626014dca7561d67f6aeba7696bb6836e39192dc9d0c91d490d4f961d935d",
+            "table_count": 2,
             "tables": {
-                "lol": [
+                "users": [
                     [
-                        "count",
+                        "author",
                         "INT"
                     ],
                     [
-                        "is_true",
-                        "BOOL"
-                    ],
+                        "phone",
+                        "TEXT"
+                    ]
+                ],
+                "users2": [
                     [
-                        "text",
+                        "author2",
                         "TEXT"
                     ],
                     [
-                        "date",
-                        "DATE"
+                        "phone2",
+                        "TEXT"
+                    ]
+                ]
+            }
+        },
+        "migration_6": {
+            "is_first": false,
+            "hash": "6f6fbc44d99954b5da536ee5d7eaab73c588be9c9f00f095e1734e57f11903dfa51c01664629d30df82e8774ce7eeadbcdefa8bcfcfdf4c8c80e77c40f0e9bb6",
+            "table_count": 2,
+            "tables": {
+                "users": [
+                    [
+                        "author",
+                        "TEXT"
                     ],
                     [
-                        "passw",
+                        "phone",
+                        "TEXT"
+                    ]
+                ],
+                "users2": [
+                    [
+                        "author2",
+                        "TEXT"
+                    ],
+                    [
+                        "phone2",
                         "TEXT"
                     ]
                 ]

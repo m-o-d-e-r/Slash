@@ -28,10 +28,9 @@ def normalize_int_array(string_int):
         if value == 0:
             string_int[index] += (max(string_int) - min(string_int))
 
-
     return string_int
 
-def triple_slash(input_string, r=2):
+def triple_slash(input_string, secret=""):
     string_int = list(map(ord, input_string))
     number = mult(string_int)
     number += 1 if number % 2 == 0 else 0

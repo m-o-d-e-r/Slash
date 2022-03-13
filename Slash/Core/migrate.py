@@ -1,4 +1,6 @@
+from multiprocessing import Queue
 import hashlib
+import rich
 import json
 import copy
 import os
@@ -33,6 +35,68 @@ class MigrationTableBlock:
         return (self.__name, [c.name for c in self.__columns])
 
 
+class VersionManager:
+    QUEUE: Queue = Queue()
+
+    MAX_MAIN_VERSION = 25
+    MAX_MIDDLE_VERSION = 25
+    MAX_MINI_VERSION = 25
+    FORMAT = "{}.{}.{}" # min: 0.0.1 > max: 25.25.25
+    VERSION_RULES: dict = {
+        "main": ("tables", "columns"),
+        "middle": ("tables"),
+        "mini": ("columns")
+    }
+
+    def __init__(self):
+        rich.print(f"\n\t[green][Info] -> [cyan]Call VersionManager\n\t{'-'*30}\n")
+
+    def get_current_version(self):
+        with open(str(os.environ.get("MIGRATION_FILE")), "r") as file_:
+            while True:
+                data = file_.readline()
+                if data == "" or "version" in data:
+                    return json.loads("{" + data.strip().replace(",", "") + "}")["version"]
+
+    def push(self, event: str, data):
+        if event == "tables":
+            rich.print("\t[green][Info] -> [blue]Detected table difference")
+            rich.print(f"\n: Current tables: {data[0]}")
+            rich.print(f": Last tables: {data[1]}")
+            rich.print(f": Difference: {data[0].symmetric_difference(data[1])}\n")
+        elif event == "columns":
+            rich.print("\n\t[green][Info] -> [blue]Detected columns difference")
+            rich.print(f": Table: {data[0]}")
+            rich.print(f": Columns: {data[1]}")
+
+        VersionManager.QUEUE.put(event)
+
+    def pop(self):
+        return VersionManager.QUEUE.get()
+
+    def generate_version(self):
+        current_version = self.get_current_version()
+        rich.print(f"\n\n\tCurrent version: [yellow]{current_version}")
+
+        main, middle, mini = map(int, current_version.split("."))
+
+        while not self.QUEUE.empty():
+            data = self.pop()
+            if data == "tables":
+                middle += 1
+            elif data == "columns":
+                mini += 1
+
+        new_version = VersionManager.FORMAT.format(main, middle, mini)
+        rich.print(f"\tNew version: [yellow]{new_version}")
+        return new_version
+
+
+class MigrationDownGrade:
+    def __int__(self):
+        ...
+
+
 class MigrationCore:
     def __init__(self, path_) -> None:
         if not os.path.exists(path_):
@@ -40,6 +104,7 @@ class MigrationCore:
             with open(path_+"/config.json", "w") as file_:
                 json.dump(STANDART_JSON_CONFIG, file_, indent=4)
         self.__migrations_folder = path_
+        os.environ.setdefault("MIGRATION_FILE", self.__migrations_folder+"/config.json")
 
     @property
     def path(self):
@@ -63,22 +128,53 @@ class MigrationCore:
                 self._make_migration_block(config, merged_table_blocks, column_names)
                 config["count_of_blocks"] += 1
             else:
-                current_signature: set = set()
-                last_signature: set = set()
-
-                for key in merged_table_blocks.keys():
-                    current_signature.add(key)
-                    current_signature.add("".join([i[0] for i in merged_table_blocks[key]]))
-
+                version_manager: VersionManager = VersionManager()
                 last_block: dict = config["blocks"][f"migration_{config['count_of_blocks']-1}"]
-                for key in last_block["tables"].keys():
-                    last_signature.add(key)
-                    last_signature.add("".join([i[0] for i in last_block["tables"][key]]))
 
-                if (current_signature != last_signature):
+                # checking the tables
+                current_tables = set(merged_table_blocks.keys())
+                last_tables = set(last_block["tables"].keys())
+
+                if current_tables.symmetric_difference(last_tables):
+                    print("Detected new table")
+
+                if current_tables != last_tables:
+                    version_manager.push("tables", (current_tables, last_tables))
+
+                # cheking the columns
+                current_columns = list(merged_table_blocks.values())
+                last_columns = list(last_block["tables"].values())
+
+                temp_ = current_tables if len(current_tables) > len(last_tables) else last_tables
+                for table in temp_:
+                    current_ = merged_table_blocks.get(table)
+                    last_ = last_block["tables"].get(table)
+                    if last_ and current_:
+                        columns_difference = None
+
+                        current_ = set(tuple([tuple(i) for i in current_]))
+                        last_ = set(tuple([tuple(i) for i in last_]))
+
+                        if len(current_) > len(last_):
+                            columns_difference = current_ - last_
+                        elif len(current_) < len(last_):
+                            columns_difference = last_ - current_
+                        else:
+                            columns_difference = current_ - last_
+                        
+                        if columns_difference:
+                            version_manager.push("columns", (table, columns_difference))
+
+                n_version: str = version_manager.generate_version()
+                if (n_version != version_manager.get_current_version()):
+                    rich.print("\n\nCreating new migration block...")
+
                     self._make_migration_block(config, merged_table_blocks, column_names, last_block["hash"])
-
+                    config["version"] = n_version
                     config["count_of_blocks"] += 1
+
+                    rich.print("Migration block was created...")
+
             self._write_config_file(config)
 
     def _make_migration_block(self, globla_config: dict, table_blocks: dict, columns_names: str, last_hash: str=""):
