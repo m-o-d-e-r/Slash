@@ -1,8 +1,10 @@
 from multiprocessing import Queue
+from typing import Any
 import hashlib
 import rich
 import json
 import copy
+import sys
 import os
 
 from migration_templates import (
@@ -10,7 +12,9 @@ from migration_templates import (
     MIGRATION_BLOCK
 )
 from ..types_ import (
-    BasicTypes, TablesManager, TableMeta
+    Column,
+    BasicTypes,
+    Table, TablesManager, TableMeta,
 )
 
 
@@ -94,7 +98,6 @@ class VersionManager:
         rich.print(f"\tNew version: [yellow]{new_version}") if self.debug_messages else ""
         return new_version
 
-
 class MigrationDownGrade:
     def __int__(self):
         ...
@@ -102,6 +105,7 @@ class MigrationDownGrade:
 
 class MigrationCore:
     def __init__(self, path_, show_messages: bool = True) -> None:
+        self._connection: Any = None
         if not os.path.exists(path_):
             os.mkdir(path_)
             with open(path_+"/config.json", "w") as file_:
@@ -139,21 +143,17 @@ class MigrationCore:
                 current_tables = set(merged_table_blocks.keys())
                 last_tables = set(last_block["tables"].keys())
 
-                if current_tables.symmetric_difference(last_tables):
-                    print("Detected new table")
-
                 if current_tables != last_tables:
                     version_manager.push("tables", (current_tables, last_tables))
 
                 # cheking the columns
-                current_columns = list(merged_table_blocks.values())
-                last_columns = list(last_block["tables"].values())
-
+                temp_table: str = ""
                 temp_ = current_tables if len(current_tables) > len(last_tables) else last_tables
                 for table in temp_:
                     current_ = merged_table_blocks.get(table)
                     last_ = last_block["tables"].get(table)
                     if last_ and current_:
+                        status = None
                         columns_difference = None
 
                         current_ = set(tuple([tuple(i) for i in current_]))
@@ -161,12 +161,44 @@ class MigrationCore:
 
                         if len(current_) > len(last_):
                             columns_difference = current_ - last_
+                            temp_table = table
+                            status = 1
                         elif len(current_) < len(last_):
                             columns_difference = last_ - current_
-                        else:
-                            columns_difference = current_ - last_
-                        
+                            temp_table = table
+                            status = -1
+
                         if columns_difference:
+                            if status == 1:
+                                table_from_manager: Table = TablesManager.tables.get(
+                                    hashlib.sha512(
+                                        temp_table.encode("utf-8")
+                                    ).hexdigest()
+                                )
+                                new_column_object: Column
+                                for column_item in columns_difference:
+                                    new_column_object: Column = Column(
+                                        BasicTypes.ORM_TYPES_LIST.get(column_item[1]),
+                                        column_item[0]
+                                    )
+                                    self._connection.add_column(
+                                        table_from_manager,
+                                        new_column_object,
+                                        False
+                                    )
+                            elif status == -1:
+                                table_from_manager: Table = TablesManager.tables.get(
+                                    hashlib.sha512(
+                                        temp_table.encode("utf-8")
+                                    ).hexdigest()
+                                )
+                                for column_item in columns_difference:
+                                    self._connection.delete_column(
+                                        table_from_manager,
+                                        column_item[0],
+                                        False
+                                    )
+
                             version_manager.push("columns", (table, columns_difference))
 
                 n_version: str = version_manager.generate_version()
@@ -178,6 +210,8 @@ class MigrationCore:
                     config["count_of_blocks"] += 1
 
                     rich.print("Migration block was created...") if self.show_messages else ""
+                else:
+                    rich.print("123")
 
             self._write_config_file(config)
 

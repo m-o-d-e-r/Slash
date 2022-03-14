@@ -202,25 +202,19 @@ class Date(ORMType):
         return datetime.datetime.now()
 
 
-class AutoField(ORMType):
-    """
-        SQL    - SERIAL PRIMARY KEY
-        Python - int
-    """
-    def __init__(self, value=""):
-        self.type_name = "type_int"
-        self.value = value
-
-
 class BasicTypes:
     """Contains all available types"""
-    TYPES_LIST = (Int, Text, Bool, Date, AutoField, Hidden)
+    TYPES_LIST = (Int, Text, Bool, Date, Hidden)
     NEED_FORMAT = ("type_text", "type_date", "type_hidden")
     DB_TYPES_LIST = {
         Int: "INT", Text: "TEXT",
         Bool: "BOOL", Date: "DATE",
-        AutoField: "SERIAL PRIMARY KEY",
         Hidden: "TEXT"
+    }
+    ORM_TYPES_LIST = {
+        "INT": Int, "TEXT": Text,
+        "BOOL": Bool, "DATE": Date,
+        "HIDDEN": Hidden
     }
 
 

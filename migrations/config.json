@@ -1,7 +1,7 @@
 {
-    "version": "0.1.1",
-    "count_of_blocks": 2,
-    "last_hash": "7dc49653c9cfcf64e0402d6db0db1af271fc7b50fd2200f860ad92d8c90f77059d15fed5d43e06730886f70c4c24b087e36c1fdc0637160600727b8055ffbe73",
+    "version": "0.4.8",
+    "count_of_blocks": 11,
+    "last_hash": "be36c9b750e59aaa403c38100b40217d332757ac65b4d3f5d7cd7e7313f1b85affdb85ac9a06034e933bf17a1b4076fce7e787911d45be895ce2d5585dc182ed",
     "blocks": {
         "migration_0": {
             "is_first": true,
@@ -39,14 +39,14 @@
                     ],
                     [
                         "reg_data",
-                        "TEXT"
+                        "DATE"
                     ]
                 ]
             }
         },
         "migration_1": {
             "is_first": false,
-            "hash": "4c63eff4e5b7696bbbbc5da37c6e99df15cf9d2e3b952e4c6116bcab15feed3907034b425194f0f9b119241f46e1f2731c201b636c0feb73843fbc7a5ae48230",
+            "hash": "f86e102a2be73a0844133d2a53d32bca24913c8f5547ea60a6382136c97517e20836e1576d0c1175e52a9033709634daf96cb38803224f055b4efc520562ec7c",
             "table_count": 1,
             "tables": {
                 "users": [
@@ -80,6 +80,469 @@
                     ],
                     [
                         "reg_data",
+                        "DATE"
+                    ],
+                    [
+                        "test_field",
+                        "TEXT"
+                    ]
+                ]
+            }
+        },
+        "migration_2": {
+            "is_first": false,
+            "hash": "2410a819eaea1f5ea053f9e5e9c37112acb486b715c7f1a76d302b552bdb4ebf50ed0f17a34e025094e57d5da283108cd3f6cd9ae100b0abdbe450219c7cf13a",
+            "table_count": 1,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ]
+                ]
+            }
+        },
+        "migration_3": {
+            "is_first": false,
+            "hash": "ba76d4c0469ed53268fb7f783b49b81ec7bdc02d2df6bdfdd6793e9efcfe29522ef7b7c743159626a2d758f981395fa54dfa82516026a58a801b2d0bff661cf1",
+            "table_count": 1,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ]
+                ]
+            }
+        },
+        "migration_4": {
+            "is_first": false,
+            "hash": "50c2d437d7c6867b3de200230b70ff7f91aed7b1789a05d2acc82b3d5ca36a48cc68617dde3e7e214d1f2b14673046a2b35d3545ce2a544eb2c4a42916e18fae",
+            "table_count": 1,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ],
+                    [
+                        "test_field",
+                        "TEXT"
+                    ]
+                ]
+            }
+        },
+        "migration_5": {
+            "is_first": false,
+            "hash": "d952f251718808b0fc71ce05af729e710ee61f584c850c73c4d38941b995ba6ef86bcee58f8402d30f900f609ba54a5c3ca95f0164c11fcfd61d07b18b2b36a5",
+            "table_count": 2,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ],
+                    [
+                        "test_field",
+                        "TEXT"
+                    ]
+                ],
+                "books": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "pages",
+                        "INT"
+                    ]
+                ]
+            }
+        },
+        "migration_6": {
+            "is_first": false,
+            "hash": "fd71e8e492bfd61b431acad683e09adf2b804d1211190f2dc3fd2da6ff79c043ccd2986ab7f1ab0f81e4d303f37999e220cf470e6fcbc91964f4252ed5cb5caf",
+            "table_count": 2,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ],
+                    [
+                        "test_field",
+                        "TEXT"
+                    ]
+                ],
+                "books": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "pages",
+                        "INT"
+                    ],
+                    [
+                        "created",
+                        "DATE"
+                    ]
+                ]
+            }
+        },
+        "migration_7": {
+            "is_first": false,
+            "hash": "54a7bc4c830fde96494640490f480082052a09db42b53859f147d3d47e72387c315c84fc012189a341379b8e12eb52ec9a38c0c51bea9489344cff1c2cfdd5d6",
+            "table_count": 2,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ],
+                    [
+                        "test_field",
+                        "TEXT"
+                    ]
+                ],
+                "books": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "pages",
+                        "INT"
+                    ]
+                ]
+            }
+        },
+        "migration_8": {
+            "is_first": false,
+            "hash": "d8906ed67ff1a2baeffa39fb8ea9e9033d1998a7a7819f13f0f5bb92adeb7be37de83f52a536b398efe8f1089eee9883b0c28e69327b17dac95e055dd1ab1270",
+            "table_count": 2,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ]
+                ],
+                "books": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "pages",
+                        "INT"
+                    ],
+                    [
+                        "created",
+                        "DATE"
+                    ]
+                ]
+            }
+        },
+        "migration_9": {
+            "is_first": false,
+            "hash": "8c987e4df400d0fe4263acf5625d09f57053b5fcf516a1dcd595dd8fd3a7c86da0cde0340a4202261f5bc811d55ce7a3a4ab4c9ccafe2a38a5592cd7bf994920",
+            "table_count": 1,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ]
+                ]
+            }
+        },
+        "migration_10": {
+            "is_first": false,
+            "hash": "be36c9b750e59aaa403c38100b40217d332757ac65b4d3f5d7cd7e7313f1b85affdb85ac9a06034e933bf17a1b4076fce7e787911d45be895ce2d5585dc182ed",
+            "table_count": 2,
+            "tables": {
+                "users": [
+                    [
+                        "rang",
+                        "INT"
+                    ],
+                    [
+                        "author_name",
+                        "TEXT"
+                    ],
+                    [
+                        "author_surname",
+                        "TEXT"
+                    ],
+                    [
+                        "single",
+                        "BOOL"
+                    ],
+                    [
+                        "phone",
+                        "TEXT"
+                    ],
+                    [
+                        "login",
+                        "TEXT"
+                    ],
+                    [
+                        "password",
+                        "TEXT"
+                    ],
+                    [
+                        "reg_data",
+                        "DATE"
+                    ]
+                ],
+                "books": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "pages",
+                        "INT"
+                    ],
+                    [
+                        "created",
                         "DATE"
                     ]
                 ]

@@ -7,13 +7,20 @@
 
 # Скоро
    - обновлю документацию
-   - (спойлер) при добавлении новой колонки в модельке, таблица автоматически обновляется. Мб завтра я это скину сюда)
 
 # Новое
+   - Добавалено автоматическое создание/удаление колонок в бд, в зависимости от состояния полей моделей (подробнее в пункте о миграциях)
    - Создан менеджер версий, который будет обновлять значение версии `{main}.{middle}.{mini}`, пример в `img/`
         - main (тут что-то зделаю)
         - middle (будет изменятся при изменении количества таблиц или их наименований)
         - mini (будет изменятся при изменении количества полей таблиц или их имени)
+
+# Миграции (тест)
+   - &emsp;Миграция будет автоматически применятся при вызове метода .create() у объекта соединения,
+   на данный момент миграции применяются когда количество вызовов .create() равно количеству моделей.<br>&emsp;Это значит то что если кто-то определил
+   дополнительную модель, и не вызвал этот метод, то ядро миргаций даже не запустится.<br>&emsp;Ядро следит за последним вызовом метода .create(). Но, 
+   если нужно "находу" создать/удалить колонку, то ядро автоматически запустится и создаст блок миграций при не соответствии сигратур блоков(есть какие-то отличия).<br>&emsp;Если всё сделано верно, тогда при добавлении/удалении(для теста можно какое-то поле закоментировать) колонки из модели это всё будет автоматически применено к бд(добавление/удаление колонки).
+
 
 ```Python
     conn = Connection("Slash", "postgres", "root", "127.0.0.1", 5432)
@@ -28,6 +35,8 @@
   - `Slash/Core/core.py` <p>Создание подключения, классы валидации, расширение SQL-запросов</p>
   - `Slash/Core/exeptions_.py` <p>Исключения</p>
   - `Slash/Core/operations_.py` <p>Операции с БД</p>
+  - `Slash/Core/migrate.py` <p>Ядро для миграций</p>
+  - `Slash/Core/migration_templates.py` <p>Шаблоны для блоков миграций</p>
 
 # Создание подключения
 ```Python
@@ -291,30 +300,31 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
-<a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 (alpha)</a><br>
-<a href="https://pypi.org/project/Slash92/1.2.0/">1.2.0 (alpha)</a><br>
-<a href="https://pypi.org/project/Slash92/1.1.2/">1.1.2 (alpha)</a><br>
-<a href="https://pypi.org/project/Slash92/1.1.1/">1.1.1 (alpha)</a><br>
-<a href="https://pypi.org/project/Slash92/1.1.0/">1.1.0 (alpha)</a><hr>
-<a href="https://pypi.org/project/Slash92/0.2.3/">0.2.3</a><br>
-<a href="https://pypi.org/project/Slash92/0.2.1.0/">0.2.1.0</a><br>
-<a href="https://pypi.org/project/Slash92/0.2.0/">0.2.0</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.9/">0.1.9</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.8/">0.1.8</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.7.0/">0.1.7.0</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.6/">0.1.6</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.5/">0.1.5</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.4/">0.1.4</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.3/">0.1.3</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.2/">0.1.2</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.1/">0.1.1</a><br>
-<a href="https://pypi.org/project/Slash92/0.1.0/">0.1.0</a>
+<span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.1 (alpha)</a> Mar 13, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 (alpha)</a> Mar 13, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.2.0/">1.2.0 </a> Mar 5, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.1.2/">1.1.2 </a> Feb 23, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.1.1/">1.1.1 </a> Feb 15, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.1.0/">1.1.0 </a> Feb 15, 2022</span><hr>
+<span><a href="https://pypi.org/project/Slash92/0.2.3/">0.2.3</a> Jan 21, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.2.1.0/">0.2.1.0</a> Jan 6, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.2.0/">0.2.0</a> Jan 4, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.9/">0.1.9</a> Jan 4, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.8/">0.1.8</a> Jan 2, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.7.0/">0.1.7.0</a> Dec 24, 2021<br>
+<span><a href="https://pypi.org/project/Slash92/0.1.6/">0.1.6</a> Dec 21, 2021</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.5/">0.1.5</a> Dec 20, 2021</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.4/">0.1.4</a> Dec 18, 2021</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.3/">0.1.3</a> Dec 17, 2021</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.2/">0.1.2</a> Dec 16, 2021</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.1/">0.1.1</a> Dec 15, 2021</span><br>
+<span><a href="https://pypi.org/project/Slash92/0.1.0/">0.1.0</a> Dec 13, 2021</span>
 
 # Собрать .whl
     python setup.py bdist_wheel
 
 # Установка через .whl
-    pip install Slash92-1.1.1-py3-none-any.whl
+    pip install Slash92-1.3.0-py3-none-any.whl
 
 # Установка через setup.py
     python setup.py install

@@ -95,15 +95,16 @@ class Connection:
 
     def set_migration_engine(self, engine: MigrationCore):
         self.__migration_engine = engine
+        self.__migration_engine._connection = self
 
-    def add_column(self, table, column: Column):
+    def add_column(self, table, column: Column, __make_migration=True):
         ColumnManipulator.new_column(self, table, column)
-        if self.__migration_engine:
+        if self.__migration_engine and __make_migration:
             self.__migration_engine.make_migrations()
 
-    def delete_column(self, table, column_name: str):
+    def delete_column(self, table, column_name: str, __make_migration=True):
         ColumnManipulator.drop_column(self, table, column_name)
-        if self.__migration_engine:
+        if self.__migration_engine and __make_migration:
             self.__migration_engine.make_migrations()
 
 

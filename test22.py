@@ -1,15 +1,24 @@
 from Slash.Core.operations_ import Operations
 from Slash.Core.migrate import MigrationCore
-from Slash.Core.core import Connection
+from Slash.Core.core import Connection, Logger
 from Slash.types_ import (
     Table, TableMeta, Column,
     Int, Text, Bool, Hidden, Date
 )
 import os
 
+#logger=Logger(__name__, __file__, redirect_error=True)
+conn = Connection(
+    "Slash", "postgres", "root", "127.0.0.1", 5432
+)
+conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations", True))
 
-conn = Connection("Slash", "postgres", "root", "127.0.0.1", 5432)
-conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations", False))
+
+class Books(Table, metaclass=TableMeta):
+    author = Column(Text, None)    
+    theme = Column(Text, None)
+    pages = Column(Int, None)
+    created = Column(Date, None)
 
 
 class UserData(Table, metaclass=TableMeta):
@@ -21,12 +30,17 @@ class UserData(Table, metaclass=TableMeta):
     login = Column(Text, None)
     password = Column(Hidden, None)
     reg_data = Column(Date, None)
+#    test_field = Column(Text, None)
 
     __table__name__ = "users"
 
 
 users = UserData()
 conn.create(users)
+
+
+#books = Books("books")
+#conn.create(books)
 
 
 #Operations(conn).insert(
