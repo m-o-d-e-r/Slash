@@ -300,8 +300,8 @@ print(
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
 # PyPI
-<span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.1 (alpha)</a> Mar 13, 2022</span><br>
-<span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 (alpha)</a> Mar 13, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.3.1/">1.3.1 (alpha)</a> Mar 14, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 </a> Mar 13, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.2.0/">1.2.0 </a> Mar 5, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.1.2/">1.1.2 </a> Feb 23, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.1.1/">1.1.1 </a> Feb 15, 2022</span><br>
