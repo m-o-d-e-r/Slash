@@ -248,7 +248,7 @@ Operations(conn).update(
     ("name", ),
     (Text("33"), ),
     SQLConditions.where(
-        "age", SQLConditions.LE, "3"
+        [table.age, SQLConditions.LE, Int(3)]
     )
 )
 ```
@@ -267,14 +267,14 @@ conn = Connection(
 # удаление с условием
 Operations(conn).delete(
     table, SQLConditions.where(
-        "age", SQLConditions.LE, 100
+        [table.age, SQLConditions.LE, Int(100)]
     )
 )
 
 # удаление без условий
 Operations(conn).delete(table.name)
 ```
-&emsp;`Operation(conn).delet` принимает объект таблицы, и условие `SQLConditions.where`.
+&emsp;`Operation(conn).delete` принимает объект таблицы, и условие `SQLConditions.where`.
 
 ## Выборка данных
 ```Python
@@ -285,17 +285,6 @@ conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432
 )
 
-# выборка даннных за условем из сортировкой
-print(
-    Operations(conn).select(
-        table,
-        ("age", "name"),
-        SQLConditions.where(
-            "age", SQLConditions.EQ, 3,
-            SQLConditions.order_by("age", desc="desc")   
-        )
-    )
-)
 ```
 &emsp;`Operation(conn).select` принимает объект таблицы, имена колонок, условие `SQLConditions.where`.
 
