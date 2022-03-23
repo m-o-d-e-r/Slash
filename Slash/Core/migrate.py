@@ -135,6 +135,7 @@ class MigrationCore:
             if config["count_of_blocks"] == 0:
                 self._make_migration_block(config, merged_table_blocks, column_names)
                 config["count_of_blocks"] += 1
+                config["blocks"]["migration_0"]["version"] = "0.1.0"
             else:
                 version_manager: VersionManager = VersionManager(self.show_messages)
                 last_block: dict = config["blocks"][f"migration_{config['count_of_blocks']-1}"]
@@ -205,21 +206,29 @@ class MigrationCore:
                 if (n_version != version_manager.get_current_version()):
                     rich.print("\n\nCreating new migration block...") if self.show_messages else ""
 
-                    self._make_migration_block(config, merged_table_blocks, column_names, last_block["hash"])
+                    self._make_migration_block(config, merged_table_blocks, column_names, n_version, last_block["hash"])
                     config["version"] = n_version
                     config["count_of_blocks"] += 1
 
                     rich.print("Migration block was created...") if self.show_messages else ""
                 else:
-                    rich.print("123")
-
+                    rich.print("Versions the same...") if self.show_messages else ""
+            
             self._write_config_file(config)
 
-    def _make_migration_block(self, globla_config: dict, table_blocks: dict, columns_names: str, last_hash: str=""):
+    def _make_migration_block(
+        self,
+        globla_config: dict,
+        table_blocks: dict,
+        columns_names: str,
+        n_version: str="",
+        last_hash: str=""
+    ):
         new_migration: dict = copy.deepcopy(MIGRATION_BLOCK)
         new_migration["is_first"] = True if not last_hash else False
         new_migration["table_count"] = len(table_blocks)
         new_migration["tables"].update(table_blocks)
+        new_migration["version"] = n_version
 
         new_migration["hash"] = hashlib.sha512(
             (
