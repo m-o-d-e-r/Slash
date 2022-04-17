@@ -1,6 +1,6 @@
 from typing import Any
 from .core import CheckDatas, Connection, SQLCnd, CheckColumns
-from ..types_ import DataSet, Table
+from ..types_ import DataSet, Table, BasicTypes
 
 from .exceptions_ import SlashRulesError, SlashLenMismatch
 
@@ -111,7 +111,15 @@ class Select():
 
 
 class Update():
-    def __init__(self, conn: Connection, table: Table, names: tuple, values: tuple, condition, rules="*"):
+    def __init__(
+        self,
+        conn: Connection,
+        table: Table,
+        names: tuple,
+        values: tuple,
+        condition,
+        rules="*"
+    ):
         self.__responce = self.__validate(
             table, names, values, condition, rules
         )
@@ -127,14 +135,12 @@ class Update():
         CheckDatas.check_str(table.name)
         sql_responce = "UPDATE {} SET ".format(table.name)
 
-        need_format = ("type_text", "type_date", "type_hidden")
-
         for index, value in enumerate(values):
             valid_responce = value._is_valid_datas(rules)
             if not valid_responce[0]:
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
 
-            if value.type_name in need_format:
+            if value.type_name in BasicTypes.NEED_FORMAT:
                 sql_responce += " = ".join((names[index], f"'{value.value}'"))
             else:
                 sql_responce += " = ".join((names[index], f"{value.value}"))
@@ -170,7 +176,11 @@ class Operations:
                     columns_list.append(column.name)
 
                 Insert(
-                    self.__connection, one_table, columns_list, [data[i] for i in columns_list], rules
+                    self.__connection,
+                    one_table,
+                    columns_list,
+                    [data[i] for i in columns_list],
+                    rules
                 )
         else:
             if rules == "*":
@@ -253,7 +263,13 @@ class Operations:
                 for column in one_table.columns:
                     columns_list.append(column.name)
 
-                Update(self.__connection, one_table, columns_list, [data[i] for i in columns_list], condition)
+                Update(
+                    self.__connection,
+                    one_table,
+                    columns_list,
+                    [data[i] for i in columns_list],
+                    condition
+                )
         else:
             Update(self.__connection, table, column_names, values, condition)
 

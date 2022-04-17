@@ -2,6 +2,7 @@ import sys
 BASE_DIR = "\\".join(__file__.split("\\")[0:-1])
 sys.path.append(BASE_DIR + "\\utilities")
 sys.path.append(BASE_DIR)
+
 from typing import Any, Union, final, Dict, List
 import datetime
 import hashlib
@@ -11,6 +12,7 @@ import os
 
 #from utils_for_rules import WinJsonConverter
 #from kolatz_utils.slash3_core import *
+from Core.exceptions_ import SlashAttributeError
 
 
 class Rules:
@@ -31,14 +33,34 @@ class Rules:
                 "valide_foo": self.valid_bool
             },
             "type_date": {
-                "do": re.search,
+                "template": "\\d{4}-\\d{2}-\\d{2}",
                 "valide_foo": self.valid_date
             },
             "type_hidden": {
-                "available": [str],
                 "valide_foo": self.valid_hidden
+            },
+            "type_email": {
+                "template": "^[a-zA-Z0-9\\-_\\.]*@[a-z\\.]*$",
+                "valide_foo": self.valid_email
+            },
+            "type_phone": {
+                "template": "\\+[0-9]*",
+                "valide_foo": self.valid_phone
+            },
+            "type_ipv4": {
+                "template": "[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}.[0-9]{1,3}",
+                "valide_foo": self.valid_ipv4
+            },
+            "type_ipv6": {
+                "template": "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$",
+                "valide_foo": self.valid_ipv6
+            },
+            "type_url": {
+                "template": "^https://[0-9a-zA-Z\\./\\-_&=]*$",
+                "valide_foo": self.valid_url
             }
         }
+
         self._user_rules = {}
 
     def get_rules(self):
@@ -66,15 +88,33 @@ class Rules:
 
     def valid_bool(self, bool_val, rule):
         """Validate bool"""
-        return bool(bool_val)
+        return bool_val
 
     def valid_date(self, date_val, rule):
         """Validate data"""
-        res = rule["do"]("\d{4}-\d{2}-\d{2}", str(date_val))
-        return (res is not None and res.span()[1] == 10)
+        return re.findall(rule["template"], str(date_val))
 
     def valid_hidden(self, hidden_val, rule):
-        return type(hidden_val) in rule["available"]
+        return type(hidden_val) is str
+
+    def valid_email(self, email_val, rule):
+        res = re.findall(rule["template"], email_val)
+        return res
+
+    def valid_phone(self, phone_val, rule):
+        return len(re.findall(rule["template"], phone_val)) == 1
+
+    def valid_ipv4(self, ipv4_val, rule):
+        res = re.findall(rule["template"], ipv4_val)
+        return (res and len(res) == 1)
+
+    def valid_ipv6(self, ipv6_val, rule):
+        res = re.findall(rule["template"], ipv6_val)
+        return (res and len(res) == 1)
+
+    def valid_url(self, url_val, rule):
+        res = re.findall(rule["template"], url_val)
+        return (len(res) == 1)
 
     def __check_path(self, path):
         return os.path.exists(path)
@@ -135,10 +175,10 @@ class JsonConverter:
 
 class ORMType:
     """Base type class"""
-    def __init__(self):
-        self.type_name: str
-        self.value: Any
-    def _is_valid_datas(self, user_rules: Rules):
+    def __init__(self, type_name, value):
+        self.type_name: str = type_name
+        self.value: Any = value
+    def _is_valid_datas(self, user_rules: Union[str, Rules]="*"):
         if user_rules == "*":
             rules = Rules()
             rule = rules.get_rules()[self.type_name]
@@ -151,11 +191,11 @@ class ORMType:
 
 
 class Hidden(ORMType):
-    def __init__(self, value: str):
-        value = str(value)
-        self.type_name = "type_hidden"
-
-        self.value = hashlib.sha512(value.encode("utf-8")).hexdigest()
+    def __init__(self, value: Any):
+        super().__init__(
+            "type_hidden",
+            hashlib.sha512(str(value).encode("utf-8")).hexdigest()
+        )
 
 
 class Int(ORMType):
@@ -164,8 +204,7 @@ class Int(ORMType):
         Python - int
     """
     def __init__(self, value):
-        self.type_name = "type_int"
-        self.value = value
+        super().__init__("type_int", value)
 
 
 class Text(ORMType):
@@ -174,8 +213,7 @@ class Text(ORMType):
         Python - str
     """
     def __init__(self, value):
-        self.type_name = "type_text"
-        self.value = value
+        super().__init__("type_text", value)
 
 
 class Bool(ORMType):
@@ -184,8 +222,7 @@ class Bool(ORMType):
         Python - bool
     """
     def __init__(self, value):
-        self.type_name = "type_bool"
-        self.value = value
+        super().__init__("type_bool", value)
 
 
 class Date(ORMType):
@@ -194,27 +231,59 @@ class Date(ORMType):
         Python - datetime.today()
     """
     def __init__(self, value):
-        self.type_name = "type_date"
-        self.value = value
+        super().__init__("type_date", value)
     
     @staticmethod
     def now():
         return datetime.datetime.now()
 
 
+class Email(ORMType):
+    def __init__(self, value):
+        super().__init__("type_email", value)
+
+
+class Phone(ORMType):
+    def __init__(self, value):
+        super().__init__("type_phone", value)
+
+
+class IPv4(ORMType):
+    def __init__(self, value):
+        super().__init__("type_ipv4", value)
+
+
+class IPv6(ORMType):
+    def __init__(self, value):
+        super().__init__("type_ipv6", value)
+
+
+class Url(ORMType):
+    def __init__(self, value):
+        super().__init__("type_url", value)
+
+
 class BasicTypes:
     """Contains all available types"""
-    TYPES_LIST = (Int, Text, Bool, Date, Hidden)
-    NEED_FORMAT = ("type_text", "type_date", "type_hidden")
+    TYPES_LIST = (Int, Text, Bool, Date, Hidden, Email, Phone, IPv4, IPv6, Url)
+    NEED_FORMAT = (
+        "type_text", "type_date", "type_hidden",
+        "type_email", "type_phone", "type_ipv4",
+        "type_ipv6", "type_url"
+    )
     DB_TYPES_LIST = {
         Int: "INT", Text: "TEXT",
         Bool: "BOOL", Date: "DATE",
-        Hidden: "TEXT"
+        Hidden: "TEXT", Email: "TEXT",
+        Phone: "TEXT", IPv4: "TEXT",
+        IPv6: "TEXT", Url: "TEXT"
     }
     ORM_TYPES_LIST = {
         "INT": Int, "TEXT": Text,
         "BOOL": Bool, "DATE": Date,
-        "HIDDEN": Hidden
+        "HIDDEN": Hidden, "EMAIL": Email,
+        "PHONE": Phone, "IPV4": IPv4,
+        "IPV6": IPv6, "URL": Url
     }
 
 
@@ -374,6 +443,15 @@ class Table:
         TableMeta.COUNT_OF_TABLE_OBJECTS += 1
         self.__name = name if name else self.name
         self.__columns: List[Column] = []
+
+        if type(self.__name) is Column:
+            raise SlashAttributeError(
+                    f"""
+                        >> A column with this name alredy exists.
+                        Column name: '{self.__name.name}'
+
+                    """
+                )
         TablesManager.tables.update(
             {
                 hashlib.sha512(self.__name.encode("utf-8")).hexdigest(): self
@@ -397,7 +475,17 @@ class Table:
         TableMeta.COUNT_OF_TABLE_TEMPLATES += 1
         self.__setattr__("rowid", Column(Int, "rowid"))
         for column in columns:
-            self.__setattr__(column.name, column)
+            try:
+                self.__setattr__(column.name, column)
+            except AttributeError as e:
+                raise SlashAttributeError(
+                    f"""
+                        >> An attribute with this name alredy exists.
+                        Attribute name: '{column.name}'
+
+                    """
+                )
+
 
         self.__columns = columns
 
