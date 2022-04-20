@@ -1,8 +1,9 @@
-from typing import Any
+from ctypes import Union
+from typing import Any, List, Tuple
 from .core import CheckDatas, Connection, SQLCnd, CheckColumns
-from ..types_ import DataSet, Table, BasicTypes
+from ..types_ import Column, DataSet, Table, BasicTypes
 
-from .exceptions_ import SlashRulesError, SlashLenMismatch
+from .exceptions_ import SlashRulesError, SlashLenMismatch, SlashTypeError
 
 
 class Insert():
@@ -156,6 +157,67 @@ class Update():
         return self.__responce
 
 
+class InnerJoin():
+    def __init__(
+        self,
+        conn: Connection,
+        tables,
+        names: Any,
+        condition: str
+    ):
+        self.__conn = conn
+        self.__tables = tables
+        self.__names = names
+        self.__responce = self.__validate(condition)
+
+    def __validate(self, condition):
+        SQL_RESPONCE = "SELECT {} FROM {} INNER JOIN {} ON {}"
+        for name in self.__names:
+            if type(name) is not Column:
+                raise SlashTypeError(
+                    f"""
+                    Type of this object should be Column, not {type(name)}
+                    Operation: INNER JOIN
+                    Object value: --{name}--
+                    """
+                )
+            CheckDatas.check_str(name.name)
+
+        for table in self.__tables:
+            if type(table) is not Table:
+                raise SlashTypeError(
+                    f"""
+                    Type of this object should be Table, not {type(name)}
+                    Operation: INNER JOIN
+                    Object value: --{name}--
+                    """
+                )
+            CheckDatas.check_str(table.name)
+
+        return SQL_RESPONCE.format(
+            ", ".join([".".join((item._p, item.name)) for item in self.__names]),
+            *[table.name for table in self.__tables],
+            condition
+        )
+    
+    def get(self):
+        self.__conn.execute(
+            CheckDatas.check_sql(self.__responce, "select"),
+            "select operation"
+        )
+        return DataSet(
+            self.__tables, self.__names, self.__conn.fetchall()
+        )
+
+
+class LeftOuter():
+    ...
+
+
+class RightOuter():
+    ...
+
+
 class Operations:
     def __init__(self, connection, table_link=None):
         self.__connection = connection
@@ -272,6 +334,9 @@ class Operations:
                 )
         else:
             Update(self.__connection, table, column_names, values, condition)
+
+    def inner_join(self, tables, names, condition):
+        return InnerJoin(self.__connection, tables, names, condition).get()
 
     def __enter__(self):
         return self

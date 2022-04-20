@@ -473,8 +473,11 @@ class Table:
             .set_columns(Column(type of datas, name of column))
         """
         TableMeta.COUNT_OF_TABLE_TEMPLATES += 1
-        self.__setattr__("rowid", Column(Int, "rowid"))
+        rowid_column = Column(Int, "rowid")
+        rowid_column.__setattr__("_p", self.name)
+        self.__setattr__("rowid", rowid_column)
         for column in columns:
+            column.__setattr__("_p", self.name)
             try:
                 self.__setattr__(column.name, column)
             except AttributeError as e:

@@ -17,7 +17,6 @@ conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations
 class Books(Table, metaclass=TableMeta):
     author = Column(Text, None)    
     theme = Column(Text, None)
-    pages = Column(Int, None)
     created = Column(Date, None)
 
 

@@ -171,7 +171,7 @@ class MyTable(Table, metaclass=TableMeta):
     born = Column(Date, None)
     man = Column(Bool, None)
     age = Column(Int, None)
-    mame = Column(Text, None)
+    name = Column(Text, None)
     password = Column(Hidden, None)
 
     __table__name__ = "test" # якщо вказати це поле, можна не передавати ім'я в конструктор
@@ -181,6 +181,88 @@ table = MyTable("testdoc1")
 conn.create(table)
 ```
 
+## Автоматичні міграції
+```Python
+from Slash.Core.migrate import MigrationCore # потрібно для міграцій
+from Slash.Core.core import Connection, Logger
+from Slash.types_ import (
+    Table, TableMeta, Column,
+    Int, Text, Bool, Hidden, Date
+)
+
+conn = Connection(
+    "Slash", "postgres", "root", "127.0.0.1", 5432
+)
+conn.set_migration_engine(
+    MigrationCore(
+        os.path.dirname(__file__) + "/migrations",  # шлях до файлу міграції
+        True                                        # показ повідомлень від ядра міграції (аналог режиму debug)
+    )
+)
+
+class Books(Table, metaclass=TableMeta):
+    author = Column(Text, None)    
+    theme = Column(Text, None)
+    pages = Column(Int, None)
+    created = Column(Date, None)
+
+
+books = Books("books")
+conn.create(books)
+```
+
+## Приклад міграцій
+```Json
+{
+    "version": "0.1.1",
+    "count_of_blocks": 1,
+    "last_hash": "4daf5d2dc979ad85eeae646d34b09df106680ef57778d6466f532307139df68a30c083f8a8065d9467e278075cc8d174c313c204dde5d5cc4754152130cea0df",
+    "blocks": {
+        "migration_0": {
+            "is_first": true,
+            "hash": "4daf5d2dc979ad85eeae646d34b09df106680ef57778d6466f532307139df68a30c083f8a8065d9467e278075cc8d174c313c204dde5d5cc4754152130cea0df",
+            "table_count": 1,
+            "tables": {
+                "books228": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "pages",
+                        "INT"
+                    ],
+                    [
+                        "created",
+                        "DATE"
+                    ]
+                ]
+            }
+        }
+    }
+}
+```
+&emsp; Структура файлу міграції
+ - `version` - нинішня версія бази даних
+ - `count_of_blocks` - кількість блоків міграції(фактично показує кількість змін)
+ - `last_hash` - хеш останнього блоку міграції
+ - `blocks` - складається з блоків міграцій
+   - `migration_0` - блок міграції (містить інформацію стосовно таблиць)
+     - `is_first` - прапорець який показує початковий блок міграції
+     - `hash` - хеш блоку міграції
+     - `table_count` - кількість таблиць(моделей)
+     - `tables` - словник, ключами якого є ім'я таблиці(моделі), а значеннями сигнатура таблиць(моделей)
+       - `books228` - ім'я таблиці(моделі)
+         - `["author", "TEXT"]` - сигнатура одного поля містить ім'я поля та його тип
+
+Початковою версією БД буде 0.1.0 -> ({main}.{middle}.{min})
+ - main - поки не змінюється
+ - middle - змінюється при додаванні/видаленні нової таблиці(моделі)
+ - min - змінюється при зміні кількості полів в однієї із таблиць (пізніше буде додана зміна версії при зміні типу поля)
 
 
 ## Вставка даних

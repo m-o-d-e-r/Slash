@@ -1,0 +1,53 @@
+{
+    "version": "0.1.1",
+    "count_of_blocks": 2,
+    "last_hash": "b8478a05860cd8d0df8e003463ea19877e8368b005145b5ead0629ba46f26fe8db60752e4f4c72e264e59ca30e34edf01ecb229493fc4f66c48ff66fa269cc49",
+    "blocks": {
+        "migration_0": {
+            "is_first": true,
+            "hash": "4daf5d2dc979ad85eeae646d34b09df106680ef57778d6466f532307139df68a30c083f8a8065d9467e278075cc8d174c313c204dde5d5cc4754152130cea0df",
+            "table_count": 1,
+            "tables": {
+                "books228": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "pages",
+                        "INT"
+                    ],
+                    [
+                        "created",
+                        "DATE"
+                    ]
+                ]
+            }
+        },
+        "migration_1": {
+            "is_first": false,
+            "hash": "b8478a05860cd8d0df8e003463ea19877e8368b005145b5ead0629ba46f26fe8db60752e4f4c72e264e59ca30e34edf01ecb229493fc4f66c48ff66fa269cc49",
+            "table_count": 1,
+            "tables": {
+                "books228": [
+                    [
+                        "author",
+                        "TEXT"
+                    ],
+                    [
+                        "theme",
+                        "TEXT"
+                    ],
+                    [
+                        "created",
+                        "DATE"
+                    ]
+                ]
+            }
+        }
+    }
+}

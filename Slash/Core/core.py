@@ -210,14 +210,17 @@ class SQLCnd:
             right_side = cond_item[2]
 
             if type(left_side) is Column:
-                if left_side.type is not type(right_side):
-                    raise SlashNotTheSame(
-                        "\n\tColumn and input types are not equal:\n\nColumn {}\nData {}".format(
-                            left_side.type,
-                            type(right_side)
+                if type(right_side) is not Column:
+                    if left_side.type is not type(right_side):
+                        raise SlashNotTheSame(
+                            "\n\tColumn and input types are not equal:\n\nColumn {}\nData {}".format(
+                                left_side.type,
+                                type(right_side)
+                            )
                         )
-                    )
-                left_side = left_side.name
+                    left_side = left_side.name
+                else:
+                    left_side = f"{left_side._p}.{left_side.name}"
                 left_side = CheckDatas.check_str(left_side)
             else:
                 raise SlashTypeError(
@@ -230,19 +233,23 @@ class SQLCnd:
             if not cond_symbol.__dict__.get("symbol"):
                 raise SlashTypeError("""Wrong type for condition symbol""")
 
-            if type(right_side) not in BasicTypes.TYPES_LIST:
+            if (type(right_side) not in BasicTypes.TYPES_LIST) and (type(right_side) is not Column):
                 raise SlashTypeError("""Wrong type for data""")
 
             temp_value = None
-            if right_side.type_name in BasicTypes.NEED_FORMAT:
-                temp_value = f"'{right_side.value}'"
+            if type(right_side) is not Column:
+                if right_side.type_name in BasicTypes.NEED_FORMAT:
+                    temp_value = f"'{right_side.value}'"
+                else:
+                    temp_value = str(right_side.value)
             else:
-                temp_value = str(right_side.value)
+                temp_value = f"{right_side._p}.{right_side.name}"
 
             cond_item[0:3] = [f"{left_side} {cond_symbol.symbol} {temp_value}"]
 
+        word = " WHERE " if type(right_side) is not Column else ""
         condition = " ".join([i[0] if type(i) is list else i for i in condition])
-        condition = CheckDatas.check_str(" WHERE " + condition)
+        condition = CheckDatas.check_str(word + condition)
 
         return condition
 
