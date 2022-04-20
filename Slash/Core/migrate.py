@@ -98,6 +98,7 @@ class VersionManager:
         rich.print(f"\tNew version: [yellow]{new_version}") if self.debug_messages else ""
         return new_version
 
+
 class MigrationDownGrade:
     def __int__(self):
         ...
@@ -126,8 +127,8 @@ class MigrationCore:
 
             for table in TablesManager.tables.values():
                 tables_block = MigrationTableBlock(
-                        table.name, table.columns, self.path
-                    ).get_table_block()
+                    table.name, table.columns, self.path
+                ).get_table_block()
 
                 merged_table_blocks.update(tables_block[0])
                 column_names += tables_block[1]
@@ -148,77 +149,76 @@ class MigrationCore:
                     version_manager.push("tables", (current_tables, last_tables))
 
                 # cheking the columns
-                temp_table: str = ""
                 temp_ = current_tables if len(current_tables) > len(last_tables) else last_tables
                 for table in temp_:
                     current_ = merged_table_blocks.get(table)
                     last_ = last_block["tables"].get(table)
-                    if last_ and current_:
-                        status = None
-                        columns_difference = None
 
-                        current_ = set(tuple([tuple(i) for i in current_]))
-                        last_ = set(tuple([tuple(i) for i in last_]))
+                    status = None
+                    columns_difference = None
 
-                        if len(current_) > len(last_):
-                            columns_difference = current_ - last_
-                            temp_table = table
-                            status = 1
-                        elif len(current_) < len(last_):
-                            columns_difference = last_ - current_
-                            temp_table = table
-                            status = -1
+                    current_ = set([tuple(i) for i in current_])
+                    last_ = set([tuple(i) for i in last_]) if last_ is not None else set()
 
-                        if columns_difference:
-                            if status == 1:
-                                table_from_manager: Table = TablesManager.tables.get(
-                                    hashlib.sha512(
-                                        temp_table.encode("utf-8")
-                                    ).hexdigest()
+                    if len(current_) > len(last_):
+                        columns_difference = current_ - last_
+                        status = 1
+                    elif len(current_) < len(last_):
+                        columns_difference = last_ - current_
+                        status = -1
+
+                    if columns_difference:
+                        table_from_manager: Table = TablesManager.tables.get(
+                            hashlib.sha512(
+                                table.encode("utf-8")
+                            ).hexdigest()
+                        )
+                        if status == 1:
+                            new_column_object: Column
+                            for column_item in columns_difference:
+                                new_column_object: Column = Column(
+                                    BasicTypes.ORM_TYPES_LIST.get(column_item[1]),
+                                    column_item[0]
                                 )
-                                new_column_object: Column
-                                for column_item in columns_difference:
-                                    new_column_object: Column = Column(
-                                        BasicTypes.ORM_TYPES_LIST.get(column_item[1]),
-                                        column_item[0]
-                                    )
-                                    self._connection.add_column(
-                                        table_from_manager,
-                                        new_column_object,
-                                        False
-                                    )
-                            elif status == -1:
-                                table_from_manager: Table = TablesManager.tables.get(
-                                    hashlib.sha512(
-                                        temp_table.encode("utf-8")
-                                    ).hexdigest()
+                                self._connection.add_column(
+                                    table_from_manager,
+                                    new_column_object,
+                                    False
                                 )
-                                for column_item in columns_difference:
-                                    self._connection.delete_column(
-                                        table_from_manager,
-                                        column_item[0],
-                                        False
-                                    )
+                        elif status == -1:
+                            for column_item in columns_difference:
+                                self._connection.delete_column(
+                                    table_from_manager,
+                                    column_item[0],
+                                    False
+                                )
 
-                            version_manager.push("columns", (table, columns_difference))
+                        version_manager.push("columns", (table, columns_difference))
 
+                # generate a new version of db of stay old
                 n_version: str = version_manager.generate_version()
                 if (n_version != version_manager.get_current_version()):
                     rich.print("\n\nCreating new migration block...") if self.show_messages else ""
 
-                    self._make_migration_block(config, merged_table_blocks, column_names, n_version, last_block["hash"])
+                    self._make_migration_block(
+                        config,               # global configs (migration file)
+                        merged_table_blocks,  # tables
+                        column_names,         # columns
+                        n_version,            # new version
+                        last_block["hash"]    # hash of the last migration block
+                    )
                     config["version"] = n_version
                     config["count_of_blocks"] += 1
 
                     rich.print("Migration block was created...") if self.show_messages else ""
                 else:
                     rich.print("Versions the same...") if self.show_messages else ""
-            
-            self._write_config_file(config)
+
+#            self._write_config_file(config)
 
     def _make_migration_block(
         self,
-        globla_config: dict,
+        global_config: dict,
         table_blocks: dict,
         columns_names: str,
         n_version: str="",
@@ -236,12 +236,12 @@ class MigrationCore:
             ).encode("utf-8")
         ).hexdigest()
 
-        globla_config["blocks"].update(
+        global_config["blocks"].update(
             {
-               "migration_"+str(globla_config["count_of_blocks"]): new_migration
+               "migration_"+str(global_config["count_of_blocks"]): new_migration
            }
         )
-        globla_config["last_hash"] = new_migration["hash"]
+        global_config["last_hash"] = new_migration["hash"]
 
     def _read_config_file(self):
         if os.path.exists(self.__migrations_folder + "\\config.json"):
