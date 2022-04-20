@@ -1,5 +1,4 @@
-from ctypes import Union
-from typing import Any, List, Tuple
+from typing import Any, Dict
 from .core import CheckDatas, Connection, SQLCnd, CheckColumns
 from ..types_ import Column, DataSet, Table, BasicTypes
 
@@ -157,22 +156,35 @@ class Update():
         return self.__responce
 
 
-class InnerJoin():
+class _Joins:
+    PARTS: Dict = {
+        "ij": ("INNER JOIN",),
+        "foj": ("FULL OUTER JOIN",),
+        "foj_": ("FULL OUTER JOIN", "WHERE {} IS NULL OR {} IS NULL"),
+        "lj": ("LEFT JOIN",),
+        "lj_": ("LEFT JOIN", "WHERE {} IS NULL"),
+        "rj": ("RIGHT JOIN",),
+        "rj_": ("RIGHT JOIN", "WHERE {} IS NULL"),
+    }
     def __init__(
         self,
         conn: Connection,
         tables,
         names: Any,
-        condition: str
+        condition: str,
+        t_: str
     ):
-        self.__conn = conn
-        self.__tables = tables
-        self.__names = names
-        self.__responce = self.__validate(condition)
+        self._conn = conn
+        self._tables = tables
+        self.names = names
+        self.t_ = t_
+        self.join_type = _Joins.PARTS.get(t_)
+
+        self._responce = self.__validate(condition)
 
     def __validate(self, condition):
-        SQL_RESPONCE = "SELECT {} FROM {} INNER JOIN {} ON {}"
-        for name in self.__names:
+        SQL_RESPONCE = "SELECT {} FROM {} {} {} ON {} {}"
+        for name in self.names:
             if type(name) is not Column:
                 raise SlashTypeError(
                     f"""
@@ -183,7 +195,7 @@ class InnerJoin():
                 )
             CheckDatas.check_str(name.name)
 
-        for table in self.__tables:
+        for table in self._tables:
             if type(table) is not Table:
                 raise SlashTypeError(
                     f"""
@@ -193,29 +205,34 @@ class InnerJoin():
                     """
                 )
             CheckDatas.check_str(table.name)
+        
+        temp = None
+        if self.t_ == "foj_":
+            temp = condition.split(" ")
+        elif self.t_ == "lj_":
+            temp = condition.split(" ")[-1]
+        elif self.t_ == "rj_":
+            temp = condition.split(" ")[0]
 
         return SQL_RESPONCE.format(
-            ", ".join([".".join((item._p, item.name)) for item in self.__names]),
-            *[table.name for table in self.__tables],
-            condition
+            ", ".join([".".join((item._p, item.name)) for item in self.names]),
+            self._tables[0].name,
+            self.join_type[0],
+            self._tables[1].name,
+            condition,
+            "" if len(self.join_type) == 1 else self.join_type[1].format(
+                *[temp[0], temp[-1]] if self.t_ == "foj_" else temp.split()
+            )
         )
-    
+
     def get(self):
-        self.__conn.execute(
-            CheckDatas.check_sql(self.__responce, "select"),
+        self._conn.execute(
+            CheckDatas.check_sql(self._responce, "select"),
             "select operation"
         )
         return DataSet(
-            self.__tables, self.__names, self.__conn.fetchall()
+            self._tables, self.names, self._conn.fetchall()
         )
-
-
-class LeftOuter():
-    ...
-
-
-class RightOuter():
-    ...
 
 
 class Operations:
@@ -336,7 +353,25 @@ class Operations:
             Update(self.__connection, table, column_names, values, condition)
 
     def inner_join(self, tables, names, condition):
-        return InnerJoin(self.__connection, tables, names, condition).get()
+        return _Joins(self.__connection, tables, names, condition, "ij").get()
+
+    def full_join(self, tables, names, condition):
+        return _Joins(self.__connection, tables, names, condition, "foj").get()
+    
+    def full_not_same_join(self, tables, names, condition):
+        return _Joins(self.__connection, tables, names, condition, "foj_").get()
+
+    def left_join(self, tables, names, condition):
+        return _Joins(self.__connection, tables, names, condition, "lj").get()
+
+    def left_not_r_join(self, tables, names, condition):
+        return _Joins(self.__connection, tables, names, condition, "lj_").get()
+
+    def right_join(self, tables, names, condition):
+        return _Joins(self.__connection, tables, names, condition, "rj").get()
+
+    def right_not_l_join(self, tables, names, condition):
+        return _Joins(self.__connection, tables, names, condition, "rj_").get()
 
     def __enter__(self):
         return self

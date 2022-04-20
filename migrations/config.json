@@ -1,0 +1,25 @@
+{
+    "version": "0.1.0",
+    "count_of_blocks": 1,
+    "last_hash": "2bcb96f6e3ad9ad6abd2bb9b91d616218babc69736d0b1fc75bd28952066ce75757a2e074d6eb45e37688e40ef09ddec2041091ee92639622584d0c281d46df3",
+    "blocks": {
+        "migration_0": {
+            "version": "0.1.0",
+            "is_first": true,
+            "hash": "2bcb96f6e3ad9ad6abd2bb9b91d616218babc69736d0b1fc75bd28952066ce75757a2e074d6eb45e37688e40ef09ddec2041091ee92639622584d0c281d46df3",
+            "table_count": 1,
+            "tables": {
+                "user_data": [
+                    [
+                        "rating",
+                        "INT"
+                    ],
+                    [
+                        "author",
+                        "TEXT"
+                    ]
+                ]
+            }
+        }
+    }
+}

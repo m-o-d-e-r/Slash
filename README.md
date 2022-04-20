@@ -1,15 +1,8 @@
-
-# Канал
-<p>
-    &emsp;Свіжа інформація щодо моїх проектів буде доступна на цьому <a href="https://t.me/logbook_17">каналі</a>.
-</p>
-
-
 # Скоро
-   - JOIN запити
 
 # Нове
-   - Додано 5 нових типів для ORM(Email, Phone, IPv4, IPv6, Url)
+  - JOIN запити
+  - Додано 5 нових типів для ORM(Email, Phone, IPv4, IPv6, Url)
 
 
 # Файли
@@ -377,12 +370,62 @@ from Slash.Core.operations_ import Operations
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432
 )
-
 ```
 &emsp;`Operation(conn).select` приймає об'єкт таблиці, імена колонок, умову `SQLConditions.where`.
 
+
+# JOIN запити
+```Python
+from Slash.types_ import (
+    Int, Text,
+    Table, Column,
+    TablesManager
+)
+from Slash.Core.core import Connection
+from Slash.Core.operations_ import Operations, SQLCnd
+
+
+conn = Connection(
+    "Slash",
+    "postgres",
+    "root",
+    "127.0.0.1",
+    5432
+)
+
+
+a = Table("a")
+a.set_columns(Column(Int, "age"))
+
+b = Table("b")
+b.set_columns(Column(Text, "username"))
+
+conn.create(a)
+conn.create(b)
+
+print(
+    Operations(conn).inner_join(
+        (a, b),
+        (a.rowid, a.age, b.username),
+        SQLCnd.where([a.rowid, SQLCnd.EQ, b.rowid])
+    ).get_data()
+)
+```
+<a href="https://upload.wikimedia.org/wikipedia/commons/9/9d/SQL_Joins.svg">Ось вам посилання щодо видів JOIN запитів</a>
+ - `inner_join`
+ - `full_join`
+ - `full_not_same_join`
+ - `left_join`
+ - `left_not_r_join`
+ - `right_join`
+ - `right_not_l_join`
+
+
+
+
 # PyPI
-<span><a href="https://pypi.org/project/Slash92/1.3.1/">1.3.1 (alpha)</a> Mar 14, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.4.0/">1.4.0</a> Apr 20, 2022</span><br>
+<span><a href="https://pypi.org/project/Slash92/1.3.1/">1.3.1 </a> Mar 14, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 </a> Mar 13, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.2.0/">1.2.0 </a> Mar 5, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.1.2/">1.1.2 </a> Feb 23, 2022</span><br>
