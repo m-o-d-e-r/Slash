@@ -413,10 +413,7 @@ class TablesManager:
 
 
 class TableMeta(type):
-    COUNT_OF_TABLE_OBJECTS = 0
-    COUNT_OF_TABLE_TEMPLATES = 0
     def __new__(cls, name, parrent, args: dict):
-        TableMeta.COUNT_OF_TABLE_TEMPLATES += 1
         columns: list = []
         dot_col: dict = {}
         for k in args:
@@ -440,14 +437,13 @@ class TableMeta(type):
 class Table:
     """Table of database"""
     def __init__(self, name: str=None):
-        TableMeta.COUNT_OF_TABLE_OBJECTS += 1
         self.__name = name if name else self.name
         self.__columns: List[Column] = []
 
         if type(self.__name) is Column:
             raise SlashAttributeError(
                     f"""
-                        >> A column with this name alredy exists.
+                        >> A column with this name already exists.
                         Column name: '{self.__name.name}'
 
                     """
@@ -472,7 +468,6 @@ class Table:
         """Set columns for table:
             .set_columns(Column(type of datas, name of column))
         """
-        TableMeta.COUNT_OF_TABLE_TEMPLATES += 1
         rowid_column = Column(Int, "rowid")
         rowid_column.__setattr__("_p", self.name)
         self.__setattr__("rowid", rowid_column)
@@ -489,8 +484,7 @@ class Table:
                     """
                 )
 
-
-        self.__columns = columns
+        self.__columns = list(columns)
 
 
 class UnitedTableMeta(type):

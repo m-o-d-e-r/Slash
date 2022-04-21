@@ -1,3 +1,4 @@
+from inspect import isclass
 import sys
 sys.path.append("\\".join(__file__.split("\\")[0:-1]))
 
@@ -20,7 +21,9 @@ from .exceptions_ import (
 from ..types_ import (
     BasicTypes,
     BasicTypes,
-    Column
+    Column,
+    Table,
+    TableMeta
 )
 from .migrate import MigrationCore
 
@@ -83,9 +86,16 @@ class Connection:
             raise SlashUnexpectedError("\n\t\"\_(-_-)_/\"")
 
     def create(self, table, operation_obj=None):
-        if self.__migration_engine:
-            self.__migration_engine.make_migrations()
         Create(table, BasicTypes.TYPES_LIST, self, operation_obj)
+
+    def migrate(self, *templates):
+        if self.__migration_engine:
+            validated_types = tuple(map(CheckDatas.check_types, templates))
+            data_type = None
+            if sum(validated_types) == len(validated_types):
+                data_type = object
+
+            self.__migration_engine.make_migrations(data_type, *templates)
 
     def __enter__(self):
         return self
@@ -111,6 +121,7 @@ class Connection:
 class ColumnManipulator:
     @staticmethod
     def new_column(connection: Connection, table, column: Column):
+        
         if isinstance(column, Column):
             CheckDatas.check_str(table.name)
             CheckDatas.check_str(column.name)
@@ -278,6 +289,11 @@ class CheckDatas:
         "drop_column": r"ALTER TABLE [a-zA-Z0-9_]* DROP COLUMN [a-zA-Z0-9_]*",
     }
     def __init__(self): ...
+
+    @staticmethod
+    def check_types(obj):
+        if isinstance(obj, Table):
+            return 1
 
     @staticmethod
     def check_str(str_: str):

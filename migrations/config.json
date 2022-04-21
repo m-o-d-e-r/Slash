@@ -1,52 +1,72 @@
 {
-    "version": "0.1.3",
-    "count_of_blocks": 4,
-    "last_hash": "f2a50d21affafac5f8b76395ae4e0d01f89627564b7cc59ef881a782f10512cbb338b4fa050b004276137ac4e11b42c3f59e25562ae3c5f626127f189854c936",
+    "version": "0.4.4",
+    "count_of_blocks": 5,
+    "last_hash": "5b1d52688653258e9229a8954909d2c566507d759afe1d5b53f320688492b2597cb56e5ed92931cd96217485e0085670f20b90a979b130993a84ace7ee95e077",
     "blocks": {
         "migration_0": {
             "version": "0.1.0",
             "is_first": true,
-            "hash": "7a645208226678f16e64475a2ed9bef793e9ee3af4d894d65d5e73dae5bc9b1571fb5a942cade2aff351774f0041b94671c5b7efaf9030eb85e807929e856a85",
+            "hash": "8325356852f8c47fecff994cb383224ee9cde6804a30ae2d314d734cebd7c51ca950a77ee79ad1a9f20ffa6494dc7f2cb7a81ffe75189ba2acdfa2d18b267bf9",
             "table_count": 1,
             "tables": {
-                "books": [
+                "readers": [
                     [
-                        "author",
+                        "username",
                         "TEXT"
                     ],
                     [
-                        "theme",
-                        "TEXT"
-                    ],
-                    [
-                        "created",
+                        "date",
                         "DATE"
                     ]
                 ]
             }
         },
         "migration_1": {
-            "version": "0.1.1",
+            "version": "0.2.1",
             "is_first": false,
-            "hash": "3dbf2f0eae3b3323050f32b30fdd87d051cc74019570b03dfdc461a799c0e323a09b6464f54bbb43b88d3059a96f411a504770622160035c1525791a1c480af7",
-            "table_count": 1,
+            "hash": "a5870dc2ea6f78738fc8dfbae00ecea3b9a9cb74cbc383a49a8062c29504d1496595d1cc45f2151f998d24687cc0303710db71c30c98876c99840957c2109eba",
+            "table_count": 2,
             "tables": {
                 "books": [
                     [
-                        "theme",
+                        "author",
                         "TEXT"
                     ],
                     [
-                        "created",
+                        "theme",
+                        "TEXT"
+                    ]
+                ],
+                "readers": [
+                    [
+                        "username",
+                        "TEXT"
+                    ],
+                    [
+                        "date",
                         "DATE"
                     ]
                 ]
             }
         },
         "migration_2": {
-            "version": "0.1.2",
+            "version": "0.3.2",
             "is_first": false,
-            "hash": "76625b82275a360611db8285359fda4201ad4d5e7e3510ead42c39ef99ae8b4b70e8836b1a3586504fb90099b514ae556059031cd1858ee44cd9043a6044a570",
+            "hash": "0177d8002b8756287d5a090a76f4058c3e2a440502c2465333b5489d676e5a7c89dec7040275a8d35ea789223a4f19f21dc3458c1bcd39ad9811b8f632d8a207",
+            "table_count": 1,
+            "tables": {
+                "books": [
+                    [
+                        "author",
+                        "TEXT"
+                    ]
+                ]
+            }
+        },
+        "migration_3": {
+            "version": "0.3.3",
+            "is_first": false,
+            "hash": "9fb717e95278668f4409cc548d0820d55cdbf82e7b07fbe2f52a3855a4970d723b82b28a494dca1f4792aef348977da2a665fc3af722a346e955bfc803591ca6",
             "table_count": 1,
             "tables": {
                 "books": [
@@ -57,27 +77,33 @@
                     [
                         "theme",
                         "TEXT"
-                    ],
-                    [
-                        "created",
-                        "DATE"
                     ]
                 ]
             }
         },
-        "migration_3": {
-            "version": "0.1.3",
+        "migration_4": {
+            "version": "0.4.4",
             "is_first": false,
-            "hash": "f2a50d21affafac5f8b76395ae4e0d01f89627564b7cc59ef881a782f10512cbb338b4fa050b004276137ac4e11b42c3f59e25562ae3c5f626127f189854c936",
-            "table_count": 1,
+            "hash": "5b1d52688653258e9229a8954909d2c566507d759afe1d5b53f320688492b2597cb56e5ed92931cd96217485e0085670f20b90a979b130993a84ace7ee95e077",
+            "table_count": 2,
             "tables": {
                 "books": [
                     [
-                        "theme",
+                        "author",
                         "TEXT"
                     ],
                     [
-                        "created",
+                        "theme",
+                        "TEXT"
+                    ]
+                ],
+                "readers": [
+                    [
+                        "username",
+                        "TEXT"
+                    ],
+                    [
+                        "date",
                         "DATE"
                     ]
                 ]

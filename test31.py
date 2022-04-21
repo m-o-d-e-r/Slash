@@ -1,36 +1,34 @@
-from Slash.Core.operations_ import Operations
 from Slash.Core.migrate import MigrationCore
-from Slash.Core.core import Connection, Logger
+from Slash.Core.core import Connection
 from Slash.types_ import (
     Table, TableMeta, Column,
-    Int, Text, Bool, Hidden, Date
+    Text, Date
 )
 import os
 
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432
 )
-conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations", True))
+conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations", False))
 
 
-class Readers(Table, metaclass=TableMeta):
-    name__ = Column(Text, None)
-    surname = Column(Text, None)
 
-    __table__name__ = "readers"
-
-
-class Books(Table, metaclass=TableMeta):
-    #author = Column(Text, None)
-    theme = Column(Text, None)
-    created = Column(Date, None)
-
-
-books = Books("books")
-readers = Readers()
-
-conn.create(books)
+readers = Table("readers")
+readers.set_columns(
+    Column(Text, "username"),
+    Column(Date, "date")
+)
 conn.create(readers)
+
+
+books = Table("books")
+books.set_columns(
+    Column(Text, "author"),
+    Column(Text, "theme")
+)
+conn.create(books)
+
+conn.migrate(books, readers)
 
 
 conn.close()

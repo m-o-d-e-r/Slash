@@ -1,8 +1,11 @@
-# Скоро
-
 # Нове
   - JOIN запити
   - Додано 5 нових типів для ORM(Email, Phone, IPv4, IPv6, Url)
+
+
+# Важливо
+Виправлена помилка яка була спричинена при порівнянні сигнатур нової таблиці(моделі).
+Порівняння відбувалося між старою та новою сигнатурами. Але так як у нової моделі ще немає старої сигнатури це провокувало помилку.
 
 
 # Файли
@@ -424,7 +427,6 @@ print(
 
 
 # PyPI
-<span><a href="https://pypi.org/project/Slash92/1.4.0/">1.4.0</a> Apr 20, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.3.1/">1.3.1 </a> Mar 14, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 </a> Mar 13, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.2.0/">1.2.0 </a> Mar 5, 2022</span><br>
