@@ -12,7 +12,6 @@ conn = Connection(
 conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations", False))
 
 
-
 readers = Table("readers")
 readers.set_columns(
     Column(Text, "username"),
