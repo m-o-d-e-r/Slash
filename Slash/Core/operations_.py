@@ -12,9 +12,9 @@ class Insert():
 
         if len(names) != len(values):
             raise SlashLenMismatch(
-                """The lenght of the data and the lenght of the columns do not match.
-                    Column lenght: {}
-                    Values lenght: {}
+                """The length of the data and the length of the columns do not match.
+                    Column length: {}
+                    Values length: {}
                 """.format(
                     len(names),
                     len(values)
@@ -32,8 +32,17 @@ class Insert():
     def __validate(self, table, names, values, rules):
         CheckDatas.check_str(table.name)
 
-        for name in names:
-            CheckDatas.check_str(name)
+        for nameItem in names:
+            if type(nameItem) is not Column:
+                raise SlashTypeError(
+                    f"""
+                    Type of this object should be Column, not {type(nameItem)}
+                    Operation: INSERT
+                    Object value: --{nameItem}--
+                    """
+                )
+            CheckDatas.check_str(nameItem.name)
+
 
         for value in values:
             if value.type_name == "type_text":
@@ -43,7 +52,7 @@ class Insert():
             if not valid_responce[0]:
                 raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
 
-        names = ", ".join(names)
+        names = ", ".join([item.name for item in names])
         sql_responce = f'INSERT INTO {table.name} ({names}) VALUES ({", ".join(["%s" for i in range(len(values))])})'
 
         return [sql_responce, tuple([i.value for i in values])]
@@ -87,11 +96,19 @@ class Select():
         names = [names] if (type(names) != list) and (type(names) != tuple) else names
 
         CheckDatas.check_str(table.name)
-        for name in names:
-            CheckDatas.check_str(name)
+        for nameItem in names:
+            if type(nameItem) is not Column:
+                raise SlashTypeError(
+                    f"""
+                    Type of this object should be Column, not {type(nameItem)}
+                    Operation: SELECT
+                    Object value: --{nameItem}--
+                    """
+                )
+            CheckDatas.check_str(nameItem.name)
 
         return "SELECT {} FROM {}{}".format(
-            ", ".join([n for n in names]),
+            ", ".join([n.name for n in names]),
             table.name, condition
         )
 
@@ -134,6 +151,18 @@ class Update():
 
         CheckDatas.check_str(table.name)
         sql_responce = "UPDATE {} SET ".format(table.name)
+
+        for nameItem in names:
+            if type(nameItem) is not Column:
+                raise SlashTypeError(
+                    f"""
+                    Type of this object should be Column, not {type(nameItem)}
+                    Operation: UPDATE
+                    Object value: --{nameItem}--
+                    """
+                )
+            CheckDatas.check_str(nameItem.name)
+        names = [i.name for i in names]
 
         for index, value in enumerate(values):
             valid_responce = value._is_valid_datas(rules)
@@ -240,6 +269,10 @@ class Operations:
         self.__connection = connection
         self.__table = table_link
 
+    @property
+    def connection(self):
+        return self.__connection
+
     def insert(self, table, names, values, *, rules="*"):
         if self.__table:
             table = self.__table
@@ -294,7 +327,7 @@ class Operations:
             for t in range(len(data_matrix)):
                 temp_data = []
                 for i, item in enumerate(data_matrix):
-                    for n, nitem in enumerate(item):
+                    for n, _ in enumerate(item):
                         temp_data.append(data_matrix[n][t])
                     break
                 output.append(temp_data)

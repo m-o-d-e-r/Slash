@@ -1,8 +1,6 @@
-from inspect import isclass
 import sys
 sys.path.append("\\".join(__file__.split("\\")[0:-1]))
 
-from datetime import datetime
 from typing import final
 import psycopg2
 import logging
@@ -22,8 +20,7 @@ from ..types_ import (
     BasicTypes,
     BasicTypes,
     Column,
-    Table,
-    TableMeta
+    Table
 )
 from .migrate import MigrationCore
 
@@ -210,7 +207,7 @@ class SQLCnd:
 
             if len(cond_item) != 3:
                 raise SlashLenMismatch(
-                    """Lenght of the condition item should be 3, not {}
+                    """Length of the condition item should be 3, not {}
                     """.format(
                         len(cond_item)
                     )
@@ -314,7 +311,7 @@ class CheckDatas:
                 return sql_request
             else:
                 raise SlashPatternMismatch(
-                    "\n\nPattern mismatch:\n\t{}\n\nFinded pattern: {}\n\t".format(
+                    "\n\nPattern mismatch:\n\t{}\n\Found pattern: {}\n\t".format(
                         sql_request, template
                     )
                 )

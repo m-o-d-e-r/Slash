@@ -3,15 +3,15 @@ BASE_DIR = "\\".join(__file__.split("\\")[0:-1])
 sys.path.append(BASE_DIR + "\\utilities")
 sys.path.append(BASE_DIR)
 
-from typing import Any, Union, final, Dict, List
+from typing import Any, final, Dict, List
 import datetime
 import hashlib
 import json
 import re
 import os
 
-#from utils_for_rules import WinJsonConverter
-#from kolatz_utils.slash3_core import *
+# from utils_for_rules import WinJsonConverter
+# from kolatz_utils.slash3_core import *
 from Core.exceptions_ import SlashAttributeError
 
 
@@ -129,23 +129,22 @@ class JsonConverter:
             type_rules: dict = self.__rules[key].copy()
 
             for rule_item in type_rules.keys():
-                if rule_item == "valide_foo":
-                    template = re.findall("valid_[a-zA-Z]*", str(type_rules[rule_item]))
+                match rule_item:
+                    case "valide_foo":
+                        template = re.findall("valid_[a-zA-Z]*", str(type_rules[rule_item]))
+                        type_rules.update({"valide_foo": template[0]})
+                        self.__rules.update({key: type_rules})
+                    case "do":
+                        type_rules.update({"do": "do"})
+                        self.__rules.update({key: type_rules})
 
-                    type_rules.update({"valide_foo": template[0]})
-                    self.__rules.update({key: type_rules})
+                    case "type":
+                        type_rules.update({"type": "int"})
+                        self.__rules.update({key: type_rules})
 
-                elif rule_item == "do":
-                    type_rules.update({"do": "do"})
-                    self.__rules.update({key: type_rules})
-
-                elif rule_item == "type":
-                    type_rules.update({"type": "int"})
-                    self.__rules.update({key: type_rules})
-
-                elif rule_item == "available":
-                    type_rules.update({"available": ["str"]})
-                    self.__rules.update({key: type_rules})
+                    case "available":
+                        type_rules.update({"available": ["str"]})
+                        self.__rules.update({key: type_rules})
 
         return self.__rules
 
@@ -178,7 +177,8 @@ class ORMType:
     def __init__(self, type_name, value):
         self.type_name: str = type_name
         self.value: Any = value
-    def _is_valid_datas(self, user_rules: Union[str, Rules]="*"):
+
+    def _is_valid_datas(self, user_rules: str | Rules="*"):
         if user_rules == "*":
             rules = Rules()
             rule = rules.get_rules()[self.type_name]
@@ -329,7 +329,7 @@ class TablesManager:
 
     @staticmethod
     def find_by_name(name):
-        """Return one tablesby name of table"""
+        """Return one tables by name of table"""
         return TablesManager.tables.get(hashlib.sha512(name.encode("utf-8")).hexdigest())
 
     @staticmethod
@@ -437,8 +437,10 @@ class TableMeta(type):
 class Table:
     """Table of database"""
     def __init__(self, name: str=None):
+        self.op = None
         self.__name = name if name else self.name
         self.__columns: List[Column] = []
+        self.__connection = None
 
         if type(self.__name) is Column:
             raise SlashAttributeError(
@@ -478,13 +480,34 @@ class Table:
             except AttributeError as e:
                 raise SlashAttributeError(
                     f"""
-                        >> An attribute with this name alredy exists.
+                        >> An attribute with this name already exists.
                         Attribute name: '{column.name}'
 
                     """
                 )
 
         self.__columns = list(columns)
+
+    def __or__(self, table):
+        if isinstance(table, Table):
+            return TablesManager.unite(self, table)
+
+    def __lshift__(self, component):
+        if "Slash.Core.operations_.Operations" in str(component.__class__):
+            self.__setattr__("op", component)
+            self.__connection = component.connection
+
+    def __add__(self, column: Column):
+        if isinstance(column, Column):
+            self.__setattr__(column.name, column)
+            self.columns.append(column)
+            self.__connection.add_column(self, column)
+
+    def __sub__(self, column: Column):
+#        raise NotImplementedError("\n\tDon't touch this protocol")
+        if isinstance(column, Column):
+            self.columns = [item for item in self.__columns if item != column]
+            self.__connection.delete_column(self, column.name)
 
 
 class UnitedTableMeta(type):
@@ -515,7 +538,7 @@ class DataSet(object):
         return self.__columns
 
     def get_data(self):
-        """Return tuple of recved data"""
+        """Return tuple of data"""
         return tuple(self.__data)
 
     def get_table_name(self):
@@ -549,11 +572,12 @@ class Role:
 class RoleRights:
     SUPERUSER = 50
     CREATEROLE = 30
-    CREATEDB = 10
+    CREATEDATABASE = 10
 
 
 class RolesManager:
     OBJECT = None
+
     def __new__(cls, *args):
         if not RolesManager.OBJECT:
             RolesManager.OBJECT = super().__new__(cls)
@@ -579,7 +603,7 @@ class RolesManager:
         self.__roles_center.pop(name)
 
     def change_rights(self, name: str, marker: str):
-        user: Union[Role, None] = self.__roles_center.get(name)
+        user: Role | None = self.__roles_center.get(name)
         if user:
             user.set_marker(marker)
             return True
@@ -587,4 +611,3 @@ class RolesManager:
 
     def get_roles(self):
         return self.__roles_center
-

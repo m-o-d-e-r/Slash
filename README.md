@@ -1,47 +1,68 @@
-# Скоро
-Ядро міграцій буде переписано, я спочатку побудував невірну логіку.
-
-# Нове
-```Python
-from Slash.Core.migrate import MigrationCore
-from Slash.Core.core import Connection
-from Slash.types_ import (
-    Table, TableMeta, Column,
-    Text, Date
-)
-import os
-
-conn = Connection(
-    "Slash", "postgres", "root", "127.0.0.1", 5432
-)
-conn.set_migration_engine(MigrationCore(os.path.dirname(__file__) + "/migrations", False))
-
-
-readers = Table("readers")
-readers.set_columns(
-    Column(Text, "username"),
-    Column(Date, "date")
-)
-conn.create(readers)
-
-
-books = Table("books")
-books.set_columns(
-    Column(Text, "author"),
-    Column(Text, "theme")
-)
-conn.create(books)
-
-conn.migrate(books, readers)
-
-
-conn.close()
-```
-
+# Зворотній зв'язок
+<a href="https://t.me/Slash_Community_bot">Бот для відгуків</a>
 
 # Важливо
-Виправлена помилка яка була спричинена при порівнянні сигнатур нової таблиці(моделі).
-Порівняння відбувалося між старою та новою сигнатурами. Але так як у нової моделі ще немає старої сигнатури це провокувало помилку.
+ORM буде переходити на Python 3.10
+
+# Нове
+  - Новий синтаксис для створення об'єднаних таблиць `UnitedTable`.
+    - Раніше: `TablesManager.unite(table1, table2)`
+    - Зараз: `table = table1 | table2`, насправді викликається метод `unite` з `TablesManager`, але на мою думку такий синтаксис більш привабливий.
+  - Новий синтаксис для додавання компонентів до таблиць (для того, щоб більше не виконувати `Operations(conn)...`, можна додати об'єкт операцій до об'єкту таблиці). Синтаксис: `об'єкт таблиці << об'єкт операцій`. Для того щоб виконати операцію з базою даних, можна звертатися до об'єкту операцій через атрибут `op`. За умовчуванням це None, я це зробив для того, щоб лінтери не сварилися на те, що такого атрибуту немає (так як лінтери сканують код не під час його виконання, то цей атрибут був би недоступний на думку лінтера).
+
+    ```Python
+    from Slash.Core.core import Connection, Table, Column
+    from Slash.Core.operations_ import Operations
+    from Slash.types_ import Int
+
+    conn = Connection(
+        "Slash", "postgres", "root", "127.0.0.1", 5432
+    )
+
+    table1 = Table("test")
+    table1.set_columns(
+        Column(Int, "testField")
+    )
+    conn.create(table1)
+
+    table1 << Operations(conn) # або можна conn.create(table1, Operations)
+
+    table1.op.insert(
+        table1,
+        [table1.testField],
+        [Int(228)]
+    )
+    ```
+    По суті `компоненти` і є нововведенням, вони просто роблять використання деяких речей більш зручним.
+  - Новий синтаксис для додавання/видалення полів моделей.
+    ```Python
+        from Slash.types_ import Column, Table, TableMeta, Int
+        from Slash.Core.operations_ import Operations
+        from Slash.Core.core import Connection
+
+        conn = Connection(
+            "Slash",
+            "postgres",
+            "root",
+            "127.0.0.1",
+            5432
+        )
+
+        class Test(Table, metaclass=TableMeta):
+            field1 = Column(Int, None)
+
+        table = Test("test123")
+        table << Operations(conn)
+
+        conn.create(table)
+
+        table + Column(Int, "field2") # створення нової колонки в таблиці, якщо ядро міграцій увімкнено буде здійснено автоматичну міграцію.
+    ```
+    Всі зміни будуть відбуватися на рівні бази та ORM.<br>
+    - `Створення нової колонки: ` об'єкт таблиці + об'єкт колонки<br>
+    - `Видалення колонки: ` об'єкт таблиці - об'єкт колонки
+
+
 
 
 # Файли
@@ -347,8 +368,17 @@ conn.create(table)
 
 operations = Operations(conn)
 
-operations.insert(table, ("age", "name"), (Int(1000), Text("Name2")), rules=myRules)
-operations.insert(table, ("age", "name"), (Int(1000), Text("Name2"))) # SlashRulesError
+operations.insert(
+    table,
+    (table.age, table.name),
+    (Int(1000), Text("Name2")),
+    rules=myRules
+)
+operations.insert(
+    table,
+    (table.age, table.name),
+    (Int(1000), Text("Name2"))
+) # SlashRulesError
 ```
 
 &emsp;`Operation`, приймає один параметр, це підключення до бд. `Operation(conn).insert` приймає об'єкт таблиці, імена колонок, дані. Також можна задати свої правила валідації, передавши методу `rules=об'єкт правил`
@@ -370,7 +400,7 @@ conn.create(table)
 
 Operations(conn).update(
     table,
-    ("name", ),
+    (table.name, ),
     (Text("33"), ),
     SQLConditions.where(
         [table.age, SQLConditions.LE, Int(3)]
@@ -408,6 +438,14 @@ from Slash.Core.operations_ import Operations
 
 conn = Connection(
     "Slash", "postgres", "root", "127.0.0.1", 5432
+)
+
+Operations(conn).select(
+    table,
+    [table.name],
+    condition=SQLConditions.where(
+        [table.age, SQLConditions.LE, Int(100)]
+    )
 )
 ```
 &emsp;`Operation(conn).select` приймає об'єкт таблиці, імена колонок, умову `SQLConditions.where`.
@@ -463,6 +501,7 @@ print(
 
 
 # PyPI
+<span><a href="https://pypi.org/project/Slash92/1.5.1/">1.5.1 </a> May 01, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.5.0/">1.5.0 </a> Apr 21, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.3.1/">1.3.1 </a> Mar 14, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.3.0/">1.3.0 </a> Mar 13, 2022</span><br>

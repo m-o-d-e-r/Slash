@@ -1,7 +1,6 @@
 from multiprocessing import Queue
 from typing import Any
 import hashlib
-from jinja2 import TemplateError
 import rich
 import json
 import copy
@@ -89,7 +88,6 @@ class VersionManager:
 
         while not self.QUEUE.empty():
             data = self.pop()
-            print(data)
             if data == "tables":
                 middle += 1
             elif data == "columns":
