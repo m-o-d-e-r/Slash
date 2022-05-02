@@ -529,7 +529,7 @@ class UnitedTableMeta(type):
 class DataSet(object):
     """Will return data from database"""
     def __init__(self, table_name, columns, data):
-        self.__table_name = table_name
+        self.__table_name: str = table_name
         self.__columns = columns
         self.__data = data
 

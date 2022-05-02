@@ -1,5 +1,5 @@
 from typing import Any, Dict
-from .core import CheckDatas, Connection, SQLCnd, CheckColumns
+from .core import CheckDatas, Connection, SQLCnd, CheckColumns, OperationsConveyor
 from ..types_ import Column, DataSet, Table, BasicTypes
 
 from .exceptions_ import SlashRulesError, SlashLenMismatch, SlashTypeError
@@ -21,41 +21,28 @@ class Insert():
                 )
             )
 
-        self.__responce = self.__validate(table, names, values, rules)
+        self.__names = names
+        self.__values = values
+        self.__rules = rules
         self.__table = table
+        self.__responce = self.__validate()
         conn.execute(
             CheckDatas.check_sql(self.__responce[0], "insert"),
-            "insert operation",
+           "insert operation",
             self.__responce[1]
         )
 
-    def __validate(self, table, names, values, rules):
-        CheckDatas.check_str(table.name)
+    def __validate(self):
+        CheckDatas.check_str(self.__table.name)
+        CheckDatas.check_column_names(self.__names, "INSERT")
+        CheckDatas.check_rules(self.__values, self.__rules)
 
-        for nameItem in names:
-            if type(nameItem) is not Column:
-                raise SlashTypeError(
-                    f"""
-                    Type of this object should be Column, not {type(nameItem)}
-                    Operation: INSERT
-                    Object value: --{nameItem}--
-                    """
-                )
-            CheckDatas.check_str(nameItem.name)
-
-
-        for value in values:
-            if value.type_name == "type_text":
-                CheckDatas.check_str(value.value)
-
-            valid_responce = value._is_valid_datas(rules)
-            if not valid_responce[0]:
-                raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
-
-        names = ", ".join([item.name for item in names])
-        sql_responce = f'INSERT INTO {table.name} ({names}) VALUES ({", ".join(["%s" for i in range(len(values))])})'
-
-        return [sql_responce, tuple([i.value for i in values])]
+        return OperationsConveyor.make_queryset(
+            table=self.__table,
+            names=self.__names,
+            values=self.__values,
+            operation_title="INSERT"
+        )
 
     @property
     def responce(self):
@@ -76,9 +63,12 @@ class Delete():
 
     def __validate(self, table, condition):
         CheckDatas.check_str(table.name)
-        sql_responce = f"DELETE FROM {table.name}{condition}"
 
-        return sql_responce
+        return OperationsConveyor.make_queryset(
+            table=table,
+            condition=condition,
+            operation_title="DELETE"
+        )
 
     @property
     def responce(self):
@@ -87,29 +77,22 @@ class Delete():
 
 class Select():
     def __init__(self, conn: Connection, table: Table, names: tuple, condition: SQLCnd):
-        self.__conn = conn
-        self.__responce = self.__validate(table, names, condition)
-        self.__table__name = table.name
-        self.__names = names
-
-    def __validate(self, table, names, condition):
         names = [names] if (type(names) != list) and (type(names) != tuple) else names
 
-        CheckDatas.check_str(table.name)
-        for nameItem in names:
-            if type(nameItem) is not Column:
-                raise SlashTypeError(
-                    f"""
-                    Type of this object should be Column, not {type(nameItem)}
-                    Operation: SELECT
-                    Object value: --{nameItem}--
-                    """
-                )
-            CheckDatas.check_str(nameItem.name)
+        self.__conn = conn
+        self.__table = table
+        self.__names = names
+        self.__responce = self.__validate(condition)
 
-        return "SELECT {} FROM {}{}".format(
-            ", ".join([n.name for n in names]),
-            table.name, condition
+    def __validate(self, condition):
+        CheckDatas.check_str(self.__table.name)
+        CheckDatas.check_column_names(self.__names, "SELECT")
+
+        return OperationsConveyor.make_queryset(
+            table=self.__table,
+            names=self.__names,
+            condition=condition,
+            operation_title="SELECT"
         )
 
     def get(self):
@@ -119,7 +102,7 @@ class Select():
         )
 
         return DataSet(
-            self.__table__name, self.__names, self.__conn.fetchall()
+            self.__table.name, self.__names, self.__conn.fetchall()
         )
 
     @property
@@ -150,35 +133,18 @@ class Update():
         values = [values] if (type(values) != list) and (type(values) != tuple) else values
 
         CheckDatas.check_str(table.name)
-        sql_responce = "UPDATE {} SET ".format(table.name)
 
-        for nameItem in names:
-            if type(nameItem) is not Column:
-                raise SlashTypeError(
-                    f"""
-                    Type of this object should be Column, not {type(nameItem)}
-                    Operation: UPDATE
-                    Object value: --{nameItem}--
-                    """
-                )
-            CheckDatas.check_str(nameItem.name)
+        CheckDatas.check_column_names(names, "UPDATE")
         names = [i.name for i in names]
 
-        for index, value in enumerate(values):
-            valid_responce = value._is_valid_datas(rules)
-            if not valid_responce[0]:
-                raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
-
-            if value.type_name in BasicTypes.NEED_FORMAT:
-                sql_responce += " = ".join((names[index], f"'{value.value}'"))
-            else:
-                sql_responce += " = ".join((names[index], f"{value.value}"))
-
-            sql_responce += ", " if index != (len(values) - 1) else ""
-
-        sql_responce += condition
-
-        return sql_responce
+        return OperationsConveyor.make_queryset(
+            table=table,
+            names=names,
+            values=values,
+            condition=condition,
+            rules=rules,
+            operation_title="UPDATE"
+        )
 
     @property
     def responce(self):

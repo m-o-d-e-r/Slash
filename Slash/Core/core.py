@@ -11,7 +11,7 @@ import os
 
 from .exceptions_ import (
     SlashBadColumnNameError, SlashLenMismatch,
-    SlashOneTableColumn, SlashTypeError,
+    SlashOneTableColumn, SlashRulesError, SlashTypeError,
     SlashBadAction, SlashPatternMismatch,
     SlashNoResultToFetch, SlashUnexpectedError,
     SlashNotTheSame
@@ -274,11 +274,11 @@ class SQLCnd:
 
 class CheckDatas:
     SQL_TEMPLATES: dict = {
-        "insert": r"INSERT INTO [a-zA-Z0-9_]* [()a-zA-Z,\s_0-9]* VALUES [a-zA-Z)(0-9,%\s'@._-]*",
-        "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9',\s_%]*",
-        "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!=',-_%+]*",
-        "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>!=_.'%]*",
-        "select": r"SELECT [a-zA-Z0-9(),\s'<>!=*._%]*",
+        "insert": r"INSERT INTO [a-zA-Z0-9_]* [()a-zA-Z,\s_0-9]* VALUES [a-zA-Z)(0-9,%\s'@!._-]*",
+        "create": r"CREATE TABLE IF NOT EXISTS [a-zA-Z0-9_]* [)()a-zA-Z0-9'!,\s_%]*",
+        "update": r"UPDATE [a-zA-Z0-9_]* SET [a-zA-Z0-9\s<>!',-_%+=]*",
+        "delete": r"DELETE FROM [a-zA-Z0-9_]* [a-zA-Z0-9\s<>_=.'%!]*",
+        "select": r"SELECT [a-zA-Z0-9(),\s'<>!*._%=]*",
         "create_role": "",
         "delete_role": "",
         "change_role_right": "",
@@ -294,7 +294,7 @@ class CheckDatas:
 
     @staticmethod
     def check_str(str_: str):
-        available_char = string.ascii_letters + string.digits + "@._-=><' "
+        available_char = string.ascii_letters + string.digits + "@._-=><' !"
         for char_  in str_:
             if char_ not in available_char:
                 raise SlashBadColumnNameError(
@@ -317,6 +317,29 @@ class CheckDatas:
                 )
         else:
             raise SlashBadAction("Action is wrong")
+
+    @staticmethod
+    def check_column_names(names, operation_title):
+        for nameItem in names:
+            if type(nameItem) is not Column:
+                raise SlashTypeError(
+                    f"""
+                    Type of this object should be Column, not {type(nameItem)}
+                    Operation: {operation_title}
+                    Object value: --{nameItem}--
+                    """
+                )
+            CheckDatas.check_str(nameItem.name)
+
+    @staticmethod
+    def check_rules(values, rules):
+        for value in values:
+            if value.type_name in BasicTypes.NEED_FORMAT:
+                CheckDatas.check_str(value.value)
+
+            valid_responce = value._is_valid_datas(rules)
+            if not valid_responce[0]:
+                raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
 
 
 class CheckColumns:
@@ -367,3 +390,50 @@ class Logger(logging.Logger):
 
     def __del__(self):
         self.info(f"Session closed (work time: {time.time() - self.__start_time})")
+
+
+class OperationsConveyor:
+    @staticmethod
+    def make_queryset(
+        *,
+        table=None,
+        names=None,
+        values=None,
+        condition=None,
+        rules=None,
+        operation_title=None,
+    ) -> str:
+        match operation_title:
+            case "INSERT":
+                names: str = ", ".join([item.name for item in names])
+                sql_responce: str = f'INSERT INTO {table.name} ({names}) VALUES ({", ".join(["%s" for i in range(len(values))])})'
+
+                return [sql_responce, tuple([i.value for i in values])]
+
+            case "DELETE":
+                return f"DELETE FROM {table.name}{condition}"
+
+            case "SELECT":
+               return "SELECT {} FROM {}{}".format(
+                    ", ".join([n.name for n in names]),
+                    table.name, condition
+                )
+
+            case "UPDATE":
+                sql_responce = "UPDATE {} SET ".format(table.name)
+
+                for index, value in enumerate(values):
+                    valid_responce = value._is_valid_datas(rules)
+                    if not valid_responce[0]:
+                        raise SlashRulesError(f"\n\n\nRule: {valid_responce[1]}")
+
+                    if value.type_name in BasicTypes.NEED_FORMAT:
+                        sql_responce += " = ".join((names[index], f"'{value.value}'"))
+                    else:
+                        sql_responce += " = ".join((names[index], f"{value.value}"))
+
+                    sql_responce += ", " if index != (len(values) - 1) else ""
+
+                sql_responce += condition
+
+                return sql_responce
