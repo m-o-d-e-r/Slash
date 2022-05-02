@@ -501,6 +501,7 @@ print(
 
 
 # PyPI
+<span><a href="https://pypi.org/project/Slash92/1.5.2/">1.5.2 </a> May 02, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.5.1/">1.5.1 </a> May 01, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.5.0/">1.5.0 </a> Apr 21, 2022</span><br>
 <span><a href="https://pypi.org/project/Slash92/1.3.1/">1.3.1 </a> Mar 14, 2022</span><br>
