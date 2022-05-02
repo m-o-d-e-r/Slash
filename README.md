@@ -1,3 +1,6 @@
+[![Downloads](https://static.pepy.tech/personalized-badge/slash92?period=total&units=international_system&left_color=grey&right_color=red&left_text=Downloads)](https://pepy.tech/project/slash92)
+[![Downloads](https://img.shields.io/static/v1?label=Version&message=v1.5.2&color=green)](https://shields.io/)
+
 # Зворотній зв'язок
 <a href="https://t.me/Slash_Community_bot">Бот для відгуків</a>
 
